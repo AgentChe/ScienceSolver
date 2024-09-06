@@ -1,8 +1,8 @@
 //
 //  Weak.swift
-//  Soccer
+//  ScienceSolver
 //
-//  Created by Andrey Chernyshev on 16.01.2021.
+//  Created by Андрей Чернышев on 06.09.2024.
 //
 
 final class Weak<T> {

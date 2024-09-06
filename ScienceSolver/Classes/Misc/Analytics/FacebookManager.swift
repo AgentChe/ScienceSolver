@@ -58,7 +58,7 @@ extension FacebookManager: SKPaymentTransactionObserver {
         iapManager.obtainProducts(ids: ids)
             .subscribe(onSuccess: { products in
                 products.forEach { product in
-                    let currency = product.original.priceLocale.currencyCode ?? "unknown"
+                    let currency = product.original.priceLocale.currency?.identifier ?? "unknown"
                     
                     AppEvents.shared.logPurchase(amount: 0, currency: currency)
                 }

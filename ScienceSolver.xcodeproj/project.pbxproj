@@ -47,7 +47,6 @@
 		DE89C1772C8B3AE100CB9160 /* Scalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BFCC2C8B3AE100CB9160 /* Scalable.swift */; };
 		DE89C1782C8B3AE100CB9160 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BFCD2C8B3AE100CB9160 /* ScreenSize.swift */; };
 		DE89C1792C8B3AE100CB9160 /* TextAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BFCE2C8B3AE100CB9160 /* TextAttributes.swift */; };
-		DE89C17A2C8B3AE100CB9160 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BFCF2C8B3AE100CB9160 /* Weak.swift */; };
 		DE89C17B2C8B3AE100CB9160 /* XOREncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BFD02C8B3AE100CB9160 /* XOREncryption.swift */; };
 		DE89C17C2C8B3AE100CB9160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BFD22C8B3AE100CB9160 /* AppDelegate.swift */; };
 		DE89C17D2C8B3AE100CB9160 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BFD32C8B3AE100CB9160 /* Appearance.swift */; };
@@ -84,6 +83,17 @@
 		DE89C3322C8B3F1800CB9160 /* PaygateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3262C8B3F1800CB9160 /* PaygateView.swift */; };
 		DE89C3332C8B3F1800CB9160 /* PaygateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3272C8B3F1800CB9160 /* PaygateViewController.swift */; };
 		DE89C3342C8B3F1800CB9160 /* PaygateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3282C8B3F1800CB9160 /* PaygateViewModel.swift */; };
+		DE89C33E2C8B41F600CB9160 /* ProfileCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C33D2C8B41F600CB9160 /* ProfileCreateRequest.swift */; };
+		DE89C3402C8B42A800CB9160 /* ProfileBindingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C33F2C8B42A800CB9160 /* ProfileBindingRequest.swift */; };
+		DE89C3422C8B43CA00CB9160 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3412C8B43CA00CB9160 /* ProfileManager.swift */; };
+		DE89C3452C8B467600CB9160 /* TryAgainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3442C8B467600CB9160 /* TryAgainViewController.swift */; };
+		DE89C3472C8B467A00CB9160 /* TryAgainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3462C8B467A00CB9160 /* TryAgainView.swift */; };
+		DE89C34A2C8B4E4800CB9160 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3492C8B4E4800CB9160 /* Weak.swift */; };
+		DE89C34B2C8B51B000CB9160 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE89C3382C8B3F8000CB9160 /* Inter-Black.ttf */; };
+		DE89C34C2C8B51B000CB9160 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE89C3362C8B3F8000CB9160 /* Inter-Bold.ttf */; };
+		DE89C34D2C8B51B000CB9160 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE89C33A2C8B3F8000CB9160 /* Inter-Medium.ttf */; };
+		DE89C34E2C8B51B000CB9160 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE89C3392C8B3F8000CB9160 /* Inter-Regular.ttf */; };
+		DE89C34F2C8B51B000CB9160 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE89C3372C8B3F8000CB9160 /* Inter-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,7 +141,6 @@
 		DE89BFCC2C8B3AE100CB9160 /* Scalable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scalable.swift; sourceTree = "<group>"; };
 		DE89BFCD2C8B3AE100CB9160 /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		DE89BFCE2C8B3AE100CB9160 /* TextAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAttributes.swift; sourceTree = "<group>"; };
-		DE89BFCF2C8B3AE100CB9160 /* Weak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		DE89BFD02C8B3AE100CB9160 /* XOREncryption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XOREncryption.swift; sourceTree = "<group>"; };
 		DE89BFD22C8B3AE100CB9160 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE89BFD32C8B3AE100CB9160 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
@@ -173,6 +182,12 @@
 		DE89C3382C8B3F8000CB9160 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
 		DE89C3392C8B3F8000CB9160 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		DE89C33A2C8B3F8000CB9160 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		DE89C33D2C8B41F600CB9160 /* ProfileCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCreateRequest.swift; sourceTree = "<group>"; };
+		DE89C33F2C8B42A800CB9160 /* ProfileBindingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBindingRequest.swift; sourceTree = "<group>"; };
+		DE89C3412C8B43CA00CB9160 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		DE89C3442C8B467600CB9160 /* TryAgainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryAgainViewController.swift; sourceTree = "<group>"; };
+		DE89C3462C8B467A00CB9160 /* TryAgainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryAgainView.swift; sourceTree = "<group>"; };
+		DE89C3492C8B4E4800CB9160 /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,8 +372,8 @@
 				DE89BFCC2C8B3AE100CB9160 /* Scalable.swift */,
 				DE89BFCD2C8B3AE100CB9160 /* ScreenSize.swift */,
 				DE89BFCE2C8B3AE100CB9160 /* TextAttributes.swift */,
-				DE89BFCF2C8B3AE100CB9160 /* Weak.swift */,
 				DE89BFD02C8B3AE100CB9160 /* XOREncryption.swift */,
+				DE89C3492C8B4E4800CB9160 /* Weak.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -447,6 +462,7 @@
 		DE89C0F12C8B3AE100CB9160 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE89C3432C8B465900CB9160 /* TryAgain */,
 				DE89C0D42C8B3AE100CB9160 /* Main */,
 				DE89C0F02C8B3AE100CB9160 /* Splash */,
 			);
@@ -494,6 +510,7 @@
 		DE89C14C2C8B3AE100CB9160 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DE89C33B2C8B415A00CB9160 /* Profile */,
 				DE89C11C2C8B3AE100CB9160 /* Purchase */,
 				DE89C14B2C8B3AE100CB9160 /* Session */,
 			);
@@ -583,6 +600,33 @@
 			path = Inter;
 			sourceTree = "<group>";
 		};
+		DE89C33B2C8B415A00CB9160 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C33C2C8B415F00CB9160 /* Request */,
+				DE89C3412C8B43CA00CB9160 /* ProfileManager.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DE89C33C2C8B415F00CB9160 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C33D2C8B41F600CB9160 /* ProfileCreateRequest.swift */,
+				DE89C33F2C8B42A800CB9160 /* ProfileBindingRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		DE89C3432C8B465900CB9160 /* TryAgain */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3442C8B467600CB9160 /* TryAgainViewController.swift */,
+				DE89C3462C8B467A00CB9160 /* TryAgainView.swift */,
+			);
+			path = TryAgain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -643,6 +687,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE89C34B2C8B51B000CB9160 /* Inter-Black.ttf in Resources */,
+				DE89C34C2C8B51B000CB9160 /* Inter-Bold.ttf in Resources */,
+				DE89C34D2C8B51B000CB9160 /* Inter-Medium.ttf in Resources */,
+				DE89C34E2C8B51B000CB9160 /* Inter-Regular.ttf in Resources */,
+				DE89C34F2C8B51B000CB9160 /* Inter-SemiBold.ttf in Resources */,
 				DE89C31A2C8B3AEE00CB9160 /* Localizable.strings in Resources */,
 				DE89BF8E2C8B35B400CB9160 /* Assets.xcassets in Resources */,
 				DE89BF912C8B35B400CB9160 /* Base in Resources */,
@@ -702,6 +751,7 @@
 				DE89C1672C8B3AE100CB9160 /* UIEdgeInsets+Extension.swift in Sources */,
 				DE89C2522C8B3AE200CB9160 /* PurchaseValidationObserver.swift in Sources */,
 				DE89C2222C8B3AE100CB9160 /* OSlideView.swift in Sources */,
+				DE89C3452C8B467600CB9160 /* TryAgainViewController.swift in Sources */,
 				DE89C15E2C8B3AE100CB9160 /* PaddingTextField.swift in Sources */,
 				DE89C1692C8B3AE100CB9160 /* UIView+RxExtension.swift in Sources */,
 				DE89C32C2C8B3F1800CB9160 /* PaygateActionsView.swift in Sources */,
@@ -726,6 +776,7 @@
 				DE89C32B2C8B3F1800CB9160 /* PaygateInteractor.swift in Sources */,
 				DE89C1602C8B3AE100CB9160 /* TapAreaButton.swift in Sources */,
 				DE89C16C2C8B3AE100CB9160 /* RestAPITransport.swift in Sources */,
+				DE89C34A2C8B4E4800CB9160 /* Weak.swift in Sources */,
 				DE89C17E2C8B3AE100CB9160 /* GlobalDefinitions.swift in Sources */,
 				DE89C24F2C8B3AE200CB9160 /* IAPProduct.swift in Sources */,
 				DE89C1622C8B3AE100CB9160 /* ObservableAndSingle+Extension.swift in Sources */,
@@ -744,15 +795,16 @@
 				DE89C1722C8B3AE100CB9160 /* SignError.swift in Sources */,
 				DE89C1522C8B3AE100CB9160 /* ImagePicker.swift in Sources */,
 				DE89C3342C8B3F1800CB9160 /* PaygateViewModel.swift in Sources */,
+				DE89C3472C8B467A00CB9160 /* TryAgainView.swift in Sources */,
 				DE89C16D2C8B3AE100CB9160 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE89C1652C8B3AE100CB9160 /* UIColor+Extension.swift in Sources */,
 				DE89C1782C8B3AE100CB9160 /* ScreenSize.swift in Sources */,
 				DE89C3312C8B3F1800CB9160 /* PaygateProductButton.swift in Sources */,
 				DE89C1772C8B3AE100CB9160 /* Scalable.swift in Sources */,
+				DE89C33E2C8B41F600CB9160 /* ProfileCreateRequest.swift in Sources */,
 				DE89C1752C8B3AE100CB9160 /* NumberLaunches.swift in Sources */,
 				DE89C2302C8B3AE200CB9160 /* SplashView.swift in Sources */,
 				DE89C2232C8B3AE100CB9160 /* OnboardingView.swift in Sources */,
-				DE89C17A2C8B3AE100CB9160 /* Weak.swift in Sources */,
 				DE89C2252C8B3AE100CB9160 /* OnboardingViewModel.swift in Sources */,
 				DE89C1742C8B3AE100CB9160 /* Fonts.swift in Sources */,
 				DE89C1682C8B3AE100CB9160 /* UITapGestureRecognizer+Extension.swift in Sources */,
@@ -761,6 +813,7 @@
 				DE89C1662C8B3AE100CB9160 /* UIDevice+Extension.swift in Sources */,
 				DE89C32A2C8B3F1800CB9160 /* Currency.swift in Sources */,
 				DE89C1562C8B3AE100CB9160 /* NavigationControllerSettings.swift in Sources */,
+				DE89C3402C8B42A800CB9160 /* ProfileBindingRequest.swift in Sources */,
 				DE89C17D2C8B3AE100CB9160 /* Appearance.swift in Sources */,
 				DE89C17F2C8B3AE100CB9160 /* SceneDelegate.swift in Sources */,
 				DE89C32E2C8B3F1800CB9160 /* PaygateEnableTrialButton.swift in Sources */,
@@ -771,6 +824,7 @@
 				DE89C14E2C8B3AE100CB9160 /* AmplitudeManager.swift in Sources */,
 				DE89C17B2C8B3AE100CB9160 /* XOREncryption.swift in Sources */,
 				DE89C14F2C8B3AE100CB9160 /* BranchManager.swift in Sources */,
+				DE89C3422C8B43CA00CB9160 /* ProfileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

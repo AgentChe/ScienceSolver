@@ -9,6 +9,8 @@ import RxCocoa
 import OtterScaleiOS
 
 protocol SessionManagerProtocol {
+    var anonymousId: String { get }
+    var internalId: String { get }
     func hasActiveSubscriptions() -> Bool
 }
 
@@ -16,6 +18,14 @@ final class SessionManager {}
 
 // MARK: SessionManagerProtocol
 extension SessionManager: SessionManagerProtocol {
+    var anonymousId: String {
+        OtterScale.shared.getAnonymousID()
+    }
+    
+    var internalId: String {
+        OtterScale.shared.getInternalID()
+    }
+    
     func hasActiveSubscriptions() -> Bool {
         guard let paymentData = OtterScale.shared.getPaymentData() else {
             return false

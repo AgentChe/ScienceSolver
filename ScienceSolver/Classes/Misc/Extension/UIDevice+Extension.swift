@@ -14,7 +14,7 @@ extension UIDevice {
             return nil
         }
         
-        return Locale(identifier: mainPreferredLanguage).languageCode
+        return Locale(identifier: mainPreferredLanguage).language.languageCode?.identifier
     }
     
     static var appVersion: String? {
