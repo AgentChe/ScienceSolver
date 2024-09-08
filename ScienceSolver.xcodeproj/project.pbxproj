@@ -55,10 +55,8 @@
 		DE89C2092C8B3AE100CB9160 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0B22C8B3AE100CB9160 /* MainView.swift */; };
 		DE89C20A2C8B3AE100CB9160 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0B32C8B3AE100CB9160 /* MainViewController.swift */; };
 		DE89C20B2C8B3AE100CB9160 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0B42C8B3AE100CB9160 /* MainViewModel.swift */; };
-		DE89C2222C8B3AE100CB9160 /* OSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0D82C8B3AE100CB9160 /* OSlideView.swift */; };
 		DE89C2232C8B3AE100CB9160 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0DA2C8B3AE100CB9160 /* OnboardingView.swift */; };
 		DE89C2242C8B3AE100CB9160 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0DB2C8B3AE100CB9160 /* OnboardingViewController.swift */; };
-		DE89C2252C8B3AE100CB9160 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0DC2C8B3AE100CB9160 /* OnboardingViewModel.swift */; };
 		DE89C22F2C8B3AE200CB9160 /* SplashReceiptValidationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0EB2C8B3AE100CB9160 /* SplashReceiptValidationObserver.swift */; };
 		DE89C2302C8B3AE200CB9160 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0ED2C8B3AE100CB9160 /* SplashView.swift */; };
 		DE89C2312C8B3AE200CB9160 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0EE2C8B3AE100CB9160 /* SplashViewController.swift */; };
@@ -94,6 +92,13 @@
 		DE89C34D2C8B51B000CB9160 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE89C33A2C8B3F8000CB9160 /* Inter-Medium.ttf */; };
 		DE89C34E2C8B51B000CB9160 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE89C3392C8B3F8000CB9160 /* Inter-Regular.ttf */; };
 		DE89C34F2C8B51B000CB9160 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE89C3372C8B3F8000CB9160 /* Inter-SemiBold.ttf */; };
+		DE89C3522C8B550100CB9160 /* OnboardingWelcome1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3512C8B550100CB9160 /* OnboardingWelcome1View.swift */; };
+		DE89C3542C8B554000CB9160 /* OnboardingWelcome2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3532C8B554000CB9160 /* OnboardingWelcome2View.swift */; };
+		DE89C3562C8B554700CB9160 /* OnboardingWelcome3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3552C8B554700CB9160 /* OnboardingWelcome3View.swift */; };
+		DE89C3592C8B559500CB9160 /* Onboarding.Welcome1.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C3582C8B559500CB9160 /* Onboarding.Welcome1.Animation.json */; };
+		DE89C35B2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C35A2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json */; };
+		DE89C35D2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C35C2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json */; };
+		DE89C35F2C8DCD3200CB9160 /* OnboardingSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C35E2C8DCD3200CB9160 /* OnboardingSlideView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,10 +154,8 @@
 		DE89C0B22C8B3AE100CB9160 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DE89C0B32C8B3AE100CB9160 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DE89C0B42C8B3AE100CB9160 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		DE89C0D82C8B3AE100CB9160 /* OSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideView.swift; sourceTree = "<group>"; };
 		DE89C0DA2C8B3AE100CB9160 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DE89C0DB2C8B3AE100CB9160 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		DE89C0DC2C8B3AE100CB9160 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		DE89C0EB2C8B3AE100CB9160 /* SplashReceiptValidationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashReceiptValidationObserver.swift; sourceTree = "<group>"; };
 		DE89C0ED2C8B3AE100CB9160 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DE89C0EE2C8B3AE100CB9160 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +191,13 @@
 		DE89C3442C8B467600CB9160 /* TryAgainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryAgainViewController.swift; sourceTree = "<group>"; };
 		DE89C3462C8B467A00CB9160 /* TryAgainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryAgainView.swift; sourceTree = "<group>"; };
 		DE89C3492C8B4E4800CB9160 /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
+		DE89C3512C8B550100CB9160 /* OnboardingWelcome1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcome1View.swift; sourceTree = "<group>"; };
+		DE89C3532C8B554000CB9160 /* OnboardingWelcome2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcome2View.swift; sourceTree = "<group>"; };
+		DE89C3552C8B554700CB9160 /* OnboardingWelcome3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcome3View.swift; sourceTree = "<group>"; };
+		DE89C3582C8B559500CB9160 /* Onboarding.Welcome1.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome1.Animation.json; sourceTree = "<group>"; };
+		DE89C35A2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome2.Animation.json; sourceTree = "<group>"; };
+		DE89C35C2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome3.Animation.json; sourceTree = "<group>"; };
+		DE89C35E2C8DCD3200CB9160 /* OnboardingSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlideView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,20 +432,11 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		DE89C0D92C8B3AE100CB9160 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DE89C0D82C8B3AE100CB9160 /* OSlideView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		DE89C0DE2C8B3AE100CB9160 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				DE89C0D92C8B3AE100CB9160 /* Views */,
+				DE89C3502C8B54F200CB9160 /* Views */,
 				DE89C0DB2C8B3AE100CB9160 /* OnboardingViewController.swift */,
-				DE89C0DC2C8B3AE100CB9160 /* OnboardingViewModel.swift */,
 				DE89C0DA2C8B3AE100CB9160 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
@@ -627,6 +628,28 @@
 			path = TryAgain;
 			sourceTree = "<group>";
 		};
+		DE89C3502C8B54F200CB9160 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3572C8B556500CB9160 /* Source */,
+				DE89C35E2C8DCD3200CB9160 /* OnboardingSlideView.swift */,
+				DE89C3512C8B550100CB9160 /* OnboardingWelcome1View.swift */,
+				DE89C3532C8B554000CB9160 /* OnboardingWelcome2View.swift */,
+				DE89C3552C8B554700CB9160 /* OnboardingWelcome3View.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE89C3572C8B556500CB9160 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C35A2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json */,
+				DE89C3582C8B559500CB9160 /* Onboarding.Welcome1.Animation.json */,
+				DE89C35C2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -688,13 +711,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE89C34B2C8B51B000CB9160 /* Inter-Black.ttf in Resources */,
+				DE89C35B2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json in Resources */,
 				DE89C34C2C8B51B000CB9160 /* Inter-Bold.ttf in Resources */,
 				DE89C34D2C8B51B000CB9160 /* Inter-Medium.ttf in Resources */,
 				DE89C34E2C8B51B000CB9160 /* Inter-Regular.ttf in Resources */,
 				DE89C34F2C8B51B000CB9160 /* Inter-SemiBold.ttf in Resources */,
 				DE89C31A2C8B3AEE00CB9160 /* Localizable.strings in Resources */,
 				DE89BF8E2C8B35B400CB9160 /* Assets.xcassets in Resources */,
+				DE89C3592C8B559500CB9160 /* Onboarding.Welcome1.Animation.json in Resources */,
 				DE89BF912C8B35B400CB9160 /* Base in Resources */,
+				DE89C35D2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,15 +776,17 @@
 				DE89C2512C8B3AE200CB9160 /* IAPManager.swift in Sources */,
 				DE89C1672C8B3AE100CB9160 /* UIEdgeInsets+Extension.swift in Sources */,
 				DE89C2522C8B3AE200CB9160 /* PurchaseValidationObserver.swift in Sources */,
-				DE89C2222C8B3AE100CB9160 /* OSlideView.swift in Sources */,
+				DE89C35F2C8DCD3200CB9160 /* OnboardingSlideView.swift in Sources */,
 				DE89C3452C8B467600CB9160 /* TryAgainViewController.swift in Sources */,
 				DE89C15E2C8B3AE100CB9160 /* PaddingTextField.swift in Sources */,
 				DE89C1692C8B3AE100CB9160 /* UIView+RxExtension.swift in Sources */,
 				DE89C32C2C8B3F1800CB9160 /* PaygateActionsView.swift in Sources */,
 				DE89C16A2C8B3AE100CB9160 /* DefaultRequestWrapper.swift in Sources */,
+				DE89C3562C8B554700CB9160 /* OnboardingWelcome3View.swift in Sources */,
 				DE89C16B2C8B3AE100CB9160 /* APIRequestBody.swift in Sources */,
 				DE89C2322C8B3AE200CB9160 /* SplashViewModel.swift in Sources */,
 				DE89C1512C8B3AE100CB9160 /* FirebaseManager.swift in Sources */,
+				DE89C3542C8B554000CB9160 /* OnboardingWelcome2View.swift in Sources */,
 				DE89C2502C8B3AE200CB9160 /* ProductPrice.swift in Sources */,
 				DE89C27A2C8B3AE200CB9160 /* SessionManager.swift in Sources */,
 				DE89C1702C8B3AE100CB9160 /* ContentError.swift in Sources */,
@@ -788,6 +816,7 @@
 				DE89C20B2C8B3AE100CB9160 /* MainViewModel.swift in Sources */,
 				DE89C1762C8B3AE100CB9160 /* ObservableRetrySingle.swift in Sources */,
 				DE89C22F2C8B3AE200CB9160 /* SplashReceiptValidationObserver.swift in Sources */,
+				DE89C3522C8B550100CB9160 /* OnboardingWelcome1View.swift in Sources */,
 				DE89C3302C8B3F1800CB9160 /* PaygateInfoView.swift in Sources */,
 				DE89C3332C8B3F1800CB9160 /* PaygateViewController.swift in Sources */,
 				DE89C24E2C8B3AE200CB9160 /* IAPActionResult.swift in Sources */,
@@ -805,7 +834,6 @@
 				DE89C1752C8B3AE100CB9160 /* NumberLaunches.swift in Sources */,
 				DE89C2302C8B3AE200CB9160 /* SplashView.swift in Sources */,
 				DE89C2232C8B3AE100CB9160 /* OnboardingView.swift in Sources */,
-				DE89C2252C8B3AE100CB9160 /* OnboardingViewModel.swift in Sources */,
 				DE89C1742C8B3AE100CB9160 /* Fonts.swift in Sources */,
 				DE89C1682C8B3AE100CB9160 /* UITapGestureRecognizer+Extension.swift in Sources */,
 				DE89C1542C8B3AE100CB9160 /* RxActivityIndicator.swift in Sources */,

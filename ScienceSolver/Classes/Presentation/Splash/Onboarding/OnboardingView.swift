@@ -8,22 +8,24 @@
 import UIKit
 
 final class OnboardingView: UIView {
-    enum Step: Int {
+    enum Slide: Int {
         case welcome1, welcome2, welcome3
     }
     
-    var didFinish: (() -> Void)?
+    private lazy var slidesViews: [OnboardingSlideView] = [
+        OnboardingWelcome1View(),
+        OnboardingWelcome2View(),
+        OnboardingWelcome3View()
+    ]
     
-    lazy var contentViews: [OSlideView] = {
-        [
-            OSlideView(step: .welcome1)
-        ]
-    }()
+    private lazy var currentSlide = Slide.welcome1
     
-    private var step = Step.welcome1
+    private let didFinish: (() -> Void)
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(didFinish: @escaping (() -> Void)) {
+        self.didFinish = didFinish
+        
+        super.init(frame: .zero)
         
         initialize()
     }
@@ -31,90 +33,90 @@ final class OnboardingView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        slidesViews.enumerated().forEach { [weak self] index, slideView in
+            guard let self else { return }
+            
+            slideView.frame.size = bounds.size
+        }
+    }
 }
 
-// MARK: OSlideViewDelegate
-extension OnboardingView: OSlideViewDelegate {
-    func slideViewDidNext(from step: Step) {
-        let nextRawValue = step.rawValue + 1
+// MARK: OnboardingSlideViewDelete
+extension OnboardingView: OnboardingSlideViewDelete {
+    func slideViewDidNext(from slide: Slide) {
+        let nextRawValue = slide.rawValue + 1
         
-        guard let nextStep = Step(rawValue: nextRawValue) else {
-            didFinish?()
+        guard let nextSlide = Slide(rawValue: nextRawValue) else {
+            didFinish()
             
             return
         }
         
-        scroll(to: nextStep)
+        scroll(to: nextSlide)
     }
     
-    func slideViewDidBack(from step: OnboardingView.Step) {
-        let previousRawValue = step.rawValue - 1
+    func slideViewDidBack(from slide: Slide) {
+        let previousRawValue = slide.rawValue - 1
         
-        guard let previousStep = Step(rawValue: previousRawValue) else {
-            return
-        }
+        guard let previousSlide = Slide(rawValue: previousRawValue) else { return }
         
-        scroll(to: previousStep)
-    }
-    
-    func slideViewDidSkip() {
-        didFinish?()
+        scroll(to: previousSlide)
     }
 }
 
 // MARK: Private
 private extension OnboardingView {
     func initialize() {
-        contentViews
-            .enumerated()
-            .forEach { [weak self] index, view in
-                view.frame.size = CGSize(width: UIScreen.main.bounds.width,
-                                         height: UIScreen.main.bounds.height)
+        backgroundColor = Appearance.main100
+        
+        slidesViews.forEach { [weak self] slideView in
+            guard let self else { return }
+            
+            slideView.clipsToBounds = true
+            slideView.delegate = self
+            
+            if slideView.slide == currentSlide {
+                slideView.frame.origin = CGPoint.zero
+                addSubview(slideView)
                 
-                view.clipsToBounds = true
-                view.delegate = self
-                
-                if index == 0 {
-                    view.frame.origin = CGPoint(x: 0, y: 0)
-                    self?.addSubview(view)
-                    
-                    view.moveToThis()
-                }
+                slideView.moveToThis()
             }
+        }
     }
     
-    func scroll(to newStep: Step) {
-        let currentIndex = step.rawValue
-        let scrollToIndex = newStep.rawValue
+    func scroll(to slide: Slide) {
+        let currentIndex = currentSlide.rawValue
+        let scrollToIndex = slide.rawValue
         
         let direction = scrollToIndex > currentIndex ? 1 : -1
         
-        let indices = contentViews.indices
+        let indices = slidesViews.indices
         
-        guard indices.contains(currentIndex), indices.contains(scrollToIndex) else {
-            return
-        }
+        guard indices.contains(currentIndex), indices.contains(scrollToIndex) else { return }
 
-        let currentView = contentViews[currentIndex]
-        let scrollToView = contentViews[scrollToIndex]
+        let currentView = slidesViews[currentIndex]
+        let scrollToView = slidesViews[scrollToIndex]
         
-        scrollToView.frame.origin = CGPoint(x: 393.scale * CGFloat(direction), y: 0)
-        
+        scrollToView.frame.origin = CGPoint(x: 0, y: bounds.size.height * CGFloat(direction))
         addSubview(scrollToView)
         
-        UIView.animate(withDuration: 0.3, animations: {
-            currentView.frame.origin = CGPoint(x: 393.scale * CGFloat(-direction), y: 0)
+        UIView.animate(withDuration: 0.3, animations: { [weak self] in
+            guard let self else { return }
+            
+            currentView.frame.origin = CGPoint(x: 0, y: bounds.size.height * -CGFloat(direction))
             scrollToView.frame.origin = CGPoint(x: 0, y: 0)
         }, completion: { [weak self] result in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             
             currentView.removeFromSuperview()
             
             scrollToView.moveToThis()
             
-            self.step = newStep
+            self.currentSlide = slide
         })
     }
 }

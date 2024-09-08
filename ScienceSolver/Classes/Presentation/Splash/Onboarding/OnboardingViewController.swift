@@ -6,35 +6,21 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
 final class OnboardingViewController: UIViewController {
     struct Constants {
         static let wasViewedKey = "onboarding_view_controller_was_viewed_key"
     }
     
-    private lazy var mainView = OnboardingView()
-    
-    private lazy var viewModel = OnboardingViewModel()
-    
-    private lazy var disposeBag = DisposeBag()
-    
-    private lazy var didCompleteOnboardingTrigger = PublishRelay<Void>()
+    private lazy var mainView = OnboardingView { [weak self] in
+        guard let self else { return }
+        
+        markAsViewed()
+        goNext()
+    }
     
     override func loadView() {
         view = mainView
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let output = viewModel.configure(input: OnboardingViewModel.Input( ))
-        
-        mainView.didFinish = { [weak self] in
-            self?.markAsViewed()
-            self?.didCompleteOnboardingTrigger.accept(Void())
-        }
     }
 }
 
@@ -53,5 +39,16 @@ extension OnboardingViewController {
 private extension OnboardingViewController {
     func markAsViewed() {
         UserDefaults.standard.setValue(true, forKey: Constants.wasViewedKey)
+    }
+    
+    func goNext() {
+        if SessionManager().hasActiveSubscriptions() {
+            UIApplication.shared.keyWindow?.rootViewController = MainViewController.make()
+        } else {
+            let vc = PaygateViewController.make {
+                UIApplication.shared.keyWindow?.rootViewController = MainViewController.make()
+            }
+            present(vc, animated: true)
+        }
     }
 }
