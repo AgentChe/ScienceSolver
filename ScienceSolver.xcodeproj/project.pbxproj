@@ -54,7 +54,6 @@
 		DE89C17F2C8B3AE100CB9160 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BFD52C8B3AE100CB9160 /* SceneDelegate.swift */; };
 		DE89C2092C8B3AE100CB9160 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0B22C8B3AE100CB9160 /* MainView.swift */; };
 		DE89C20A2C8B3AE100CB9160 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0B32C8B3AE100CB9160 /* MainViewController.swift */; };
-		DE89C20B2C8B3AE100CB9160 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0B42C8B3AE100CB9160 /* MainViewModel.swift */; };
 		DE89C2232C8B3AE100CB9160 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0DA2C8B3AE100CB9160 /* OnboardingView.swift */; };
 		DE89C2242C8B3AE100CB9160 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0DB2C8B3AE100CB9160 /* OnboardingViewController.swift */; };
 		DE89C22F2C8B3AE200CB9160 /* SplashReceiptValidationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C0EB2C8B3AE100CB9160 /* SplashReceiptValidationObserver.swift */; };
@@ -99,6 +98,9 @@
 		DE89C35B2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C35A2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json */; };
 		DE89C35D2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C35C2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json */; };
 		DE89C35F2C8DCD3200CB9160 /* OnboardingSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C35E2C8DCD3200CB9160 /* OnboardingSlideView.swift */; };
+		DE89C3622C8DFF2500CB9160 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3612C8DFF2500CB9160 /* TabView.swift */; };
+		DE89C3642C8DFF2D00CB9160 /* TabItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3632C8DFF2D00CB9160 /* TabItemButton.swift */; };
+		DE89C36A2C8EDC3300CB9160 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3692C8EDC3300CB9160 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,7 +155,6 @@
 		DE89BFD52C8B3AE100CB9160 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DE89C0B22C8B3AE100CB9160 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DE89C0B32C8B3AE100CB9160 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		DE89C0B42C8B3AE100CB9160 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		DE89C0DA2C8B3AE100CB9160 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DE89C0DB2C8B3AE100CB9160 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		DE89C0EB2C8B3AE100CB9160 /* SplashReceiptValidationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashReceiptValidationObserver.swift; sourceTree = "<group>"; };
@@ -198,6 +199,9 @@
 		DE89C35A2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome2.Animation.json; sourceTree = "<group>"; };
 		DE89C35C2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome3.Animation.json; sourceTree = "<group>"; };
 		DE89C35E2C8DCD3200CB9160 /* OnboardingSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlideView.swift; sourceTree = "<group>"; };
+		DE89C3612C8DFF2500CB9160 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		DE89C3632C8DFF2D00CB9160 /* TabItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemButton.swift; sourceTree = "<group>"; };
+		DE89C3692C8EDC3300CB9160 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +413,7 @@
 		DE89C0B12C8B3AE100CB9160 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE89C3602C8DFF1C00CB9160 /* Tab */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,8 +423,8 @@
 			children = (
 				DE89C0B12C8B3AE100CB9160 /* Views */,
 				DE89C0B32C8B3AE100CB9160 /* MainViewController.swift */,
-				DE89C0B42C8B3AE100CB9160 /* MainViewModel.swift */,
 				DE89C0B22C8B3AE100CB9160 /* MainView.swift */,
+				DE89C3692C8EDC3300CB9160 /* MainCoordinator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -650,6 +655,15 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		DE89C3602C8DFF1C00CB9160 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3612C8DFF2500CB9160 /* TabView.swift */,
+				DE89C3632C8DFF2D00CB9160 /* TabItemButton.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -790,6 +804,7 @@
 				DE89C2502C8B3AE200CB9160 /* ProductPrice.swift in Sources */,
 				DE89C27A2C8B3AE200CB9160 /* SessionManager.swift in Sources */,
 				DE89C1702C8B3AE100CB9160 /* ContentError.swift in Sources */,
+				DE89C36A2C8EDC3300CB9160 /* MainCoordinator.swift in Sources */,
 				DE89C1552C8B3AE100CB9160 /* NavigationController.swift in Sources */,
 				DE89C1642C8B3AE100CB9160 /* UIApplication+Extension.swift in Sources */,
 				DE89C24D2C8B3AE200CB9160 /* IAPErrorHelper.swift in Sources */,
@@ -798,6 +813,7 @@
 				DE89C24C2C8B3AE200CB9160 /* IAPError.swift in Sources */,
 				DE89C16F2C8B3AE100CB9160 /* PushNotificationsManager.swift in Sources */,
 				DE89C15D2C8B3AE100CB9160 /* PaddingLabel.swift in Sources */,
+				DE89C3622C8DFF2500CB9160 /* TabView.swift in Sources */,
 				DE89C16E2C8B3AE100CB9160 /* PushNotificationsModel.swift in Sources */,
 				DE89C2242C8B3AE100CB9160 /* OnboardingViewController.swift in Sources */,
 				DE89C15B2C8B3AE100CB9160 /* GradientView.swift in Sources */,
@@ -813,7 +829,6 @@
 				DE89C1612C8B3AE100CB9160 /* Collection+Extension.swift in Sources */,
 				DE89C1502C8B3AE100CB9160 /* FacebookManager.swift in Sources */,
 				DE89C32F2C8B3F1800CB9160 /* PaygateInfoCell.swift in Sources */,
-				DE89C20B2C8B3AE100CB9160 /* MainViewModel.swift in Sources */,
 				DE89C1762C8B3AE100CB9160 /* ObservableRetrySingle.swift in Sources */,
 				DE89C22F2C8B3AE200CB9160 /* SplashReceiptValidationObserver.swift in Sources */,
 				DE89C3522C8B550100CB9160 /* OnboardingWelcome1View.swift in Sources */,
@@ -853,6 +868,7 @@
 				DE89C17B2C8B3AE100CB9160 /* XOREncryption.swift in Sources */,
 				DE89C14F2C8B3AE100CB9160 /* BranchManager.swift in Sources */,
 				DE89C3422C8B43CA00CB9160 /* ProfileManager.swift in Sources */,
+				DE89C3642C8DFF2D00CB9160 /* TabItemButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

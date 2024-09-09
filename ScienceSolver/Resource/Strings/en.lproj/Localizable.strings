@@ -55,3 +55,7 @@
 "Onboarding.Welcome2.SubTitle" = "Take a photo of your homework or type in your question and get accurate answers in seconds.";
 "Onboarding.Welcome3.Title" = "Revolutionize Your Learning Journey";
 "Onboarding.Welcome3.SubTitle" = "Say goodbye to tedious and time-consuming research and hello to instant answers and explanations.";
+
+// MARK: Main
+"Main.Assistant" = "Text";
+"Main.Account" = "Account";
