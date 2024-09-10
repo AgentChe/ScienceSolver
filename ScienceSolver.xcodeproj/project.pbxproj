@@ -94,13 +94,34 @@
 		DE89C3522C8B550100CB9160 /* OnboardingWelcome1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3512C8B550100CB9160 /* OnboardingWelcome1View.swift */; };
 		DE89C3542C8B554000CB9160 /* OnboardingWelcome2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3532C8B554000CB9160 /* OnboardingWelcome2View.swift */; };
 		DE89C3562C8B554700CB9160 /* OnboardingWelcome3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3552C8B554700CB9160 /* OnboardingWelcome3View.swift */; };
-		DE89C3592C8B559500CB9160 /* Onboarding.Welcome1.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C3582C8B559500CB9160 /* Onboarding.Welcome1.Animation.json */; };
 		DE89C35B2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C35A2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json */; };
 		DE89C35D2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C35C2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json */; };
 		DE89C35F2C8DCD3200CB9160 /* OnboardingSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C35E2C8DCD3200CB9160 /* OnboardingSlideView.swift */; };
 		DE89C3622C8DFF2500CB9160 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3612C8DFF2500CB9160 /* TabView.swift */; };
 		DE89C3642C8DFF2D00CB9160 /* TabItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3632C8DFF2D00CB9160 /* TabItemButton.swift */; };
 		DE89C36A2C8EDC3300CB9160 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3692C8EDC3300CB9160 /* MainCoordinator.swift */; };
+		DE89C36E2C8EE1A800CB9160 /* AssistantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C36D2C8EE1A800CB9160 /* AssistantManager.swift */; };
+		DE89C3712C8EE5E700CB9160 /* AssistantAnalyzeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3702C8EE5E700CB9160 /* AssistantAnalyzeImage.swift */; };
+		DE89C3732C8EE98800CB9160 /* AssistantAnalyzeImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3722C8EE98800CB9160 /* AssistantAnalyzeImageResponse.swift */; };
+		DE89C3752C8EEBCD00CB9160 /* MathAssistantResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3742C8EEBCD00CB9160 /* MathAssistantResult.swift */; };
+		DE89C3772C8EF43300CB9160 /* PhysicsAssistantResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3762C8EF43300CB9160 /* PhysicsAssistantResult.swift */; };
+		DE89C3792C8EF5DA00CB9160 /* BiologyAssistantResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3782C8EF5DA00CB9160 /* BiologyAssistantResult.swift */; };
+		DE89C37B2C8EF5FA00CB9160 /* ChemistryAssistantResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C37A2C8EF5FA00CB9160 /* ChemistryAssistantResult.swift */; };
+		DE89C37D2C8EF70200CB9160 /* AssistantAnalyzeProcessRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C37C2C8EF70200CB9160 /* AssistantAnalyzeProcessRequest.swift */; };
+		DE89C37F2C8EFAC900CB9160 /* AssistantHelpfulRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C37E2C8EFAC900CB9160 /* AssistantHelpfulRequest.swift */; };
+		DE89C3812C8EFBD800CB9160 /* AssistantTranslateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3802C8EFBD800CB9160 /* AssistantTranslateImage.swift */; };
+		DE89C3852C8F037D00CB9160 /* TranslateResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3842C8F037D00CB9160 /* TranslateResult.swift */; };
+		DE89C3872C8F059800CB9160 /* AssistantTranslateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3862C8F059800CB9160 /* AssistantTranslateRequest.swift */; };
+		DE89C3892C8F080500CB9160 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3882C8F080500CB9160 /* Language.swift */; };
+		DE89C38B2C8F0A1100CB9160 /* GetLanguagesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C38A2C8F0A1100CB9160 /* GetLanguagesRequest.swift */; };
+		DE89C38D2C8F0E8800CB9160 /* AssistantAnalyzeWritingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C38C2C8F0E8800CB9160 /* AssistantAnalyzeWritingImage.swift */; };
+		DE89C38F2C8F0ED900CB9160 /* WritingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C38E2C8F0ED900CB9160 /* WritingMode.swift */; };
+		DE89C3912C8F0EFB00CB9160 /* WritingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3902C8F0EFB00CB9160 /* WritingStyle.swift */; };
+		DE89C3932C8F112600CB9160 /* AssistantAnalyzeWritingProcessRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3922C8F112500CB9160 /* AssistantAnalyzeWritingProcessRequest.swift */; };
+		DE89C3952C8F119C00CB9160 /* WritingAssistantResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3942C8F119C00CB9160 /* WritingAssistantResult.swift */; };
+		DE89C3972C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3962C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift */; };
+		DE89C3992C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3982C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift */; };
+		DE89C39B2C9051B100CB9160 /* Onboarding.Welcome1.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C39A2C9051B000CB9160 /* Onboarding.Welcome1.Animation.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -195,13 +216,34 @@
 		DE89C3512C8B550100CB9160 /* OnboardingWelcome1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcome1View.swift; sourceTree = "<group>"; };
 		DE89C3532C8B554000CB9160 /* OnboardingWelcome2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcome2View.swift; sourceTree = "<group>"; };
 		DE89C3552C8B554700CB9160 /* OnboardingWelcome3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcome3View.swift; sourceTree = "<group>"; };
-		DE89C3582C8B559500CB9160 /* Onboarding.Welcome1.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome1.Animation.json; sourceTree = "<group>"; };
 		DE89C35A2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome2.Animation.json; sourceTree = "<group>"; };
 		DE89C35C2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome3.Animation.json; sourceTree = "<group>"; };
 		DE89C35E2C8DCD3200CB9160 /* OnboardingSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlideView.swift; sourceTree = "<group>"; };
 		DE89C3612C8DFF2500CB9160 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		DE89C3632C8DFF2D00CB9160 /* TabItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemButton.swift; sourceTree = "<group>"; };
 		DE89C3692C8EDC3300CB9160 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		DE89C36D2C8EE1A800CB9160 /* AssistantManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantManager.swift; sourceTree = "<group>"; };
+		DE89C3702C8EE5E700CB9160 /* AssistantAnalyzeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAnalyzeImage.swift; sourceTree = "<group>"; };
+		DE89C3722C8EE98800CB9160 /* AssistantAnalyzeImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAnalyzeImageResponse.swift; sourceTree = "<group>"; };
+		DE89C3742C8EEBCD00CB9160 /* MathAssistantResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathAssistantResult.swift; sourceTree = "<group>"; };
+		DE89C3762C8EF43300CB9160 /* PhysicsAssistantResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsAssistantResult.swift; sourceTree = "<group>"; };
+		DE89C3782C8EF5DA00CB9160 /* BiologyAssistantResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiologyAssistantResult.swift; sourceTree = "<group>"; };
+		DE89C37A2C8EF5FA00CB9160 /* ChemistryAssistantResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChemistryAssistantResult.swift; sourceTree = "<group>"; };
+		DE89C37C2C8EF70200CB9160 /* AssistantAnalyzeProcessRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAnalyzeProcessRequest.swift; sourceTree = "<group>"; };
+		DE89C37E2C8EFAC900CB9160 /* AssistantHelpfulRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantHelpfulRequest.swift; sourceTree = "<group>"; };
+		DE89C3802C8EFBD800CB9160 /* AssistantTranslateImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantTranslateImage.swift; sourceTree = "<group>"; };
+		DE89C3842C8F037D00CB9160 /* TranslateResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResult.swift; sourceTree = "<group>"; };
+		DE89C3862C8F059800CB9160 /* AssistantTranslateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantTranslateRequest.swift; sourceTree = "<group>"; };
+		DE89C3882C8F080500CB9160 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		DE89C38A2C8F0A1100CB9160 /* GetLanguagesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLanguagesRequest.swift; sourceTree = "<group>"; };
+		DE89C38C2C8F0E8800CB9160 /* AssistantAnalyzeWritingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAnalyzeWritingImage.swift; sourceTree = "<group>"; };
+		DE89C38E2C8F0ED900CB9160 /* WritingMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingMode.swift; sourceTree = "<group>"; };
+		DE89C3902C8F0EFB00CB9160 /* WritingStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingStyle.swift; sourceTree = "<group>"; };
+		DE89C3922C8F112500CB9160 /* AssistantAnalyzeWritingProcessRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAnalyzeWritingProcessRequest.swift; sourceTree = "<group>"; };
+		DE89C3942C8F119C00CB9160 /* WritingAssistantResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingAssistantResult.swift; sourceTree = "<group>"; };
+		DE89C3962C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAnalyzeManualWritingRequest.swift; sourceTree = "<group>"; };
+		DE89C3982C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAnalyzeManualRequest.swift; sourceTree = "<group>"; };
+		DE89C39A2C9051B000CB9160 /* Onboarding.Welcome1.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome1.Animation.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -516,6 +558,7 @@
 		DE89C14C2C8B3AE100CB9160 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				DE89C36B2C8EE19A00CB9160 /* Assistant */,
 				DE89C33B2C8B415A00CB9160 /* Profile */,
 				DE89C11C2C8B3AE100CB9160 /* Purchase */,
 				DE89C14B2C8B3AE100CB9160 /* Session */,
@@ -648,8 +691,8 @@
 		DE89C3572C8B556500CB9160 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DE89C39A2C9051B000CB9160 /* Onboarding.Welcome1.Animation.json */,
 				DE89C35A2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json */,
-				DE89C3582C8B559500CB9160 /* Onboarding.Welcome1.Animation.json */,
 				DE89C35C2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json */,
 			);
 			path = Source;
@@ -662,6 +705,50 @@
 				DE89C3632C8DFF2D00CB9160 /* TabItemButton.swift */,
 			);
 			path = Tab;
+			sourceTree = "<group>";
+		};
+		DE89C36B2C8EE19A00CB9160 /* Assistant */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C36F2C8EE43800CB9160 /* Request */,
+				DE89C36C2C8EE1A000CB9160 /* Model */,
+				DE89C36D2C8EE1A800CB9160 /* AssistantManager.swift */,
+			);
+			path = Assistant;
+			sourceTree = "<group>";
+		};
+		DE89C36C2C8EE1A000CB9160 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3722C8EE98800CB9160 /* AssistantAnalyzeImageResponse.swift */,
+				DE89C3742C8EEBCD00CB9160 /* MathAssistantResult.swift */,
+				DE89C3762C8EF43300CB9160 /* PhysicsAssistantResult.swift */,
+				DE89C3782C8EF5DA00CB9160 /* BiologyAssistantResult.swift */,
+				DE89C37A2C8EF5FA00CB9160 /* ChemistryAssistantResult.swift */,
+				DE89C3942C8F119C00CB9160 /* WritingAssistantResult.swift */,
+				DE89C3842C8F037D00CB9160 /* TranslateResult.swift */,
+				DE89C3882C8F080500CB9160 /* Language.swift */,
+				DE89C38E2C8F0ED900CB9160 /* WritingMode.swift */,
+				DE89C3902C8F0EFB00CB9160 /* WritingStyle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE89C36F2C8EE43800CB9160 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3702C8EE5E700CB9160 /* AssistantAnalyzeImage.swift */,
+				DE89C3982C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift */,
+				DE89C37C2C8EF70200CB9160 /* AssistantAnalyzeProcessRequest.swift */,
+				DE89C38C2C8F0E8800CB9160 /* AssistantAnalyzeWritingImage.swift */,
+				DE89C3962C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift */,
+				DE89C3922C8F112500CB9160 /* AssistantAnalyzeWritingProcessRequest.swift */,
+				DE89C3802C8EFBD800CB9160 /* AssistantTranslateImage.swift */,
+				DE89C3862C8F059800CB9160 /* AssistantTranslateRequest.swift */,
+				DE89C37E2C8EFAC900CB9160 /* AssistantHelpfulRequest.swift */,
+				DE89C38A2C8F0A1100CB9160 /* GetLanguagesRequest.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -724,6 +811,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE89C39B2C9051B100CB9160 /* Onboarding.Welcome1.Animation.json in Resources */,
 				DE89C34B2C8B51B000CB9160 /* Inter-Black.ttf in Resources */,
 				DE89C35B2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json in Resources */,
 				DE89C34C2C8B51B000CB9160 /* Inter-Bold.ttf in Resources */,
@@ -732,7 +820,6 @@
 				DE89C34F2C8B51B000CB9160 /* Inter-SemiBold.ttf in Resources */,
 				DE89C31A2C8B3AEE00CB9160 /* Localizable.strings in Resources */,
 				DE89BF8E2C8B35B400CB9160 /* Assets.xcassets in Resources */,
-				DE89C3592C8B559500CB9160 /* Onboarding.Welcome1.Animation.json in Resources */,
 				DE89BF912C8B35B400CB9160 /* Base in Resources */,
 				DE89C35D2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json in Resources */,
 			);
@@ -797,13 +884,17 @@
 				DE89C32C2C8B3F1800CB9160 /* PaygateActionsView.swift in Sources */,
 				DE89C16A2C8B3AE100CB9160 /* DefaultRequestWrapper.swift in Sources */,
 				DE89C3562C8B554700CB9160 /* OnboardingWelcome3View.swift in Sources */,
+				DE89C37B2C8EF5FA00CB9160 /* ChemistryAssistantResult.swift in Sources */,
 				DE89C16B2C8B3AE100CB9160 /* APIRequestBody.swift in Sources */,
+				DE89C3912C8F0EFB00CB9160 /* WritingStyle.swift in Sources */,
 				DE89C2322C8B3AE200CB9160 /* SplashViewModel.swift in Sources */,
 				DE89C1512C8B3AE100CB9160 /* FirebaseManager.swift in Sources */,
+				DE89C3752C8EEBCD00CB9160 /* MathAssistantResult.swift in Sources */,
 				DE89C3542C8B554000CB9160 /* OnboardingWelcome2View.swift in Sources */,
 				DE89C2502C8B3AE200CB9160 /* ProductPrice.swift in Sources */,
 				DE89C27A2C8B3AE200CB9160 /* SessionManager.swift in Sources */,
 				DE89C1702C8B3AE100CB9160 /* ContentError.swift in Sources */,
+				DE89C3852C8F037D00CB9160 /* TranslateResult.swift in Sources */,
 				DE89C36A2C8EDC3300CB9160 /* MainCoordinator.swift in Sources */,
 				DE89C1552C8B3AE100CB9160 /* NavigationController.swift in Sources */,
 				DE89C1642C8B3AE100CB9160 /* UIApplication+Extension.swift in Sources */,
@@ -818,24 +909,36 @@
 				DE89C2242C8B3AE100CB9160 /* OnboardingViewController.swift in Sources */,
 				DE89C15B2C8B3AE100CB9160 /* GradientView.swift in Sources */,
 				DE89C32B2C8B3F1800CB9160 /* PaygateInteractor.swift in Sources */,
+				DE89C3712C8EE5E700CB9160 /* AssistantAnalyzeImage.swift in Sources */,
 				DE89C1602C8B3AE100CB9160 /* TapAreaButton.swift in Sources */,
+				DE89C3812C8EFBD800CB9160 /* AssistantTranslateImage.swift in Sources */,
 				DE89C16C2C8B3AE100CB9160 /* RestAPITransport.swift in Sources */,
 				DE89C34A2C8B4E4800CB9160 /* Weak.swift in Sources */,
 				DE89C17E2C8B3AE100CB9160 /* GlobalDefinitions.swift in Sources */,
 				DE89C24F2C8B3AE200CB9160 /* IAPProduct.swift in Sources */,
 				DE89C1622C8B3AE100CB9160 /* ObservableAndSingle+Extension.swift in Sources */,
 				DE89C1792C8B3AE100CB9160 /* TextAttributes.swift in Sources */,
+				DE89C3932C8F112600CB9160 /* AssistantAnalyzeWritingProcessRequest.swift in Sources */,
+				DE89C3872C8F059800CB9160 /* AssistantTranslateRequest.swift in Sources */,
 				DE89C1532C8B3AE100CB9160 /* RequestReview.swift in Sources */,
 				DE89C1612C8B3AE100CB9160 /* Collection+Extension.swift in Sources */,
+				DE89C37D2C8EF70200CB9160 /* AssistantAnalyzeProcessRequest.swift in Sources */,
 				DE89C1502C8B3AE100CB9160 /* FacebookManager.swift in Sources */,
+				DE89C3952C8F119C00CB9160 /* WritingAssistantResult.swift in Sources */,
+				DE89C3992C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift in Sources */,
+				DE89C3772C8EF43300CB9160 /* PhysicsAssistantResult.swift in Sources */,
 				DE89C32F2C8B3F1800CB9160 /* PaygateInfoCell.swift in Sources */,
 				DE89C1762C8B3AE100CB9160 /* ObservableRetrySingle.swift in Sources */,
+				DE89C37F2C8EFAC900CB9160 /* AssistantHelpfulRequest.swift in Sources */,
+				DE89C38B2C8F0A1100CB9160 /* GetLanguagesRequest.swift in Sources */,
 				DE89C22F2C8B3AE200CB9160 /* SplashReceiptValidationObserver.swift in Sources */,
 				DE89C3522C8B550100CB9160 /* OnboardingWelcome1View.swift in Sources */,
 				DE89C3302C8B3F1800CB9160 /* PaygateInfoView.swift in Sources */,
 				DE89C3332C8B3F1800CB9160 /* PaygateViewController.swift in Sources */,
+				DE89C3732C8EE98800CB9160 /* AssistantAnalyzeImageResponse.swift in Sources */,
 				DE89C24E2C8B3AE200CB9160 /* IAPActionResult.swift in Sources */,
 				DE89C1632C8B3AE100CB9160 /* String+Extension.swift in Sources */,
+				DE89C38D2C8F0E8800CB9160 /* AssistantAnalyzeWritingImage.swift in Sources */,
 				DE89C1722C8B3AE100CB9160 /* SignError.swift in Sources */,
 				DE89C1522C8B3AE100CB9160 /* ImagePicker.swift in Sources */,
 				DE89C3342C8B3F1800CB9160 /* PaygateViewModel.swift in Sources */,
@@ -844,6 +947,7 @@
 				DE89C1652C8B3AE100CB9160 /* UIColor+Extension.swift in Sources */,
 				DE89C1782C8B3AE100CB9160 /* ScreenSize.swift in Sources */,
 				DE89C3312C8B3F1800CB9160 /* PaygateProductButton.swift in Sources */,
+				DE89C3792C8EF5DA00CB9160 /* BiologyAssistantResult.swift in Sources */,
 				DE89C1772C8B3AE100CB9160 /* Scalable.swift in Sources */,
 				DE89C33E2C8B41F600CB9160 /* ProfileCreateRequest.swift in Sources */,
 				DE89C1752C8B3AE100CB9160 /* NumberLaunches.swift in Sources */,
@@ -851,15 +955,19 @@
 				DE89C2232C8B3AE100CB9160 /* OnboardingView.swift in Sources */,
 				DE89C1742C8B3AE100CB9160 /* Fonts.swift in Sources */,
 				DE89C1682C8B3AE100CB9160 /* UITapGestureRecognizer+Extension.swift in Sources */,
+				DE89C38F2C8F0ED900CB9160 /* WritingMode.swift in Sources */,
 				DE89C1542C8B3AE100CB9160 /* RxActivityIndicator.swift in Sources */,
 				DE89C20A2C8B3AE100CB9160 /* MainViewController.swift in Sources */,
 				DE89C1662C8B3AE100CB9160 /* UIDevice+Extension.swift in Sources */,
 				DE89C32A2C8B3F1800CB9160 /* Currency.swift in Sources */,
 				DE89C1562C8B3AE100CB9160 /* NavigationControllerSettings.swift in Sources */,
 				DE89C3402C8B42A800CB9160 /* ProfileBindingRequest.swift in Sources */,
+				DE89C3892C8F080500CB9160 /* Language.swift in Sources */,
 				DE89C17D2C8B3AE100CB9160 /* Appearance.swift in Sources */,
+				DE89C36E2C8EE1A800CB9160 /* AssistantManager.swift in Sources */,
 				DE89C17F2C8B3AE100CB9160 /* SceneDelegate.swift in Sources */,
 				DE89C32E2C8B3F1800CB9160 /* PaygateEnableTrialButton.swift in Sources */,
+				DE89C3972C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift in Sources */,
 				DE89C1712C8B3AE100CB9160 /* NetworkError.swift in Sources */,
 				DE89C32D2C8B3F1800CB9160 /* PaygateBestOfferView.swift in Sources */,
 				DE89C2312C8B3AE200CB9160 /* SplashViewController.swift in Sources */,

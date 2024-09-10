@@ -17,6 +17,7 @@ final class SplashViewModel {
     
     private lazy var sessionManager = SessionManager()
     private lazy var profileManager = ProfileManager()
+    private lazy var assistantManager = AssistantManager()
     
     private lazy var observableRetrySingle = ObservableRetrySingle()
 }
@@ -33,17 +34,18 @@ extension SplashViewModel {
     
     func configure(input: Input) -> Output {
         let login = login(didSDKConfigured: input.didSDKConfigured)
+        let fetchLibrary = fetchLibrary(login: login)
         
         return Output(
-            route: makeRoute(login: login)
+            route: makeRoute(fetchLibrary: fetchLibrary)
         )
     }
 }
 
 // MARK: Private
 private extension SplashViewModel {
-    func makeRoute(login: Signal<Void>) -> Driver<Route> {
-        login
+    func makeRoute(fetchLibrary: Signal<Void>) -> Driver<Route> {
+        fetchLibrary
             .compactMap { [weak self] void -> Route? in
                 guard let self else { return nil }
                 
@@ -54,6 +56,23 @@ private extension SplashViewModel {
                 return .main
             }
             .asDriver(onErrorDriveWith: .never())
+    }
+    
+    func fetchLibrary(login: Signal<Void>) -> Signal<Void> {
+        login
+            .flatMapLatest { [weak self] void -> Signal<Void> in
+                guard let self else { return .never() }
+                
+                let languages = assistantManager
+                    .obtainLanaguages(forceUpdate: true)
+                    .asSignal(onErrorJustReturn: [])
+                    .map { languages -> Void in Void() }
+                
+                return Signal
+                    .merge([
+                        languages
+                    ])
+            }
     }
     
     func login(didSDKConfigured: Signal<Void>) -> Signal<Void> {
