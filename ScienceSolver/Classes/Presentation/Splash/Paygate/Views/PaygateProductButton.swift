@@ -41,7 +41,6 @@ final class PaygateProductButton: UIButton {
 // MARK: Private
 private extension PaygateProductButton {
     func initialize() {
-        backgroundColor = Appearance.mono200
         layer.cornerRadius = 10.scale
     }
     
@@ -52,9 +51,7 @@ private extension PaygateProductButton {
     }
     
     func updateLeft() {
-        guard let product else {
-            return
-        }
+        guard let product else { return }
         
         let isYearly = isYearly()
         
@@ -63,14 +60,14 @@ private extension PaygateProductButton {
         switch isYearly {
         case true:
             let nameAttrs = TextAttributes()
-                .textColor(Appearance.mono100)
+                .textColor(Appearance.mono200)
                 .font(Fonts.Inter.medium(size: 14.scale))
                 .lineHeight(20.scale)
             let name = "Paygate.Yearly".localized + "\n"
             result.append(name.attributed(with: nameAttrs))
             
             let bottomAttrs = TextAttributes()
-                .textColor(Appearance.mono100)
+                .textColor(Appearance.mono200)
                 .font(Fonts.Inter.semiBold(size: 16.scale))
                 .lineHeight(22.scale)
             let price = Currency(productPrice: product).formatted() ?? ""
@@ -78,9 +75,9 @@ private extension PaygateProductButton {
             result.append(bottom.attributed(with: bottomAttrs))
         case false:
             let attrs = TextAttributes()
-                .textColor(Appearance.mono100)
-                .font(Fonts.Inter.semiBold(size: ScreenSize.isIphoneXFamily ? 16.scale : 15.scale))
-                .lineHeight(ScreenSize.isIphoneXFamily ? 22.scale : 21.scale)
+                .textColor(Appearance.mono200)
+                .font(Fonts.Inter.semiBold(size: 16.scale))
+                .lineHeight(22.scale)
             result.append("Paygate.FreeTrialDays".localized.uppercased().attributed(with: attrs))
         }
         
@@ -99,27 +96,27 @@ private extension PaygateProductButton {
         switch isYearly {
         case true:
             let priceAttrs = TextAttributes()
-                .textColor(Appearance.mono100)
+                .textColor(Appearance.mono200)
                 .font(Fonts.Inter.medium(size: 16.scale))
                 .lineHeight(22.scale)
             let price = Currency(productPrice: product, div: 52).formatted() ?? ""
             result.append((price + "\n").attributed(with: priceAttrs))
             
             let periodAttrs = TextAttributes()
-                .textColor(Appearance.mono100)
+                .textColor(Appearance.mono200)
                 .font(Fonts.Inter.medium(size: 14.scale))
                 .lineHeight(20.scale)
             result.append("Paygate.PerWeek".localized.attributed(with: periodAttrs))
         case false:
             let priceAttrs = TextAttributes()
-                .textColor(Appearance.mono100)
+                .textColor(Appearance.mono200)
                 .font(Fonts.Inter.medium(size: 16.scale))
                 .lineHeight(22.scale)
             let price = Currency(productPrice: product).formatted() ?? ""
             result.append(String(format: "Paygate.Then".localized, price).attributed(with: priceAttrs))
             
             let periodAttrs = TextAttributes()
-                .textColor(Appearance.mono100)
+                .textColor(Appearance.mono200)
                 .font(Fonts.Inter.medium(size: 14.scale))
                 .lineHeight(20.scale)
             result.append("Paygate.PerWeek".localized.attributed(with: periodAttrs))
@@ -133,11 +130,13 @@ private extension PaygateProductButton {
     }
     
     func updateAppearance() {
+        backgroundColor = marked ? Appearance.main300.withAlphaComponent(0.1) : Appearance.mono100
+        
         let imageName = marked ? "Paygate.Marker.S" : "Paygate.Marker.D"
         markerView.image = UIImage(named: imageName)
         
         layer.borderWidth = marked ? 2.scale : 1.scale
-        layer.borderColor = marked ? Appearance.main400.cgColor : Appearance.main200.cgColor
+        layer.borderColor = marked ? Appearance.main300.cgColor : Appearance.main200.cgColor
     }
 }
 

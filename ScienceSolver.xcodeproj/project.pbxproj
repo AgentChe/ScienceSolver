@@ -630,9 +630,9 @@
 			children = (
 				DE89C31E2C8B3F1800CB9160 /* Utils */,
 				DE89C3252C8B3F1800CB9160 /* Views */,
-				DE89C3262C8B3F1800CB9160 /* PaygateView.swift */,
 				DE89C3272C8B3F1800CB9160 /* PaygateViewController.swift */,
 				DE89C3282C8B3F1800CB9160 /* PaygateViewModel.swift */,
+				DE89C3262C8B3F1800CB9160 /* PaygateView.swift */,
 			);
 			path = Paygate;
 			sourceTree = "<group>";
@@ -1142,7 +1142,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.ScienceSolver;
+				PRODUCT_BUNDLE_IDENTIFIER = train.somatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1175,7 +1175,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wed.ScienceSolver;
+				PRODUCT_BUNDLE_IDENTIFIER = train.somatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

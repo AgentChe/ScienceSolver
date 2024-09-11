@@ -30,7 +30,6 @@ final class GlobalDefinitions {
         static let redirectUri = "https://cmmaker.callback"
     }
     
-    // TODO
     enum Paygate {
         static let yearly = "train.somatic.endless"
         static let weekly = "train.somatic.monthly"

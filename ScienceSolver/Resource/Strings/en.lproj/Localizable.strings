@@ -27,9 +27,9 @@
 "Paygate.Error.Text" = "An error occurred during execution. Try later.";
 "Paygate.Error.Button" = "OK";
 "Paygate.Title" = "Upgrade Premium";
-"Paygate.Info1" = "Customized somatic workouts";
-"Paygate.Info2" = "Clear instructions";
-"Paygate.Info3" = "Easily schedule your training";
+"Paygate.Info1" = "Get all the pre-installed games";
+"Paygate.Info2" = "Import & play own games";
+"Paygate.Info3" = "1000+ retro gaming wallpapers";
 "Paygate.EnableFreeTrial" = "Enable Free Trial";
 "Paygate.FreeTrialEnabled" = "Free Trial Enabled";
 "Paygate.Yearly" = "Yearly";
@@ -38,7 +38,7 @@
 "Paygate.FreeTrialDays" = "3-day free trial";
 "Paygate.Then" = "%@\n";
 "Paygate.Continue" = "Continue";
-"Paygate.TryFreeSubscribe" = "Try Free & Subscribe";
+"Paygate.TryFreeSubscribe" = "Try free & subscribe";
 "Paygate.CancelAnytime" = "Cancel Anytime";
 "Paygate.NoPaymentNow" = "No payment now";
 "Paygate.TermsOfUse" = "Terms of Use";
