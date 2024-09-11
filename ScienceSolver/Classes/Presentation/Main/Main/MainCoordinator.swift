@@ -12,7 +12,7 @@ final class MainCoordinator {
     
     lazy var recognizerVC = NavigationController(rootViewController: UIViewController())
     lazy var assistantVC = NavigationController(rootViewController: UIViewController())
-    lazy var accountVC = NavigationController(rootViewController: UIViewController())
+    lazy var accountVC = NavigationController(rootViewController: AccountViewController.make())
     
     private var previousVC: UIViewController?
     

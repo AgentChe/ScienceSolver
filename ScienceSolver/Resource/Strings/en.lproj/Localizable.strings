@@ -59,3 +59,11 @@
 // MARK: Main
 "Main.Assistant" = "Text";
 "Main.Account" = "Account";
+
+// MARK: Account
+"Account.Title" = "Account";
+"Account.History" = "History";
+"Account.About" = "About";
+"Account.PrivacyPolicy" = "Privacy Policy";
+"Account.TermsOfUse" = "Terms of Use";
+"Account.ContactUs" = "Contact us";

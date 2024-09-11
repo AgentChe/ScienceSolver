@@ -122,6 +122,15 @@
 		DE89C3972C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3962C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift */; };
 		DE89C3992C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3982C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift */; };
 		DE89C39B2C9051B100CB9160 /* Onboarding.Welcome1.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C39A2C9051B000CB9160 /* Onboarding.Welcome1.Animation.json */; };
+		DE89C39F2C918D1E00CB9160 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C39E2C918D1E00CB9160 /* AccountViewController.swift */; };
+		DE89C3A12C918D2700CB9160 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3A02C918D2700CB9160 /* AccountViewModel.swift */; };
+		DE89C3A32C918D2C00CB9160 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3A22C918D2C00CB9160 /* AccountView.swift */; };
+		DE89C3A72C918DC800CB9160 /* AccountTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3A62C918DC800CB9160 /* AccountTableView.swift */; };
+		DE89C3A92C918DD000CB9160 /* AccountTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3A82C918DD000CB9160 /* AccountTableElement.swift */; };
+		DE89C3AC2C918DDD00CB9160 /* AccountHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3AB2C918DDD00CB9160 /* AccountHistoryCell.swift */; };
+		DE89C3AE2C918DE600CB9160 /* AccountAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3AD2C918DE600CB9160 /* AccountAboutCell.swift */; };
+		DE89C3B12C918E9300CB9160 /* AccountActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3B02C918E9300CB9160 /* AccountActionView.swift */; };
+		DE89C3B32C919A4F00CB9160 /* AccountTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3B22C919A4F00CB9160 /* AccountTitleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -244,6 +253,15 @@
 		DE89C3962C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAnalyzeManualWritingRequest.swift; sourceTree = "<group>"; };
 		DE89C3982C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAnalyzeManualRequest.swift; sourceTree = "<group>"; };
 		DE89C39A2C9051B000CB9160 /* Onboarding.Welcome1.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome1.Animation.json; sourceTree = "<group>"; };
+		DE89C39E2C918D1E00CB9160 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		DE89C3A02C918D2700CB9160 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		DE89C3A22C918D2C00CB9160 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		DE89C3A62C918DC800CB9160 /* AccountTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableView.swift; sourceTree = "<group>"; };
+		DE89C3A82C918DD000CB9160 /* AccountTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableElement.swift; sourceTree = "<group>"; };
+		DE89C3AB2C918DDD00CB9160 /* AccountHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHistoryCell.swift; sourceTree = "<group>"; };
+		DE89C3AD2C918DE600CB9160 /* AccountAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAboutCell.swift; sourceTree = "<group>"; };
+		DE89C3B02C918E9300CB9160 /* AccountActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountActionView.swift; sourceTree = "<group>"; };
+		DE89C3B22C919A4F00CB9160 /* AccountTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTitleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -474,6 +492,7 @@
 		DE89C0D42C8B3AE100CB9160 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DE89C39D2C918D1300CB9160 /* Account */,
 				DE89C0B52C8B3AE100CB9160 /* Main */,
 			);
 			path = Main;
@@ -751,6 +770,54 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		DE89C39D2C918D1300CB9160 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3A42C918D7700CB9160 /* Views */,
+				DE89C39E2C918D1E00CB9160 /* AccountViewController.swift */,
+				DE89C3A02C918D2700CB9160 /* AccountViewModel.swift */,
+				DE89C3A22C918D2C00CB9160 /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		DE89C3A42C918D7700CB9160 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3A52C918DC000CB9160 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE89C3A52C918DC000CB9160 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3AA2C918DD200CB9160 /* Cells */,
+				DE89C3A62C918DC800CB9160 /* AccountTableView.swift */,
+				DE89C3A82C918DD000CB9160 /* AccountTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DE89C3AA2C918DD200CB9160 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3AF2C918E8100CB9160 /* Atoms */,
+				DE89C3B22C919A4F00CB9160 /* AccountTitleCell.swift */,
+				DE89C3AB2C918DDD00CB9160 /* AccountHistoryCell.swift */,
+				DE89C3AD2C918DE600CB9160 /* AccountAboutCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DE89C3AF2C918E8100CB9160 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3B02C918E9300CB9160 /* AccountActionView.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -875,13 +942,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE89C2512C8B3AE200CB9160 /* IAPManager.swift in Sources */,
+				DE89C3A12C918D2700CB9160 /* AccountViewModel.swift in Sources */,
 				DE89C1672C8B3AE100CB9160 /* UIEdgeInsets+Extension.swift in Sources */,
+				DE89C39F2C918D1E00CB9160 /* AccountViewController.swift in Sources */,
 				DE89C2522C8B3AE200CB9160 /* PurchaseValidationObserver.swift in Sources */,
 				DE89C35F2C8DCD3200CB9160 /* OnboardingSlideView.swift in Sources */,
 				DE89C3452C8B467600CB9160 /* TryAgainViewController.swift in Sources */,
 				DE89C15E2C8B3AE100CB9160 /* PaddingTextField.swift in Sources */,
 				DE89C1692C8B3AE100CB9160 /* UIView+RxExtension.swift in Sources */,
 				DE89C32C2C8B3F1800CB9160 /* PaygateActionsView.swift in Sources */,
+				DE89C3A32C918D2C00CB9160 /* AccountView.swift in Sources */,
 				DE89C16A2C8B3AE100CB9160 /* DefaultRequestWrapper.swift in Sources */,
 				DE89C3562C8B554700CB9160 /* OnboardingWelcome3View.swift in Sources */,
 				DE89C37B2C8EF5FA00CB9160 /* ChemistryAssistantResult.swift in Sources */,
@@ -891,6 +961,8 @@
 				DE89C1512C8B3AE100CB9160 /* FirebaseManager.swift in Sources */,
 				DE89C3752C8EEBCD00CB9160 /* MathAssistantResult.swift in Sources */,
 				DE89C3542C8B554000CB9160 /* OnboardingWelcome2View.swift in Sources */,
+				DE89C3A72C918DC800CB9160 /* AccountTableView.swift in Sources */,
+				DE89C3AE2C918DE600CB9160 /* AccountAboutCell.swift in Sources */,
 				DE89C2502C8B3AE200CB9160 /* ProductPrice.swift in Sources */,
 				DE89C27A2C8B3AE200CB9160 /* SessionManager.swift in Sources */,
 				DE89C1702C8B3AE100CB9160 /* ContentError.swift in Sources */,
@@ -901,6 +973,7 @@
 				DE89C24D2C8B3AE200CB9160 /* IAPErrorHelper.swift in Sources */,
 				DE89C2092C8B3AE100CB9160 /* MainView.swift in Sources */,
 				DE89C17C2C8B3AE100CB9160 /* AppDelegate.swift in Sources */,
+				DE89C3A92C918DD000CB9160 /* AccountTableElement.swift in Sources */,
 				DE89C24C2C8B3AE200CB9160 /* IAPError.swift in Sources */,
 				DE89C16F2C8B3AE100CB9160 /* PushNotificationsManager.swift in Sources */,
 				DE89C15D2C8B3AE100CB9160 /* PaddingLabel.swift in Sources */,
@@ -910,6 +983,7 @@
 				DE89C15B2C8B3AE100CB9160 /* GradientView.swift in Sources */,
 				DE89C32B2C8B3F1800CB9160 /* PaygateInteractor.swift in Sources */,
 				DE89C3712C8EE5E700CB9160 /* AssistantAnalyzeImage.swift in Sources */,
+				DE89C3AC2C918DDD00CB9160 /* AccountHistoryCell.swift in Sources */,
 				DE89C1602C8B3AE100CB9160 /* TapAreaButton.swift in Sources */,
 				DE89C3812C8EFBD800CB9160 /* AssistantTranslateImage.swift in Sources */,
 				DE89C16C2C8B3AE100CB9160 /* RestAPITransport.swift in Sources */,
@@ -931,6 +1005,7 @@
 				DE89C1762C8B3AE100CB9160 /* ObservableRetrySingle.swift in Sources */,
 				DE89C37F2C8EFAC900CB9160 /* AssistantHelpfulRequest.swift in Sources */,
 				DE89C38B2C8F0A1100CB9160 /* GetLanguagesRequest.swift in Sources */,
+				DE89C3B32C919A4F00CB9160 /* AccountTitleCell.swift in Sources */,
 				DE89C22F2C8B3AE200CB9160 /* SplashReceiptValidationObserver.swift in Sources */,
 				DE89C3522C8B550100CB9160 /* OnboardingWelcome1View.swift in Sources */,
 				DE89C3302C8B3F1800CB9160 /* PaygateInfoView.swift in Sources */,
@@ -965,6 +1040,7 @@
 				DE89C3892C8F080500CB9160 /* Language.swift in Sources */,
 				DE89C17D2C8B3AE100CB9160 /* Appearance.swift in Sources */,
 				DE89C36E2C8EE1A800CB9160 /* AssistantManager.swift in Sources */,
+				DE89C3B12C918E9300CB9160 /* AccountActionView.swift in Sources */,
 				DE89C17F2C8B3AE100CB9160 /* SceneDelegate.swift in Sources */,
 				DE89C32E2C8B3F1800CB9160 /* PaygateEnableTrialButton.swift in Sources */,
 				DE89C3972C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift in Sources */,
