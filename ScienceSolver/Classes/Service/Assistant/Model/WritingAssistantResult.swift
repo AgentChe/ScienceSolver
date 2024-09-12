@@ -27,8 +27,9 @@ struct WritingAssistantResult {
     
     let threadId: String
     let helpful: Bool?
+    let created: TimeInterval
     let meta: Meta
-    let request: Request?
+    let request: Request
     let response: Response
 }
 
@@ -37,7 +38,8 @@ extension WritingAssistantResult {
     init?(body: [String: Any]) {
         guard
             let threadId = body["thread_id"] as? String,
-            let content = body["content"] as? [[String: Any]]
+            let content = body["content"] as? [[String: Any]],
+            let created = body["created_at"] as? TimeInterval
         else { return nil }
         
         let meta: Meta? = {
@@ -70,6 +72,7 @@ extension WritingAssistantResult {
             
             return nil
         }()
+        guard let request else { return nil }
         
         let response: Response? = {
             for json in content {
@@ -88,6 +91,7 @@ extension WritingAssistantResult {
         self = WritingAssistantResult(
             threadId: threadId,
             helpful: body["helpful"] as? Bool,
+            created: created,
             meta: meta,
             request: request,
             response: response

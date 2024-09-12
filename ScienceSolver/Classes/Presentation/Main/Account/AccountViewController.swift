@@ -69,7 +69,8 @@ private extension AccountViewController {
     func route(_ route: AccountViewModel.Route) {
         switch route {
         case .history:
-            break // TODO
+            let vc = HistoryViewController.make()
+            navigationController?.pushViewController(vc, animated: true)
         case .url(let url):
             UIApplication.shared.open(url)
         }

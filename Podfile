@@ -7,6 +7,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'ScienceSolver' do
   pod 'Toast-Swift'
   pod 'lottie-ios'
+  pod 'Kingfisher'
   
   pod 'RxSwift'
   pod 'RxCocoa'
@@ -37,4 +38,3 @@ post_install do |installer|
     end
   end
 end
-

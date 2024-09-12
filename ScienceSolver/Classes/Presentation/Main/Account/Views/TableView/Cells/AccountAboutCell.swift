@@ -59,7 +59,7 @@ private extension AccountAboutCell {
         NSLayoutConstraint.activate([
             privacyPolicyView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             privacyPolicyView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            privacyPolicyView.topAnchor.constraint(equalTo: container.topAnchor, constant: 8.scale)
+            privacyPolicyView.topAnchor.constraint(equalTo: container.topAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -72,7 +72,7 @@ private extension AccountAboutCell {
             contactUsView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             contactUsView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
             contactUsView.topAnchor.constraint(equalTo: termsOfUseView.bottomAnchor),
-            contactUsView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -8.scale)
+            contactUsView.bottomAnchor.constraint(equalTo: container.bottomAnchor)
         ])
     }
 }
@@ -120,8 +120,6 @@ private extension AccountAboutCell {
         let view = AccountActionView(title: "Account.TermsOfUse".localized, separatorHidden: true) { [weak self] in
             self?.didTapTermsOfUse?()
         }
-        view.layer.cornerRadius = 16.scale
-        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
@@ -133,7 +131,7 @@ private extension AccountAboutCell {
             self?.didTapContactUs?()
         }
         view.layer.cornerRadius = 16.scale
-        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)

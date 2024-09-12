@@ -22,7 +22,8 @@ struct ChemistryAssistantResult {
     
     let threadId: String
     let helpful: Bool?
-    let request: Request?
+    let created: TimeInterval
+    let request: Request
     let response: Response
 }
 
@@ -31,7 +32,8 @@ extension ChemistryAssistantResult {
     init?(body: [String: Any]) {
         guard
             let threadId = body["thread_id"] as? String,
-            let content = body["content"] as? [[String: Any]]
+            let content = body["content"] as? [[String: Any]],
+            let created = body["created_at"] as? TimeInterval
         else { return nil }
         
         let request: Request? = {
@@ -51,6 +53,7 @@ extension ChemistryAssistantResult {
             
             return nil
         }()
+        guard let request else { return nil }
         
         let response: Response? = {
             for json in content {
@@ -69,6 +72,7 @@ extension ChemistryAssistantResult {
         self = ChemistryAssistantResult(
             threadId: threadId,
             helpful: body["helpful"] as? Bool,
+            created: created,
             request: request,
             response: response
         )

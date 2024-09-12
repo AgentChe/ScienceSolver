@@ -135,6 +135,14 @@
 		DE89C3D32C92E83900CB9160 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3D22C92E83900CB9160 /* Page.swift */; };
 		DE89C3D52C92E8A200CB9160 /* AssistantHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3D42C92E8A200CB9160 /* AssistantHistoryItem.swift */; };
 		DE89C3D72C92EED700CB9160 /* AssistantHistoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3D62C92EED700CB9160 /* AssistantHistoryPage.swift */; };
+		DE89C3DA2C93181600CB9160 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3D92C93181600CB9160 /* HistoryViewController.swift */; };
+		DE89C3DC2C93181B00CB9160 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3DB2C93181B00CB9160 /* HistoryViewModel.swift */; };
+		DE89C3DE2C93181E00CB9160 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3DD2C93181E00CB9160 /* HistoryView.swift */; };
+		DE89C3E22C931B2800CB9160 /* HistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3E12C931B2800CB9160 /* HistoryTableView.swift */; };
+		DE89C3E42C931B2E00CB9160 /* HistoryTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3E32C931B2E00CB9160 /* HistoryTableElement.swift */; };
+		DE89C3E72C931B4200CB9160 /* HistoryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3E62C931B4200CB9160 /* HistoryImageCell.swift */; };
+		DE89C3E92C931B4A00CB9160 /* HistoryTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3E82C931B4A00CB9160 /* HistoryTextCell.swift */; };
+		DE89C3F32C932BBC00CB9160 /* HistoryEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3F22C932BBC00CB9160 /* HistoryEmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -270,6 +278,14 @@
 		DE89C3D22C92E83900CB9160 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		DE89C3D42C92E8A200CB9160 /* AssistantHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantHistoryItem.swift; sourceTree = "<group>"; };
 		DE89C3D62C92EED700CB9160 /* AssistantHistoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantHistoryPage.swift; sourceTree = "<group>"; };
+		DE89C3D92C93181600CB9160 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		DE89C3DB2C93181B00CB9160 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		DE89C3DD2C93181E00CB9160 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		DE89C3E12C931B2800CB9160 /* HistoryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableView.swift; sourceTree = "<group>"; };
+		DE89C3E32C931B2E00CB9160 /* HistoryTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableElement.swift; sourceTree = "<group>"; };
+		DE89C3E62C931B4200CB9160 /* HistoryImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryImageCell.swift; sourceTree = "<group>"; };
+		DE89C3E82C931B4A00CB9160 /* HistoryTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTextCell.swift; sourceTree = "<group>"; };
+		DE89C3F22C932BBC00CB9160 /* HistoryEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +516,7 @@
 		DE89C0D42C8B3AE100CB9160 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				DE89C3D82C9317FA00CB9160 /* History */,
 				DE89C39D2C918D1300CB9160 /* Account */,
 				DE89C0B52C8B3AE100CB9160 /* Main */,
 			);
@@ -830,6 +847,45 @@
 			path = Atoms;
 			sourceTree = "<group>";
 		};
+		DE89C3D82C9317FA00CB9160 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3DF2C931A8100CB9160 /* Views */,
+				DE89C3D92C93181600CB9160 /* HistoryViewController.swift */,
+				DE89C3DB2C93181B00CB9160 /* HistoryViewModel.swift */,
+				DE89C3DD2C93181E00CB9160 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		DE89C3DF2C931A8100CB9160 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3E02C931B1E00CB9160 /* TableView */,
+				DE89C3F22C932BBC00CB9160 /* HistoryEmptyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE89C3E02C931B1E00CB9160 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3E52C931B3100CB9160 /* Cells */,
+				DE89C3E12C931B2800CB9160 /* HistoryTableView.swift */,
+				DE89C3E32C931B2E00CB9160 /* HistoryTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DE89C3E52C931B3100CB9160 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3E62C931B4200CB9160 /* HistoryImageCell.swift */,
+				DE89C3E82C931B4A00CB9160 /* HistoryTextCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -959,6 +1015,7 @@
 				DE89C39F2C918D1E00CB9160 /* AccountViewController.swift in Sources */,
 				DE89C2522C8B3AE200CB9160 /* PurchaseValidationObserver.swift in Sources */,
 				DE89C35F2C8DCD3200CB9160 /* OnboardingSlideView.swift in Sources */,
+				DE89C3E22C931B2800CB9160 /* HistoryTableView.swift in Sources */,
 				DE89C3452C8B467600CB9160 /* TryAgainViewController.swift in Sources */,
 				DE89C15E2C8B3AE100CB9160 /* PaddingTextField.swift in Sources */,
 				DE89C1692C8B3AE100CB9160 /* UIView+RxExtension.swift in Sources */,
@@ -985,9 +1042,11 @@
 				DE89C1552C8B3AE100CB9160 /* NavigationController.swift in Sources */,
 				DE89C1642C8B3AE100CB9160 /* UIApplication+Extension.swift in Sources */,
 				DE89C24D2C8B3AE200CB9160 /* IAPErrorHelper.swift in Sources */,
+				DE89C3F32C932BBC00CB9160 /* HistoryEmptyView.swift in Sources */,
 				DE89C2092C8B3AE100CB9160 /* MainView.swift in Sources */,
 				DE89C17C2C8B3AE100CB9160 /* AppDelegate.swift in Sources */,
 				DE89C3A92C918DD000CB9160 /* AccountTableElement.swift in Sources */,
+				DE89C3DC2C93181B00CB9160 /* HistoryViewModel.swift in Sources */,
 				DE89C24C2C8B3AE200CB9160 /* IAPError.swift in Sources */,
 				DE89C16F2C8B3AE100CB9160 /* PushNotificationsManager.swift in Sources */,
 				DE89C15D2C8B3AE100CB9160 /* PaddingLabel.swift in Sources */,
@@ -1001,6 +1060,7 @@
 				DE89C1602C8B3AE100CB9160 /* TapAreaButton.swift in Sources */,
 				DE89C3812C8EFBD800CB9160 /* AssistantTranslateImage.swift in Sources */,
 				DE89C16C2C8B3AE100CB9160 /* RestAPITransport.swift in Sources */,
+				DE89C3DE2C93181E00CB9160 /* HistoryView.swift in Sources */,
 				DE89C34A2C8B4E4800CB9160 /* Weak.swift in Sources */,
 				DE89C17E2C8B3AE100CB9160 /* GlobalDefinitions.swift in Sources */,
 				DE89C24F2C8B3AE200CB9160 /* IAPProduct.swift in Sources */,
@@ -1016,12 +1076,14 @@
 				DE89C3952C8F119C00CB9160 /* WritingAssistantResult.swift in Sources */,
 				DE89C3992C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift in Sources */,
 				DE89C3772C8EF43300CB9160 /* PhysicsAssistantResult.swift in Sources */,
+				DE89C3E92C931B4A00CB9160 /* HistoryTextCell.swift in Sources */,
 				DE89C32F2C8B3F1800CB9160 /* PaygateInfoCell.swift in Sources */,
 				DE89C1762C8B3AE100CB9160 /* ObservableRetrySingle.swift in Sources */,
 				DE89C37F2C8EFAC900CB9160 /* AssistantHelpfulRequest.swift in Sources */,
 				DE89C38B2C8F0A1100CB9160 /* GetLanguagesRequest.swift in Sources */,
 				DE89C3B32C919A4F00CB9160 /* AccountTitleCell.swift in Sources */,
 				DE89C22F2C8B3AE200CB9160 /* SplashReceiptValidationObserver.swift in Sources */,
+				DE89C3DA2C93181600CB9160 /* HistoryViewController.swift in Sources */,
 				DE89C3522C8B550100CB9160 /* OnboardingWelcome1View.swift in Sources */,
 				DE89C3302C8B3F1800CB9160 /* PaygateInfoView.swift in Sources */,
 				DE89C3332C8B3F1800CB9160 /* PaygateViewController.swift in Sources */,
@@ -1043,6 +1105,7 @@
 				DE89C1752C8B3AE100CB9160 /* NumberLaunches.swift in Sources */,
 				DE89C2302C8B3AE200CB9160 /* SplashView.swift in Sources */,
 				DE89C2232C8B3AE100CB9160 /* OnboardingView.swift in Sources */,
+				DE89C3E72C931B4200CB9160 /* HistoryImageCell.swift in Sources */,
 				DE89C1742C8B3AE100CB9160 /* Fonts.swift in Sources */,
 				DE89C3D52C92E8A200CB9160 /* AssistantHistoryItem.swift in Sources */,
 				DE89C1682C8B3AE100CB9160 /* UITapGestureRecognizer+Extension.swift in Sources */,
@@ -1066,6 +1129,7 @@
 				DE89C3322C8B3F1800CB9160 /* PaygateView.swift in Sources */,
 				DE89C14E2C8B3AE100CB9160 /* AmplitudeManager.swift in Sources */,
 				DE89C17B2C8B3AE100CB9160 /* XOREncryption.swift in Sources */,
+				DE89C3E42C931B2E00CB9160 /* HistoryTableElement.swift in Sources */,
 				DE89C14F2C8B3AE100CB9160 /* BranchManager.swift in Sources */,
 				DE89C3422C8B43CA00CB9160 /* ProfileManager.swift in Sources */,
 				DE89C3642C8DFF2D00CB9160 /* TabItemButton.swift in Sources */,

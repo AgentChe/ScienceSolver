@@ -31,7 +31,8 @@ struct MathAssistantResult {
     
     let threadId: String
     let helpful: Bool?
-    let request: Request?
+    let created: TimeInterval
+    let request: Request
     let response: Response
 }
 
@@ -40,7 +41,8 @@ extension MathAssistantResult {
     init?(body: [String: Any]) {
         guard
             let threadId = body["thread_id"] as? String,
-            let content = body["content"] as? [[String: Any]]
+            let content = body["content"] as? [[String: Any]],
+            let created = body["created_at"] as? TimeInterval
         else { return nil }
         
         let request: Request? = {
@@ -60,6 +62,7 @@ extension MathAssistantResult {
             
             return nil
         }()
+        guard let request else { return nil }
         
         let response: Response? = {
             for json in content {
@@ -78,6 +81,7 @@ extension MathAssistantResult {
         self = MathAssistantResult(
             threadId: threadId,
             helpful: body["helpful"] as? Bool,
+            created: created,
             request: request,
             response: response
         )

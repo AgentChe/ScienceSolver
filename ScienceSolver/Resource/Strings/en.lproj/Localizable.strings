@@ -67,3 +67,7 @@
 "Account.PrivacyPolicy" = "Privacy Policy";
 "Account.TermsOfUse" = "Terms of Use";
 "Account.ContactUs" = "Contact us";
+
+// MARK: History
+"History.Title" = "History";
+"History.Empty" = "You have no requests in your history ";

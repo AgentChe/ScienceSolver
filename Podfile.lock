@@ -108,6 +108,7 @@ PODS:
   - GoogleUtilities/UserDefaults (7.13.3):
     - GoogleUtilities/Logger
     - GoogleUtilities/Privacy
+  - Kingfisher (7.11.0)
   - lottie-ios (4.4.3)
   - nanopb (2.30910.0):
     - nanopb/decode (= 2.30910.0)
@@ -132,6 +133,7 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - Firebase/Analytics
   - Firebase/Messaging
+  - Kingfisher
   - lottie-ios
   - OtterScaleiOS (from `https://github.com/AgentChe/OtterScaleiOS.git`)
   - RxCocoa
@@ -156,6 +158,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
+    - Kingfisher
     - lottie-ios
     - nanopb
     - PromisesObjC
@@ -190,6 +193,7 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 9abf64b682732fed36da827aa2a68f0221fd2356
   GoogleDataTransport: 6c09b596d841063d76d4288cc2d2f42cc36e1e2a
   GoogleUtilities: ea963c370a38a8069cc5f7ba4ca849a60b6d7d15
+  Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
   lottie-ios: fcb5e73e17ba4c983140b7d21095c834b3087418
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
   OtterScaleiOS: 0411b70aee2f3c998988188b0768e2e3216ebe9d
@@ -200,6 +204,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: d83493e7cd8747da40c5e35ed88dc300d6738c71
+PODFILE CHECKSUM: 69197fba0902e242c830e7fa76ace7999553107b
 
 COCOAPODS: 1.15.2
