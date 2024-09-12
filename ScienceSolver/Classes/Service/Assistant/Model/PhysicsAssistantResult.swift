@@ -5,16 +5,19 @@
 //  Created by Андрей Чернышев on 09.09.2024.
 //
 
+import Foundation
+
 struct PhysicsAssistantResult {
     struct Request {
-        let content: String
+        let imageUrl: URL?
+        let content: String // html текст
     }
     
     struct Response {
-        let userRawInput: String?
-        let body: String
-        let explanation: String
-        let recommendation: String
+        let userRawInput: String? // html текст
+        let body: String // html текст
+        let explanation: String // html текст
+        let recommendation: String // html текст
     }
     
     let threadId: String
@@ -25,10 +28,8 @@ struct PhysicsAssistantResult {
 
 // MARK: Public
 extension PhysicsAssistantResult {
-    static func map(response: Any) -> PhysicsAssistantResult? {
+    init?(body: [String: Any]) {
         guard
-            let json = response as? [String: Any],
-            let body = json["body"] as? [String: Any],
             let threadId = body["thread_id"] as? String,
             let content = body["content"] as? [[String: Any]]
         else { return nil }
@@ -40,7 +41,12 @@ extension PhysicsAssistantResult {
                     let content = json["content"] as? String
                 else { continue }
                 
-                return Request(content: content)
+                let imageUrl: URL? = {
+                    guard let path = json["image"] as? String else { return nil }
+                    return URL(string: path)
+                }()
+                
+                return Request(imageUrl: imageUrl, content: content)
             }
             
             return nil
@@ -60,12 +66,21 @@ extension PhysicsAssistantResult {
         }()
         guard let response else { return nil }
         
-        return PhysicsAssistantResult(
+        self = PhysicsAssistantResult(
             threadId: threadId,
             helpful: body["helpful"] as? Bool,
             request: request,
             response: response
         )
+    }
+    
+    static func map(response: Any) -> PhysicsAssistantResult? {
+        guard
+            let json = response as? [String: Any],
+            let body = json["body"] as? [String: Any]
+        else { return nil }
+        
+        return PhysicsAssistantResult(body: body)
     }
 }
 

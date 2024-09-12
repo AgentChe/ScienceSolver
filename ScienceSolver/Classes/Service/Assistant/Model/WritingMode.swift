@@ -7,4 +7,15 @@
 
 enum WritingMode {
     case outline, essay
+    
+    init?(meta: String) {
+        switch meta.lowercased() {
+        case "essay":
+            self = .essay
+        case "outline":
+            self = .outline
+        default:
+            return nil
+        }
+    }
 }

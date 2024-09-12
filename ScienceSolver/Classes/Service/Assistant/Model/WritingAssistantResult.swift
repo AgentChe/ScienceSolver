@@ -5,33 +5,53 @@
 //  Created by Андрей Чернышев on 09.09.2024.
 //
 
+import Foundation
+
 struct WritingAssistantResult {
+    struct Meta {
+        let mode: WritingMode
+        let style: WritingStyle
+    }
+    
     struct Request {
-        let content: String
+        let imageUrl: URL?
+        let content: String // html текст
     }
     
     struct Response {
-        let userRawInput: String?
-        let body: String
-        let explanation: String
-        let recommendation: String
+        let userRawInput: String? // html текст
+        let body: String // html текст
+        let explanation: String // html текст
+        let recommendation: String // html текст
     }
     
     let threadId: String
     let helpful: Bool?
+    let meta: Meta
     let request: Request?
     let response: Response
 }
 
 // MARK: Public
 extension WritingAssistantResult {
-    static func map(response: Any) -> WritingAssistantResult? {
+    init?(body: [String: Any]) {
         guard
-            let json = response as? [String: Any],
-            let body = json["body"] as? [String: Any],
             let threadId = body["thread_id"] as? String,
             let content = body["content"] as? [[String: Any]]
         else { return nil }
+        
+        let meta: Meta? = {
+            guard
+                let metaJSON = body["meta"] as? [String: Any],
+                let modeRawValue = metaJSON["mode"] as? String,
+                let mode = WritingMode(meta: modeRawValue),
+                let styleRawValue = metaJSON["style"] as? String,
+                let style = WritingStyle(meta: styleRawValue)
+            else { return nil }
+            
+            return Meta(mode: mode, style: style)
+        }()
+        guard let meta else { return nil }
         
         let request: Request? = {
             for json in content {
@@ -40,7 +60,12 @@ extension WritingAssistantResult {
                     let content = json["content"] as? String
                 else { continue }
                 
-                return Request(content: content)
+                let imageUrl: URL? = {
+                    guard let path = json["image"] as? String else { return nil }
+                    return URL(string: path)
+                }()
+                
+                return Request(imageUrl: imageUrl, content: content)
             }
             
             return nil
@@ -60,12 +85,22 @@ extension WritingAssistantResult {
         }()
         guard let response else { return nil }
         
-        return WritingAssistantResult(
+        self = WritingAssistantResult(
             threadId: threadId,
             helpful: body["helpful"] as? Bool,
+            meta: meta,
             request: request,
             response: response
         )
+    }
+    
+    static func map(response: Any) -> WritingAssistantResult? {
+        guard
+            let json = response as? [String: Any],
+            let body = json["body"] as? [String: Any]
+        else { return nil }
+        
+        return WritingAssistantResult(body: body)
     }
 }
 

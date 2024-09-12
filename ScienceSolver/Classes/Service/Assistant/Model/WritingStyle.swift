@@ -14,4 +14,27 @@ enum WritingStyle {
     case descriptive
     case omparative
     case other
+    
+    init?(meta: String) {
+        switch meta.lowercased() {
+        case "expository":
+            self = .expository
+        case "narrative":
+            self = .narrative
+        case "argumentative":
+            self = .argumentative
+        case "analytical":
+            self = .analytical
+        case "research":
+            self = .research
+        case "descriptive":
+            self = .descriptive
+        case "omparative":
+            self = .omparative
+        case "other":
+            self = .other
+        default:
+            return nil
+        }
+    }
 }

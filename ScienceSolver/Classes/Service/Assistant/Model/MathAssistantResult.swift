@@ -9,23 +9,24 @@ import Foundation
 
 struct MathAssistantResult {
     struct Request {
-        let content: String
+        let imageUrl: URL?
+        let content: String // latex текст
     }
     
     struct Response {
         struct Solution {
             let step: Int
-            let math: String
-            let description: String
+            let math: String // latex текст
+            let description: String // latex текст
         }
         
-        let userFormula: String?
-        let userRawInput: String?
-        let problem: String
+        let userFormula: String? // latex текст
+        let userRawInput: String? // latex текст
+        let problem: String // latex текст
         let solution: [Solution]
-        let answer: String
-        let explanation: String?
-        let recommendation: String?
+        let answer: String // latex текст
+        let explanation: String? // latex текст
+        let recommendation: String? // latex текст
     }
     
     let threadId: String
@@ -36,22 +37,25 @@ struct MathAssistantResult {
 
 // MARK: Public
 extension MathAssistantResult {
-    static func map(response: Any) -> MathAssistantResult? {
+    init?(body: [String: Any]) {
         guard
-            let json = response as? [String: Any],
-            let body = json["body"] as? [String: Any],
             let threadId = body["thread_id"] as? String,
             let content = body["content"] as? [[String: Any]]
         else { return nil }
         
         let request: Request? = {
             for json in content {
-                guard 
+                guard
                     let type = json["type"] as? String, type == "request",
                     let content = json["content"] as? String
                 else { continue }
                 
-                return Request(content: content)
+                let imageUrl: URL? = {
+                    guard let path = json["image"] as? String else { return nil }
+                    return URL(string: path)
+                }()
+                
+                return Request(imageUrl: imageUrl, content: content)
             }
             
             return nil
@@ -71,12 +75,21 @@ extension MathAssistantResult {
         }()
         guard let response else { return nil }
         
-        return MathAssistantResult(
+        self = MathAssistantResult(
             threadId: threadId,
             helpful: body["helpful"] as? Bool,
             request: request,
             response: response
         )
+    }
+    
+    static func map(response: Any) -> MathAssistantResult? {
+        guard
+            let json = response as? [String: Any],
+            let body = json["body"] as? [String: Any]
+        else { return nil }
+        
+        return MathAssistantResult(body: body)
     }
 }
 

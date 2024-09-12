@@ -29,6 +29,8 @@ protocol AssistantManagerProtocol {
     func helpful(threadId: String, assistantType: AssistantHelpfulRequest.AssistantType, helpful: Bool) -> Single<Void>
     
     func obtainLanaguages(forceUpdate: Bool) -> Single<[Language]>
+    
+    func history(page: Int) -> Single<AssistantHistoryPage?>
 }
 
 final class AssistantManager {
@@ -245,6 +247,18 @@ extension AssistantManager: AssistantManagerProtocol {
     
     func obtainLanaguages(forceUpdate: Bool) -> Single<[Language]> {
         forceUpdate ? downloadLanguages() : cachedLanguages()
+    }
+    
+    func history(page: Int) -> Single<AssistantHistoryPage?> {
+        let request = AssistantHistoryRequest(
+            anonymousId: sessionManager.anonymousId,
+            internalId: sessionManager.internalId,
+            page: page
+        )
+        
+        return restApiTransport
+            .callServerApi(requestBody: request)
+            .map { AssistantHistoryPage(response: $0) }
     }
 }
 

@@ -131,6 +131,10 @@
 		DE89C3AE2C918DE600CB9160 /* AccountAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3AD2C918DE600CB9160 /* AccountAboutCell.swift */; };
 		DE89C3B12C918E9300CB9160 /* AccountActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3B02C918E9300CB9160 /* AccountActionView.swift */; };
 		DE89C3B32C919A4F00CB9160 /* AccountTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3B22C919A4F00CB9160 /* AccountTitleCell.swift */; };
+		DE89C3CA2C92E77900CB9160 /* AssistantHistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3C92C92E77900CB9160 /* AssistantHistoryRequest.swift */; };
+		DE89C3D32C92E83900CB9160 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3D22C92E83900CB9160 /* Page.swift */; };
+		DE89C3D52C92E8A200CB9160 /* AssistantHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3D42C92E8A200CB9160 /* AssistantHistoryItem.swift */; };
+		DE89C3D72C92EED700CB9160 /* AssistantHistoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3D62C92EED700CB9160 /* AssistantHistoryPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -262,6 +266,10 @@
 		DE89C3AD2C918DE600CB9160 /* AccountAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAboutCell.swift; sourceTree = "<group>"; };
 		DE89C3B02C918E9300CB9160 /* AccountActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountActionView.swift; sourceTree = "<group>"; };
 		DE89C3B22C919A4F00CB9160 /* AccountTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTitleCell.swift; sourceTree = "<group>"; };
+		DE89C3C92C92E77900CB9160 /* AssistantHistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantHistoryRequest.swift; sourceTree = "<group>"; };
+		DE89C3D22C92E83900CB9160 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		DE89C3D42C92E8A200CB9160 /* AssistantHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantHistoryItem.swift; sourceTree = "<group>"; };
+		DE89C3D62C92EED700CB9160 /* AssistantHistoryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantHistoryPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -749,6 +757,9 @@
 				DE89C3882C8F080500CB9160 /* Language.swift */,
 				DE89C38E2C8F0ED900CB9160 /* WritingMode.swift */,
 				DE89C3902C8F0EFB00CB9160 /* WritingStyle.swift */,
+				DE89C3D22C92E83900CB9160 /* Page.swift */,
+				DE89C3D42C92E8A200CB9160 /* AssistantHistoryItem.swift */,
+				DE89C3D62C92EED700CB9160 /* AssistantHistoryPage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -766,6 +777,7 @@
 				DE89C3862C8F059800CB9160 /* AssistantTranslateRequest.swift */,
 				DE89C37E2C8EFAC900CB9160 /* AssistantHelpfulRequest.swift */,
 				DE89C38A2C8F0A1100CB9160 /* GetLanguagesRequest.swift */,
+				DE89C3C92C92E77900CB9160 /* AssistantHistoryRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -955,8 +967,10 @@
 				DE89C16A2C8B3AE100CB9160 /* DefaultRequestWrapper.swift in Sources */,
 				DE89C3562C8B554700CB9160 /* OnboardingWelcome3View.swift in Sources */,
 				DE89C37B2C8EF5FA00CB9160 /* ChemistryAssistantResult.swift in Sources */,
+				DE89C3D72C92EED700CB9160 /* AssistantHistoryPage.swift in Sources */,
 				DE89C16B2C8B3AE100CB9160 /* APIRequestBody.swift in Sources */,
 				DE89C3912C8F0EFB00CB9160 /* WritingStyle.swift in Sources */,
+				DE89C3CA2C92E77900CB9160 /* AssistantHistoryRequest.swift in Sources */,
 				DE89C2322C8B3AE200CB9160 /* SplashViewModel.swift in Sources */,
 				DE89C1512C8B3AE100CB9160 /* FirebaseManager.swift in Sources */,
 				DE89C3752C8EEBCD00CB9160 /* MathAssistantResult.swift in Sources */,
@@ -990,6 +1004,7 @@
 				DE89C34A2C8B4E4800CB9160 /* Weak.swift in Sources */,
 				DE89C17E2C8B3AE100CB9160 /* GlobalDefinitions.swift in Sources */,
 				DE89C24F2C8B3AE200CB9160 /* IAPProduct.swift in Sources */,
+				DE89C3D32C92E83900CB9160 /* Page.swift in Sources */,
 				DE89C1622C8B3AE100CB9160 /* ObservableAndSingle+Extension.swift in Sources */,
 				DE89C1792C8B3AE100CB9160 /* TextAttributes.swift in Sources */,
 				DE89C3932C8F112600CB9160 /* AssistantAnalyzeWritingProcessRequest.swift in Sources */,
@@ -1029,6 +1044,7 @@
 				DE89C2302C8B3AE200CB9160 /* SplashView.swift in Sources */,
 				DE89C2232C8B3AE100CB9160 /* OnboardingView.swift in Sources */,
 				DE89C1742C8B3AE100CB9160 /* Fonts.swift in Sources */,
+				DE89C3D52C92E8A200CB9160 /* AssistantHistoryItem.swift in Sources */,
 				DE89C1682C8B3AE100CB9160 /* UITapGestureRecognizer+Extension.swift in Sources */,
 				DE89C38F2C8F0ED900CB9160 /* WritingMode.swift in Sources */,
 				DE89C1542C8B3AE100CB9160 /* RxActivityIndicator.swift in Sources */,
@@ -1205,6 +1221,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GY8CB289H;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScienceSolver/Info.plist;
@@ -1218,7 +1235,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = train.somatic;
+				PRODUCT_BUNDLE_IDENTIFIER = train.somatic1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1238,6 +1255,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2GY8CB289H;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScienceSolver/Info.plist;
@@ -1251,7 +1269,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = train.somatic;
+				PRODUCT_BUNDLE_IDENTIFIER = train.somatic1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
