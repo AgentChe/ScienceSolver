@@ -143,6 +143,16 @@
 		DE89C3E72C931B4200CB9160 /* HistoryImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3E62C931B4200CB9160 /* HistoryImageCell.swift */; };
 		DE89C3E92C931B4A00CB9160 /* HistoryTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3E82C931B4A00CB9160 /* HistoryTextCell.swift */; };
 		DE89C3F32C932BBC00CB9160 /* HistoryEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3F22C932BBC00CB9160 /* HistoryEmptyView.swift */; };
+		DE89C3F62C9344E500CB9160 /* AssistantCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3F52C9344E500CB9160 /* AssistantCameraViewController.swift */; };
+		DE89C3F82C9344EC00CB9160 /* AssistantCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3F72C9344EC00CB9160 /* AssistantCameraViewModel.swift */; };
+		DE89C3FA2C9344F100CB9160 /* AssistantCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3F92C9344F100CB9160 /* AssistantCameraView.swift */; };
+		DE89C3FE2C93482700CB9160 /* AssistantsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3FD2C93482700CB9160 /* AssistantsCollectionView.swift */; };
+		DE89C4002C93482E00CB9160 /* AssistantsCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3FF2C93482E00CB9160 /* AssistantsCollectionElement.swift */; };
+		DE89C4022C93483300CB9160 /* AssistantsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C4012C93483300CB9160 /* AssistantsCollectionCell.swift */; };
+		DE89C4062C94735700CB9160 /* AssistantRecognizerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C4052C94735700CB9160 /* AssistantRecognizerController.swift */; };
+		DE89C40B2C94770700CB9160 /* AssistantImageResizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C40A2C94770700CB9160 /* AssistantImageResizeViewController.swift */; };
+		DE89C40D2C94770D00CB9160 /* AssistantImageResizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C40C2C94770D00CB9160 /* AssistantImageResizeViewModel.swift */; };
+		DE89C40F2C94771100CB9160 /* AssistantImageResizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C40E2C94771100CB9160 /* AssistantImageResizeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -286,6 +296,16 @@
 		DE89C3E62C931B4200CB9160 /* HistoryImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryImageCell.swift; sourceTree = "<group>"; };
 		DE89C3E82C931B4A00CB9160 /* HistoryTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTextCell.swift; sourceTree = "<group>"; };
 		DE89C3F22C932BBC00CB9160 /* HistoryEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEmptyView.swift; sourceTree = "<group>"; };
+		DE89C3F52C9344E500CB9160 /* AssistantCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantCameraViewController.swift; sourceTree = "<group>"; };
+		DE89C3F72C9344EC00CB9160 /* AssistantCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantCameraViewModel.swift; sourceTree = "<group>"; };
+		DE89C3F92C9344F100CB9160 /* AssistantCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantCameraView.swift; sourceTree = "<group>"; };
+		DE89C3FD2C93482700CB9160 /* AssistantsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantsCollectionView.swift; sourceTree = "<group>"; };
+		DE89C3FF2C93482E00CB9160 /* AssistantsCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantsCollectionElement.swift; sourceTree = "<group>"; };
+		DE89C4012C93483300CB9160 /* AssistantsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantsCollectionCell.swift; sourceTree = "<group>"; };
+		DE89C4052C94735700CB9160 /* AssistantRecognizerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantRecognizerController.swift; sourceTree = "<group>"; };
+		DE89C40A2C94770700CB9160 /* AssistantImageResizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantImageResizeViewController.swift; sourceTree = "<group>"; };
+		DE89C40C2C94770D00CB9160 /* AssistantImageResizeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantImageResizeViewModel.swift; sourceTree = "<group>"; };
+		DE89C40E2C94771100CB9160 /* AssistantImageResizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantImageResizeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -554,6 +574,7 @@
 		DE89C0F12C8B3AE100CB9160 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DE89C3F42C9344DB00CB9160 /* AssistantCamera */,
 				DE89C3432C8B465900CB9160 /* TryAgain */,
 				DE89C0D42C8B3AE100CB9160 /* Main */,
 				DE89C0F02C8B3AE100CB9160 /* Splash */,
@@ -886,6 +907,63 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DE89C3F42C9344DB00CB9160 /* AssistantCamera */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C4042C934EA700CB9160 /* AssistantRecognizer */,
+				DE89C4092C9476F500CB9160 /* AssistantImageResize */,
+				DE89C4032C934E9500CB9160 /* AssistantCamera */,
+			);
+			path = AssistantCamera;
+			sourceTree = "<group>";
+		};
+		DE89C3FB2C93481200CB9160 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3FC2C93481900CB9160 /* AssistantsCollection */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE89C3FC2C93481900CB9160 /* AssistantsCollection */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3FD2C93482700CB9160 /* AssistantsCollectionView.swift */,
+				DE89C3FF2C93482E00CB9160 /* AssistantsCollectionElement.swift */,
+				DE89C4012C93483300CB9160 /* AssistantsCollectionCell.swift */,
+			);
+			path = AssistantsCollection;
+			sourceTree = "<group>";
+		};
+		DE89C4032C934E9500CB9160 /* AssistantCamera */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C3FB2C93481200CB9160 /* Views */,
+				DE89C3F52C9344E500CB9160 /* AssistantCameraViewController.swift */,
+				DE89C3F72C9344EC00CB9160 /* AssistantCameraViewModel.swift */,
+				DE89C3F92C9344F100CB9160 /* AssistantCameraView.swift */,
+			);
+			path = AssistantCamera;
+			sourceTree = "<group>";
+		};
+		DE89C4042C934EA700CB9160 /* AssistantRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C4052C94735700CB9160 /* AssistantRecognizerController.swift */,
+			);
+			path = AssistantRecognizer;
+			sourceTree = "<group>";
+		};
+		DE89C4092C9476F500CB9160 /* AssistantImageResize */ = {
+			isa = PBXGroup;
+			children = (
+				DE89C40A2C94770700CB9160 /* AssistantImageResizeViewController.swift */,
+				DE89C40C2C94770D00CB9160 /* AssistantImageResizeViewModel.swift */,
+				DE89C40E2C94771100CB9160 /* AssistantImageResizeView.swift */,
+			);
+			path = AssistantImageResize;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1034,6 +1112,7 @@
 				DE89C3542C8B554000CB9160 /* OnboardingWelcome2View.swift in Sources */,
 				DE89C3A72C918DC800CB9160 /* AccountTableView.swift in Sources */,
 				DE89C3AE2C918DE600CB9160 /* AccountAboutCell.swift in Sources */,
+				DE89C40F2C94771100CB9160 /* AssistantImageResizeView.swift in Sources */,
 				DE89C2502C8B3AE200CB9160 /* ProductPrice.swift in Sources */,
 				DE89C27A2C8B3AE200CB9160 /* SessionManager.swift in Sources */,
 				DE89C1702C8B3AE100CB9160 /* ContentError.swift in Sources */,
@@ -1055,14 +1134,17 @@
 				DE89C2242C8B3AE100CB9160 /* OnboardingViewController.swift in Sources */,
 				DE89C15B2C8B3AE100CB9160 /* GradientView.swift in Sources */,
 				DE89C32B2C8B3F1800CB9160 /* PaygateInteractor.swift in Sources */,
+				DE89C4062C94735700CB9160 /* AssistantRecognizerController.swift in Sources */,
 				DE89C3712C8EE5E700CB9160 /* AssistantAnalyzeImage.swift in Sources */,
 				DE89C3AC2C918DDD00CB9160 /* AccountHistoryCell.swift in Sources */,
 				DE89C1602C8B3AE100CB9160 /* TapAreaButton.swift in Sources */,
 				DE89C3812C8EFBD800CB9160 /* AssistantTranslateImage.swift in Sources */,
+				DE89C3FA2C9344F100CB9160 /* AssistantCameraView.swift in Sources */,
 				DE89C16C2C8B3AE100CB9160 /* RestAPITransport.swift in Sources */,
 				DE89C3DE2C93181E00CB9160 /* HistoryView.swift in Sources */,
 				DE89C34A2C8B4E4800CB9160 /* Weak.swift in Sources */,
 				DE89C17E2C8B3AE100CB9160 /* GlobalDefinitions.swift in Sources */,
+				DE89C3F82C9344EC00CB9160 /* AssistantCameraViewModel.swift in Sources */,
 				DE89C24F2C8B3AE200CB9160 /* IAPProduct.swift in Sources */,
 				DE89C3D32C92E83900CB9160 /* Page.swift in Sources */,
 				DE89C1622C8B3AE100CB9160 /* ObservableAndSingle+Extension.swift in Sources */,
@@ -1084,17 +1166,21 @@
 				DE89C3B32C919A4F00CB9160 /* AccountTitleCell.swift in Sources */,
 				DE89C22F2C8B3AE200CB9160 /* SplashReceiptValidationObserver.swift in Sources */,
 				DE89C3DA2C93181600CB9160 /* HistoryViewController.swift in Sources */,
+				DE89C3FE2C93482700CB9160 /* AssistantsCollectionView.swift in Sources */,
 				DE89C3522C8B550100CB9160 /* OnboardingWelcome1View.swift in Sources */,
 				DE89C3302C8B3F1800CB9160 /* PaygateInfoView.swift in Sources */,
+				DE89C40D2C94770D00CB9160 /* AssistantImageResizeViewModel.swift in Sources */,
 				DE89C3332C8B3F1800CB9160 /* PaygateViewController.swift in Sources */,
 				DE89C3732C8EE98800CB9160 /* AssistantAnalyzeImageResponse.swift in Sources */,
 				DE89C24E2C8B3AE200CB9160 /* IAPActionResult.swift in Sources */,
+				DE89C3F62C9344E500CB9160 /* AssistantCameraViewController.swift in Sources */,
 				DE89C1632C8B3AE100CB9160 /* String+Extension.swift in Sources */,
 				DE89C38D2C8F0E8800CB9160 /* AssistantAnalyzeWritingImage.swift in Sources */,
 				DE89C1722C8B3AE100CB9160 /* SignError.swift in Sources */,
 				DE89C1522C8B3AE100CB9160 /* ImagePicker.swift in Sources */,
 				DE89C3342C8B3F1800CB9160 /* PaygateViewModel.swift in Sources */,
 				DE89C3472C8B467A00CB9160 /* TryAgainView.swift in Sources */,
+				DE89C4022C93483300CB9160 /* AssistantsCollectionCell.swift in Sources */,
 				DE89C16D2C8B3AE100CB9160 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DE89C1652C8B3AE100CB9160 /* UIColor+Extension.swift in Sources */,
 				DE89C1782C8B3AE100CB9160 /* ScreenSize.swift in Sources */,
@@ -1113,12 +1199,14 @@
 				DE89C1542C8B3AE100CB9160 /* RxActivityIndicator.swift in Sources */,
 				DE89C20A2C8B3AE100CB9160 /* MainViewController.swift in Sources */,
 				DE89C1662C8B3AE100CB9160 /* UIDevice+Extension.swift in Sources */,
+				DE89C4002C93482E00CB9160 /* AssistantsCollectionElement.swift in Sources */,
 				DE89C32A2C8B3F1800CB9160 /* Currency.swift in Sources */,
 				DE89C1562C8B3AE100CB9160 /* NavigationControllerSettings.swift in Sources */,
 				DE89C3402C8B42A800CB9160 /* ProfileBindingRequest.swift in Sources */,
 				DE89C3892C8F080500CB9160 /* Language.swift in Sources */,
 				DE89C17D2C8B3AE100CB9160 /* Appearance.swift in Sources */,
 				DE89C36E2C8EE1A800CB9160 /* AssistantManager.swift in Sources */,
+				DE89C40B2C94770700CB9160 /* AssistantImageResizeViewController.swift in Sources */,
 				DE89C3B12C918E9300CB9160 /* AccountActionView.swift in Sources */,
 				DE89C17F2C8B3AE100CB9160 /* SceneDelegate.swift in Sources */,
 				DE89C32E2C8B3F1800CB9160 /* PaygateEnableTrialButton.swift in Sources */,

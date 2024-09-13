@@ -71,3 +71,14 @@
 // MARK: History
 "History.Title" = "History";
 "History.Empty" = "You have no requests in your history ";
+
+// MARK: Assistant
+"Assistant.Math" = "Math";
+"Assistant.Physics" = "Physics";
+"Assistant.Biology" = "Biology";
+"Assistant.Chemistry" = "Chemistry";
+"Assistant.Writing" = "Writing";
+"Assistant.Language" = "Language";
+
+// MARK: AssistantImageResize
+"AssistantImageResize.Done" = "Done";

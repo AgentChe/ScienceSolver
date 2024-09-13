@@ -25,11 +25,29 @@ final class MainViewController: UIViewController {
         rx.methodInvoked(#selector(UIViewController.viewDidLayoutSubviews))
             .take(1)
             .bind(to: Binder(self) { base, _ in
-                base.update(selectedTab: .assistant)
+                base.coordinator.change(tab: .assistant)
             })
             .disposed(by: disposeBag)
         
-        addActionsToTabs()
+        Observable
+            .merge([
+                mainView.tabView.assistantButton
+                    .rx.tap.map { TabView.Tab.assistant },
+                
+                mainView.tabView.accountButton
+                    .rx.tap.map { TabView.Tab.account }
+            ])
+            .bind(to: Binder(self) { base, tab in
+                base.coordinator.change(tab: tab)
+            })
+            .disposed(by: disposeBag)
+        
+        // TODO
+        mainView.tabView.recognizerButton
+            .rx.tap.bind(to: (Binder(self) { base, void in
+                let vc = AssistantRecognizerController.make()
+                base.present(vc, animated: true)
+            }))
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -43,30 +61,5 @@ extension MainViewController {
         let vc = MainViewController()
         vc.navigationItem.backButtonTitle = " "
         return vc
-    }
-}
-
-// MARK: Private
-private extension MainViewController {
-    func addActionsToTabs() {
-        Observable
-            .merge([
-                mainView.tabView.recognizerButton
-                    .rx.tap.map { TabView.Tab.recognizer },
-                
-                mainView.tabView.assistantButton
-                    .rx.tap.map { TabView.Tab.assistant },
-                
-                mainView.tabView.accountButton
-                    .rx.tap.map { TabView.Tab.account }
-            ])
-            .bind(to: Binder(self) { base, tab in
-                base.update(selectedTab: tab)
-            })
-            .disposed(by: disposeBag)
-    }
-    
-    func update(selectedTab: TabView.Tab) {
-        coordinator.change(tab: selectedTab)
     }
 }

@@ -10,7 +10,6 @@ import UIKit
 final class MainCoordinator {
     weak var parentVC: MainViewController?
     
-    lazy var recognizerVC = NavigationController(rootViewController: UIViewController())
     lazy var assistantVC = NavigationController(rootViewController: UIViewController())
     lazy var accountVC = NavigationController(rootViewController: AccountViewController.make())
     
@@ -25,7 +24,7 @@ final class MainCoordinator {
         
         switch tab {
         case .recognizer:
-            changeVC(on: recognizerVC)
+            return
         case .assistant:
             changeVC(on: assistantVC)
         case .account:
