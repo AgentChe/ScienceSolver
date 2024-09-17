@@ -5,7 +5,7 @@
 //  Created by Андрей Чернышев on 09.09.2024.
 //
 
-enum WritingStyle {
+enum WritingStyle: CaseIterable {
     case expository
     case narrative
     case argumentative

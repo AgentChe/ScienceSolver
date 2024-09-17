@@ -11,8 +11,17 @@ import PhotosUI
 
 final class AssistantCameraViewController: UIViewController {
     struct Result {
+        enum Assistant {
+            case math
+            case physics
+            case biology
+            case chemistry
+            case writing(WritingMode)
+            case language
+        }
+        
         let image: UIImage
-        let assistant: AssistantsCollectionElement.Assistant
+        let assistant: Assistant
     }
     
     var didClose: (() -> Void)?
@@ -43,7 +52,8 @@ final class AssistantCameraViewController: UIViewController {
         
         let output = viewModel.configure(input: AssistantCameraViewModel.Input(
             didTapDismiss: mainView.closeButton.rx.tap.asSignal(),
-            didTapSelectImageFromLibrary: mainView.wallpapersButton.rx.tap.asSignal()
+            didTapSelectImageFromLibrary: mainView.wallpapersButton.rx.tap.asSignal(),
+            didSelect: mainView.collectionView.didSelect
         ))
         
         output.route
@@ -55,6 +65,12 @@ final class AssistantCameraViewController: UIViewController {
         output.elements
             .drive(Binder(mainView.collectionView) { base, elements in
                 base.setup(elements: elements)
+            })
+            .disposed(by: disposeBag)
+        
+        output.writingModeHidden
+            .drive(Binder(mainView.writingModeView) { base, hidden in
+                base.isHidden = hidden
             })
             .disposed(by: disposeBag)
     }
@@ -110,7 +126,24 @@ private extension AssistantCameraViewController {
     }
     
     func complete(image: UIImage?) {
-        guard let image, let assistant = mainView.collectionView.elements.first(where: { $0.marked })?.assistant else { return }
+        guard let image, let element = mainView.collectionView.elements.first(where: { $0.marked })?.assistant else { return }
+        
+        let assistant: Result.Assistant = {
+            switch element {
+            case .math:
+                return .math
+            case .physics:
+                return .physics
+            case .biology:
+                return .biology
+            case .chemistry:
+                return .chemistry
+            case .writing:
+                return .writing(mainView.writingModeView.mode)
+            case .language:
+                return .language
+            }
+        }()
         
         let result = Result(image: image, assistant: assistant)
         

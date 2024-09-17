@@ -5,7 +5,7 @@
 //  Created by Андрей Чернышев on 09.09.2024.
 //
 
-struct Language: Codable {
+struct Language: Codable, Hashable {
     let code: String
     let name: String
 }

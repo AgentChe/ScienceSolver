@@ -80,5 +80,34 @@
 "Assistant.Writing" = "Writing";
 "Assistant.Language" = "Language";
 
+// MARK: WritingStyle
+"WritingStyle.Expository" = "Expository";
+"WritingStyle.Narrative" = "Narrative";
+"WritingStyle.Argumentative" = "Argumentative";
+"WritingStyle.Analytical" = "Analytical";
+"WritingStyle.Research" = "Research";
+"WritingStyle.Descriptive" = "Descriptive";
+"WritingStyle.Omparative" = "Omparative";
+"WritingStyle.Other" = "Other";
+
 // MARK: AssistantImageResize
 "AssistantImageResize.Done" = "Done";
+"AssistantImageResize.Translate" = "Translate to: %@";
+
+// MARK: AssistantCamera
+"AssistantCamera.Essay" = "Essay";
+"AssistantCamera.Outline" = "Outline";
+
+// MARK: SelectWritingMode
+"SelectWritingMode.Essay" = "Essay Type";
+"SelectWritingMode.Outline" = "Outline Type";
+"SelectWritingMode.Save" = "Save";
+
+// MARK: SelectLanguage
+"SelectLanguage.Title" = "Translate to";
+"SelectLanguage.Save" = "Save";
+
+// MARK: AssistantCameraError
+"AssistantCameraError.Title" = "Couldn’t recognize text in image";
+"AssistantCameraError.SubTitle" = "Please check that the text is aligned and clearly visible";
+"AssistantCameraError.Button" = "Try again";

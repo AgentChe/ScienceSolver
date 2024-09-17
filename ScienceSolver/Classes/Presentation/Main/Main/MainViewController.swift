@@ -45,7 +45,9 @@ final class MainViewController: UIViewController {
         // TODO
         mainView.tabView.recognizerButton
             .rx.tap.bind(to: (Binder(self) { base, void in
-                let vc = AssistantRecognizerController.make()
+                let vc = AssistantRecognizerController.make() { result in
+                    print(result)
+                }
                 base.present(vc, animated: true)
             }))
     }

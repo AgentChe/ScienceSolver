@@ -110,6 +110,7 @@ PODS:
     - GoogleUtilities/Privacy
   - Kingfisher (7.11.0)
   - lottie-ios (4.4.3)
+  - Mantis (2.21.0)
   - nanopb (2.30910.0):
     - nanopb/decode (= 2.30910.0)
     - nanopb/encode (= 2.30910.0)
@@ -135,6 +136,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Kingfisher
   - lottie-ios
+  - Mantis
   - OtterScaleiOS (from `https://github.com/AgentChe/OtterScaleiOS.git`)
   - RxCocoa
   - RxSwift
@@ -160,6 +162,7 @@ SPEC REPOS:
     - GoogleUtilities
     - Kingfisher
     - lottie-ios
+    - Mantis
     - nanopb
     - PromisesObjC
     - RxCocoa
@@ -195,6 +198,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: ea963c370a38a8069cc5f7ba4ca849a60b6d7d15
   Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
   lottie-ios: fcb5e73e17ba4c983140b7d21095c834b3087418
+  Mantis: e9712f7b0d07709326e6f333bf16bd5828c0a4c9
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
   OtterScaleiOS: 0411b70aee2f3c998988188b0768e2e3216ebe9d
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
@@ -204,6 +208,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: 69197fba0902e242c830e7fa76ace7999553107b
+PODFILE CHECKSUM: 7a8b40632a4a1d3f693f9dd93d4be2c4ab1a05de
 
 COCOAPODS: 1.15.2

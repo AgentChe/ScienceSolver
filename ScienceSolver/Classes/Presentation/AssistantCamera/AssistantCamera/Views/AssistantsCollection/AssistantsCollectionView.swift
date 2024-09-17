@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class AssistantsCollectionView: UICollectionView {
     lazy var elements = [AssistantsCollectionElement]()
+    
+    private lazy var didSelectTrigger = PublishRelay<AssistantsCollectionElement.Assistant>()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -42,6 +46,10 @@ extension AssistantsCollectionView {
             reloadData()
         }
     }
+    
+    var didSelect: Signal<AssistantsCollectionElement.Assistant> {
+        didSelectTrigger.asSignal()
+    }
 }
 
 // MARK: UICollectionViewDataSource
@@ -68,6 +76,10 @@ extension AssistantsCollectionView: UICollectionViewDelegateFlowLayout {
         
         CATransaction.setCompletionBlock { [weak self] in
             self?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            
+            if let assistant = self?.elements.first(where: { $0.marked })?.assistant {
+                self?.didSelectTrigger.accept(assistant)
+            }
         }
 
         reloadData()

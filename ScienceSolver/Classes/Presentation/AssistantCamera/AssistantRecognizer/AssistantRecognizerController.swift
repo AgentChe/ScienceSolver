@@ -9,6 +9,11 @@ import UIKit
 import RxSwift
 
 final class AssistantRecognizerController: UIViewController {
+    struct Result {
+        let fromCamera: AssistantCameraViewController.Result
+        let recognized: AssistantImageResizeViewController.Result
+    }
+    
     private lazy var mainView: UIView = {
         let view = UIView()
         view.backgroundColor = Appearance.mono200
@@ -21,8 +26,11 @@ final class AssistantRecognizerController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private init(assistant: AssistantsCollectionElement.Assistant?) {
-        cameraVC = AssistantCameraViewController.make(assistant: assistant)
+    private let result: (Result) -> Void
+    
+    private init(assistant: AssistantsCollectionElement.Assistant?, result: @escaping (Result) -> Void) {
+        self.cameraVC = AssistantCameraViewController.make(assistant: assistant)
+        self.result = result
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,10 +46,18 @@ final class AssistantRecognizerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cameraVC.didResult = { [weak self] result in
+        cameraVC.didResult = { [weak self] fromCamera in
             guard let self else { return }
             
-            let vc = AssistantImageResizeViewController.make(fromCamera: result)
+            let vc = AssistantImageResizeViewController.make(fromCamera: fromCamera)
+            
+            vc.didResult = { [weak self] recognized in
+                let finally = Result(fromCamera: fromCamera, recognized: recognized)
+                
+                self?.dismiss(animated: true) { [weak self] in
+                    self?.result(finally)
+                }
+            }
             
             vc.didCancel = { [weak self] in
                 guard let self else { return }
@@ -67,8 +83,8 @@ final class AssistantRecognizerController: UIViewController {
 
 // MARK: Public
 extension AssistantRecognizerController {
-    static func make(assistant: AssistantsCollectionElement.Assistant? = nil) -> AssistantRecognizerController {
-        let vc = AssistantRecognizerController(assistant: assistant)
+    static func make(assistant: AssistantsCollectionElement.Assistant? = nil, result: @escaping (AssistantRecognizerController.Result) -> Void) -> AssistantRecognizerController {
+        let vc = AssistantRecognizerController(assistant: assistant, result: result)
         vc.modalPresentationStyle = .fullScreen
         return vc
     }

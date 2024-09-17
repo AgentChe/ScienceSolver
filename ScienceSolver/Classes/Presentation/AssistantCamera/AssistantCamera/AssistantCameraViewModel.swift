@@ -25,20 +25,26 @@ extension AssistantCameraViewModel {
     struct Input {
         let didTapDismiss: Signal<Void>
         let didTapSelectImageFromLibrary: Signal<Void>
+        let didSelect: Signal<AssistantsCollectionElement.Assistant>
     }
     
     struct Output {
         let route: Driver<Route>
         let elements: Driver<[AssistantsCollectionElement]>
+        let writingModeHidden: Driver<Bool>
     }
     
     func configure(input: Input) -> Output {
-        Output(
+        let startAssistant = initialAssistant.map { $0 ?? .math }
+        let currentAssistant = Driver.merge(startAssistant, input.didSelect.asDriver(onErrorDriveWith: .never()))
+        
+        return Output(
             route: makeRoute(
                 didTapDismiss: input.didTapDismiss,
                 didTapSelectImageFromLibrary: input.didTapSelectImageFromLibrary
             ),
-            elements: makeElements()
+            elements: makeElements(startAssistant: startAssistant),
+            writingModeHidden: currentAssistant.map { $0 != .writing }
         )
     }
 }
@@ -61,16 +67,16 @@ private extension AssistantCameraViewModel {
             .merge(dismiss, selectImageFromLibrary)
     }
     
-    func makeElements() -> Driver<[AssistantsCollectionElement]> {
-        initialAssistant
-            .map { initialAssistant -> [AssistantsCollectionElement] in
+    func makeElements(startAssistant: Driver<AssistantsCollectionElement.Assistant>) -> Driver<[AssistantsCollectionElement]> {
+        startAssistant
+            .map { startAssistant -> [AssistantsCollectionElement] in
                 [
-                    .init(assistant: .math, marked: (initialAssistant == .math) || initialAssistant == nil),
-                    .init(assistant: .physics, marked: initialAssistant == .physics),
-                    .init(assistant: .biology, marked: initialAssistant == .biology),
-                    .init(assistant: .chemistry, marked: initialAssistant == .chemistry),
-                    .init(assistant: .writing, marked: initialAssistant == .writing),
-                    .init(assistant: .language, marked: initialAssistant == .language)
+                    .init(assistant: .math, marked: startAssistant == .math),
+                    .init(assistant: .physics, marked: startAssistant == .physics),
+                    .init(assistant: .biology, marked: startAssistant == .biology),
+                    .init(assistant: .chemistry, marked: startAssistant == .chemistry),
+                    .init(assistant: .writing, marked: startAssistant == .writing),
+                    .init(assistant: .language, marked: startAssistant == .language)
                 ]
             }
     }

@@ -153,6 +153,18 @@
 		DE89C40B2C94770700CB9160 /* AssistantImageResizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C40A2C94770700CB9160 /* AssistantImageResizeViewController.swift */; };
 		DE89C40D2C94770D00CB9160 /* AssistantImageResizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C40C2C94770D00CB9160 /* AssistantImageResizeViewModel.swift */; };
 		DE89C40F2C94771100CB9160 /* AssistantImageResizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C40E2C94771100CB9160 /* AssistantImageResizeView.swift */; };
+		DE89C4112C949EE500CB9160 /* AssistantCameraWritingModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C4102C949EE500CB9160 /* AssistantCameraWritingModeView.swift */; };
+		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
+		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
+		DEE8837E2C996922008DAD26 /* SWMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837D2C996922008DAD26 /* SWMView.swift */; };
+		DEE883802C99692B008DAD26 /* SWMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837F2C99692B008DAD26 /* SWMViewController.swift */; };
+		DEE883852C996F5F008DAD26 /* SWMPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883842C996F5F008DAD26 /* SWMPickerView.swift */; };
+		DEE883882C9975CA008DAD26 /* SLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883872C9975CA008DAD26 /* SLViewController.swift */; };
+		DEE8838A2C9975D0008DAD26 /* SLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883892C9975D0008DAD26 /* SLViewModel.swift */; };
+		DEE8838C2C9975D4008DAD26 /* SLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8838B2C9975D4008DAD26 /* SLView.swift */; };
+		DEE8838F2C9976BE008DAD26 /* SLPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8838E2C9976BE008DAD26 /* SLPickerView.swift */; };
+		DEE883932C99C18B008DAD26 /* ACEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883922C99C18B008DAD26 /* ACEViewController.swift */; };
+		DEE883952C99C190008DAD26 /* ACEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883942C99C190008DAD26 /* ACEView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -306,6 +318,18 @@
 		DE89C40A2C94770700CB9160 /* AssistantImageResizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantImageResizeViewController.swift; sourceTree = "<group>"; };
 		DE89C40C2C94770D00CB9160 /* AssistantImageResizeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantImageResizeViewModel.swift; sourceTree = "<group>"; };
 		DE89C40E2C94771100CB9160 /* AssistantImageResizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantImageResizeView.swift; sourceTree = "<group>"; };
+		DE89C4102C949EE500CB9160 /* AssistantCameraWritingModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantCameraWritingModeView.swift; sourceTree = "<group>"; };
+		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
+		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
+		DEE8837D2C996922008DAD26 /* SWMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMView.swift; sourceTree = "<group>"; };
+		DEE8837F2C99692B008DAD26 /* SWMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMViewController.swift; sourceTree = "<group>"; };
+		DEE883842C996F5F008DAD26 /* SWMPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMPickerView.swift; sourceTree = "<group>"; };
+		DEE883872C9975CA008DAD26 /* SLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLViewController.swift; sourceTree = "<group>"; };
+		DEE883892C9975D0008DAD26 /* SLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLViewModel.swift; sourceTree = "<group>"; };
+		DEE8838B2C9975D4008DAD26 /* SLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLView.swift; sourceTree = "<group>"; };
+		DEE8838E2C9976BE008DAD26 /* SLPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPickerView.swift; sourceTree = "<group>"; };
+		DEE883922C99C18B008DAD26 /* ACEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACEViewController.swift; sourceTree = "<group>"; };
+		DEE883942C99C190008DAD26 /* ACEView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACEView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -910,6 +934,9 @@
 		DE89C3F42C9344DB00CB9160 /* AssistantCamera */ = {
 			isa = PBXGroup;
 			children = (
+				DEE883912C99C176008DAD26 /* AssistantCameraError */,
+				DEE883862C9975B9008DAD26 /* SelectLanguage */,
+				DEE8837C2C996909008DAD26 /* SelectWritingMode */,
 				DE89C4042C934EA700CB9160 /* AssistantRecognizer */,
 				DE89C4092C9476F500CB9160 /* AssistantImageResize */,
 				DE89C4032C934E9500CB9160 /* AssistantCamera */,
@@ -921,6 +948,7 @@
 			isa = PBXGroup;
 			children = (
 				DE89C3FC2C93481900CB9160 /* AssistantsCollection */,
+				DE89C4102C949EE500CB9160 /* AssistantCameraWritingModeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -957,11 +985,67 @@
 		DE89C4092C9476F500CB9160 /* AssistantImageResize */ = {
 			isa = PBXGroup;
 			children = (
+				DEE883772C988F9D008DAD26 /* Views */,
 				DE89C40A2C94770700CB9160 /* AssistantImageResizeViewController.swift */,
 				DE89C40C2C94770D00CB9160 /* AssistantImageResizeViewModel.swift */,
 				DE89C40E2C94771100CB9160 /* AssistantImageResizeView.swift */,
 			);
 			path = AssistantImageResize;
+			sourceTree = "<group>";
+		};
+		DEE883772C988F9D008DAD26 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */,
+				DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEE8837C2C996909008DAD26 /* SelectWritingMode */ = {
+			isa = PBXGroup;
+			children = (
+				DEE883832C996F54008DAD26 /* Views */,
+				DEE8837F2C99692B008DAD26 /* SWMViewController.swift */,
+				DEE8837D2C996922008DAD26 /* SWMView.swift */,
+			);
+			path = SelectWritingMode;
+			sourceTree = "<group>";
+		};
+		DEE883832C996F54008DAD26 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEE883842C996F5F008DAD26 /* SWMPickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEE883862C9975B9008DAD26 /* SelectLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				DEE8838D2C9976B5008DAD26 /* Views */,
+				DEE883872C9975CA008DAD26 /* SLViewController.swift */,
+				DEE883892C9975D0008DAD26 /* SLViewModel.swift */,
+				DEE8838B2C9975D4008DAD26 /* SLView.swift */,
+			);
+			path = SelectLanguage;
+			sourceTree = "<group>";
+		};
+		DEE8838D2C9976B5008DAD26 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEE8838E2C9976BE008DAD26 /* SLPickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEE883912C99C176008DAD26 /* AssistantCameraError */ = {
+			isa = PBXGroup;
+			children = (
+				DEE883922C99C18B008DAD26 /* ACEViewController.swift */,
+				DEE883942C99C190008DAD26 /* ACEView.swift */,
+			);
+			path = AssistantCameraError;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1090,7 +1174,9 @@
 				DE89C2512C8B3AE200CB9160 /* IAPManager.swift in Sources */,
 				DE89C3A12C918D2700CB9160 /* AccountViewModel.swift in Sources */,
 				DE89C1672C8B3AE100CB9160 /* UIEdgeInsets+Extension.swift in Sources */,
+				DEE883802C99692B008DAD26 /* SWMViewController.swift in Sources */,
 				DE89C39F2C918D1E00CB9160 /* AccountViewController.swift in Sources */,
+				DEE8838F2C9976BE008DAD26 /* SLPickerView.swift in Sources */,
 				DE89C2522C8B3AE200CB9160 /* PurchaseValidationObserver.swift in Sources */,
 				DE89C35F2C8DCD3200CB9160 /* OnboardingSlideView.swift in Sources */,
 				DE89C3E22C931B2800CB9160 /* HistoryTableView.swift in Sources */,
@@ -1105,6 +1191,7 @@
 				DE89C3D72C92EED700CB9160 /* AssistantHistoryPage.swift in Sources */,
 				DE89C16B2C8B3AE100CB9160 /* APIRequestBody.swift in Sources */,
 				DE89C3912C8F0EFB00CB9160 /* WritingStyle.swift in Sources */,
+				DEE8838C2C9975D4008DAD26 /* SLView.swift in Sources */,
 				DE89C3CA2C92E77900CB9160 /* AssistantHistoryRequest.swift in Sources */,
 				DE89C2322C8B3AE200CB9160 /* SplashViewModel.swift in Sources */,
 				DE89C1512C8B3AE100CB9160 /* FirebaseManager.swift in Sources */,
@@ -1142,8 +1229,10 @@
 				DE89C3FA2C9344F100CB9160 /* AssistantCameraView.swift in Sources */,
 				DE89C16C2C8B3AE100CB9160 /* RestAPITransport.swift in Sources */,
 				DE89C3DE2C93181E00CB9160 /* HistoryView.swift in Sources */,
+				DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */,
 				DE89C34A2C8B4E4800CB9160 /* Weak.swift in Sources */,
 				DE89C17E2C8B3AE100CB9160 /* GlobalDefinitions.swift in Sources */,
+				DEE8838A2C9975D0008DAD26 /* SLViewModel.swift in Sources */,
 				DE89C3F82C9344EC00CB9160 /* AssistantCameraViewModel.swift in Sources */,
 				DE89C24F2C8B3AE200CB9160 /* IAPProduct.swift in Sources */,
 				DE89C3D32C92E83900CB9160 /* Page.swift in Sources */,
@@ -1159,8 +1248,10 @@
 				DE89C3992C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift in Sources */,
 				DE89C3772C8EF43300CB9160 /* PhysicsAssistantResult.swift in Sources */,
 				DE89C3E92C931B4A00CB9160 /* HistoryTextCell.swift in Sources */,
+				DEE883852C996F5F008DAD26 /* SWMPickerView.swift in Sources */,
 				DE89C32F2C8B3F1800CB9160 /* PaygateInfoCell.swift in Sources */,
 				DE89C1762C8B3AE100CB9160 /* ObservableRetrySingle.swift in Sources */,
+				DEE883932C99C18B008DAD26 /* ACEViewController.swift in Sources */,
 				DE89C37F2C8EFAC900CB9160 /* AssistantHelpfulRequest.swift in Sources */,
 				DE89C38B2C8F0A1100CB9160 /* GetLanguagesRequest.swift in Sources */,
 				DE89C3B32C919A4F00CB9160 /* AccountTitleCell.swift in Sources */,
@@ -1182,6 +1273,8 @@
 				DE89C3472C8B467A00CB9160 /* TryAgainView.swift in Sources */,
 				DE89C4022C93483300CB9160 /* AssistantsCollectionCell.swift in Sources */,
 				DE89C16D2C8B3AE100CB9160 /* PushNotificationsAuthorizationStatus.swift in Sources */,
+				DEE8837E2C996922008DAD26 /* SWMView.swift in Sources */,
+				DEE883882C9975CA008DAD26 /* SLViewController.swift in Sources */,
 				DE89C1652C8B3AE100CB9160 /* UIColor+Extension.swift in Sources */,
 				DE89C1782C8B3AE100CB9160 /* ScreenSize.swift in Sources */,
 				DE89C3312C8B3F1800CB9160 /* PaygateProductButton.swift in Sources */,
@@ -1191,6 +1284,8 @@
 				DE89C1752C8B3AE100CB9160 /* NumberLaunches.swift in Sources */,
 				DE89C2302C8B3AE200CB9160 /* SplashView.swift in Sources */,
 				DE89C2232C8B3AE100CB9160 /* OnboardingView.swift in Sources */,
+				DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */,
+				DE89C4112C949EE500CB9160 /* AssistantCameraWritingModeView.swift in Sources */,
 				DE89C3E72C931B4200CB9160 /* HistoryImageCell.swift in Sources */,
 				DE89C1742C8B3AE100CB9160 /* Fonts.swift in Sources */,
 				DE89C3D52C92E8A200CB9160 /* AssistantHistoryItem.swift in Sources */,
@@ -1210,6 +1305,7 @@
 				DE89C3B12C918E9300CB9160 /* AccountActionView.swift in Sources */,
 				DE89C17F2C8B3AE100CB9160 /* SceneDelegate.swift in Sources */,
 				DE89C32E2C8B3F1800CB9160 /* PaygateEnableTrialButton.swift in Sources */,
+				DEE883952C99C190008DAD26 /* ACEView.swift in Sources */,
 				DE89C3972C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift in Sources */,
 				DE89C1712C8B3AE100CB9160 /* NetworkError.swift in Sources */,
 				DE89C32D2C8B3F1800CB9160 /* PaygateBestOfferView.swift in Sources */,

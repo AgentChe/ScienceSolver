@@ -13,6 +13,7 @@ final class AssistantCameraView: UIView {
     lazy var wallpapersButton = makeTapAreaButton(imageName: "AssistantCamera.Wallpapers")
     lazy var takeButton = makeTapAreaButton(imageName: "AssistantCamera.Take")
     lazy var flashButton = makeTapAreaButton(imageName: "AssistantCamera.Flash")
+    lazy var writingModeView = makeWritingModeView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -70,6 +71,13 @@ private extension AssistantCameraView {
             flashButton.leadingAnchor.constraint(equalTo: takeButton.trailingAnchor, constant: 32.scale),
             flashButton.centerYAnchor.constraint(equalTo: takeButton.centerYAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            writingModeView.widthAnchor.constraint(equalToConstant: 172.scale),
+            writingModeView.heightAnchor.constraint(equalToConstant: 43.scale),
+            writingModeView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            writingModeView.bottomAnchor.constraint(equalTo: takeButton.topAnchor, constant: -24.scale)
+        ])
     }
 }
 
@@ -95,6 +103,13 @@ private extension AssistantCameraView {
         view.showsHorizontalScrollIndicator = false
         view.contentInset = UIEdgeInsets(horizontal: 100.scale)
         view.setContentOffset(CGPoint(x: -100.scale, y: 0), animated: false)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeWritingModeView() -> AssistantCameraWritingModeView {
+        let view = AssistantCameraWritingModeView()
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
