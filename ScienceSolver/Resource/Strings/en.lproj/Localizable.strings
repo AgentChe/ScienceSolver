@@ -97,6 +97,9 @@
 // MARK: AssistantCamera
 "AssistantCamera.Essay" = "Essay";
 "AssistantCamera.Outline" = "Outline";
+"AssistantCamera.PermissionProblem.Title" = "Allow access to camera";
+"AssistantCamera.PermissionProblem.SubTitle" = "This allows you to easily scan or take pictures of your tasks";
+"AssistantCamera.PermissionProblem.Button" = "Allow access";
 
 // MARK: SelectWritingMode
 "SelectWritingMode.Essay" = "Essay Type";

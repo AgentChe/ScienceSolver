@@ -172,8 +172,6 @@ private extension AssistantImageResizeViewController {
     func animate(_ animate: Bool) {
         animate ? mainView.animateView.animate() : mainView.animateView.cancel()
         
-        mainView.cancelButton.isHidden = animate
         mainView.doneButton.isHidden = animate
-        mainView.selectEntityButton.isHidden = animate
     }
 }

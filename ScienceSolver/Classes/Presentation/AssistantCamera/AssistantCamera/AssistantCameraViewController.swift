@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import PhotosUI
+import AVFoundation
 
 final class AssistantCameraViewController: UIViewController {
     struct Result {
@@ -33,6 +34,12 @@ final class AssistantCameraViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
+    private lazy var cameraService: CameraService = {
+        let cameraService = CameraService()
+        cameraService.delegate = self
+        return cameraService
+    }()
+    
     private init(assistant: AssistantsCollectionElement.Assistant?) {
         viewModel = AssistantCameraViewModel(assistant: assistant)
         
@@ -53,12 +60,20 @@ final class AssistantCameraViewController: UIViewController {
         let output = viewModel.configure(input: AssistantCameraViewModel.Input(
             didTapDismiss: mainView.closeButton.rx.tap.asSignal(),
             didTapSelectImageFromLibrary: mainView.wallpapersButton.rx.tap.asSignal(),
-            didSelect: mainView.collectionView.didSelect
+            didSelect: mainView.collectionView.didSelect,
+            didTapTakePhoto: mainView.takeButton.rx.tap.asSignal(),
+            didTapAllowAccess: mainView.permissionProblemView.allowAccessButton.rx.tap.asSignal()
         ))
         
         output.route
             .drive(Binder(self) { base, route in
                 base.route(route)
+            })
+            .disposed(by: disposeBag)
+        
+        output.action
+            .drive(Binder(self) { base, action in
+                base.action(action)
             })
             .disposed(by: disposeBag)
         
@@ -71,6 +86,13 @@ final class AssistantCameraViewController: UIViewController {
         output.writingModeHidden
             .drive(Binder(mainView.writingModeView) { base, hidden in
                 base.isHidden = hidden
+            })
+            .disposed(by: disposeBag)
+        
+        rx.methodInvoked(#selector(UIViewController.viewDidLayoutSubviews))
+            .take(1)
+            .bind(to: Binder(self) { base, _ in
+                base.setupCameraLayer()
             })
             .disposed(by: disposeBag)
     }
@@ -106,6 +128,13 @@ extension AssistantCameraViewController: PHPickerViewControllerDelegate {
     }
 }
 
+// MARK: CameraServiceDelegate
+extension AssistantCameraViewController: CameraServiceDelegate {
+    func setPhoto(image: UIImage) {
+        complete(image: image)
+    }
+}
+
 // MARK: Private
 private extension AssistantCameraViewController {
     func route(_ route: AssistantCameraViewModel.Route) {
@@ -122,6 +151,20 @@ private extension AssistantCameraViewController {
             picker.delegate = self
             
             present(picker, animated: true)
+        case .requestPermissionInSettings:
+            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+            
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    func action(_ action: AssistantCameraViewModel.Action) {
+        switch action {
+        case .takePhoto:
+            let photoSettings = AVCapturePhotoSettings()
+            photoSettings.isHighResolutionPhotoEnabled = true
+            photoSettings.flashMode = .off
+            cameraService.photoOutput.capturePhoto(with: photoSettings, delegate: cameraService)
         }
     }
     
@@ -148,5 +191,32 @@ private extension AssistantCameraViewController {
         let result = Result(image: image, assistant: assistant)
         
         didResult?(result)
+    }
+    
+    func setupCameraLayer() {
+        func ui(authorized: Bool) {
+            mainView.permissionProblemView.isHidden = authorized
+            mainView.takeButton.isHidden = !authorized
+            
+            if authorized {
+                let previewLayer = AVCaptureVideoPreviewLayer(session: cameraService.captureSession) as AVCaptureVideoPreviewLayer
+                previewLayer.frame = mainView.bounds
+                previewLayer.videoGravity = .resizeAspectFill
+                mainView.layer.insertSublayer(previewLayer, at: 0)
+            }
+        }
+        
+        let cameraAuthStatus = AVCaptureDevice.authorizationStatus(for: .video)
+        
+        switch cameraAuthStatus {
+        case .authorized:
+            ui(authorized: true)
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { authorized in
+                ui(authorized: authorized)
+            }
+        default:
+            ui(authorized: false)
+        }
     }
 }

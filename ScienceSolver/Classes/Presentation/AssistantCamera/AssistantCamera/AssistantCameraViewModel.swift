@@ -10,7 +10,11 @@ import RxCocoa
 
 final class AssistantCameraViewModel {
     enum Route {
-        case dismiss, selectImageFromLibrary
+        case dismiss, selectImageFromLibrary, requestPermissionInSettings
+    }
+    
+    enum Action {
+        case takePhoto
     }
     
     private let initialAssistant: Driver<AssistantsCollectionElement.Assistant?>
@@ -26,12 +30,15 @@ extension AssistantCameraViewModel {
         let didTapDismiss: Signal<Void>
         let didTapSelectImageFromLibrary: Signal<Void>
         let didSelect: Signal<AssistantsCollectionElement.Assistant>
+        let didTapTakePhoto: Signal<Void>
+        let didTapAllowAccess: Signal<Void>
     }
     
     struct Output {
         let route: Driver<Route>
         let elements: Driver<[AssistantsCollectionElement]>
         let writingModeHidden: Driver<Bool>
+        let action: Driver<Action>
     }
     
     func configure(input: Input) -> Output {
@@ -41,10 +48,12 @@ extension AssistantCameraViewModel {
         return Output(
             route: makeRoute(
                 didTapDismiss: input.didTapDismiss,
-                didTapSelectImageFromLibrary: input.didTapSelectImageFromLibrary
+                didTapSelectImageFromLibrary: input.didTapSelectImageFromLibrary,
+                didTapAllowAccess: input.didTapAllowAccess
             ),
             elements: makeElements(startAssistant: startAssistant),
-            writingModeHidden: currentAssistant.map { $0 != .writing }
+            writingModeHidden: currentAssistant.map { $0 != .writing },
+            action: makeAction(didTapTakePhoto: input.didTapTakePhoto)
         )
     }
 }
@@ -53,7 +62,8 @@ extension AssistantCameraViewModel {
 private extension AssistantCameraViewModel {
     func makeRoute(
         didTapDismiss: Signal<Void>,
-        didTapSelectImageFromLibrary: Signal<Void>
+        didTapSelectImageFromLibrary: Signal<Void>,
+        didTapAllowAccess: Signal<Void>
     ) -> Driver<Route> {
         let dismiss = didTapDismiss
             .map { Route.dismiss }
@@ -63,8 +73,12 @@ private extension AssistantCameraViewModel {
             .map { Route.selectImageFromLibrary }
             .asDriver(onErrorDriveWith: .never())
         
+        let requestPermissionInSettings = didTapAllowAccess
+            .map { Route.requestPermissionInSettings }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(dismiss, selectImageFromLibrary)
+            .merge(dismiss, selectImageFromLibrary, requestPermissionInSettings)
     }
     
     func makeElements(startAssistant: Driver<AssistantsCollectionElement.Assistant>) -> Driver<[AssistantsCollectionElement]> {
@@ -79,5 +93,14 @@ private extension AssistantCameraViewModel {
                     .init(assistant: .language, marked: startAssistant == .language)
                 ]
             }
+    }
+    
+    func makeAction(didTapTakePhoto: Signal<Void>) -> Driver<Action> {
+        let takePhoto = didTapTakePhoto
+            .map { Action.takePhoto }
+            .asDriver(onErrorDriveWith: .never())
+        
+        return Driver
+            .merge(takePhoto)
     }
 }

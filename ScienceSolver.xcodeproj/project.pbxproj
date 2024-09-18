@@ -165,6 +165,8 @@
 		DEE8838F2C9976BE008DAD26 /* SLPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8838E2C9976BE008DAD26 /* SLPickerView.swift */; };
 		DEE883932C99C18B008DAD26 /* ACEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883922C99C18B008DAD26 /* ACEViewController.swift */; };
 		DEE883952C99C190008DAD26 /* ACEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883942C99C190008DAD26 /* ACEView.swift */; };
+		DEE883982C9AAB04008DAD26 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883972C9AAB04008DAD26 /* CameraService.swift */; };
+		DEE8839E2C9ABC6C008DAD26 /* AssistantCameraPermissionProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8839D2C9ABC6C008DAD26 /* AssistantCameraPermissionProblemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -330,6 +332,8 @@
 		DEE8838E2C9976BE008DAD26 /* SLPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPickerView.swift; sourceTree = "<group>"; };
 		DEE883922C99C18B008DAD26 /* ACEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACEViewController.swift; sourceTree = "<group>"; };
 		DEE883942C99C190008DAD26 /* ACEView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACEView.swift; sourceTree = "<group>"; };
+		DEE883972C9AAB04008DAD26 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		DEE8839D2C9ABC6C008DAD26 /* AssistantCameraPermissionProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantCameraPermissionProblemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -949,6 +953,7 @@
 			children = (
 				DE89C3FC2C93481900CB9160 /* AssistantsCollection */,
 				DE89C4102C949EE500CB9160 /* AssistantCameraWritingModeView.swift */,
+				DEE8839D2C9ABC6C008DAD26 /* AssistantCameraPermissionProblemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -966,6 +971,7 @@
 		DE89C4032C934E9500CB9160 /* AssistantCamera */ = {
 			isa = PBXGroup;
 			children = (
+				DEE8839C2C9AB7D3008DAD26 /* Utils */,
 				DE89C3FB2C93481200CB9160 /* Views */,
 				DE89C3F52C9344E500CB9160 /* AssistantCameraViewController.swift */,
 				DE89C3F72C9344EC00CB9160 /* AssistantCameraViewModel.swift */,
@@ -1046,6 +1052,14 @@
 				DEE883942C99C190008DAD26 /* ACEView.swift */,
 			);
 			path = AssistantCameraError;
+			sourceTree = "<group>";
+		};
+		DEE8839C2C9AB7D3008DAD26 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DEE883972C9AAB04008DAD26 /* CameraService.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1296,9 +1310,11 @@
 				DE89C1662C8B3AE100CB9160 /* UIDevice+Extension.swift in Sources */,
 				DE89C4002C93482E00CB9160 /* AssistantsCollectionElement.swift in Sources */,
 				DE89C32A2C8B3F1800CB9160 /* Currency.swift in Sources */,
+				DEE883982C9AAB04008DAD26 /* CameraService.swift in Sources */,
 				DE89C1562C8B3AE100CB9160 /* NavigationControllerSettings.swift in Sources */,
 				DE89C3402C8B42A800CB9160 /* ProfileBindingRequest.swift in Sources */,
 				DE89C3892C8F080500CB9160 /* Language.swift in Sources */,
+				DEE8839E2C9ABC6C008DAD26 /* AssistantCameraPermissionProblemView.swift in Sources */,
 				DE89C17D2C8B3AE100CB9160 /* Appearance.swift in Sources */,
 				DE89C36E2C8EE1A800CB9160 /* AssistantManager.swift in Sources */,
 				DE89C40B2C94770700CB9160 /* AssistantImageResizeViewController.swift in Sources */,
@@ -1473,6 +1489,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScienceSolver/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1507,6 +1525,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScienceSolver/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

@@ -14,6 +14,7 @@ final class AssistantCameraView: UIView {
     lazy var takeButton = makeTapAreaButton(imageName: "AssistantCamera.Take")
     lazy var flashButton = makeTapAreaButton(imageName: "AssistantCamera.Flash")
     lazy var writingModeView = makeWritingModeView()
+    lazy var permissionProblemView = makePermissionProblemView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,6 +79,12 @@ private extension AssistantCameraView {
             writingModeView.centerXAnchor.constraint(equalTo: centerXAnchor),
             writingModeView.bottomAnchor.constraint(equalTo: takeButton.topAnchor, constant: -24.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            permissionProblemView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            permissionProblemView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            permissionProblemView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
     }
 }
 
@@ -110,6 +117,14 @@ private extension AssistantCameraView {
     
     func makeWritingModeView() -> AssistantCameraWritingModeView {
         let view = AssistantCameraWritingModeView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePermissionProblemView() -> AssistantCameraPermissionProblemView {
+        let view = AssistantCameraPermissionProblemView()
+        view.isHidden = true
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
