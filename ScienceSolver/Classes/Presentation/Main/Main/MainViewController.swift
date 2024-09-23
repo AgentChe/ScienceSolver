@@ -42,14 +42,11 @@ final class MainViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        // TODO
         mainView.tabView.recognizerButton
             .rx.tap.bind(to: (Binder(self) { base, void in
-                let vc = AssistantRecognizerController.make() { result in
-                    print(result)
-                }
-                base.present(vc, animated: true)
+                AssistantAssembly().recognize(from: base)
             }))
+            .disposed(by: disposeBag)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

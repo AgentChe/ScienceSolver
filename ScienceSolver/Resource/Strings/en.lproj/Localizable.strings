@@ -114,3 +114,13 @@
 "AssistantCameraError.Title" = "Couldn’t recognize text in image";
 "AssistantCameraError.SubTitle" = "Please check that the text is aligned and clearly visible";
 "AssistantCameraError.Button" = "Try again";
+
+// MARK: AssistantResult
+"AssistantResult.Helpful" = "Was it helpful?";
+"AssistantResult.Answer" = "Answer";
+"AssistantResult.Explanation" = "Explanation";
+"AssistantResult.Recommendation" = "Recommendation";
+"AssistantResult.Math.UserFormula" = "User Formula";
+"AssistantResult.Math.Problem" = "Problem";
+"AssistantResult.Math.Solution" = "Solution";
+"AssistantResult.Copied" = "Copied";

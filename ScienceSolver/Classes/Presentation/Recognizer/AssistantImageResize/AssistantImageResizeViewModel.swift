@@ -150,7 +150,7 @@ private extension AssistantImageResizeViewModel {
                         .asDriver(onErrorJustReturn: nil)
                         .map { result -> Action in
                             guard let result else { return .error }
-                            return .result(.math(result))
+                            return .result(.init(croppedImage: image, assistant: .math(result)))
                         }
                 case .physics:
                     return assistantManager
@@ -158,7 +158,7 @@ private extension AssistantImageResizeViewModel {
                         .asDriver(onErrorJustReturn: nil)
                         .map { result -> Action in
                             guard let result else { return .error }
-                            return .result(.physics(result))
+                            return .result(.init(croppedImage: image, assistant: .physics(result)))
                         }
                 case .biology:
                     return assistantManager
@@ -166,7 +166,7 @@ private extension AssistantImageResizeViewModel {
                         .asDriver(onErrorJustReturn: nil)
                         .map { result -> Action in
                             guard let result else { return .error }
-                            return .result(.biology(result))
+                            return .result(.init(croppedImage: image, assistant: .biology(result)))
                         }
                 case .chemistry:
                     return assistantManager
@@ -174,7 +174,7 @@ private extension AssistantImageResizeViewModel {
                         .asDriver(onErrorJustReturn: nil)
                         .map { result -> Action in
                             guard let result else { return .error }
-                            return .result(.chemistry(result))
+                            return .result(.init(croppedImage: image, assistant: .chemistry(result)))
                         }
                 case .writing(let mode):
                     guard let writingStyle = additionalInfo?.writingStyle else {
@@ -186,7 +186,7 @@ private extension AssistantImageResizeViewModel {
                         .asDriver(onErrorJustReturn: nil)
                         .map { result -> Action in
                             guard let result else { return .error }
-                            return .result(.writing(writingStyle, result))
+                            return .result(.init(croppedImage: image, assistant: .writing(writingStyle, result)))
                         }
                 case .language:
                     guard let language = additionalInfo?.language else {
@@ -198,7 +198,7 @@ private extension AssistantImageResizeViewModel {
                         .asDriver(onErrorJustReturn: nil)
                         .map { result -> Action in
                             guard let result else { return .error }
-                            return .result(.language(result))
+                            return .result(.init(croppedImage: image, assistant: .language(result)))
                         }
                 }
             }

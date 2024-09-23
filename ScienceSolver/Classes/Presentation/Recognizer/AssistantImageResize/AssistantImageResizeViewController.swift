@@ -11,13 +11,18 @@ import RxCocoa
 import Mantis
 
 final class AssistantImageResizeViewController: UIViewController {
-    enum Result {
-        case math(AssistantAnalyzeImageResult)
-        case physics(AssistantAnalyzeImageResult)
-        case biology(AssistantAnalyzeImageResult)
-        case chemistry(AssistantAnalyzeImageResult)
-        case writing(WritingStyle, AssistantAnalyzeImageResult)
-        case language(TranslateResult)
+    struct Result {
+        enum Assistant {
+            case math(AssistantAnalyzeImageResult)
+            case physics(AssistantAnalyzeImageResult)
+            case biology(AssistantAnalyzeImageResult)
+            case chemistry(AssistantAnalyzeImageResult)
+            case writing(WritingStyle, AssistantAnalyzeImageResult)
+            case language(TranslateResult)
+        }
+        
+        let croppedImage: UIImage
+        let assistant: Assistant
     }
     
     var didResult: ((Result) -> Void)?
@@ -172,6 +177,7 @@ private extension AssistantImageResizeViewController {
     func animate(_ animate: Bool) {
         animate ? mainView.animateView.animate() : mainView.animateView.cancel()
         
+        mainView.cancelButton.isHidden = animate
         mainView.doneButton.isHidden = animate
     }
 }

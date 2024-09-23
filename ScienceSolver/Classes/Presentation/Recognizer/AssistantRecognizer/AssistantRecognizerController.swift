@@ -26,10 +26,16 @@ final class AssistantRecognizerController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
+    private let close: () -> Void
     private let result: (Result) -> Void
     
-    private init(assistant: AssistantsCollectionElement.Assistant?, result: @escaping (Result) -> Void) {
+    private init(
+        assistant: AssistantsCollectionElement.Assistant?, 
+        close: @escaping () -> Void,
+        result: @escaping (Result) -> Void
+    ) {
         self.cameraVC = AssistantCameraViewController.make(assistant: assistant)
+        self.close = close
         self.result = result
         
         super.init(nibName: nil, bundle: nil)
@@ -54,9 +60,7 @@ final class AssistantRecognizerController: UIViewController {
             vc.didResult = { [weak self] recognized in
                 let finally = Result(fromCamera: fromCamera, recognized: recognized)
                 
-                self?.dismiss(animated: true) { [weak self] in
-                    self?.result(finally)
-                }
+                self?.result(finally)
             }
             
             vc.didCancel = { [weak self] in
@@ -69,7 +73,7 @@ final class AssistantRecognizerController: UIViewController {
         }
         
         cameraVC.didClose = { [weak self] in
-            self?.dismiss(animated: true)
+            self?.close()
         }
         
         rx.methodInvoked(#selector(UIViewController.viewDidLayoutSubviews))
@@ -83,8 +87,12 @@ final class AssistantRecognizerController: UIViewController {
 
 // MARK: Public
 extension AssistantRecognizerController {
-    static func make(assistant: AssistantsCollectionElement.Assistant? = nil, result: @escaping (AssistantRecognizerController.Result) -> Void) -> AssistantRecognizerController {
-        let vc = AssistantRecognizerController(assistant: assistant, result: result)
+    static func make(
+        assistant: AssistantsCollectionElement.Assistant? = nil,
+        close: @escaping () -> Void,
+        result: @escaping (AssistantRecognizerController.Result) -> Void
+    ) -> AssistantRecognizerController {
+        let vc = AssistantRecognizerController(assistant: assistant, close: close, result: result)
         vc.modalPresentationStyle = .fullScreen
         return vc
     }

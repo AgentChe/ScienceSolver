@@ -167,6 +167,18 @@
 		DEE883952C99C190008DAD26 /* ACEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883942C99C190008DAD26 /* ACEView.swift */; };
 		DEE883982C9AAB04008DAD26 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883972C9AAB04008DAD26 /* CameraService.swift */; };
 		DEE8839E2C9ABC6C008DAD26 /* AssistantCameraPermissionProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8839D2C9ABC6C008DAD26 /* AssistantCameraPermissionProblemView.swift */; };
+		DEE883A12C9AED8D008DAD26 /* AssistantResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883A02C9AED8D008DAD26 /* AssistantResultViewController.swift */; };
+		DEE883A32C9AED92008DAD26 /* AssistantResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883A22C9AED92008DAD26 /* AssistantResultViewModel.swift */; };
+		DEE883A52C9AED96008DAD26 /* AssistantResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883A42C9AED96008DAD26 /* AssistantResultView.swift */; };
+		DEE883A92C9AEDEC008DAD26 /* AssistantResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883A82C9AEDEC008DAD26 /* AssistantResultTableView.swift */; };
+		DEE883AB2C9AEDF1008DAD26 /* AssistantResultTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883AA2C9AEDF1008DAD26 /* AssistantResultTableElement.swift */; };
+		DEE883AE2C9AEE2F008DAD26 /* ARTQuestionImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883AD2C9AEE2F008DAD26 /* ARTQuestionImageCell.swift */; };
+		DEE883B02C9AEE37008DAD26 /* ARTQuestionTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883AF2C9AEE37008DAD26 /* ARTQuestionTextCell.swift */; };
+		DEE883B22C9AEE42008DAD26 /* ARTLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883B12C9AEE42008DAD26 /* ARTLoadingCell.swift */; };
+		DEE883B42C9AEE57008DAD26 /* ARTAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883B32C9AEE57008DAD26 /* ARTAnswerCell.swift */; };
+		DEE883B62C9AEE61008DAD26 /* ARTHelpfulCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883B52C9AEE61008DAD26 /* ARTHelpfulCell.swift */; };
+		DEE883B92C9AF75A008DAD26 /* AssistantAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883B82C9AF75A008DAD26 /* AssistantAssembly.swift */; };
+		DEE883BC2C9B2D27008DAD26 /* ART.Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = DEE883BB2C9B2D27008DAD26 /* ART.Loader.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -334,6 +346,18 @@
 		DEE883942C99C190008DAD26 /* ACEView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACEView.swift; sourceTree = "<group>"; };
 		DEE883972C9AAB04008DAD26 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
 		DEE8839D2C9ABC6C008DAD26 /* AssistantCameraPermissionProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantCameraPermissionProblemView.swift; sourceTree = "<group>"; };
+		DEE883A02C9AED8D008DAD26 /* AssistantResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantResultViewController.swift; sourceTree = "<group>"; };
+		DEE883A22C9AED92008DAD26 /* AssistantResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantResultViewModel.swift; sourceTree = "<group>"; };
+		DEE883A42C9AED96008DAD26 /* AssistantResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantResultView.swift; sourceTree = "<group>"; };
+		DEE883A82C9AEDEC008DAD26 /* AssistantResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantResultTableView.swift; sourceTree = "<group>"; };
+		DEE883AA2C9AEDF1008DAD26 /* AssistantResultTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantResultTableElement.swift; sourceTree = "<group>"; };
+		DEE883AD2C9AEE2F008DAD26 /* ARTQuestionImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTQuestionImageCell.swift; sourceTree = "<group>"; };
+		DEE883AF2C9AEE37008DAD26 /* ARTQuestionTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTQuestionTextCell.swift; sourceTree = "<group>"; };
+		DEE883B12C9AEE42008DAD26 /* ARTLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTLoadingCell.swift; sourceTree = "<group>"; };
+		DEE883B32C9AEE57008DAD26 /* ARTAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTAnswerCell.swift; sourceTree = "<group>"; };
+		DEE883B52C9AEE61008DAD26 /* ARTHelpfulCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTHelpfulCell.swift; sourceTree = "<group>"; };
+		DEE883B82C9AF75A008DAD26 /* AssistantAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAssembly.swift; sourceTree = "<group>"; };
+		DEE883BB2C9B2D27008DAD26 /* ART.Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ART.Loader.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -602,7 +626,8 @@
 		DE89C0F12C8B3AE100CB9160 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				DE89C3F42C9344DB00CB9160 /* AssistantCamera */,
+				DEE8839F2C9AED06008DAD26 /* Assistant */,
+				DE89C3F42C9344DB00CB9160 /* Recognizer */,
 				DE89C3432C8B465900CB9160 /* TryAgain */,
 				DE89C0D42C8B3AE100CB9160 /* Main */,
 				DE89C0F02C8B3AE100CB9160 /* Splash */,
@@ -935,7 +960,7 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		DE89C3F42C9344DB00CB9160 /* AssistantCamera */ = {
+		DE89C3F42C9344DB00CB9160 /* Recognizer */ = {
 			isa = PBXGroup;
 			children = (
 				DEE883912C99C176008DAD26 /* AssistantCameraError */,
@@ -945,7 +970,7 @@
 				DE89C4092C9476F500CB9160 /* AssistantImageResize */,
 				DE89C4032C934E9500CB9160 /* AssistantCamera */,
 			);
-			path = AssistantCamera;
+			path = Recognizer;
 			sourceTree = "<group>";
 		};
 		DE89C3FB2C93481200CB9160 /* Views */ = {
@@ -1062,6 +1087,65 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		DEE8839F2C9AED06008DAD26 /* Assistant */ = {
+			isa = PBXGroup;
+			children = (
+				DEE883B72C9AF6ED008DAD26 /* AssistantResult */,
+				DEE883B82C9AF75A008DAD26 /* AssistantAssembly.swift */,
+			);
+			path = Assistant;
+			sourceTree = "<group>";
+		};
+		DEE883A62C9AEDD7008DAD26 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEE883A72C9AEDDD008DAD26 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEE883A72C9AEDDD008DAD26 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEE883AC2C9AEDF4008DAD26 /* Cells */,
+				DEE883A82C9AEDEC008DAD26 /* AssistantResultTableView.swift */,
+				DEE883AA2C9AEDF1008DAD26 /* AssistantResultTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEE883AC2C9AEDF4008DAD26 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEE883BA2C9B2D13008DAD26 /* Source */,
+				DEE883AD2C9AEE2F008DAD26 /* ARTQuestionImageCell.swift */,
+				DEE883AF2C9AEE37008DAD26 /* ARTQuestionTextCell.swift */,
+				DEE883B12C9AEE42008DAD26 /* ARTLoadingCell.swift */,
+				DEE883B32C9AEE57008DAD26 /* ARTAnswerCell.swift */,
+				DEE883B52C9AEE61008DAD26 /* ARTHelpfulCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DEE883B72C9AF6ED008DAD26 /* AssistantResult */ = {
+			isa = PBXGroup;
+			children = (
+				DEE883A62C9AEDD7008DAD26 /* Views */,
+				DEE883A02C9AED8D008DAD26 /* AssistantResultViewController.swift */,
+				DEE883A22C9AED92008DAD26 /* AssistantResultViewModel.swift */,
+				DEE883A42C9AED96008DAD26 /* AssistantResultView.swift */,
+			);
+			path = AssistantResult;
+			sourceTree = "<group>";
+		};
+		DEE883BA2C9B2D13008DAD26 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DEE883BB2C9B2D27008DAD26 /* ART.Loader.json */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1133,6 +1217,7 @@
 				DE89BF8E2C8B35B400CB9160 /* Assets.xcassets in Resources */,
 				DE89BF912C8B35B400CB9160 /* Base in Resources */,
 				DE89C35D2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json in Resources */,
+				DEE883BC2C9B2D27008DAD26 /* ART.Loader.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1202,12 +1287,16 @@
 				DE89C16A2C8B3AE100CB9160 /* DefaultRequestWrapper.swift in Sources */,
 				DE89C3562C8B554700CB9160 /* OnboardingWelcome3View.swift in Sources */,
 				DE89C37B2C8EF5FA00CB9160 /* ChemistryAssistantResult.swift in Sources */,
+				DEE883AE2C9AEE2F008DAD26 /* ARTQuestionImageCell.swift in Sources */,
 				DE89C3D72C92EED700CB9160 /* AssistantHistoryPage.swift in Sources */,
 				DE89C16B2C8B3AE100CB9160 /* APIRequestBody.swift in Sources */,
 				DE89C3912C8F0EFB00CB9160 /* WritingStyle.swift in Sources */,
+				DEE883A32C9AED92008DAD26 /* AssistantResultViewModel.swift in Sources */,
 				DEE8838C2C9975D4008DAD26 /* SLView.swift in Sources */,
 				DE89C3CA2C92E77900CB9160 /* AssistantHistoryRequest.swift in Sources */,
+				DEE883A52C9AED96008DAD26 /* AssistantResultView.swift in Sources */,
 				DE89C2322C8B3AE200CB9160 /* SplashViewModel.swift in Sources */,
+				DEE883B62C9AEE61008DAD26 /* ARTHelpfulCell.swift in Sources */,
 				DE89C1512C8B3AE100CB9160 /* FirebaseManager.swift in Sources */,
 				DE89C3752C8EEBCD00CB9160 /* MathAssistantResult.swift in Sources */,
 				DE89C3542C8B554000CB9160 /* OnboardingWelcome2View.swift in Sources */,
@@ -1236,8 +1325,10 @@
 				DE89C15B2C8B3AE100CB9160 /* GradientView.swift in Sources */,
 				DE89C32B2C8B3F1800CB9160 /* PaygateInteractor.swift in Sources */,
 				DE89C4062C94735700CB9160 /* AssistantRecognizerController.swift in Sources */,
+				DEE883A92C9AEDEC008DAD26 /* AssistantResultTableView.swift in Sources */,
 				DE89C3712C8EE5E700CB9160 /* AssistantAnalyzeImage.swift in Sources */,
 				DE89C3AC2C918DDD00CB9160 /* AccountHistoryCell.swift in Sources */,
+				DEE883B02C9AEE37008DAD26 /* ARTQuestionTextCell.swift in Sources */,
 				DE89C1602C8B3AE100CB9160 /* TapAreaButton.swift in Sources */,
 				DE89C3812C8EFBD800CB9160 /* AssistantTranslateImage.swift in Sources */,
 				DE89C3FA2C9344F100CB9160 /* AssistantCameraView.swift in Sources */,
@@ -1267,6 +1358,7 @@
 				DE89C1762C8B3AE100CB9160 /* ObservableRetrySingle.swift in Sources */,
 				DEE883932C99C18B008DAD26 /* ACEViewController.swift in Sources */,
 				DE89C37F2C8EFAC900CB9160 /* AssistantHelpfulRequest.swift in Sources */,
+				DEE883B92C9AF75A008DAD26 /* AssistantAssembly.swift in Sources */,
 				DE89C38B2C8F0A1100CB9160 /* GetLanguagesRequest.swift in Sources */,
 				DE89C3B32C919A4F00CB9160 /* AccountTitleCell.swift in Sources */,
 				DE89C22F2C8B3AE200CB9160 /* SplashReceiptValidationObserver.swift in Sources */,
@@ -1287,6 +1379,7 @@
 				DE89C3472C8B467A00CB9160 /* TryAgainView.swift in Sources */,
 				DE89C4022C93483300CB9160 /* AssistantsCollectionCell.swift in Sources */,
 				DE89C16D2C8B3AE100CB9160 /* PushNotificationsAuthorizationStatus.swift in Sources */,
+				DEE883B42C9AEE57008DAD26 /* ARTAnswerCell.swift in Sources */,
 				DEE8837E2C996922008DAD26 /* SWMView.swift in Sources */,
 				DEE883882C9975CA008DAD26 /* SLViewController.swift in Sources */,
 				DE89C1652C8B3AE100CB9160 /* UIColor+Extension.swift in Sources */,
@@ -1295,6 +1388,7 @@
 				DE89C3792C8EF5DA00CB9160 /* BiologyAssistantResult.swift in Sources */,
 				DE89C1772C8B3AE100CB9160 /* Scalable.swift in Sources */,
 				DE89C33E2C8B41F600CB9160 /* ProfileCreateRequest.swift in Sources */,
+				DEE883A12C9AED8D008DAD26 /* AssistantResultViewController.swift in Sources */,
 				DE89C1752C8B3AE100CB9160 /* NumberLaunches.swift in Sources */,
 				DE89C2302C8B3AE200CB9160 /* SplashView.swift in Sources */,
 				DE89C2232C8B3AE100CB9160 /* OnboardingView.swift in Sources */,
@@ -1305,6 +1399,7 @@
 				DE89C3D52C92E8A200CB9160 /* AssistantHistoryItem.swift in Sources */,
 				DE89C1682C8B3AE100CB9160 /* UITapGestureRecognizer+Extension.swift in Sources */,
 				DE89C38F2C8F0ED900CB9160 /* WritingMode.swift in Sources */,
+				DEE883AB2C9AEDF1008DAD26 /* AssistantResultTableElement.swift in Sources */,
 				DE89C1542C8B3AE100CB9160 /* RxActivityIndicator.swift in Sources */,
 				DE89C20A2C8B3AE100CB9160 /* MainViewController.swift in Sources */,
 				DE89C1662C8B3AE100CB9160 /* UIDevice+Extension.swift in Sources */,
@@ -1318,6 +1413,7 @@
 				DE89C17D2C8B3AE100CB9160 /* Appearance.swift in Sources */,
 				DE89C36E2C8EE1A800CB9160 /* AssistantManager.swift in Sources */,
 				DE89C40B2C94770700CB9160 /* AssistantImageResizeViewController.swift in Sources */,
+				DEE883B22C9AEE42008DAD26 /* ARTLoadingCell.swift in Sources */,
 				DE89C3B12C918E9300CB9160 /* AccountActionView.swift in Sources */,
 				DE89C17F2C8B3AE100CB9160 /* SceneDelegate.swift in Sources */,
 				DE89C32E2C8B3F1800CB9160 /* PaygateEnableTrialButton.swift in Sources */,

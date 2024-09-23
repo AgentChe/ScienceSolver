@@ -26,7 +26,7 @@ final class CameraService: NSObject {
     private var frontInput: AVCaptureInput!
     private let cameraQueue = DispatchQueue(label: "com.capturingQueue")
 
-    private var startZoom: CGFloat = 2.0
+    private var startZoom: CGFloat = 1.0
     private let zoomLimit: CGFloat = 10.0
 
     private var backCameraOn = true
