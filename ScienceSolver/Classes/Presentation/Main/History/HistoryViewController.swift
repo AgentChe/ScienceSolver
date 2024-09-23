@@ -69,7 +69,9 @@ private extension HistoryViewController {
     func route(_ route: HistoryViewModel.Route) {
         switch route {
         case .select(let item):
-            break // TODO
+            guard let nc = navigationController else { return }
+            
+            AssistantAssembly().history(item: item, from: nc)
         }
     }
     

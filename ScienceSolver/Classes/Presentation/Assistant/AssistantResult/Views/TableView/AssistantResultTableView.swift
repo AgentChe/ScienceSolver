@@ -34,9 +34,6 @@ extension AssistantResultTableView {
         self.elements = elements
         
         reloadData()
-        
-        let index = IndexSet(integer: 0)
-        reloadSections(index, with: .none)
     }
     
     var didTapLike: Signal<Void> {
@@ -64,6 +61,10 @@ extension AssistantResultTableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch elements[indexPath.row] {
+        case .questionImageUrl(let url):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: ARTQuestionImageCell.self), for: indexPath) as! ARTQuestionImageCell
+            cell.setup(url: url)
+            return cell
         case .questionImage(let image):
             let cell = dequeueReusableCell(withIdentifier: String(describing: ARTQuestionImageCell.self), for: indexPath) as! ARTQuestionImageCell
             cell.setup(image: image)
@@ -100,13 +101,7 @@ extension AssistantResultTableView: UITableViewDataSource {
 // MARK: UITableViewDelegate
 extension AssistantResultTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch elements[indexPath.row] {
-        case .questionImage(let image):
-            let aspectHeight = image.size.height / image.size.width * frame.width
-            return aspectHeight + 32.scale
-        default:
-            return UITableView.automaticDimension
-        }
+        UITableView.automaticDimension
     }
 }
 

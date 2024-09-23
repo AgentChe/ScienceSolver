@@ -26,4 +26,16 @@ final class AssistantAssembly {
         
         from.present(nc, animated: true)
     }
+    
+    func history(item: AssistantHistoryItem, from: UINavigationController) {
+        let ncHidden = from.isNavigationBarHidden
+        
+        from.setNavigationBarHidden(true, animated: false)
+        
+        let resultVC = AssistantResultViewController.make(historyItem: item) { [weak from] in
+            from?.popViewController(animated: true)
+            from?.setNavigationBarHidden(ncHidden, animated: true)
+        }
+        from.pushViewController(resultVC, animated: true)
+    }
 }

@@ -18,6 +18,13 @@ final class AssistantResultViewController: UIViewController {
     
     private let didTapClose: () -> Void
     
+    private init(historyItem: AssistantHistoryItem, didTapClose: @escaping () -> Void) {
+        self.viewModel = AssistantResultViewModel(historyItem: historyItem)
+        self.didTapClose = didTapClose
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
     private init(recognized: AssistantRecognizerController.Result, didTapClose: @escaping () -> Void) {
         self.viewModel = AssistantResultViewModel(recognized: recognized)
         self.didTapClose = didTapClose
@@ -66,6 +73,12 @@ final class AssistantResultViewController: UIViewController {
 extension AssistantResultViewController {
     static func make(recognized: AssistantRecognizerController.Result, didTapClose: @escaping () -> Void) -> AssistantResultViewController {
         let vc = AssistantResultViewController(recognized: recognized, didTapClose: didTapClose)
+        vc.navigationItem.backButtonTitle = " "
+        return vc
+    }
+    
+    static func make(historyItem: AssistantHistoryItem, didTapClose: @escaping () -> Void) -> AssistantResultViewController {
+        let vc = AssistantResultViewController(historyItem: historyItem, didTapClose: didTapClose)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }

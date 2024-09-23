@@ -2,14 +2,19 @@
 //  ARTQuestionImageCell.swift
 //  ScienceSolver
 //
-//  Created by Андрей Чернышев on 18.09.2024.
+//  Created by Андрей Чернышев on 23.09.2024.
 //
 
 import UIKit
+import Kingfisher
 
 final class ARTQuestionImageCell: UITableViewCell {
     lazy var container = makeContainer()
     lazy var pictureView = makeImageView()
+    
+    private lazy var pictureHeightConstraint = NSLayoutConstraint()
+    
+    private var imageSize: CGSize?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -21,12 +26,45 @@ final class ARTQuestionImageCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        pictureView.kf.cancelDownloadTask()
+        pictureView.image = nil
+        
+        imageSize = nil
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        updateLayout()
+    }
 }
 
 // MARK: Public
 extension ARTQuestionImageCell {
+    func setup(url: URL) {
+        pictureView.kf.setImage(with: url) { [weak self] result in
+            guard let self, case let .success(result) = result else { return }
+            
+            self.imageSize = result.image.size
+            self.setNeedsLayout()
+            
+            updateLayout()
+        }
+    }
+    
     func setup(image: UIImage) {
-        pictureView.image = image
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            
+            pictureView.image = image
+            
+            imageSize = image.size
+            setNeedsLayout()
+        }
     }
 }
 
@@ -37,9 +75,25 @@ private extension ARTQuestionImageCell {
         contentView.backgroundColor = UIColor.clear
         selectionStyle = .none
     }
+    
+    func updateLayout() {
+        guard let imageSize else { return }
+        
+        let aspectHeight = imageSize.height / imageSize.width * frame.width
+        pictureHeightConstraint.constant = aspectHeight
+        
+        layoutIfNeeded()
+    
+        guard let tableView = superview as? UITableView else { return }
+    
+        UIView.performWithoutAnimation {
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+    }
 }
 
-// MARK: Make constraints
+// MARK: Make constraits
 private extension ARTQuestionImageCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
@@ -49,11 +103,13 @@ private extension ARTQuestionImageCell {
             container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
+        pictureHeightConstraint = pictureView.heightAnchor.constraint(equalToConstant: 0)
         NSLayoutConstraint.activate([
             pictureView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
             pictureView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
             pictureView.topAnchor.constraint(equalTo: container.topAnchor, constant: 16.scale),
-            pictureView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale)
+            pictureView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale),
+            pictureHeightConstraint
         ])
     }
 }

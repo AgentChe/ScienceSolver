@@ -154,6 +154,7 @@
 		DE89C40D2C94770D00CB9160 /* AssistantImageResizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C40C2C94770D00CB9160 /* AssistantImageResizeViewModel.swift */; };
 		DE89C40F2C94771100CB9160 /* AssistantImageResizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C40E2C94771100CB9160 /* AssistantImageResizeView.swift */; };
 		DE89C4112C949EE500CB9160 /* AssistantCameraWritingModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C4102C949EE500CB9160 /* AssistantCameraWritingModeView.swift */; };
+		DEB22DC82CA1916F000200C1 /* ARTQuestionImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DC72CA1916F000200C1 /* ARTQuestionImageCell.swift */; };
 		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
 		DEE8837E2C996922008DAD26 /* SWMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837D2C996922008DAD26 /* SWMView.swift */; };
@@ -172,7 +173,6 @@
 		DEE883A52C9AED96008DAD26 /* AssistantResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883A42C9AED96008DAD26 /* AssistantResultView.swift */; };
 		DEE883A92C9AEDEC008DAD26 /* AssistantResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883A82C9AEDEC008DAD26 /* AssistantResultTableView.swift */; };
 		DEE883AB2C9AEDF1008DAD26 /* AssistantResultTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883AA2C9AEDF1008DAD26 /* AssistantResultTableElement.swift */; };
-		DEE883AE2C9AEE2F008DAD26 /* ARTQuestionImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883AD2C9AEE2F008DAD26 /* ARTQuestionImageCell.swift */; };
 		DEE883B02C9AEE37008DAD26 /* ARTQuestionTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883AF2C9AEE37008DAD26 /* ARTQuestionTextCell.swift */; };
 		DEE883B22C9AEE42008DAD26 /* ARTLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883B12C9AEE42008DAD26 /* ARTLoadingCell.swift */; };
 		DEE883B42C9AEE57008DAD26 /* ARTAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883B32C9AEE57008DAD26 /* ARTAnswerCell.swift */; };
@@ -333,6 +333,7 @@
 		DE89C40C2C94770D00CB9160 /* AssistantImageResizeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantImageResizeViewModel.swift; sourceTree = "<group>"; };
 		DE89C40E2C94771100CB9160 /* AssistantImageResizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantImageResizeView.swift; sourceTree = "<group>"; };
 		DE89C4102C949EE500CB9160 /* AssistantCameraWritingModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantCameraWritingModeView.swift; sourceTree = "<group>"; };
+		DEB22DC72CA1916F000200C1 /* ARTQuestionImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTQuestionImageCell.swift; sourceTree = "<group>"; };
 		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
 		DEE8837D2C996922008DAD26 /* SWMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMView.swift; sourceTree = "<group>"; };
@@ -351,7 +352,6 @@
 		DEE883A42C9AED96008DAD26 /* AssistantResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantResultView.swift; sourceTree = "<group>"; };
 		DEE883A82C9AEDEC008DAD26 /* AssistantResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantResultTableView.swift; sourceTree = "<group>"; };
 		DEE883AA2C9AEDF1008DAD26 /* AssistantResultTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantResultTableElement.swift; sourceTree = "<group>"; };
-		DEE883AD2C9AEE2F008DAD26 /* ARTQuestionImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTQuestionImageCell.swift; sourceTree = "<group>"; };
 		DEE883AF2C9AEE37008DAD26 /* ARTQuestionTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTQuestionTextCell.swift; sourceTree = "<group>"; };
 		DEE883B12C9AEE42008DAD26 /* ARTLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTLoadingCell.swift; sourceTree = "<group>"; };
 		DEE883B32C9AEE57008DAD26 /* ARTAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTAnswerCell.swift; sourceTree = "<group>"; };
@@ -1118,7 +1118,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE883BA2C9B2D13008DAD26 /* Source */,
-				DEE883AD2C9AEE2F008DAD26 /* ARTQuestionImageCell.swift */,
+				DEB22DC72CA1916F000200C1 /* ARTQuestionImageCell.swift */,
 				DEE883AF2C9AEE37008DAD26 /* ARTQuestionTextCell.swift */,
 				DEE883B12C9AEE42008DAD26 /* ARTLoadingCell.swift */,
 				DEE883B32C9AEE57008DAD26 /* ARTAnswerCell.swift */,
@@ -1283,11 +1283,11 @@
 				DE89C15E2C8B3AE100CB9160 /* PaddingTextField.swift in Sources */,
 				DE89C1692C8B3AE100CB9160 /* UIView+RxExtension.swift in Sources */,
 				DE89C32C2C8B3F1800CB9160 /* PaygateActionsView.swift in Sources */,
+				DEB22DC82CA1916F000200C1 /* ARTQuestionImageCell.swift in Sources */,
 				DE89C3A32C918D2C00CB9160 /* AccountView.swift in Sources */,
 				DE89C16A2C8B3AE100CB9160 /* DefaultRequestWrapper.swift in Sources */,
 				DE89C3562C8B554700CB9160 /* OnboardingWelcome3View.swift in Sources */,
 				DE89C37B2C8EF5FA00CB9160 /* ChemistryAssistantResult.swift in Sources */,
-				DEE883AE2C9AEE2F008DAD26 /* ARTQuestionImageCell.swift in Sources */,
 				DE89C3D72C92EED700CB9160 /* AssistantHistoryPage.swift in Sources */,
 				DE89C16B2C8B3AE100CB9160 /* APIRequestBody.swift in Sources */,
 				DE89C3912C8F0EFB00CB9160 /* WritingStyle.swift in Sources */,

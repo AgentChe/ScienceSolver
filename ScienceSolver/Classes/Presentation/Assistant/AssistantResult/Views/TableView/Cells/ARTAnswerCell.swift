@@ -87,8 +87,8 @@ private extension ARTAnswerCell {
             return makeMathViews(response: response)
         case .physics(let response):
             return makePhysicsViews(response: response)
-        case .biolody(let response):
-            return makeBiolodyViews(response: response)
+        case .biology(let response):
+            return makeBiologyViews(response: response)
         case .chemistry(let response):
             return makeChemistryViews(response: response)
         case .writing(let response):
@@ -193,7 +193,7 @@ private extension ARTAnswerCell {
         return views
     }
     
-    func makeBiolodyViews(response: BiologyAssistantResult.Response) -> [UIView] {
+    func makeBiologyViews(response: BiologyAssistantResult.Response) -> [UIView] {
         var views = [UIView]()
         
         if !response.body.isEmpty {
