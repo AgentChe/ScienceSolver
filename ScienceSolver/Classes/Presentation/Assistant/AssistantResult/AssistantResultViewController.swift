@@ -46,7 +46,9 @@ final class AssistantResultViewController: UIViewController {
         let output = viewModel.configure(input: AssistantResultViewModel.Input(
             didTapClose: mainView.closeButton.rx.tap.asSignal(),
             didTapRefresh: mainView.tableView.didTapRefresh,
-            didTapCopy: mainView.tableView.didTapCopy
+            didTapCopy: mainView.tableView.didTapCopy,
+            didTapLike: mainView.tableView.didTapLike,
+            didTapDislike: mainView.tableView.didTapDislike
         ))
         
         output.route

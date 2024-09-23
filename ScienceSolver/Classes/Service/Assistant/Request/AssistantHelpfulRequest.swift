@@ -9,7 +9,7 @@ import Alamofire
 
 struct AssistantHelpfulRequest: APIRequestBody {
     enum AssistantType {
-        case math, physics, biology, chemistry
+        case math, physics, biology, chemistry, writing
     }
     
     let assistantType: AssistantType
@@ -54,6 +54,8 @@ private extension AssistantHelpfulRequest.AssistantType {
             return "biology"
         case .chemistry:
             return "chemistry"
+        case .writing:
+            return "writing"
         }
     }
 }

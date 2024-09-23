@@ -86,6 +86,16 @@ extension PhysicsAssistantResult {
         
         return PhysicsAssistantResult(body: body)
     }
+    
+    func helpful(_ helpful: Bool?) -> PhysicsAssistantResult {
+        PhysicsAssistantResult(
+            threadId: threadId,
+            helpful: helpful,
+            created: created,
+            request: request,
+            response: response
+        )
+    }
 }
 
 // MARK: Public

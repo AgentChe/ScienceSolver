@@ -95,6 +95,16 @@ extension MathAssistantResult {
         
         return MathAssistantResult(body: body)
     }
+    
+    func helpful(_ helpful: Bool?) -> MathAssistantResult {
+        MathAssistantResult(
+            threadId: threadId,
+            helpful: helpful,
+            created: created,
+            request: request,
+            response: response
+        )
+    }
 }
 
 // MARK: Public

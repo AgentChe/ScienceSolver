@@ -39,7 +39,9 @@ final class ARTQuestionImageCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        updateLayout()
+        if pictureHeightConstraint.constant == 0, imageSize != nil {
+            updateLayout()
+        }
     }
 }
 

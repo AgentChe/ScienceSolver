@@ -86,6 +86,16 @@ extension BiologyAssistantResult {
         
         return BiologyAssistantResult(body: body)
     }
+    
+    func helpful(_ helpful: Bool?) -> BiologyAssistantResult {
+        BiologyAssistantResult(
+            threadId: threadId,
+            helpful: helpful,
+            created: created,
+            request: request,
+            response: response
+        )
+    }
 }
 
 // MARK: Public

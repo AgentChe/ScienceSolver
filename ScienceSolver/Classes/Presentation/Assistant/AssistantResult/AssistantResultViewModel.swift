@@ -36,6 +36,8 @@ extension AssistantResultViewModel {
         let didTapClose: Signal<Void>
         let didTapRefresh: Signal<Void>
         let didTapCopy: Signal<AssistantResultTableAnswerElement>
+        let didTapLike: Signal<Void>
+        let didTapDislike: Signal<Void>
     }
     
     struct Output {
@@ -45,10 +47,21 @@ extension AssistantResultViewModel {
     }
     
     func configure(input: Input) -> Output {
-        Output(
+        let assistantResult = makeResult(
+            inputData: inputData,
+            didTapRefresh: input.didTapRefresh,
+            didTapLike: input.didTapLike,
+            didTapDislike: input.didTapDislike
+        )
+        
+        return Output(
             route: makeRoute(didTapClose: input.didTapClose),
             action: makeAction(didTapCopy: input.didTapCopy),
-            elements: makeElements(didTapRefresh: input.didTapRefresh)
+            elements: makeElements(
+                inputData: inputData,
+                didTapRefresh: input.didTapRefresh,
+                assistantResult: assistantResult
+            )
         )
     }
 }
@@ -91,51 +104,131 @@ private extension AssistantResultViewModel {
             .merge(close)
     }
     
-    func makeElements(didTapRefresh: Signal<Void>) -> Driver<[AssistantResultTableElement]> {
-        let initial = makeInitialElements()
-        
-        let reset = resetElementsToInitial(didTapRefresh: didTapRefresh)
-        
-        let result = Driver
-            .merge(
-                makeDownloadResult(),
-                makeRefreshResult(didTapRefresh: didTapRefresh)
-            )
-        let response = makeResponseElements(assistantResult: result, ignoreHelpful: false)
-        
-        return Driver
-            .merge(initial, reset, response)
+    func makeElements(
+        inputData: Driver<InputData>,
+        didTapRefresh: Signal<Void>,
+        assistantResult: Driver<AssistantResult>
+    ) -> Driver<[AssistantResultTableElement]> {
+        let initalElements = makeInitialElements(inputData: inputData)
+        let resultElements = makeResultElements(assistantResult: assistantResult)
+        let resetElements = makeResetElements(didTapRefresh: didTapRefresh, inputData: inputData)
+        return Driver.merge(initalElements, resultElements, resetElements)
     }
     
-    func makeInitialElements() -> Driver<[AssistantResultTableElement]> {
+    func makeInitialElements(inputData: Driver<InputData>) -> Driver<[AssistantResultTableElement]> {
         inputData
-            .map { inputData -> [AssistantResultTableElement] in
+            .compactMap { inputData -> [AssistantResultTableElement]? in
                 switch inputData {
-                case .recognized:
-                    return inputData.initialElements(withLoading: true)
+                case .recognized(let recognized):
+                    switch recognized.recognized.assistant {
+                    case .math(let math):
+                        return [.questionImageUrl(math.url), .loading ]
+                    case .physics(let physics):
+                        return [.questionImageUrl(physics.url), .loading]
+                    case .biology(let biology):
+                        return [.questionImageUrl(biology.url), .loading]
+                    case .chemistry(let chemistry):
+                        return [.questionImageUrl(chemistry.url), .loading]
+                    case .writing(_, let writing):
+                        return [.questionImageUrl(writing.url), .loading]
+                    case .language(let translateResult):
+                        return [.questionImage(recognized.recognized.croppedImage), .answer(.language(translateResult))]
+                    }
                 case .historyItem:
-                    return inputData.initialElements(withLoading: false)
+                    return nil
                 }
             }
     }
     
-    func resetElementsToInitial(didTapRefresh: Signal<Void>) -> Driver<[AssistantResultTableElement]> {
+    func makeResetElements(didTapRefresh: Signal<Void>, inputData: Driver<InputData>) -> Driver<[AssistantResultTableElement]> {
         didTapRefresh
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(inputData)
             .map { inputData -> [AssistantResultTableElement] in
-                inputData.initialElements(withLoading: true)
+                switch inputData {
+                case .recognized(let recognized):
+                    switch recognized.recognized.assistant {
+                    case .math(let math):
+                        return [.questionImageUrl(math.url), .loading ]
+                    case .physics(let physics):
+                        return [.questionImageUrl(physics.url), .loading]
+                    case .biology(let biology):
+                        return [.questionImageUrl(biology.url), .loading]
+                    case .chemistry(let chemistry):
+                        return [.questionImageUrl(chemistry.url), .loading]
+                    case .writing(_, let writing):
+                        return [.questionImageUrl(writing.url), .loading]
+                    case .language(let translateResult):
+                        return [.questionImage(recognized.recognized.croppedImage), .answer(.language(translateResult))]
+                    }
+                case .historyItem(let item):
+                    switch item {
+                    case .math(let math):
+                        return [
+                            {
+                                if let imageUrl = math.request.imageUrl {
+                                    return .questionImageUrl(imageUrl)
+                                } else {
+                                    return .questionText(math.request.content)
+                                }
+                            }(),
+                            .loading
+                        ]
+                    case .physics(let physics):
+                        return [
+                            {
+                                if let imageUrl = physics.request.imageUrl {
+                                    return .questionImageUrl(imageUrl)
+                                } else {
+                                    return .questionText(physics.request.content)
+                                }
+                            }(),
+                            .loading
+                        ]
+                    case .biology(let biology):
+                        return [
+                            {
+                                if let imageUrl = biology.request.imageUrl {
+                                    return .questionImageUrl(imageUrl)
+                                } else {
+                                    return .questionText(biology.request.content)
+                                }
+                            }(),
+                            .loading
+                        ]
+                    case .chemistry(let chemistry):
+                        return [
+                            {
+                                if let imageUrl = chemistry.request.imageUrl {
+                                    return .questionImageUrl(imageUrl)
+                                } else {
+                                    return .questionText(chemistry.request.content)
+                                }
+                            }(),
+                            .loading
+                        ]
+                    case .writing(let writing):
+                        return [
+                            {
+                                if let imageUrl = writing.request.imageUrl {
+                                    return .questionImageUrl(imageUrl)
+                                } else {
+                                    return .questionText(writing.request.content)
+                                }
+                            }(),
+                            .loading
+                        ]
+                    }
+                }
             }
     }
     
-    func makeResponseElements(assistantResult: Driver<AssistantResult>, ignoreHelpful: Bool) -> Driver<[AssistantResultTableElement]> {
+    func makeResultElements(assistantResult: Driver<AssistantResult>) -> Driver<[AssistantResultTableElement]> {
         assistantResult
             .map { assistantResult -> [AssistantResultTableElement] in
                 let inputData = assistantResult.inputData
                 
-                guard let result = assistantResult.result else {
-                    return inputData.initialElements(withLoading: false)
-                }
+                guard let result = assistantResult.result else { return [] }
                 
                 switch result {
                 case .math(let mathResult):
@@ -148,7 +241,7 @@ private extension AssistantResultViewModel {
                             }
                         }(),
                         .answer(.math(mathResult.response)),
-                        ignoreHelpful ? nil : ((mathResult.helpful == nil) ? .helpful : nil)
+                        (mathResult.helpful == nil) ? .helpful : nil
                     ].compactMap { $0 }
                 case .physics(let physicsResult):
                     return [
@@ -160,7 +253,7 @@ private extension AssistantResultViewModel {
                             }
                         }(),
                         .answer(.physics(physicsResult.response)),
-                        ignoreHelpful ? nil : ((physicsResult.helpful == nil) ? .helpful : nil)
+                        (physicsResult.helpful == nil) ? .helpful : nil
                     ].compactMap { $0 }
                 case .biology(let biologyResult):
                     return [
@@ -172,7 +265,7 @@ private extension AssistantResultViewModel {
                             }
                         }(),
                         .answer(.biology(biologyResult.response)),
-                        ignoreHelpful ? nil : ((biologyResult.helpful == nil) ? .helpful : nil)
+                        (biologyResult.helpful == nil) ? .helpful : nil
                     ].compactMap { $0 }
                 case .chemistry(let chemistryResult):
                     return [
@@ -184,7 +277,7 @@ private extension AssistantResultViewModel {
                             }
                         }(),
                         .answer(.chemistry(chemistryResult.response)),
-                        ignoreHelpful ? nil : ((chemistryResult.helpful == nil) ? .helpful : nil)
+                        (chemistryResult.helpful == nil) ? .helpful : nil
                     ].compactMap { $0 }
                 case .writing(let writingResult):
                     return [
@@ -195,8 +288,7 @@ private extension AssistantResultViewModel {
                                 return .questionText(writingResult.request.content)
                             }
                         }(),
-                        .answer(.writing(writingResult.response)),
-                        ignoreHelpful ? nil : ((writingResult.helpful == nil) ? .helpful : nil)
+                        .answer(.writing(writingResult.response))
                     ].compactMap { $0 }
                 case .translate(let translateResult):
                     var result = [AssistantResultTableElement]()
@@ -228,27 +320,151 @@ private extension AssistantResultViewModel {
             }
     }
     
-    func makeDownloadResult() -> Driver<AssistantResult> {
+    func makeResult(
+        inputData: Driver<InputData>,
+        didTapRefresh: Signal<Void>,
+        didTapLike: Signal<Void>,
+        didTapDislike: Signal<Void>
+    ) -> Driver<AssistantResult> {
+        let initialResult = makeInitialResult(inputData: inputData)
+        let refreshResult = makeRefreshResult(inputData: inputData, didTapRefresh: didTapRefresh)
+        let helpfulResult = makeHelpfulResult(
+            inputData: inputData,
+            didTapLike: didTapLike,
+            didTapDislike: didTapDislike
+        )
+        return Driver.merge(initialResult, refreshResult, helpfulResult)
+    }
+    
+    func makeInitialResult(inputData: Driver<InputData>) -> Driver<AssistantResult> {
         inputData
             .flatMapLatest { [weak self] inputData -> Driver<AssistantResult> in
                 guard let self else { return .never() }
                 
-                return makeResult(inputData: inputData, refresh: false)
+                switch inputData {
+                case .recognized:
+                    return fetchResult(inputData: inputData, refresh: false)
+                case .historyItem(let item):
+                    switch item {
+                    case .math(let math):
+                        let result = AssistantResult(inputData: inputData, result: .math(math))
+                        return .just(result)
+                    case .physics(let physics):
+                        let result = AssistantResult(inputData: inputData, result: .physics(physics))
+                        return .just(result)
+                    case .biology(let biology):
+                        let result = AssistantResult(inputData: inputData, result: .biology(biology))
+                        return .just(result)
+                    case .chemistry(let chemistry):
+                        let result = AssistantResult(inputData: inputData, result: .chemistry(chemistry))
+                        return .just(result)
+                    case .writing(let writing):
+                        let result = AssistantResult(inputData: inputData, result: .writing(writing))
+                        return .just(result)
+                    }
+                }
             }
     }
     
-    func makeRefreshResult(didTapRefresh: Signal<Void>) -> Driver<AssistantResult> {
+    func makeRefreshResult(
+        inputData: Driver<InputData>,
+        didTapRefresh: Signal<Void>
+    ) -> Driver<AssistantResult> {
         didTapRefresh
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(inputData)
             .flatMapLatest { [weak self] inputData -> Driver<AssistantResult> in
                 guard let self else { return .never() }
                 
-                return makeResult(inputData: inputData, refresh: true)
+                return fetchResult(inputData: inputData, refresh: true)
             }
     }
     
-    func makeResult(inputData: InputData, refresh: Bool) -> Driver<AssistantResult> {
+    func makeHelpfulResult(
+        inputData: Driver<InputData>,
+        didTapLike: Signal<Void>,
+        didTapDislike: Signal<Void>
+    ) -> Driver<AssistantResult> {
+        let helpful = Signal
+            .merge(
+                didTapLike.map { true },
+                didTapDislike.map { false }
+            )
+            .asDriver(onErrorDriveWith: .never())
+        
+        return helpful
+            .withLatestFrom(inputData) { ($0, $1) }
+            .flatMapFirst { [weak self] args -> Driver<AssistantResult> in
+                guard let self else { return .never() }
+                
+                let (helpful, inputData) = args
+                
+                let performHelpful: Single<Void> = { [weak self] in
+                    guard let self else { return .never() }
+                    
+                    switch inputData {
+                    case .recognized(let recognized):
+                        switch recognized.recognized.assistant {
+                        case .math(let math):
+                            return assistantManager
+                                .helpful(threadId: math.threadId, assistantType: .math, helpful: helpful)
+                                .catchAndReturn(())
+                        case .physics(let physics):
+                            return assistantManager
+                                .helpful(threadId: physics.threadId, assistantType: .physics, helpful: helpful)
+                                .catchAndReturn(())
+                        case .biology(let biology):
+                            return assistantManager
+                                .helpful(threadId: biology.threadId, assistantType: .biology, helpful: helpful)
+                                .catchAndReturn(())
+                        case .chemistry(let chemistry):
+                            return assistantManager
+                                .helpful(threadId: chemistry.threadId, assistantType: .chemistry, helpful: helpful)
+                                .catchAndReturn(())
+                        case .writing(_, let writing):
+                            return assistantManager
+                                .helpful(threadId: writing.threadId, assistantType: .writing, helpful: helpful)
+                                .catchAndReturn(())
+                        case .language:
+                            return .never()
+                        }
+                    case .historyItem(let item):
+                        switch item {
+                        case .math(let math):
+                            return assistantManager
+                                .helpful(threadId: math.threadId, assistantType: .math, helpful: helpful)
+                                .catchAndReturn(())
+                        case .physics(let physics):
+                            return assistantManager
+                                .helpful(threadId: physics.threadId, assistantType: .physics, helpful: helpful)
+                                .catchAndReturn(())
+                        case .biology(let biology):
+                            return assistantManager
+                                .helpful(threadId: biology.threadId, assistantType: .biology, helpful: helpful)
+                                .catchAndReturn(())
+                        case .chemistry(let chemistry):
+                            return assistantManager
+                                .helpful(threadId: chemistry.threadId, assistantType: .chemistry, helpful: helpful)
+                                .catchAndReturn(())
+                        case .writing(let writing):
+                            return assistantManager
+                                .helpful(threadId: writing.threadId, assistantType: .writing, helpful: helpful)
+                                .catchAndReturn(())
+                        }
+                    }
+                }()
+                
+                return performHelpful
+                    .asDriver(onErrorDriveWith: .never())
+                    .flatMap { [weak self] void -> Driver<AssistantResult> in
+                        guard let self else { return .never() }
+                        
+                        return fetchResult(inputData: inputData, refresh: false)
+                    }
+            }
+    }
+    
+    func fetchResult(inputData: InputData, refresh: Bool) -> Driver<AssistantResult> {
         switch inputData {
         case .recognized(let recognized):
             switch recognized.recognized.assistant {
@@ -303,8 +519,10 @@ private extension AssistantResultViewModel {
                         return AssistantResult(inputData: inputData, result: result)
                     }
             case .language(let translateResult):
-                // В случае с переводом респонс получен сразу на этапе распознавания фото
-                guard refresh else { return .never() }
+                guard refresh else {
+                    let result = AssistantResult(inputData: inputData, result: .translate(translateResult))
+                    return .just(result)
+                }
                 
                 let croppedImage = recognized.recognized.croppedImage
                 
@@ -319,9 +537,6 @@ private extension AssistantResultViewModel {
                     }
             }
         case .historyItem(let historyItem):
-            // В случае с историей, в initial сразу отобразятся актуальные данные
-            guard refresh else { return .never() }
-            
             switch historyItem {
             case .math(let mathResult):
                 return assistantManager
@@ -408,96 +623,5 @@ private extension AssistantResultViewModel {
         
         return Driver
             .merge(copy)
-    }
-}
-
-// MARK: Additional
-private extension AssistantResultViewModel.InputData {
-    func initialElements(withLoading: Bool) -> [AssistantResultTableElement] {
-        switch self {
-        case .recognized(let recognized):
-            switch recognized.recognized.assistant {
-            case .math(let math):
-                return [.questionImageUrl(math.url), withLoading ? .loading : nil].compactMap { $0 }
-            case .physics(let physics):
-                return [.questionImageUrl(physics.url), withLoading ? .loading : nil].compactMap { $0 }
-            case .biology(let biology):
-                return [.questionImageUrl(biology.url), withLoading ? .loading : nil].compactMap { $0 }
-            case .chemistry(let chemistry):
-                return [.questionImageUrl(chemistry.url), withLoading ? .loading : nil].compactMap { $0 }
-            case .writing(_, let writing):
-                return [.questionImageUrl(writing.url), withLoading ? .loading : nil].compactMap { $0 }
-            case .language:
-                return [.questionImage(recognized.recognized.croppedImage), withLoading ? .loading : nil].compactMap { $0 }
-            }
-        case .historyItem(let historyItem):
-            switch historyItem {
-            case .math(let math):
-                return [
-                    {
-                        if let imageUrl = math.request.imageUrl {
-                            return .questionImageUrl(imageUrl)
-                        } else {
-                            return .questionText(math.request.content)
-                        }
-                    }(),
-                    withLoading ? .loading : nil,
-                    withLoading ? nil : .answer(.math(math.response)),
-                    withLoading ? nil : ((math.helpful == nil) ? .helpful : nil)
-                ].compactMap { $0 }
-            case .physics(let physics):
-                return [
-                    {
-                        if let imageUrl = physics.request.imageUrl {
-                            return .questionImageUrl(imageUrl)
-                        } else {
-                            return .questionText(physics.request.content)
-                        }
-                    }(),
-                    withLoading ? .loading : nil,
-                    withLoading ? nil : .answer(.physics(physics.response)),
-                    withLoading ? nil : ((physics.helpful == nil) ? .helpful : nil)
-                ].compactMap { $0 }
-            case .biology(let biology):
-                return [
-                    {
-                        if let imageUrl = biology.request.imageUrl {
-                            return .questionImageUrl(imageUrl)
-                        } else {
-                            return .questionText(biology.request.content)
-                        }
-                    }(),
-                    withLoading ? .loading : nil,
-                    withLoading ? nil : .answer(.biology(biology.response)),
-                    withLoading ? nil : ((biology.helpful == nil) ? .helpful : nil)
-                ].compactMap { $0 }
-            case .chemistry(let chemistry):
-                return [
-                    {
-                        if let imageUrl = chemistry.request.imageUrl {
-                            return .questionImageUrl(imageUrl)
-                        } else {
-                            return .questionText(chemistry.request.content)
-                        }
-                    }(),
-                    withLoading ? .loading : nil,
-                    withLoading ? nil : .answer(.chemistry(chemistry.response)),
-                    withLoading ? nil : ((chemistry.helpful == nil) ? .helpful : nil)
-                ].compactMap { $0 }
-            case .writing(let writing):
-                return [
-                    {
-                        if let imageUrl = writing.request.imageUrl {
-                            return .questionImageUrl(imageUrl)
-                        } else {
-                            return .questionText(writing.request.content)
-                        }
-                    }(),
-                    withLoading ? .loading : nil,
-                    withLoading ? nil : .answer(.writing(writing.response)),
-                    withLoading ? nil : ((writing.helpful == nil) ? .helpful : nil)
-                ].compactMap { $0 }
-            }
-        }
     }
 }

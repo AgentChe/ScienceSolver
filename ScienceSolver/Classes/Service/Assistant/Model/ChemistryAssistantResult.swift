@@ -86,6 +86,16 @@ extension ChemistryAssistantResult {
         
         return ChemistryAssistantResult(body: body)
     }
+    
+    func helpful(_ helpful: Bool?) -> ChemistryAssistantResult {
+        ChemistryAssistantResult(
+            threadId: threadId,
+            helpful: helpful,
+            created: created,
+            request: request,
+            response: response
+        )
+    }
 }
 
 // MARK: Public
