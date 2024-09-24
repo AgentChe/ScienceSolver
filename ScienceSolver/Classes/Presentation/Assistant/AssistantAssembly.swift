@@ -11,7 +11,6 @@ final class AssistantAssembly {
     func recognize(assistant: AssistantsCollectionElement.Assistant? = nil, from: UIViewController) {
         let nc = NavigationController()
         nc.modalPresentationStyle = .fullScreen
-        nc.setNavigationBarHidden(true, animated: false)
         
         let recognizerVC = AssistantRecognizerController.make(assistant: assistant, close: { [weak nc] in
             nc?.dismiss(animated: true)
@@ -27,14 +26,13 @@ final class AssistantAssembly {
         from.present(nc, animated: true)
     }
     
+    func manualAnalyze(data: AssistantMainViewController.DataForManualAnalyze, from: UIViewController) {
+        // TODO
+    }
+    
     func history(item: AssistantHistoryItem, from: UINavigationController) {
-        let ncHidden = from.isNavigationBarHidden
-        
-        from.setNavigationBarHidden(true, animated: false)
-        
         let resultVC = AssistantResultViewController.make(historyItem: item) { [weak from] in
             from?.popViewController(animated: true)
-            from?.setNavigationBarHidden(ncHidden, animated: true)
         }
         from.pushViewController(resultVC, animated: true)
     }

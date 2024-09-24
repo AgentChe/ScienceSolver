@@ -15,11 +15,18 @@ final class AssistantsCollectionElement {
         case language
     }
     
+    enum Style {
+        case onlyWhite
+        case whiteBlack
+    }
+    
     let assistant: Assistant
+    let style: Style
     var marked: Bool
     
-    init(assistant: Assistant, marked: Bool) {
+    init(assistant: Assistant, style: Style, marked: Bool) {
         self.assistant = assistant
+        self.style = style
         self.marked = marked
     }
 }

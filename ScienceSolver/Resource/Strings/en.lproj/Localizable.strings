@@ -10,6 +10,7 @@
 "Cancel" = "Cancel";
 "Continue" = "Continue";
 "Next" = "Next";
+"Done" = "Done";
 
 // MARK: ImagePicker
 "ImagePicker.TakePhoto" = "Take a photo";
@@ -124,3 +125,8 @@
 "AssistantResult.Math.Problem" = "Problem";
 "AssistantResult.Math.Solution" = "Solution";
 "AssistantResult.Copied" = "Copied";
+
+// MARK: AssistantMain
+"AssistantMain.History" = "History";
+"AssistantMain.Translate" = "Translate to: %@";
+"AssistantMain.Input.Placeholder" = "Ask a question";

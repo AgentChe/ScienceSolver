@@ -23,6 +23,7 @@ final class HistoryViewController: UIViewController {
         super.viewDidLoad()
         
         let output = viewModel.configure(input: HistoryViewModel.Input(
+            didTapBack: mainView.backButton.rx.tap.asSignal(),
             didSelect: mainView.tableView.didSelect,
             didScrollToBottom: mainView.tableView.didScrollToBottom
         ))
@@ -59,7 +60,6 @@ extension HistoryViewController {
     static func make() -> HistoryViewController {
         let vc = HistoryViewController()
         vc.navigationItem.backButtonTitle = " "
-        vc.navigationItem.title = "History.Title".localized
         return vc
     }
 }
@@ -68,6 +68,8 @@ extension HistoryViewController {
 private extension HistoryViewController {
     func route(_ route: HistoryViewModel.Route) {
         switch route {
+        case .back:
+            navigationController?.popViewController(animated: true)
         case .select(let item):
             guard let nc = navigationController else { return }
             

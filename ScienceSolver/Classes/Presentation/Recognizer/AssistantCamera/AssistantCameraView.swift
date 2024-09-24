@@ -116,7 +116,7 @@ private extension AssistantCameraView {
     }
     
     func makeWritingModeView() -> AssistantCameraWritingModeView {
-        let view = AssistantCameraWritingModeView()
+        let view = AssistantCameraWritingModeView(style: .camera)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

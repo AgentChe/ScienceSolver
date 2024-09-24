@@ -85,12 +85,12 @@ private extension AssistantCameraViewModel {
         startAssistant
             .map { startAssistant -> [AssistantsCollectionElement] in
                 [
-                    .init(assistant: .math, marked: startAssistant == .math),
-                    .init(assistant: .physics, marked: startAssistant == .physics),
-                    .init(assistant: .biology, marked: startAssistant == .biology),
-                    .init(assistant: .chemistry, marked: startAssistant == .chemistry),
-                    .init(assistant: .writing, marked: startAssistant == .writing),
-                    .init(assistant: .language, marked: startAssistant == .language)
+                    .init(assistant: .math, style: .onlyWhite, marked: startAssistant == .math),
+                    .init(assistant: .physics, style: .onlyWhite, marked: startAssistant == .physics),
+                    .init(assistant: .biology, style: .onlyWhite, marked: startAssistant == .biology),
+                    .init(assistant: .chemistry, style: .onlyWhite, marked: startAssistant == .chemistry),
+                    .init(assistant: .writing, style: .onlyWhite, marked: startAssistant == .writing),
+                    .init(assistant: .language, style: .onlyWhite, marked: startAssistant == .language)
                 ]
             }
     }

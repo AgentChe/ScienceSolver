@@ -10,8 +10,13 @@ import UIKit
 final class AssistantsCollectionCell: UICollectionViewCell {
     lazy var label = makeLabel()
     
-    private lazy var attrs = TextAttributes()
+    private lazy var mono100Attrs = TextAttributes()
         .textColor(Appearance.mono100)
+        .font(Fonts.Inter.medium(size: 16.scale))
+        .lineHeight(19.scale)
+        .textAlignment(.center)
+    private lazy var mono200Attrs = TextAttributes()
+        .textColor(Appearance.mono200)
         .font(Fonts.Inter.medium(size: 16.scale))
         .lineHeight(19.scale)
         .textAlignment(.center)
@@ -31,9 +36,17 @@ final class AssistantsCollectionCell: UICollectionViewCell {
 // MARK: Public
 extension AssistantsCollectionCell {
     func setup(element: AssistantsCollectionElement) {
-        label.attributedText = element.assistant.title.attributed(with: attrs)
-        
-        contentView.backgroundColor = element.marked ? Appearance.main300 : Appearance.mono200.withAlphaComponent(0.2)
+        switch element.style {
+        case .onlyWhite:
+            label.attributedText = element.assistant.title.attributed(with: mono100Attrs)
+            
+            contentView.backgroundColor = element.marked ? Appearance.main300 : Appearance.mono200.withAlphaComponent(0.2)
+        case .whiteBlack:
+            let attrs = element.marked ? mono100Attrs : mono200Attrs
+            label.attributedText = element.assistant.title.attributed(with: attrs)
+            
+            contentView.backgroundColor = element.marked ? Appearance.main300 : Appearance.main200
+        }
     }
 }
 

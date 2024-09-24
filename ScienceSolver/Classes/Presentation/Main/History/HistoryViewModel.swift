@@ -10,7 +10,7 @@ import RxCocoa
 
 final class HistoryViewModel {
     enum Route {
-        case select(AssistantHistoryItem)
+        case back, select(AssistantHistoryItem)
     }
     
     private lazy var firstPageActivity = RxActivityIndicator()
@@ -22,6 +22,7 @@ final class HistoryViewModel {
 // MARK: Public
 extension HistoryViewModel {
     struct Input {
+        let didTapBack: Signal<Void>
         let didSelect: Signal<AssistantHistoryItem>
         let didScrollToBottom: Signal<Void>
     }
@@ -36,7 +37,10 @@ extension HistoryViewModel {
     func configure(input: Input) -> Output {
         Output(
             elements: makeElements(didScrollToBottom: input.didScrollToBottom),
-            route: makeRoute(didSelect: input.didSelect),
+            route: makeRoute(
+                didTapBack: input.didTapBack,
+                didSelect: input.didSelect
+            ),
             firstPageActivity: firstPageActivity.asDriver(),
             paginationActivity: paginationActivity.asDriver()
         )
@@ -79,12 +83,19 @@ private extension HistoryViewModel {
             }
     }
     
-    func makeRoute(didSelect: Signal<AssistantHistoryItem>) -> Driver<Route> {
+    func makeRoute(
+        didTapBack: Signal<Void>, 
+        didSelect: Signal<AssistantHistoryItem>
+    ) -> Driver<Route> {
+        let back = didTapBack
+            .map { Route.back }
+            .asDriver(onErrorDriveWith: .never())
+        
         let select = didSelect
             .map { Route.select($0) }
             .asDriver(onErrorDriveWith: .never())
         
         return Driver
-            .merge(select)
+            .merge(back, select)
     }
 }

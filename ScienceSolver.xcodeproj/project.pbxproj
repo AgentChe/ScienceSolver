@@ -155,6 +155,16 @@
 		DE89C40F2C94771100CB9160 /* AssistantImageResizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C40E2C94771100CB9160 /* AssistantImageResizeView.swift */; };
 		DE89C4112C949EE500CB9160 /* AssistantCameraWritingModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C4102C949EE500CB9160 /* AssistantCameraWritingModeView.swift */; };
 		DEB22DC82CA1916F000200C1 /* ARTQuestionImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DC72CA1916F000200C1 /* ARTQuestionImageCell.swift */; };
+		DEB22DCB2CA29B01000200C1 /* AssistantMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DCA2CA29B01000200C1 /* AssistantMainViewController.swift */; };
+		DEB22DCD2CA29B06000200C1 /* AssistantMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DCC2CA29B06000200C1 /* AssistantMainViewModel.swift */; };
+		DEB22DCF2CA29B0A000200C1 /* AssistantMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DCE2CA29B0A000200C1 /* AssistantMainView.swift */; };
+		DEB22DD32CA29FE8000200C1 /* AssistantMainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DD22CA29FE8000200C1 /* AssistantMainTableView.swift */; };
+		DEB22DD52CA29FEF000200C1 /* AssistantMainTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DD42CA29FEF000200C1 /* AssistantMainTableElement.swift */; };
+		DEB22DDA2CA2A01B000200C1 /* AMInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DD92CA2A01B000200C1 /* AMInputCell.swift */; };
+		DEB22DDC2CA2A02A000200C1 /* AMHistoryTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DDB2CA2A02A000200C1 /* AMHistoryTitleCell.swift */; };
+		DEB22DDF2CA2B6E8000200C1 /* AMInputBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DDE2CA2B6E8000200C1 /* AMInputBottomView.swift */; };
+		DEB22DE12CA2B83A000200C1 /* AMSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DE02CA2B83A000200C1 /* AMSelectEntityButton.swift */; };
+		DEB22DE32CA30357000200C1 /* AMTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DE22CA30357000200C1 /* AMTextView.swift */; };
 		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
 		DEE8837E2C996922008DAD26 /* SWMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837D2C996922008DAD26 /* SWMView.swift */; };
@@ -334,6 +344,16 @@
 		DE89C40E2C94771100CB9160 /* AssistantImageResizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantImageResizeView.swift; sourceTree = "<group>"; };
 		DE89C4102C949EE500CB9160 /* AssistantCameraWritingModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantCameraWritingModeView.swift; sourceTree = "<group>"; };
 		DEB22DC72CA1916F000200C1 /* ARTQuestionImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTQuestionImageCell.swift; sourceTree = "<group>"; };
+		DEB22DCA2CA29B01000200C1 /* AssistantMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantMainViewController.swift; sourceTree = "<group>"; };
+		DEB22DCC2CA29B06000200C1 /* AssistantMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantMainViewModel.swift; sourceTree = "<group>"; };
+		DEB22DCE2CA29B0A000200C1 /* AssistantMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantMainView.swift; sourceTree = "<group>"; };
+		DEB22DD22CA29FE8000200C1 /* AssistantMainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantMainTableView.swift; sourceTree = "<group>"; };
+		DEB22DD42CA29FEF000200C1 /* AssistantMainTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantMainTableElement.swift; sourceTree = "<group>"; };
+		DEB22DD92CA2A01B000200C1 /* AMInputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMInputCell.swift; sourceTree = "<group>"; };
+		DEB22DDB2CA2A02A000200C1 /* AMHistoryTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMHistoryTitleCell.swift; sourceTree = "<group>"; };
+		DEB22DDE2CA2B6E8000200C1 /* AMInputBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMInputBottomView.swift; sourceTree = "<group>"; };
+		DEB22DE02CA2B83A000200C1 /* AMSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMSelectEntityButton.swift; sourceTree = "<group>"; };
+		DEB22DE22CA30357000200C1 /* AMTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTextView.swift; sourceTree = "<group>"; };
 		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
 		DEE8837D2C996922008DAD26 /* SWMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMView.swift; sourceTree = "<group>"; };
@@ -1024,6 +1044,55 @@
 			path = AssistantImageResize;
 			sourceTree = "<group>";
 		};
+		DEB22DC92CA29AF0000200C1 /* AssistantMain */ = {
+			isa = PBXGroup;
+			children = (
+				DEB22DD02CA29F9E000200C1 /* Views */,
+				DEB22DCA2CA29B01000200C1 /* AssistantMainViewController.swift */,
+				DEB22DCC2CA29B06000200C1 /* AssistantMainViewModel.swift */,
+				DEB22DCE2CA29B0A000200C1 /* AssistantMainView.swift */,
+			);
+			path = AssistantMain;
+			sourceTree = "<group>";
+		};
+		DEB22DD02CA29F9E000200C1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEB22DD12CA29FDE000200C1 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEB22DD12CA29FDE000200C1 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				DEB22DD62CA29FF3000200C1 /* Cells */,
+				DEB22DD22CA29FE8000200C1 /* AssistantMainTableView.swift */,
+				DEB22DD42CA29FEF000200C1 /* AssistantMainTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		DEB22DD62CA29FF3000200C1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DEB22DDD2CA2B6D7000200C1 /* Atoms */,
+				DEB22DD92CA2A01B000200C1 /* AMInputCell.swift */,
+				DEB22DDB2CA2A02A000200C1 /* AMHistoryTitleCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DEB22DDD2CA2B6D7000200C1 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DEB22DDE2CA2B6E8000200C1 /* AMInputBottomView.swift */,
+				DEB22DE02CA2B83A000200C1 /* AMSelectEntityButton.swift */,
+				DEB22DE22CA30357000200C1 /* AMTextView.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
 		DEE883772C988F9D008DAD26 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1090,6 +1159,7 @@
 		DEE8839F2C9AED06008DAD26 /* Assistant */ = {
 			isa = PBXGroup;
 			children = (
+				DEB22DC92CA29AF0000200C1 /* AssistantMain */,
 				DEE883B72C9AF6ED008DAD26 /* AssistantResult */,
 				DEE883B82C9AF75A008DAD26 /* AssistantAssembly.swift */,
 			);
@@ -1298,6 +1368,7 @@
 				DE89C2322C8B3AE200CB9160 /* SplashViewModel.swift in Sources */,
 				DEE883B62C9AEE61008DAD26 /* ARTHelpfulCell.swift in Sources */,
 				DE89C1512C8B3AE100CB9160 /* FirebaseManager.swift in Sources */,
+				DEB22DE12CA2B83A000200C1 /* AMSelectEntityButton.swift in Sources */,
 				DE89C3752C8EEBCD00CB9160 /* MathAssistantResult.swift in Sources */,
 				DE89C3542C8B554000CB9160 /* OnboardingWelcome2View.swift in Sources */,
 				DE89C3A72C918DC800CB9160 /* AccountTableView.swift in Sources */,
@@ -1316,6 +1387,7 @@
 				DE89C17C2C8B3AE100CB9160 /* AppDelegate.swift in Sources */,
 				DE89C3A92C918DD000CB9160 /* AccountTableElement.swift in Sources */,
 				DE89C3DC2C93181B00CB9160 /* HistoryViewModel.swift in Sources */,
+				DEB22DCB2CA29B01000200C1 /* AssistantMainViewController.swift in Sources */,
 				DE89C24C2C8B3AE200CB9160 /* IAPError.swift in Sources */,
 				DE89C16F2C8B3AE100CB9160 /* PushNotificationsManager.swift in Sources */,
 				DE89C15D2C8B3AE100CB9160 /* PaddingLabel.swift in Sources */,
@@ -1346,6 +1418,7 @@
 				DE89C3932C8F112600CB9160 /* AssistantAnalyzeWritingProcessRequest.swift in Sources */,
 				DE89C3872C8F059800CB9160 /* AssistantTranslateRequest.swift in Sources */,
 				DE89C1532C8B3AE100CB9160 /* RequestReview.swift in Sources */,
+				DEB22DCD2CA29B06000200C1 /* AssistantMainViewModel.swift in Sources */,
 				DE89C1612C8B3AE100CB9160 /* Collection+Extension.swift in Sources */,
 				DE89C37D2C8EF70200CB9160 /* AssistantAnalyzeProcessRequest.swift in Sources */,
 				DE89C1502C8B3AE100CB9160 /* FacebookManager.swift in Sources */,
@@ -1358,6 +1431,7 @@
 				DE89C1762C8B3AE100CB9160 /* ObservableRetrySingle.swift in Sources */,
 				DEE883932C99C18B008DAD26 /* ACEViewController.swift in Sources */,
 				DE89C37F2C8EFAC900CB9160 /* AssistantHelpfulRequest.swift in Sources */,
+				DEB22DCF2CA29B0A000200C1 /* AssistantMainView.swift in Sources */,
 				DEE883B92C9AF75A008DAD26 /* AssistantAssembly.swift in Sources */,
 				DE89C38B2C8F0A1100CB9160 /* GetLanguagesRequest.swift in Sources */,
 				DE89C3B32C919A4F00CB9160 /* AccountTitleCell.swift in Sources */,
@@ -1368,6 +1442,7 @@
 				DE89C3302C8B3F1800CB9160 /* PaygateInfoView.swift in Sources */,
 				DE89C40D2C94770D00CB9160 /* AssistantImageResizeViewModel.swift in Sources */,
 				DE89C3332C8B3F1800CB9160 /* PaygateViewController.swift in Sources */,
+				DEB22DDC2CA2A02A000200C1 /* AMHistoryTitleCell.swift in Sources */,
 				DE89C3732C8EE98800CB9160 /* AssistantAnalyzeImageResponse.swift in Sources */,
 				DE89C24E2C8B3AE200CB9160 /* IAPActionResult.swift in Sources */,
 				DE89C3F62C9344E500CB9160 /* AssistantCameraViewController.swift in Sources */,
@@ -1388,6 +1463,7 @@
 				DE89C3792C8EF5DA00CB9160 /* BiologyAssistantResult.swift in Sources */,
 				DE89C1772C8B3AE100CB9160 /* Scalable.swift in Sources */,
 				DE89C33E2C8B41F600CB9160 /* ProfileCreateRequest.swift in Sources */,
+				DEB22DDA2CA2A01B000200C1 /* AMInputCell.swift in Sources */,
 				DEE883A12C9AED8D008DAD26 /* AssistantResultViewController.swift in Sources */,
 				DE89C1752C8B3AE100CB9160 /* NumberLaunches.swift in Sources */,
 				DE89C2302C8B3AE200CB9160 /* SplashView.swift in Sources */,
@@ -1402,8 +1478,10 @@
 				DEE883AB2C9AEDF1008DAD26 /* AssistantResultTableElement.swift in Sources */,
 				DE89C1542C8B3AE100CB9160 /* RxActivityIndicator.swift in Sources */,
 				DE89C20A2C8B3AE100CB9160 /* MainViewController.swift in Sources */,
+				DEB22DD52CA29FEF000200C1 /* AssistantMainTableElement.swift in Sources */,
 				DE89C1662C8B3AE100CB9160 /* UIDevice+Extension.swift in Sources */,
 				DE89C4002C93482E00CB9160 /* AssistantsCollectionElement.swift in Sources */,
+				DEB22DE32CA30357000200C1 /* AMTextView.swift in Sources */,
 				DE89C32A2C8B3F1800CB9160 /* Currency.swift in Sources */,
 				DEE883982C9AAB04008DAD26 /* CameraService.swift in Sources */,
 				DE89C1562C8B3AE100CB9160 /* NavigationControllerSettings.swift in Sources */,
@@ -1415,12 +1493,14 @@
 				DE89C40B2C94770700CB9160 /* AssistantImageResizeViewController.swift in Sources */,
 				DEE883B22C9AEE42008DAD26 /* ARTLoadingCell.swift in Sources */,
 				DE89C3B12C918E9300CB9160 /* AccountActionView.swift in Sources */,
+				DEB22DDF2CA2B6E8000200C1 /* AMInputBottomView.swift in Sources */,
 				DE89C17F2C8B3AE100CB9160 /* SceneDelegate.swift in Sources */,
 				DE89C32E2C8B3F1800CB9160 /* PaygateEnableTrialButton.swift in Sources */,
 				DEE883952C99C190008DAD26 /* ACEView.swift in Sources */,
 				DE89C3972C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift in Sources */,
 				DE89C1712C8B3AE100CB9160 /* NetworkError.swift in Sources */,
 				DE89C32D2C8B3F1800CB9160 /* PaygateBestOfferView.swift in Sources */,
+				DEB22DD32CA29FE8000200C1 /* AssistantMainTableView.swift in Sources */,
 				DE89C2312C8B3AE200CB9160 /* SplashViewController.swift in Sources */,
 				DE89C3322C8B3F1800CB9160 /* PaygateView.swift in Sources */,
 				DE89C14E2C8B3AE100CB9160 /* AmplitudeManager.swift in Sources */,

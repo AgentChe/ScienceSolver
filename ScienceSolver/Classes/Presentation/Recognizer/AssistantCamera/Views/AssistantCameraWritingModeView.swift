@@ -10,9 +10,17 @@ import RxSwift
 import RxCocoa
 
 final class AssistantCameraWritingModeView: UIView {
+    var didChangeMode: ((WritingMode) -> Void)?
+    
+    enum Style {
+        case camera
+        case manual
+    }
+    
     lazy var mode: WritingMode = .essay {
         didSet {
             update(animate: true)
+            didChangeMode?(mode)
         }
     }
     
@@ -23,8 +31,11 @@ final class AssistantCameraWritingModeView: UIView {
     private lazy var selectedAttrs = TextAttributes()
         .textColor(Appearance.mono200)
         .font(Fonts.Inter.medium(size: 16.scale))
-    private lazy var deselectedAttrs = TextAttributes()
+    private lazy var deselectedCameraAttrs = TextAttributes()
         .textColor(Appearance.mono100)
+        .font(Fonts.Inter.medium(size: 16.scale))
+    private lazy var deselectedManualAttrs = TextAttributes()
+        .textColor(Appearance.mono200.withAlphaComponent(0.4))
         .font(Fonts.Inter.medium(size: 16.scale))
     
     private lazy var selectorLeadingConstraint = NSLayoutConstraint()
@@ -32,8 +43,12 @@ final class AssistantCameraWritingModeView: UIView {
     
     private lazy var disposeBag = DisposeBag()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let style: Style
+    
+    init(style: Style) {
+        self.style = style
+        
+        super.init(frame: .zero)
         
         makeConstraints()
         initialize()
@@ -48,7 +63,14 @@ final class AssistantCameraWritingModeView: UIView {
 // MARK: Private
 private extension AssistantCameraWritingModeView {
     func initialize() {
-        backgroundColor = Appearance.main100.withAlphaComponent(0.2)
+        backgroundColor = {
+            switch style {
+            case .camera:
+                return Appearance.main100.withAlphaComponent(0.2)
+            case .manual:
+                return  Appearance.main100
+            }
+        }()
         layer.cornerRadius = 21.5.scale
         layer.masksToBounds = true
         
@@ -69,10 +91,24 @@ private extension AssistantCameraWritingModeView {
             selectorTrailingConstraint
         ])
         
-        let essayAttrs = mode == .essay ? selectedAttrs : deselectedAttrs
+        let essayAttrs = {
+            switch style {
+            case .camera:
+                return mode == .essay ? selectedAttrs : deselectedCameraAttrs
+            case .manual:
+                return mode == .essay ? selectedAttrs : deselectedManualAttrs
+            }
+        }()
         essayButton.setAttributedTitle("AssistantCamera.Essay".localized.attributed(with: essayAttrs), for: .normal)
         
-        let outlineAttrs = mode == .outline ? selectedAttrs : deselectedAttrs
+        let outlineAttrs = {
+            switch style {
+            case .camera:
+                return mode == .outline ? selectedAttrs : deselectedCameraAttrs
+            case .manual:
+                return mode == .outline ? selectedAttrs : deselectedManualAttrs
+            }
+        }()
         outlineButton.setAttributedTitle("AssistantCamera.Outline".localized.attributed(with: outlineAttrs), for: .normal)
         
         switch mode {

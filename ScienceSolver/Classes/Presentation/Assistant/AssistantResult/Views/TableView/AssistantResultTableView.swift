@@ -69,9 +69,9 @@ extension AssistantResultTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: ARTQuestionImageCell.self), for: indexPath) as! ARTQuestionImageCell
             cell.setup(image: image)
             return cell
-        case .questionText(let text):
+        case .questionText(let question):
             let cell = dequeueReusableCell(withIdentifier: String(describing: ARTQuestionTextCell.self), for: indexPath) as! ARTQuestionTextCell
-            cell.setup()
+            cell.setup(question: question)
             return cell
         case .loading:
             return dequeueReusableCell(withIdentifier: String(describing: ARTLoadingCell.self), for: indexPath)
