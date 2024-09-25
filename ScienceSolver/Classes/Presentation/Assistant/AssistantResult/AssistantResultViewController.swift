@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import Toast_Swift
 
 final class AssistantResultViewController: UIViewController {
@@ -18,6 +19,10 @@ final class AssistantResultViewController: UIViewController {
     
     private let didTapClose: () -> Void
     
+    private lazy var didRefreshTrigger = PublishRelay<AssistantResultViewModel.AssistantResult>()
+    private lazy var didLikeTrigger = PublishRelay<AssistantResultViewModel.AssistantResult>()
+    private lazy var didDislikeTrigger = PublishRelay<AssistantResultViewModel.AssistantResult>()
+    
     private init(historyItem: AssistantHistoryItem, didTapClose: @escaping () -> Void) {
         self.viewModel = AssistantResultViewModel(historyItem: historyItem)
         self.didTapClose = didTapClose
@@ -27,6 +32,13 @@ final class AssistantResultViewController: UIViewController {
     
     private init(recognized: AssistantRecognizerController.Result, didTapClose: @escaping () -> Void) {
         self.viewModel = AssistantResultViewModel(recognized: recognized)
+        self.didTapClose = didTapClose
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    private init(manual: AssistantMainViewController.DataForManualAnalyze, didTapClose: @escaping () -> Void) {
+        self.viewModel = AssistantResultViewModel(manual: manual)
         self.didTapClose = didTapClose
         
         super.init(nibName: nil, bundle: nil)
@@ -45,11 +57,37 @@ final class AssistantResultViewController: UIViewController {
         
         let output = viewModel.configure(input: AssistantResultViewModel.Input(
             didTapClose: mainView.closeButton.rx.tap.asSignal(),
-            didTapRefresh: mainView.tableView.didTapRefresh,
+            didTapRefresh: didRefreshTrigger.asSignal(),
             didTapCopy: mainView.tableView.didTapCopy,
-            didTapLike: mainView.tableView.didTapLike,
-            didTapDislike: mainView.tableView.didTapDislike
+            didTapLike: didLikeTrigger.asSignal(),
+            didTapDislike: didDislikeTrigger.asSignal()
         ))
+        
+        let currentAssistantResult = output.currentResult
+        
+        mainView.tableView.didTapRefresh
+            .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(currentAssistantResult)
+            .drive(Binder(self) { base, currentAssistantResult in
+                base.didRefreshTrigger.accept(currentAssistantResult)
+            })
+            .disposed(by: disposeBag)
+        
+        mainView.tableView.didTapLike
+            .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(currentAssistantResult)
+            .drive(Binder(self) { base, currentAssistantResult in
+                base.didLikeTrigger.accept(currentAssistantResult)
+            })
+            .disposed(by: disposeBag)
+        
+        mainView.tableView.didTapDislike
+            .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(currentAssistantResult)
+            .drive(Binder(self) { base, currentAssistantResult in
+                base.didDislikeTrigger.accept(currentAssistantResult)
+            })
+            .disposed(by: disposeBag)
         
         output.route
             .drive(Binder(self) { base, route in
@@ -81,6 +119,12 @@ extension AssistantResultViewController {
     
     static func make(historyItem: AssistantHistoryItem, didTapClose: @escaping () -> Void) -> AssistantResultViewController {
         let vc = AssistantResultViewController(historyItem: historyItem, didTapClose: didTapClose)
+        vc.navigationItem.backButtonTitle = " "
+        return vc
+    }
+    
+    static func make(manual: AssistantMainViewController.DataForManualAnalyze, didTapClose: @escaping () -> Void) -> AssistantResultViewController {
+        let vc = AssistantResultViewController(manual: manual, didTapClose: didTapClose)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }

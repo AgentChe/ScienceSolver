@@ -121,7 +121,9 @@ private extension AssistantMainViewController {
         case .calculator:
             break // TODO
         case .analyze(let data):
-            AssistantAssembly().manualAnalyze(data: data, from: self)
+            guard let nc = navigationController else { return }
+            
+            AssistantAssembly().manualAnalyze(data: data, from: nc)
         }
     }
 }

@@ -26,8 +26,11 @@ final class AssistantAssembly {
         from.present(nc, animated: true)
     }
     
-    func manualAnalyze(data: AssistantMainViewController.DataForManualAnalyze, from: UIViewController) {
-        // TODO
+    func manualAnalyze(data: AssistantMainViewController.DataForManualAnalyze, from: UINavigationController) {
+        let resultVC = AssistantResultViewController.make(manual: data) { [weak from] in
+            from?.popViewController(animated: true)
+        }
+        from.pushViewController(resultVC, animated: true)
     }
     
     func history(item: AssistantHistoryItem, from: UINavigationController) {
