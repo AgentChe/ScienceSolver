@@ -165,6 +165,7 @@
 		DEB22DDF2CA2B6E8000200C1 /* AMInputBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DDE2CA2B6E8000200C1 /* AMInputBottomView.swift */; };
 		DEB22DE12CA2B83A000200C1 /* AMSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DE02CA2B83A000200C1 /* AMSelectEntityButton.swift */; };
 		DEB22DE32CA30357000200C1 /* AMTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DE22CA30357000200C1 /* AMTextView.swift */; };
+		DEB22DFA2CAE92B2000200C1 /* KatexWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DF92CAE92B2000200C1 /* KatexWebView.swift */; };
 		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
 		DEE8837E2C996922008DAD26 /* SWMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837D2C996922008DAD26 /* SWMView.swift */; };
@@ -354,6 +355,7 @@
 		DEB22DDE2CA2B6E8000200C1 /* AMInputBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMInputBottomView.swift; sourceTree = "<group>"; };
 		DEB22DE02CA2B83A000200C1 /* AMSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMSelectEntityButton.swift; sourceTree = "<group>"; };
 		DEB22DE22CA30357000200C1 /* AMTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTextView.swift; sourceTree = "<group>"; };
+		DEB22DF92CAE92B2000200C1 /* KatexWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatexWebView.swift; sourceTree = "<group>"; };
 		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
 		DEE8837D2C996922008DAD26 /* SWMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMView.swift; sourceTree = "<group>"; };
@@ -1093,6 +1095,14 @@
 			path = Atoms;
 			sourceTree = "<group>";
 		};
+		DEB22DF82CAE92A9000200C1 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+				DEB22DF92CAE92B2000200C1 /* KatexWebView.swift */,
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
 		DEE883772C988F9D008DAD26 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1187,6 +1197,7 @@
 		DEE883AC2C9AEDF4008DAD26 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				DEB22DF82CAE92A9000200C1 /* Atoms */,
 				DEE883BA2C9B2D13008DAD26 /* Source */,
 				DEB22DC72CA1916F000200C1 /* ARTQuestionImageCell.swift */,
 				DEE883AF2C9AEE37008DAD26 /* ARTQuestionTextCell.swift */,
@@ -1393,6 +1404,7 @@
 				DE89C15D2C8B3AE100CB9160 /* PaddingLabel.swift in Sources */,
 				DE89C3622C8DFF2500CB9160 /* TabView.swift in Sources */,
 				DE89C16E2C8B3AE100CB9160 /* PushNotificationsModel.swift in Sources */,
+				DEB22DFA2CAE92B2000200C1 /* KatexWebView.swift in Sources */,
 				DE89C2242C8B3AE100CB9160 /* OnboardingViewController.swift in Sources */,
 				DE89C15B2C8B3AE100CB9160 /* GradientView.swift in Sources */,
 				DE89C32B2C8B3F1800CB9160 /* PaygateInteractor.swift in Sources */,

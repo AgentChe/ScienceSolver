@@ -14,17 +14,9 @@ struct MathAssistantResult {
     }
     
     struct Response {
-        struct Solution {
-            let step: Int
-            let math: String // latex текст
-            let description: String // latex текст
-        }
-        
         let userFormula: String? // latex текст
         let userRawInput: String? // latex текст
-        let problem: String // latex текст
-        let solution: [Solution]
-        let answer: String // latex текст
+        let body: String // latex текст
         let explanation: String? // latex текст
         let recommendation: String? // latex текст
     }
@@ -110,37 +102,14 @@ extension MathAssistantResult {
 // MARK: Public
 extension MathAssistantResult.Response {
     static func map(content: [String: Any]) -> MathAssistantResult.Response? {
-        guard
-            let body = content["body"] as? [String: Any],
-            let problem = body["problem"] as? String,
-            let solutionArray = body["solution"] as? [[String: Any]], !solutionArray.isEmpty,
-            let answer = body["answer"] as? String
-        else { return nil }
-        
-        let solution = solutionArray.compactMap { json -> MathAssistantResult.Response.Solution? in
-            guard
-                let step = json["step"] as? Int,
-                let math = json["math"] as? String,
-                let description = json["description"] as? String
-            else { return nil }
-            
-            return MathAssistantResult.Response.Solution(
-                step: step,
-                math: math,
-                description: description
-            )
-        }
-        
-        guard !solution.isEmpty else { return nil }
+        guard let body = content["body"] as? String else { return nil }
         
         return MathAssistantResult.Response(
             userFormula: content["user_formula"] as? String,
             userRawInput: content["user_raw_input"] as? String,
-            problem: problem,
-            solution: solution,
-            answer: answer,
-            explanation: body["explanation"] as? String,
-            recommendation: body["recommendation"] as? String
+            body: body,
+            explanation: content["explanation"] as? String,
+            recommendation: content["recommendation"] as? String
         )
     }
 }

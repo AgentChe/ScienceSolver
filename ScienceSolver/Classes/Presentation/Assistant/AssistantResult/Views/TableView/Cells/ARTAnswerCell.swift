@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import iosMath
+import WebKit
 
 final class ARTAnswerCell: UITableViewCell {
     var didTapRefresh: (() -> Void)?
@@ -104,39 +104,15 @@ private extension ARTAnswerCell {
         if let userFormula = response.userFormula {
             let userFormulaViews = [
                 makeTitleLabel("AssistantResult.Math.UserFormula".localized),
-                makeLatexLabel(userFormula),
+                makeKatexWebView(userFormula),
                 makeSeparator()
             ]
             views.append(contentsOf: userFormulaViews)
         }
         
-        let problemViews = [
-            makeTitleLabel("AssistantResult.Math.Problem".localized),
-            makeLatexLabel(response.problem),
-            makeSeparator()
-        ]
-        views.append(contentsOf: problemViews)
-        
-        let solutionViews: [UIView] = {
-            guard !response.solution.isEmpty else { return [] }
-            
-            let solution = response
-                .solution.map { solution -> String in
-                    [solution.math, solution.description].joined(separator: "\n")
-                }
-                .joined(separator: "\n\n")
-            
-            return [
-                makeTitleLabel("AssistantResult.Math.Solution".localized),
-                makeLatexLabel(solution),
-                makeSeparator()
-            ]
-        }()
-        views.append(contentsOf: solutionViews)
-        
         let answerViews = [
             makeTitleLabel("AssistantResult.Answer".localized),
-            makeLatexLabel(response.answer),
+            makeKatexWebView(response.body),
             (response.explanation == nil && response.recommendation == nil) ? nil : makeSeparator()
         ].compactMap { $0 }
         views.append(contentsOf: answerViews)
@@ -144,7 +120,7 @@ private extension ARTAnswerCell {
         if let explanation = response.explanation {
             let explanationViews = [
                 makeTitleLabel("AssistantResult.Explanation".localized),
-                makeLatexLabel(explanation),
+                makeKatexWebView(explanation),
                 (response.recommendation == nil) ? nil : makeSeparator()
             ].compactMap { $0 }
             views.append(contentsOf: explanationViews)
@@ -153,7 +129,7 @@ private extension ARTAnswerCell {
         if let recommendation = response.recommendation {
             let recommendationViews = [
                 makeTitleLabel("AssistantResult.Recommendation".localized),
-                makeLatexLabel(recommendation)
+                makeKatexWebView(recommendation)
             ]
             views.append(contentsOf: recommendationViews)
         }
@@ -304,16 +280,10 @@ private extension ARTAnswerCell {
         return view
     }
     
-    // TODO: найти решение переноса строк и установки пробелов; возможно, отказаться от iosMath и использовать другую либу
-    func makeLatexLabel(_ text: String) -> MTMathUILabel {
-        let view = MTMathUILabel()
-        view.font = MTFontManager().defaultFont()
-        view.textColor = Appearance.mono200
-        view.textAlignment = .left
-        view.latex = text
-        view.backgroundColor = UIColor.clear
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    func makeKatexWebView(_ katex: String) -> KatexWebView {
+        KatexWebView(katex: katex) { [weak self] in
+            self?.updateLayout()
+        }
     }
     
     func makeNormalTextLabel(_ text: String) -> UILabel {
@@ -359,6 +329,19 @@ private extension ARTAnswerCell {
         view.heightAnchor.constraint(equalToConstant: 1.scale).isActive = true
         
         return view
+    }
+    
+    func updateLayout() {
+        layoutIfNeeded()
+        
+        guard let tableView = superview as? UITableView else {
+            return
+        }
+        
+        UIView.performWithoutAnimation {
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
     }
 }
 

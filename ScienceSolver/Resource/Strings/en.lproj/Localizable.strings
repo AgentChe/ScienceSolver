@@ -122,8 +122,6 @@
 "AssistantResult.Explanation" = "Explanation";
 "AssistantResult.Recommendation" = "Recommendation";
 "AssistantResult.Math.UserFormula" = "User Formula";
-"AssistantResult.Math.Problem" = "Problem";
-"AssistantResult.Math.Solution" = "Solution";
 "AssistantResult.Copied" = "Copied";
 
 // MARK: AssistantMain

@@ -703,15 +703,7 @@ private extension AssistantResultViewModel {
             .map { answer -> String in
                 switch answer {
                 case .math(let mathResponse):
-                    let solution = mathResponse
-                        .solution.map { solution -> String in
-                            [solution.math, solution.description].joined(separator: "\n")
-                        }
-                        .joined(separator: "\n\n")
-                    let answer = mathResponse.answer
-                    
-                    return [solution, answer]
-                        .joined(separator: "\n\n")
+                    return mathResponse.body
                 case .physics(let physicsResponse):
                     return physicsResponse.body
                 case .biology(let biologyResponse):
