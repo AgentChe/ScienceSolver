@@ -1,0 +1,24 @@
+{
+  "originHash" : "869665a79858a178339f9c03d1f75ee2eaa3985d368bf676c8d9f3144aa1fe78",
+  "pins" : [
+    {
+      "identity" : "expression",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nicklockwood/Expression.git",
+      "state" : {
+        "revision" : "95ffe4c352e456cede933d9910d25b9c84039d1b",
+        "version" : "0.13.9"
+      }
+    },
+    {
+      "identity" : "swiftmath",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mgriebling/SwiftMath.git",
+      "state" : {
+        "revision" : "9fecdcf563f5fb51978ad3dbcdd0e4d22c7b0e69",
+        "version" : "1.5.4"
+      }
+    }
+  ],
+  "version" : 3
+}

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9A4B42872AE234D9F6F087D3 /* Pods_ScienceSolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FFBE93DB1784E69B82777B /* Pods_ScienceSolver.framework */; };
+		A3430F502CB373F50006FB37 /* SwiftMath in Frameworks */ = {isa = PBXBuildFile; productRef = A3430F4F2CB373F50006FB37 /* SwiftMath */; };
+		A3430F532CB374270006FB37 /* SwiftMath in Frameworks */ = {isa = PBXBuildFile; productRef = A3430F522CB374270006FB37 /* SwiftMath */; };
+		A3430F732CB375510006FB37 /* SetCalcBtnImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3430F722CB375510006FB37 /* SetCalcBtnImages.swift */; };
+		A3430F742CB375510006FB37 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3430F702CB375510006FB37 /* CalculatorViewController.swift */; };
+		A3430F752CB375510006FB37 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3430F712CB375510006FB37 /* Parser.swift */; };
+		A3430F782CB375780006FB37 /* Expression in Frameworks */ = {isa = PBXBuildFile; productRef = A3430F772CB375780006FB37 /* Expression */; };
 		DE89BF8E2C8B35B400CB9160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE89BF8D2C8B35B300CB9160 /* Assets.xcassets */; };
 		DE89BF912C8B35B400CB9160 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DE89BF902C8B35B400CB9160 /* Base */; };
 		DE89C14E2C8B3AE100CB9160 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BF992C8B3AE100CB9160 /* AmplitudeManager.swift */; };
@@ -196,6 +202,9 @@
 		15FFBE93DB1784E69B82777B /* Pods_ScienceSolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScienceSolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E1951324937B8BD0239B0B4 /* Pods-ScienceSolver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceSolver.release.xcconfig"; path = "Target Support Files/Pods-ScienceSolver/Pods-ScienceSolver.release.xcconfig"; sourceTree = "<group>"; };
 		47120E2B84162D01A45F4247 /* Pods-ScienceSolver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScienceSolver.debug.xcconfig"; path = "Target Support Files/Pods-ScienceSolver/Pods-ScienceSolver.debug.xcconfig"; sourceTree = "<group>"; };
+		A3430F702CB375510006FB37 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		A3430F712CB375510006FB37 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		A3430F722CB375510006FB37 /* SetCalcBtnImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCalcBtnImages.swift; sourceTree = "<group>"; };
 		DE89BF812C8B35B100CB9160 /* ScienceSolver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScienceSolver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE89BF8D2C8B35B300CB9160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE89BF902C8B35B400CB9160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -387,7 +396,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3430F502CB373F50006FB37 /* SwiftMath in Frameworks */,
 				9A4B42872AE234D9F6F087D3 /* Pods_ScienceSolver.framework in Frameworks */,
+				A3430F782CB375780006FB37 /* Expression in Frameworks */,
+				A3430F532CB374270006FB37 /* SwiftMath in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +413,16 @@
 				1E1951324937B8BD0239B0B4 /* Pods-ScienceSolver.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A3B0FAAC2CB36950006FA01D /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				A3430F702CB375510006FB37 /* CalculatorViewController.swift */,
+				A3430F712CB375510006FB37 /* Parser.swift */,
+				A3430F722CB375510006FB37 /* SetCalcBtnImages.swift */,
+			);
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 		B514A8B49C170904269274A6 /* Frameworks */ = {
@@ -649,6 +671,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE8839F2C9AED06008DAD26 /* Assistant */,
+				A3B0FAAC2CB36950006FA01D /* Calculator */,
 				DE89C3F42C9344DB00CB9160 /* Recognizer */,
 				DE89C3432C8B465900CB9160 /* TryAgain */,
 				DE89C0D42C8B3AE100CB9160 /* Main */,
@@ -1273,6 +1296,10 @@
 				Base,
 			);
 			mainGroup = DE89BF782C8B35B100CB9160;
+			packageReferences = (
+				A3430F512CB374270006FB37 /* XCRemoteSwiftPackageReference "SwiftMath" */,
+				A3430F762CB375780006FB37 /* XCRemoteSwiftPackageReference "Expression" */,
+			);
 			productRefGroup = DE89BF822C8B35B100CB9160 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1423,6 +1450,9 @@
 				DE89C17E2C8B3AE100CB9160 /* GlobalDefinitions.swift in Sources */,
 				DEE8838A2C9975D0008DAD26 /* SLViewModel.swift in Sources */,
 				DE89C3F82C9344EC00CB9160 /* AssistantCameraViewModel.swift in Sources */,
+				A3430F732CB375510006FB37 /* SetCalcBtnImages.swift in Sources */,
+				A3430F742CB375510006FB37 /* CalculatorViewController.swift in Sources */,
+				A3430F752CB375510006FB37 /* Parser.swift in Sources */,
 				DE89C24F2C8B3AE200CB9160 /* IAPProduct.swift in Sources */,
 				DE89C3D32C92E83900CB9160 /* Page.swift in Sources */,
 				DE89C1622C8B3AE100CB9160 /* ObservableAndSingle+Extension.swift in Sources */,
@@ -1673,7 +1703,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2GY8CB289H;
+				DEVELOPMENT_TEAM = 2NVL5EUMWM;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScienceSolver/Info.plist;
@@ -1689,7 +1719,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = train.somatic1;
+				PRODUCT_BUNDLE_IDENTIFIER = train.somatdfdfd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1709,7 +1739,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2GY8CB289H;
+				DEVELOPMENT_TEAM = 2NVL5EUMWM;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScienceSolver/Info.plist;
@@ -1725,7 +1755,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = train.somatic1;
+				PRODUCT_BUNDLE_IDENTIFIER = train.somatdfdfd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1759,6 +1789,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A3430F4E2CB373F50006FB37 /* XCRemoteSwiftPackageReference "SwiftMath" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mgriebling/SwiftMath.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+		A3430F512CB374270006FB37 /* XCRemoteSwiftPackageReference "SwiftMath" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mgriebling/SwiftMath.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.5.4;
+			};
+		};
+		A3430F762CB375780006FB37 /* XCRemoteSwiftPackageReference "Expression" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nicklockwood/Expression.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.13.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A3430F4F2CB373F50006FB37 /* SwiftMath */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3430F4E2CB373F50006FB37 /* XCRemoteSwiftPackageReference "SwiftMath" */;
+			productName = SwiftMath;
+		};
+		A3430F522CB374270006FB37 /* SwiftMath */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3430F512CB374270006FB37 /* XCRemoteSwiftPackageReference "SwiftMath" */;
+			productName = SwiftMath;
+		};
+		A3430F772CB375780006FB37 /* Expression */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3430F762CB375780006FB37 /* XCRemoteSwiftPackageReference "Expression" */;
+			productName = Expression;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE89BF792C8B35B100CB9160 /* Project object */;
 }

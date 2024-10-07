@@ -119,7 +119,9 @@ private extension AssistantMainViewController {
         case .assistantRecognize(let assistant):
             AssistantAssembly().recognize(assistant: assistant, from: self)
         case .calculator:
-            break // TODO
+            let calculatorViewController = CalculatorViewController()
+            calculatorViewController.modalPresentationStyle = .fullScreen
+            present(calculatorViewController, animated:  true)
         case .analyze(let data):
             guard let nc = navigationController else { return }
             
