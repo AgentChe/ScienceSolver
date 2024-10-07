@@ -8,6 +8,7 @@
 import UIKit
 
 final class AssistantAssembly {
+    
     func recognize(assistant: AssistantsCollectionElement.Assistant? = nil, from: UIViewController) {
         let nc = NavigationController()
         nc.modalPresentationStyle = .fullScreen

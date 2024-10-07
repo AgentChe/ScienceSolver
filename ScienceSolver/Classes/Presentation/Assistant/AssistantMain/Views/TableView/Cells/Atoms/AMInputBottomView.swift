@@ -17,6 +17,7 @@ final class AMInputBottomView: UIView {
         
         makeConstraints()
         initialize()
+        
     }
     
     required init?(coder: NSCoder) {
