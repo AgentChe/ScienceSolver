@@ -16,7 +16,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = MainViewController.make()
+        window?.rootViewController = SplashViewController.make()
         window?.makeKeyAndVisible()
     }
 }

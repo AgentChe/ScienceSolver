@@ -46,7 +46,7 @@ class CalculatorViewController: UIViewController {
         let button = UIButton(type: .custom)
         
         // Set the image instead of title
-        if let dismissImage = UIImage(named: "dismissImage") {
+        if let dismissImage = UIImage(named: "Calculator.close") {
             button.setImage(dismissImage, for: .normal)
         }
         
@@ -60,8 +60,9 @@ class CalculatorViewController: UIViewController {
         let label = MTMathUILabel()
         label.textAlignment = .right
         label.fontSize = 29.scale
-        let font = MTFontManager().font(withName: "FiraMath-Regular", size: 29.scale)
-        label.font = font!
+        if let font = MTFontManager().kpMathSansFont(withSize: 29.scale) {
+            label.font = font
+        }
         label.latex = "0"
         label.textAlignment = .right
         label.backgroundColor = .clear//.yellow
@@ -481,9 +482,9 @@ class CalculatorViewController: UIViewController {
         var fontSize = expressionLabel.fontSize
            while totalWidth > historyScrollView.frame.width {
                fontSize -= 0.1
-               expressionLabel.font =  MTFontManager().font(withName: "FiraMath-Regular", size: fontSize)
+               expressionLabel.font =  MTFontManager().kpMathSansFont(withSize: fontSize)
                if expressionLabel.fontSize < 1 {  // Prevent font size from becoming too small
-                   expressionLabel.font =  MTFontManager().font(withName: "FiraMath-Regular", size: 1)
+                   expressionLabel.font =  MTFontManager().kpMathSansFont(withSize: 1)
                    break
                }
                expressionLabel.layoutSubviews()
@@ -497,7 +498,7 @@ class CalculatorViewController: UIViewController {
            let resultLabel = MTMathUILabel()
            resultLabel.textAlignment = .right
         resultLabel.fontSize = displayLabel.fontSize * 1.5 // Double the font size
-        resultLabel.font = MTFontManager().font(withName: "FiraMath-Regular", size: 29*1.5.scale) // S
+        resultLabel.font = MTFontManager().kpMathSansFont(withSize: 29*1.5.scale)
            let resultLatex: String
            if isDecimalDisplay {
                resultLatex = "= " + formatDecimalResult(result)
@@ -516,9 +517,9 @@ class CalculatorViewController: UIViewController {
         fontSize = resultLabel.fontSize
            while totalWidth > historyScrollView.frame.width {
                fontSize -= 0.1
-               resultLabel.font =  MTFontManager().font(withName: "FiraMath-Regular", size: fontSize)
+               resultLabel.font = MTFontManager().kpMathSansFont(withSize: fontSize)
                if resultLabel.fontSize < 1 {  // Prevent font size from becoming too small
-                   resultLabel.font =  MTFontManager().font(withName: "FiraMath-Regular", size: 1)
+                   resultLabel.font =  MTFontManager().kpMathSansFont(withSize: 1)
                    break
                }
                resultLabel.layoutSubviews()
