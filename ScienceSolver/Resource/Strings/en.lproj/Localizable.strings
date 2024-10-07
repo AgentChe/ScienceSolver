@@ -28,9 +28,9 @@
 "Paygate.Error.Text" = "An error occurred during execution. Try later.";
 "Paygate.Error.Button" = "OK";
 "Paygate.Title" = "Upgrade Premium";
-"Paygate.Info1" = "Get all the pre-installed games";
-"Paygate.Info2" = "Import & play own games";
-"Paygate.Info3" = "1000+ retro gaming wallpapers";
+"Paygate.Info1" = "Learn smarter with AI";
+"Paygate.Info2" = "Scan & solve in various sciences";
+"Paygate.Info3" = "Review your progress with prompt\nhistory";
 "Paygate.EnableFreeTrial" = "Enable Free Trial";
 "Paygate.FreeTrialEnabled" = "Free Trial Enabled";
 "Paygate.Yearly" = "Yearly";

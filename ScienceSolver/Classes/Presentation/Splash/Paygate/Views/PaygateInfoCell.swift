@@ -74,6 +74,7 @@ private extension PaygateInfoCell {
             .textAlignment(.left)
         
         let view = UILabel()
+        view.numberOfLines = 2
         view.attributedText = text.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

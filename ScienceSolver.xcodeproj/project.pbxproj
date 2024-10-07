@@ -671,7 +671,6 @@
 			isa = PBXGroup;
 			children = (
 				DEE8839F2C9AED06008DAD26 /* Assistant */,
-				A3B0FAAC2CB36950006FA01D /* Calculator */,
 				DE89C3F42C9344DB00CB9160 /* Recognizer */,
 				DE89C3432C8B465900CB9160 /* TryAgain */,
 				DE89C0D42C8B3AE100CB9160 /* Main */,
@@ -1192,6 +1191,7 @@
 		DEE8839F2C9AED06008DAD26 /* Assistant */ = {
 			isa = PBXGroup;
 			children = (
+				A3B0FAAC2CB36950006FA01D /* Calculator */,
 				DEB22DC92CA29AF0000200C1 /* AssistantMain */,
 				DEE883B72C9AF6ED008DAD26 /* AssistantResult */,
 				DEE883B82C9AF75A008DAD26 /* AssistantAssembly.swift */,
