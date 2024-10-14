@@ -127,7 +127,6 @@
 		DE89C3952C8F119C00CB9160 /* WritingAssistantResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3942C8F119C00CB9160 /* WritingAssistantResult.swift */; };
 		DE89C3972C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3962C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift */; };
 		DE89C3992C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3982C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift */; };
-		DE89C39B2C9051B100CB9160 /* Onboarding.Welcome1.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C39A2C9051B000CB9160 /* Onboarding.Welcome1.Animation.json */; };
 		DE89C39F2C918D1E00CB9160 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C39E2C918D1E00CB9160 /* AccountViewController.swift */; };
 		DE89C3A12C918D2700CB9160 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3A02C918D2700CB9160 /* AccountViewModel.swift */; };
 		DE89C3A32C918D2C00CB9160 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3A22C918D2C00CB9160 /* AccountView.swift */; };
@@ -172,6 +171,7 @@
 		DEB22DE12CA2B83A000200C1 /* AMSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DE02CA2B83A000200C1 /* AMSelectEntityButton.swift */; };
 		DEB22DE32CA30357000200C1 /* AMTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DE22CA30357000200C1 /* AMTextView.swift */; };
 		DEB22DFA2CAE92B2000200C1 /* KatexWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DF92CAE92B2000200C1 /* KatexWebView.swift */; };
+		DEC65C3D2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC65C3C2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json */; };
 		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
 		DEE8837E2C996922008DAD26 /* SWMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837D2C996922008DAD26 /* SWMView.swift */; };
@@ -320,7 +320,6 @@
 		DE89C3942C8F119C00CB9160 /* WritingAssistantResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingAssistantResult.swift; sourceTree = "<group>"; };
 		DE89C3962C8F181F00CB9160 /* AssistantAnalyzeManualWritingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAnalyzeManualWritingRequest.swift; sourceTree = "<group>"; };
 		DE89C3982C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAnalyzeManualRequest.swift; sourceTree = "<group>"; };
-		DE89C39A2C9051B000CB9160 /* Onboarding.Welcome1.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome1.Animation.json; sourceTree = "<group>"; };
 		DE89C39E2C918D1E00CB9160 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		DE89C3A02C918D2700CB9160 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		DE89C3A22C918D2C00CB9160 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
@@ -365,6 +364,7 @@
 		DEB22DE02CA2B83A000200C1 /* AMSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMSelectEntityButton.swift; sourceTree = "<group>"; };
 		DEB22DE22CA30357000200C1 /* AMTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTextView.swift; sourceTree = "<group>"; };
 		DEB22DF92CAE92B2000200C1 /* KatexWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatexWebView.swift; sourceTree = "<group>"; };
+		DEC65C3C2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Onboarding.Welcome1.Animation.json; sourceTree = "<group>"; };
 		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
 		DEE8837D2C996922008DAD26 /* SWMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMView.swift; sourceTree = "<group>"; };
@@ -853,7 +853,7 @@
 		DE89C3572C8B556500CB9160 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				DE89C39A2C9051B000CB9160 /* Onboarding.Welcome1.Animation.json */,
+				DEC65C3C2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json */,
 				DE89C35A2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json */,
 				DE89C35C2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json */,
 			);
@@ -1314,7 +1314,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE89C39B2C9051B100CB9160 /* Onboarding.Welcome1.Animation.json in Resources */,
 				DE89C34B2C8B51B000CB9160 /* Inter-Black.ttf in Resources */,
 				DE89C35B2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json in Resources */,
 				DE89C34C2C8B51B000CB9160 /* Inter-Bold.ttf in Resources */,
@@ -1325,6 +1324,7 @@
 				DE89BF8E2C8B35B400CB9160 /* Assets.xcassets in Resources */,
 				DE89BF912C8B35B400CB9160 /* Base in Resources */,
 				DE89C35D2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json in Resources */,
+				DEC65C3D2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json in Resources */,
 				DEE883BC2C9B2D27008DAD26 /* ART.Loader.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
