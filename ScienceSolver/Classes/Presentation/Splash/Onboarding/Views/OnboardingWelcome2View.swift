@@ -53,7 +53,7 @@ private extension OnboardingWelcome2View {
         NSLayoutConstraint.activate([
             animationView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             animationView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            animationView.topAnchor.constraint(equalTo: container.topAnchor, constant: 79.scale),
+            animationView.topAnchor.constraint(equalTo: container.topAnchor, constant: ScreenSize.isIphoneXFamily ? 79.scale : 32.scale),
             animationView.heightAnchor.constraint(equalToConstant: 427.scale)
         ])
         
@@ -66,7 +66,7 @@ private extension OnboardingWelcome2View {
         NSLayoutConstraint.activate([
             subTitleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 31.scale),
             subTitleLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -31.scale),
-            subTitleLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -48.scale)
+            subTitleLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -48.scale : -16.scale)
         ])
         
         NSLayoutConstraint.activate([

@@ -36,7 +36,7 @@ private extension AssistantMainView {
         NSLayoutConstraint.activate([
             assistantsCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             assistantsCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            assistantsCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 36.scale),
+            assistantsCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: ScreenSize.isIphoneXFamily ? 36.scale : 16.scale),
             assistantsCollectionView.heightAnchor.constraint(equalToConstant: 31.scale)
         ])
         

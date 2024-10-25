@@ -50,7 +50,7 @@ private extension SplashView {
         
         NSLayoutConstraint.activate([
             preloaderLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            preloader.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -26.scale)
+            preloaderLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -26.scale)
         ])
     }
 }

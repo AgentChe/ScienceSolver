@@ -57,10 +57,10 @@ private extension PaygateView {
 private extension PaygateView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 292.scale),
-            imageView.heightAnchor.constraint(equalToConstant: 181.scale),
+            imageView.widthAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 292.scale : 233.6.scale),
+            imageView.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 181.scale : 144.8.scale),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 27.scale)
+            imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: ScreenSize.isIphoneXFamily ? 27.scale : 16.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -73,7 +73,7 @@ private extension PaygateView {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 12.scale)
+            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 12.scale : 4.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -97,7 +97,7 @@ private extension PaygateView {
         NSLayoutConstraint.activate([
             enableTrialButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             enableTrialButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            enableTrialButton.topAnchor.constraint(equalTo: cell3.bottomAnchor, constant: 16.scale),
+            enableTrialButton.topAnchor.constraint(equalTo: cell3.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 16.scale : 8.scale),
             enableTrialButton.heightAnchor.constraint(equalToConstant: 63.scale)
         ])
         
@@ -123,13 +123,13 @@ private extension PaygateView {
         NSLayoutConstraint.activate([
             buyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             buyButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            buyButton.topAnchor.constraint(equalTo: product2Button.bottomAnchor, constant: 16.scale),
+            buyButton.topAnchor.constraint(equalTo: product2Button.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 16.scale : 8.scale),
             buyButton.heightAnchor.constraint(equalToConstant: 50.scale)
         ])
         
         NSLayoutConstraint.activate([
             infoView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            infoView.topAnchor.constraint(equalTo: buyButton.bottomAnchor, constant: 12.scale)
+            infoView.topAnchor.constraint(equalTo: buyButton.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? 12.scale : 8.scale)
         ])
         
         NSLayoutConstraint.activate([
