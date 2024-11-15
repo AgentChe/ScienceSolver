@@ -60,7 +60,7 @@ private extension AccountViewController {
             let vc = HistoryViewController.make()
             navigationController?.pushViewController(vc, animated: true)
         case .url(let url):
-            UIApplication.shared.open(url)
+            UIApplication.shared.open(url, options: [:])
         }
     }
 }
