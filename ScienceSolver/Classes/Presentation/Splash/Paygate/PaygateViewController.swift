@@ -143,7 +143,8 @@ private extension PaygateViewController {
         case .error:
             showError()
         case .open(let url):
-            UIApplication.shared.open(url, options: [:])
+            let vc = WebController.make(url: url)
+            present(vc, animated: true)
         }
     }
     

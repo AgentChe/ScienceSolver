@@ -44,7 +44,8 @@ final class TryAgainViewController: UIViewController {
         
         mainView.contactButton.rx.tap
             .bind(to: Binder(self) { base, void in
-                UIApplication.shared.open(GlobalDefinitions.contactUsUrl, options: [:])
+                let vc = WebController.make(url: GlobalDefinitions.contactUsUrl)
+                base.present(vc, animated: true)
             })
             .disposed(by: disposeBag)
     }
