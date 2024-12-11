@@ -14,6 +14,7 @@
 		A3430F742CB375510006FB37 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3430F702CB375510006FB37 /* CalculatorViewController.swift */; };
 		A3430F752CB375510006FB37 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3430F712CB375510006FB37 /* Parser.swift */; };
 		A3430F782CB375780006FB37 /* Expression in Frameworks */ = {isa = PBXBuildFile; productRef = A3430F772CB375780006FB37 /* Expression */; };
+		DE1DF99A2D09C14B0004A43F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE1DF9992D09C14B0004A43F /* GoogleService-Info.plist */; };
 		DE89BF8E2C8B35B400CB9160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE89BF8D2C8B35B300CB9160 /* Assets.xcassets */; };
 		DE89BF912C8B35B400CB9160 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DE89BF902C8B35B400CB9160 /* Base */; };
 		DE89C14E2C8B3AE100CB9160 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BF992C8B3AE100CB9160 /* AmplitudeManager.swift */; };
@@ -206,6 +207,7 @@
 		A3430F702CB375510006FB37 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		A3430F712CB375510006FB37 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		A3430F722CB375510006FB37 /* SetCalcBtnImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCalcBtnImages.swift; sourceTree = "<group>"; };
+		DE1DF9992D09C14B0004A43F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE89BF812C8B35B100CB9160 /* ScienceSolver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScienceSolver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE89BF8D2C8B35B300CB9160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE89BF902C8B35B400CB9160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				DE89BF8D2C8B35B300CB9160 /* Assets.xcassets */,
 				DE89BF8F2C8B35B400CB9160 /* LaunchScreen.storyboard */,
 				DE89BF922C8B35B400CB9160 /* Info.plist */,
+				DE1DF9992D09C14B0004A43F /* GoogleService-Info.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1317,6 +1320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE1DF99A2D09C14B0004A43F /* GoogleService-Info.plist in Resources */,
 				DE89C34B2C8B51B000CB9160 /* Inter-Black.ttf in Resources */,
 				DE89C35B2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json in Resources */,
 				DE89C34C2C8B51B000CB9160 /* Inter-Bold.ttf in Resources */,
@@ -1707,7 +1711,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1723,7 +1727,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.iphone.science;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1745,7 +1749,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1761,7 +1765,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.4;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = app.iphone.science;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

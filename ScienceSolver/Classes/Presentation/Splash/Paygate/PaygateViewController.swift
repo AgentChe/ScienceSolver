@@ -37,6 +37,8 @@ final class PaygateViewController: UIViewController {
         
         AmplitudeManager.shared
             .logEvent(name: "Paygate Screen")
+        FirebaseManager.shared
+            .logEvent(name: "client_paygate_screen")
         
         Observable
             .merge(
