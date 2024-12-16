@@ -30,7 +30,7 @@
 "Paygate.Title" = "Upgrade Premium";
 "Paygate.Info1" = "Learn smarter with AI";
 "Paygate.Info2" = "Scan & solve in various sciences";
-"Paygate.Info3" = "Review your progress with prompt\nhistory";
+"Paygate.Info3" = "Review your progress with recent\ninquiries";
 "Paygate.EnableFreeTrial" = "Enable Free Trial";
 "Paygate.FreeTrialEnabled" = "Free Trial Enabled";
 "Paygate.Yearly" = "Yearly";
@@ -63,15 +63,15 @@
 
 // MARK: Account
 "Account.Title" = "Account";
-"Account.History" = "History";
+"Account.History" = "Recent";
 "Account.About" = "About";
 "Account.PrivacyPolicy" = "Privacy Policy";
 "Account.TermsOfUse" = "Terms of Use";
 "Account.ContactUs" = "Contact us";
 
 // MARK: History
-"History.Title" = "History";
-"History.Empty" = "You have no requests in your history ";
+"History.Title" = "Recent";
+"History.Empty" = "You have no requests in your history";
 
 // MARK: Assistant
 "Assistant.Math" = "Math";
@@ -125,6 +125,6 @@
 "AssistantResult.Copied" = "Copied";
 
 // MARK: AssistantMain
-"AssistantMain.History" = "History";
+"AssistantMain.History" = "Recent";
 "AssistantMain.Translate" = "Translate to: %@";
 "AssistantMain.Input.Placeholder" = "Ask a question";
