@@ -14,8 +14,6 @@ final class ARTAnswerCell: UITableViewCell {
     
     lazy var container = makeContainer()
     lazy var stackView = makeStackView()
-    lazy var refreshButton = makeActionButton(iconName: "AssistantResult.Refresh")
-    lazy var copyButton = makeActionButton(iconName: "AssistantResult.Copy")
     
     private lazy var titleAttrs = TextAttributes()
         .textColor(Appearance.main400)
@@ -54,9 +52,6 @@ extension ARTAnswerCell {
             stackView.addArrangedSubview(view)
         }
         
-        refreshButton.isHidden = !answer.detected
-        copyButton.isHidden = !answer.detected
-        
         layoutIfNeeded()
     }
 }
@@ -67,9 +62,6 @@ private extension ARTAnswerCell {
         backgroundColor = UIColor.clear
         contentView.backgroundColor = UIColor.clear
         selectionStyle = .none
-        
-        refreshButton.addTarget(self, action: #selector(refreshTapped), for: .touchUpInside)
-        copyButton.addTarget(self, action: #selector(copyTapped), for: .touchUpInside)
     }
     
     @objc
@@ -144,6 +136,9 @@ private extension ARTAnswerCell {
             views.append(contentsOf: recommendationViews)
         }
         
+        let actionsView = makeActionsView()
+        views.append(actionsView)
+        
         return views
     }
     
@@ -182,6 +177,9 @@ private extension ARTAnswerCell {
             ]
             views.append(contentsOf: recommendationViews)
         }
+        
+        let actionsView = makeActionsView()
+        views.append(actionsView)
         
         return views
     }
@@ -222,6 +220,9 @@ private extension ARTAnswerCell {
             views.append(contentsOf: recommendationViews)
         }
         
+        let actionsView = makeActionsView()
+        views.append(actionsView)
+        
         return views
     }
     
@@ -260,6 +261,9 @@ private extension ARTAnswerCell {
             ]
             views.append(contentsOf: recommendationViews)
         }
+        
+        let actionsView = makeActionsView()
+        views.append(actionsView)
         
         return views
     }
@@ -300,13 +304,17 @@ private extension ARTAnswerCell {
             views.append(contentsOf: recommendationViews)
         }
         
+        let actionsView = makeActionsView()
+        views.append(actionsView)
+        
         return views
     }
     
     func makeLanguageViews(response: TranslateResult) -> [UIView] {
         [
             makeTitleLabel("AssistantResult.Answer".localized),
-            makeNormalTextLabel(response.translate)
+            makeNormalTextLabel(response.translate),
+            makeActionsView()
         ]
     }
     
@@ -369,6 +377,44 @@ private extension ARTAnswerCell {
         return view
     }
     
+    func makeActionsView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        func makeActionButton(iconName: String) -> TapAreaButton {
+            let button = TapAreaButton()
+            button.setImage(UIImage(named: iconName), for: .normal)
+            button.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(button)
+            return button
+        }
+        
+        let refreshButton = makeActionButton(iconName: "AssistantResult.Refresh")
+        let copyButton = makeActionButton(iconName: "AssistantResult.Copy")
+        
+        NSLayoutConstraint.activate([
+            refreshButton.widthAnchor.constraint(equalToConstant: 24.scale),
+            refreshButton.heightAnchor.constraint(equalToConstant: 24.scale),
+            refreshButton.trailingAnchor.constraint(equalTo: copyButton.leadingAnchor, constant: -16.scale),
+            refreshButton.topAnchor.constraint(equalTo: view.topAnchor),
+            refreshButton.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            copyButton.widthAnchor.constraint(equalToConstant: 24.scale),
+            copyButton.heightAnchor.constraint(equalToConstant: 24.scale),
+            copyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            copyButton.topAnchor.constraint(equalTo: view.topAnchor),
+            copyButton.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        refreshButton.addTarget(self, action: #selector(refreshTapped), for: .touchUpInside)
+        copyButton.addTarget(self, action: #selector(copyTapped), for: .touchUpInside)
+        
+        return view
+    }
+    
     func updateLayout() {
         layoutIfNeeded()
         
@@ -397,21 +443,7 @@ private extension ARTAnswerCell {
             stackView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
             stackView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
             stackView.topAnchor.constraint(equalTo: container.topAnchor, constant: 16.scale),
-            stackView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -56.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            copyButton.widthAnchor.constraint(equalToConstant: 24.scale),
-            copyButton.heightAnchor.constraint(equalToConstant: 24.scale),
-            copyButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -24.scale),
-            copyButton.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            refreshButton.widthAnchor.constraint(equalToConstant: 24.scale),
-            refreshButton.heightAnchor.constraint(equalToConstant: 24.scale),
-            refreshButton.trailingAnchor.constraint(equalTo: copyButton.leadingAnchor, constant: -16.scale),
-            refreshButton.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale)
+            stackView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale)
         ])
     }
 }
@@ -437,14 +469,6 @@ private extension ARTAnswerCell {
         view.spacing = 16.scale
         view.distribution = .fill
         view.contentMode = .scaleToFill
-        view.translatesAutoresizingMaskIntoConstraints = false
-        container.addSubview(view)
-        return view
-    }
-    
-    func makeActionButton(iconName: String) -> TapAreaButton {
-        let view = TapAreaButton()
-        view.setImage(UIImage(named: iconName), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view
