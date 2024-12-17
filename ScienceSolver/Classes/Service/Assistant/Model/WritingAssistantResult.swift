@@ -19,10 +19,16 @@ struct WritingAssistantResult {
     }
     
     struct Response {
-        let userRawInput: String? // html текст
-        let body: String // html текст
-        let explanation: String // html текст
-        let recommendation: String // html текст
+        struct Data {
+            let userRawInput: String? // html текст
+            let body: String // html текст
+            let explanation: String // html текст
+            let recommendation: String // html текст
+        }
+        
+        let detected: Bool
+        let error: String?
+        let data: Data?
     }
     
     let threadId: String
@@ -111,17 +117,27 @@ extension WritingAssistantResult {
 // MARK: Public
 extension WritingAssistantResult.Response {
     static func map(content: [String: Any]) -> WritingAssistantResult.Response? {
-        guard
-            let body = content["body"] as? String,
-            let explanation = content["explanation"] as? String,
-            let recommendation = content["recommendation"] as? String
-        else { return nil }
+        guard let detected = content["detected"] as? Bool else { return nil }
+        
+        let data: WritingAssistantResult.Response.Data? = {
+            guard
+                let body = content["body"] as? String,
+                let explanation = content["explanation"] as? String,
+                let recommendation = content["recommendation"] as? String
+            else { return nil }
+            
+            return WritingAssistantResult.Response.Data(
+                userRawInput: content["user_raw_input"] as? String,
+                body: body,
+                explanation: explanation,
+                recommendation: recommendation
+            )
+        }()
         
         return WritingAssistantResult.Response(
-            userRawInput: content["user_raw_input"] as? String,
-            body: body,
-            explanation: explanation,
-            recommendation: recommendation
+            detected: detected,
+            error: content["error"] as? String,
+            data: data
         )
     }
 }

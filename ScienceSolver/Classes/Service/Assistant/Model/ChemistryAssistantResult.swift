@@ -14,10 +14,16 @@ struct ChemistryAssistantResult {
     }
     
     struct Response {
-        let userRawInput: String? // html текст
-        let body: String // html текст
-        let explanation: String // html текст
-        let recommendation: String // html текст
+        struct Data {
+            let userRawInput: String? // html текст
+            let body: String // html текст
+            let explanation: String // html текст
+            let recommendation: String // html текст
+        }
+        
+        let detected: Bool
+        let error: String?
+        let data: Data?
     }
     
     let threadId: String
@@ -101,17 +107,28 @@ extension ChemistryAssistantResult {
 // MARK: Public
 extension ChemistryAssistantResult.Response {
     static func map(content: [String: Any]) -> ChemistryAssistantResult.Response? {
-        guard
-            let body = content["body"] as? String,
-            let explanation = content["explanation"] as? String,
-            let recommendation = content["recommendation"] as? String
-        else { return nil }
+        guard let detected = content["detected"] as? Bool else { return nil }
+        
+        let data: ChemistryAssistantResult.Response.Data? = {
+            guard
+                detected,
+                let body = content["body"] as? String,
+                let explanation = content["explanation"] as? String,
+                let recommendation = content["recommendation"] as? String
+            else { return nil }
+            
+            return ChemistryAssistantResult.Response.Data(
+                userRawInput: content["user_raw_input"] as? String,
+                body: body,
+                explanation: explanation,
+                recommendation: recommendation
+            )
+        }()
         
         return ChemistryAssistantResult.Response(
-            userRawInput: content["user_raw_input"] as? String,
-            body: body,
-            explanation: explanation,
-            recommendation: recommendation
+            detected: detected,
+            error: content["error"] as? String,
+            data: data
         )
     }
 }

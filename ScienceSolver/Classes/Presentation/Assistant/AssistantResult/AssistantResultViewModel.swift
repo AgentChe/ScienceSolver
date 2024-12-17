@@ -700,18 +700,19 @@ private extension AssistantResultViewModel {
     func makeAction(didTapCopy: Signal<AssistantResultTableAnswerElement>) -> Driver<Action> {
         let copy = didTapCopy
             .asDriver(onErrorDriveWith: .never())
+            .filter { $0.detected }
             .map { answer -> String in
                 switch answer {
                 case .math(let mathResponse):
-                    return mathResponse.body
+                    return mathResponse.data?.body ?? ""
                 case .physics(let physicsResponse):
-                    return physicsResponse.body
+                    return physicsResponse.data?.body ?? ""
                 case .biology(let biologyResponse):
-                    return biologyResponse.body
+                    return biologyResponse.data?.body ?? ""
                 case .chemistry(let chemistryResponse):
-                    return chemistryResponse.body
+                    return chemistryResponse.data?.body ?? ""
                 case .writing(let writingResponse):
-                    return writingResponse.body
+                    return writingResponse.data?.body ?? ""
                 case .language(let translateResult):
                     return translateResult.translate
                 }

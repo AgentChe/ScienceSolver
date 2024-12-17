@@ -14,11 +14,17 @@ struct MathAssistantResult {
     }
     
     struct Response {
-        let userFormula: String? // latex текст
-        let userRawInput: String? // latex текст
-        let body: String // latex текст
-        let explanation: String? // latex текст
-        let recommendation: String? // latex текст
+        struct Data {
+            let userFormula: String? // latex текст
+            let userRawInput: String? // latex текст
+            let body: String // latex текст
+            let explanation: String? // latex текст
+            let recommendation: String? // latex текст
+        }
+        
+        let detected: Bool
+        let error: String?
+        let data: Data?
     }
     
     let threadId: String
@@ -102,14 +108,24 @@ extension MathAssistantResult {
 // MARK: Public
 extension MathAssistantResult.Response {
     static func map(content: [String: Any]) -> MathAssistantResult.Response? {
-        guard let body = content["body"] as? String else { return nil }
+        guard let detected = content["detected"] as? Bool else { return nil }
+        
+        let data: MathAssistantResult.Response.Data? = {
+            guard detected, let body = content["body"] as? String else { return nil }
+            
+            return MathAssistantResult.Response.Data(
+                userFormula: content["user_formula"] as? String,
+                userRawInput: content["user_raw_input"] as? String,
+                body: body,
+                explanation: content["explanation"] as? String,
+                recommendation: content["recommendation"] as? String
+            )
+        }()
         
         return MathAssistantResult.Response(
-            userFormula: content["user_formula"] as? String,
-            userRawInput: content["user_raw_input"] as? String,
-            body: body,
-            explanation: content["explanation"] as? String,
-            recommendation: content["recommendation"] as? String
+            detected: detected,
+            error: content["error"] as? String,
+            data: data
         )
     }
 }
