@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import RiveRuntime
 
 final class OnboardingWelcome3View: OnboardingSlideView {
     lazy var container = makeContainer()
@@ -14,6 +15,8 @@ final class OnboardingWelcome3View: OnboardingSlideView {
     lazy var titleLabel = makeTitleLabel()
     lazy var subTitleLabel = makeSubTitleLabel()
     lazy var button = makeButton()
+    
+    private lazy var animationViewModel = RiveViewModel(fileName: "Onboarding.Welcome3.Animation", autoPlay: false)
     
     init() {
         super.init(slide: .welcome3)
@@ -29,7 +32,7 @@ final class OnboardingWelcome3View: OnboardingSlideView {
     override func moveToThis() {
         super.moveToThis()
         
-        animationView.play()
+        animationViewModel.play(loop: .oneShot)
     }
 }
 
@@ -90,11 +93,9 @@ private extension OnboardingWelcome3View {
         return view
     }
     
-    func makeAnimationView() -> LottieAnimationView {
-        let view = LottieAnimationView()
-        view.contentMode = .scaleAspectFit
+    func makeAnimationView() -> UIView {
+        let view = animationViewModel.createRiveView()
         view.backgroundColor = UIColor.clear
-        view.animation = LottieAnimation.named("Onboarding.Welcome3.Animation")
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view

@@ -119,6 +119,7 @@ PODS:
   - nanopb/encode (2.30910.0)
   - OtterScaleiOS (1.25)
   - PromisesObjC (2.4.0)
+  - RiveRuntime (6.5.9)
   - RxCocoa (6.7.1):
     - RxRelay (= 6.7.1)
     - RxSwift (= 6.7.1)
@@ -140,6 +141,7 @@ DEPENDENCIES:
   - lottie-ios
   - Mantis
   - OtterScaleiOS (from `https://github.com/AgentChe/OtterScaleiOS.git`)
+  - RiveRuntime
   - RxCocoa
   - RxSwift
   - SwiftyStoreKit
@@ -168,6 +170,7 @@ SPEC REPOS:
     - Mantis
     - nanopb
     - PromisesObjC
+    - RiveRuntime
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -206,12 +209,13 @@ SPEC CHECKSUMS:
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
   OtterScaleiOS: 0411b70aee2f3c998988188b0768e2e3216ebe9d
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+  RiveRuntime: 30e9d937a66004aa1b3374326798f276140bfecb
   RxCocoa: f5609cb4637587a7faa99c5d5787e3ad582b75a4
   RxRelay: 4151ba01152436b08271e08410135e099880eae5
   RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
 
-PODFILE CHECKSUM: 8692ef52b83d7ccf07e5e85023649a3c0a61e69f
+PODFILE CHECKSUM: 7c0f0dc54d68cb4bad70886049a7549fa7fc9ad6
 
 COCOAPODS: 1.15.2

@@ -102,7 +102,6 @@
 		DE89C3542C8B554000CB9160 /* OnboardingWelcome2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3532C8B554000CB9160 /* OnboardingWelcome2View.swift */; };
 		DE89C3562C8B554700CB9160 /* OnboardingWelcome3View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3552C8B554700CB9160 /* OnboardingWelcome3View.swift */; };
 		DE89C35B2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C35A2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json */; };
-		DE89C35D2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DE89C35C2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json */; };
 		DE89C35F2C8DCD3200CB9160 /* OnboardingSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C35E2C8DCD3200CB9160 /* OnboardingSlideView.swift */; };
 		DE89C3622C8DFF2500CB9160 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3612C8DFF2500CB9160 /* TabView.swift */; };
 		DE89C3642C8DFF2D00CB9160 /* TabItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89C3632C8DFF2D00CB9160 /* TabItemButton.swift */; };
@@ -173,6 +172,7 @@
 		DEB22DE32CA30357000200C1 /* AMTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DE22CA30357000200C1 /* AMTextView.swift */; };
 		DEB22DFA2CAE92B2000200C1 /* KatexWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DF92CAE92B2000200C1 /* KatexWebView.swift */; };
 		DEC65C3D2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC65C3C2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json */; };
+		DEC9F6E42D66054800353955 /* Onboarding.Welcome3.Animation.riv in Resources */ = {isa = PBXBuildFile; fileRef = DEC9F6E32D66054800353955 /* Onboarding.Welcome3.Animation.riv */; };
 		DED95F8F2CEA5396003CBC48 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED95F8E2CEA5396003CBC48 /* WebController.swift */; };
 		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
@@ -297,7 +297,6 @@
 		DE89C3532C8B554000CB9160 /* OnboardingWelcome2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcome2View.swift; sourceTree = "<group>"; };
 		DE89C3552C8B554700CB9160 /* OnboardingWelcome3View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWelcome3View.swift; sourceTree = "<group>"; };
 		DE89C35A2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome2.Animation.json; sourceTree = "<group>"; };
-		DE89C35C2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Welcome3.Animation.json; sourceTree = "<group>"; };
 		DE89C35E2C8DCD3200CB9160 /* OnboardingSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlideView.swift; sourceTree = "<group>"; };
 		DE89C3612C8DFF2500CB9160 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		DE89C3632C8DFF2D00CB9160 /* TabItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemButton.swift; sourceTree = "<group>"; };
@@ -368,6 +367,7 @@
 		DEB22DE22CA30357000200C1 /* AMTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMTextView.swift; sourceTree = "<group>"; };
 		DEB22DF92CAE92B2000200C1 /* KatexWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatexWebView.swift; sourceTree = "<group>"; };
 		DEC65C3C2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Onboarding.Welcome1.Animation.json; sourceTree = "<group>"; };
+		DEC9F6E32D66054800353955 /* Onboarding.Welcome3.Animation.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding.Welcome3.Animation.riv; sourceTree = "<group>"; };
 		DED95F8E2CEA5396003CBC48 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
@@ -861,7 +861,7 @@
 			children = (
 				DEC65C3C2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json */,
 				DE89C35A2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json */,
-				DE89C35C2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json */,
+				DEC9F6E32D66054800353955 /* Onboarding.Welcome3.Animation.riv */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1268,6 +1268,7 @@
 				DE89BF7E2C8B35B100CB9160 /* Frameworks */,
 				DE89BF7F2C8B35B100CB9160 /* Resources */,
 				35118BC238D68D1A848E3AF3 /* [CP] Embed Pods Frameworks */,
+				64BAB72F8571667C31B63F2E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1320,6 +1321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC9F6E42D66054800353955 /* Onboarding.Welcome3.Animation.riv in Resources */,
 				DE1DF99A2D09C14B0004A43F /* GoogleService-Info.plist in Resources */,
 				DE89C34B2C8B51B000CB9160 /* Inter-Black.ttf in Resources */,
 				DE89C35B2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json in Resources */,
@@ -1330,7 +1332,6 @@
 				DE89C31A2C8B3AEE00CB9160 /* Localizable.strings in Resources */,
 				DE89BF8E2C8B35B400CB9160 /* Assets.xcassets in Resources */,
 				DE89BF912C8B35B400CB9160 /* Base in Resources */,
-				DE89C35D2C8B55C400CB9160 /* Onboarding.Welcome3.Animation.json in Resources */,
 				DEC65C3D2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json in Resources */,
 				DEE883BC2C9B2D27008DAD26 /* ART.Loader.json in Resources */,
 			);
@@ -1354,6 +1355,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScienceSolver/Pods-ScienceSolver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64BAB72F8571667C31B63F2E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScienceSolver/Pods-ScienceSolver-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScienceSolver/Pods-ScienceSolver-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScienceSolver/Pods-ScienceSolver-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F30AF316788435D593226AE9 /* [CP] Check Pods Manifest.lock */ = {

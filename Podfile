@@ -10,6 +10,7 @@ target 'ScienceSolver' do
   pod 'Kingfisher'
   pod 'Mantis'
   pod 'iosMath'
+  pod 'RiveRuntime'
   
   pod 'RxSwift'
   pod 'RxCocoa'
