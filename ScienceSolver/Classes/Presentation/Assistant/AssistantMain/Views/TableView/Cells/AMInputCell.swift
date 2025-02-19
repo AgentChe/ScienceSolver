@@ -99,7 +99,7 @@ private extension AMInputCell {
             container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
             container.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16.scale),
             container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            container.heightAnchor.constraint(equalToConstant: 378.scale)
+            container.heightAnchor.constraint(equalToConstant: 296.scale)
         ])
         
         NSLayoutConstraint.activate([
