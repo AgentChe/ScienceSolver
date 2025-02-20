@@ -52,7 +52,7 @@ private extension AssistantMainView {
 // MARK: Lazy initialization
 private extension AssistantMainView {
     func makeAssistantsCollectionView() -> AssistantsCollectionView {
-        let layout = UICollectionViewFlowLayout()
+        let layout = AssistantsCollectionViewLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 12.scale
@@ -60,9 +60,8 @@ private extension AssistantMainView {
         
         let view = AssistantsCollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = UIColor.clear
+        view.decelerationRate = .fast
         view.showsHorizontalScrollIndicator = false
-        view.contentInset = UIEdgeInsets(horizontal: 100.scale)
-        view.setContentOffset(CGPoint(x: -100.scale, y: 0), animated: false)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

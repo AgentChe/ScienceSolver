@@ -173,6 +173,7 @@
 		DEB22DFA2CAE92B2000200C1 /* KatexWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB22DF92CAE92B2000200C1 /* KatexWebView.swift */; };
 		DEC65C3D2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC65C3C2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json */; };
 		DEC9F6E42D66054800353955 /* Onboarding.Welcome3.Animation.riv in Resources */ = {isa = PBXBuildFile; fileRef = DEC9F6E32D66054800353955 /* Onboarding.Welcome3.Animation.riv */; };
+		DEC9F6E62D6622AB00353955 /* AssistantsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9F6E52D6622AB00353955 /* AssistantsCollectionViewLayout.swift */; };
 		DED95F8F2CEA5396003CBC48 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED95F8E2CEA5396003CBC48 /* WebController.swift */; };
 		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
@@ -368,6 +369,7 @@
 		DEB22DF92CAE92B2000200C1 /* KatexWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatexWebView.swift; sourceTree = "<group>"; };
 		DEC65C3C2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Onboarding.Welcome1.Animation.json; sourceTree = "<group>"; };
 		DEC9F6E32D66054800353955 /* Onboarding.Welcome3.Animation.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding.Welcome3.Animation.riv; sourceTree = "<group>"; };
+		DEC9F6E52D6622AB00353955 /* AssistantsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		DED95F8E2CEA5396003CBC48 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
@@ -1039,6 +1041,7 @@
 				DE89C3FD2C93482700CB9160 /* AssistantsCollectionView.swift */,
 				DE89C3FF2C93482E00CB9160 /* AssistantsCollectionElement.swift */,
 				DE89C4012C93483300CB9160 /* AssistantsCollectionCell.swift */,
+				DEC9F6E52D6622AB00353955 /* AssistantsCollectionViewLayout.swift */,
 			);
 			path = AssistantsCollection;
 			sourceTree = "<group>";
@@ -1510,6 +1513,7 @@
 				DE89C3302C8B3F1800CB9160 /* PaygateInfoView.swift in Sources */,
 				DE89C40D2C94770D00CB9160 /* AssistantImageResizeViewModel.swift in Sources */,
 				DE89C3332C8B3F1800CB9160 /* PaygateViewController.swift in Sources */,
+				DEC9F6E62D6622AB00353955 /* AssistantsCollectionViewLayout.swift in Sources */,
 				DEB22DDC2CA2A02A000200C1 /* AMHistoryTitleCell.swift in Sources */,
 				DE89C3732C8EE98800CB9160 /* AssistantAnalyzeImageResponse.swift in Sources */,
 				DE89C24E2C8B3AE200CB9160 /* IAPActionResult.swift in Sources */,
@@ -1728,9 +1732,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2GY8CB289H;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScienceSolver/Info.plist;
@@ -1746,7 +1750,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.iphone.science;
+				PRODUCT_BUNDLE_IDENTIFIER = app.iphone.science.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1766,9 +1770,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2GY8CB289H;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ScienceSolver/Info.plist;
@@ -1784,7 +1788,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.5.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.iphone.science;
+				PRODUCT_BUNDLE_IDENTIFIER = app.iphone.science.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -67,24 +67,38 @@ extension AssistantsCollectionView: UICollectionViewDataSource {
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension AssistantsCollectionView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let inset = bounds.width * 0.5 - bounds.height * 0.5
+        return UIEdgeInsets(horizontal: inset)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let centerPoint = CGPoint(
+            x: scrollView.contentOffset.x + bounds.width / 2,
+            y: bounds.height / 2
+        )
+        
+        guard let indexPath = indexPathForItem(at: centerPoint) else { return }
+        
+        elements.enumerated().forEach { index, element in
+            element.marked = indexPath.row == index
+        }
+        
+        reloadData()
+        
+        didSelectTrigger.accept(elements[indexPath.row].assistant)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         elements.enumerated().forEach { index, element in
             element.marked = indexPath.row == index
         }
         
-        CATransaction.begin()
+        scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         
-        CATransaction.setCompletionBlock { [weak self] in
-            self?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            
-            if let assistant = self?.elements.first(where: { $0.marked })?.assistant {
-                self?.didSelectTrigger.accept(assistant)
-            }
-        }
-
         reloadData()
-
-        CATransaction.commit()
+        
+        didSelectTrigger.accept(elements[indexPath.row].assistant)
     }
 }
 

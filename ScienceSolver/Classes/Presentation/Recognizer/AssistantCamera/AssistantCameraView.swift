@@ -99,7 +99,7 @@ private extension AssistantCameraView {
     }
     
     func makeCollectionView() -> AssistantsCollectionView {
-        let layout = UICollectionViewFlowLayout()
+        let layout = AssistantsCollectionViewLayout()
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 12.scale
@@ -107,9 +107,8 @@ private extension AssistantCameraView {
         
         let view = AssistantsCollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = UIColor.clear
+        view.decelerationRate = .fast
         view.showsHorizontalScrollIndicator = false
-        view.contentInset = UIEdgeInsets(horizontal: 100.scale)
-        view.setContentOffset(CGPoint(x: -100.scale, y: 0), animated: false)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
