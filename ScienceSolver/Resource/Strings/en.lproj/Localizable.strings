@@ -128,3 +128,4 @@
 "AssistantMain.History" = "Recent";
 "AssistantMain.Translate" = "Translate to: %@";
 "AssistantMain.Input.Placeholder" = "Ask a question";
+"AssistantMain.GetAnswer" = "Get answer";

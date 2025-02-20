@@ -49,7 +49,7 @@ private extension AssistantCameraView {
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 12.scale),
-            collectionView.heightAnchor.constraint(equalToConstant: 31.scale)
+            collectionView.heightAnchor.constraint(equalToConstant: 35.scale)
         ])
         
         NSLayoutConstraint.activate([

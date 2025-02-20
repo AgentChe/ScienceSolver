@@ -35,6 +35,22 @@ final class AssistantMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainView.rx.keyboardHeight
+            .map { $0 <= 0 ? true : false }
+            .startWith(true)
+            .bind(to: mainView.getAnswerButton.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        Signal
+            .merge(
+                mainView.getAnswerButton.tap,
+                mainView.tableView.willBeginDragging
+            )
+            .emit(to: Binder(mainView) { base, void in
+                base.endEditing(true)
+            })
+            .disposed(by: disposeBag)
+        
         let output = viewModel.configure(input: AssistantMainViewModel.Input(
             didSelectAssistant: mainView.assistantsCollectionView.didSelect,
             didTapHistory: mainView.tableView.didTapHistory,
@@ -45,7 +61,8 @@ final class AssistantMainViewController: UIViewController {
             didChangeWritingMode: mainView.tableView.didChangeWritingMode,
             didTapCamera: mainView.tableView.didTapCamera,
             didTapCalculator: mainView.tableView.didTapCalculator,
-            didTapDone: mainView.tableView.didTapDone
+            didTapDone: mainView.getAnswerButton.tap,
+            didChangeText: mainView.tableView.didChangeText
         ))
         
         output.assistantsElements
@@ -81,6 +98,19 @@ final class AssistantMainViewController: UIViewController {
         output.additionalDataEntity
             .drive(Binder(mainView.tableView) { base, additionalDataEntity in
                 base.setup(additionalDataEntity: additionalDataEntity)
+            })
+            .disposed(by: disposeBag)
+        
+        output.canGetAnswer
+            .drive(Binder(mainView.getAnswerButton.button) { base, can in
+                base.isEnabled = can
+                base.alpha = can ? 1 : 0.5
+            })
+            .disposed(by: disposeBag)
+        
+        output.action
+            .drive(Binder(self) { base, action in
+                base.action(action)
             })
             .disposed(by: disposeBag)
     }
@@ -126,6 +156,13 @@ private extension AssistantMainViewController {
             guard let nc = navigationController else { return }
             
             AssistantAssembly().manualAnalyze(data: data, from: nc)
+        }
+    }
+    
+    func action(_ action: AssistantMainViewModel.Action) {
+        switch action {
+        case .resetInput:
+            mainView.tableView.resetInput()
         }
     }
 }

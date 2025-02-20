@@ -8,11 +8,11 @@
 import UIKit
 
 final class AMInputCell: UITableViewCell {
+    var didEditing: ((String) -> Void)?
     var didTapSelectAdditionalData: (() -> Void)?
     var didTapCalculator: (() -> Void)?
     var didTapCamera: (() -> Void)?
     var didChangeWritingMode: ((WritingMode) -> Void)?
-    var didTapDone: ((String) -> Void)?
     
     lazy var container = makeContainer()
     lazy var writingModeView = makeWritingModeView()
@@ -53,6 +53,11 @@ extension AMInputCell {
     func setup(additionalDataEntity: AMSelectEntityButton.Entity?) {
         bottomView.selectEntityButton.entity = additionalDataEntity
     }
+    
+    func resetInput() {
+        textView.textView.text = ""
+        didEditing?("")
+    }
 }
 
 // MARK: Private
@@ -70,8 +75,8 @@ private extension AMInputCell {
             self?.didChangeWritingMode?(mode)
         }
         
-        textView.didTapDone = { [weak self] text in
-            self?.didTapDone?(text)
+        textView.didEditing = { [weak self] text in
+            self?.didEditing?(text)
         }
     }
     

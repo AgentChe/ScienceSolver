@@ -10,6 +10,7 @@ import UIKit
 final class AssistantMainView: UIView {
     lazy var assistantsCollectionView = makeAssistantsCollectionView()
     lazy var tableView = makeTableView()
+    lazy var getAnswerButton = makeGetAnswerButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,7 +38,7 @@ private extension AssistantMainView {
             assistantsCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             assistantsCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             assistantsCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: ScreenSize.isIphoneXFamily ? 36.scale : 16.scale),
-            assistantsCollectionView.heightAnchor.constraint(equalToConstant: 31.scale)
+            assistantsCollectionView.heightAnchor.constraint(equalToConstant: 35.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -45,6 +46,13 @@ private extension AssistantMainView {
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.topAnchor.constraint(equalTo: assistantsCollectionView.bottomAnchor, constant: 8.scale),
             tableView.bottomAnchor.constraint(equalTo: keyboardLayoutGuide.topAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            getAnswerButton.leadingAnchor.constraint(equalTo: leadingAnchor),
+            getAnswerButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            getAnswerButton.bottomAnchor.constraint(equalTo: keyboardLayoutGuide.topAnchor),
+            getAnswerButton.heightAnchor.constraint(equalToConstant: 80.scale)
         ])
     }
 }
@@ -74,6 +82,13 @@ private extension AssistantMainView {
         view.showsVerticalScrollIndicator = false
         view.contentInset = UIEdgeInsets(vertical: 16.scale)
         view.setContentOffset(CGPoint(x: 0, y: -16.scale), animated: false)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeGetAnswerButton() -> AssistantMainGetAnswerButton {
+        let view = AssistantMainGetAnswerButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

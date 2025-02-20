@@ -20,7 +20,8 @@ final class AssistantMainTableView: UITableView {
     private lazy var didTapCalculatorTrigger = PublishRelay<Void>()
     private lazy var didTapCameraTrigger = PublishRelay<Void>()
     private lazy var didChangeWritingModeTrigger = PublishRelay<WritingMode>()
-    private lazy var didTapDoneTrigger = PublishRelay<String>()
+    private lazy var didChangeTextTrigger = PublishRelay<String>()
+    private lazy var willBeginDraggingTrigger = PublishRelay<Void>()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -53,6 +54,10 @@ extension AssistantMainTableView {
         inputCell.setup(additionalDataEntity: additionalDataEntity)
     }
     
+    func resetInput() {
+        inputCell.resetInput()
+    }
+    
     var didTapHistory: Signal<Void> {
         didTapHistoryTrigger.asSignal()
     }
@@ -77,8 +82,12 @@ extension AssistantMainTableView {
         didChangeWritingModeTrigger.asSignal()
     }
     
-    var didTapDone: Signal<String> {
-        didTapDoneTrigger.asSignal()
+    var didChangeText: Signal<String> {
+        didChangeTextTrigger.asSignal()
+    }
+    
+    var willBeginDragging: Signal<Void> {
+        willBeginDraggingTrigger.asSignal()
     }
 }
 
@@ -125,6 +134,10 @@ extension AssistantMainTableView: UITableViewDelegate {
             return
         }
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        willBeginDraggingTrigger.accept(Void())
+    }
 }
 
 // MARK: Private
@@ -153,8 +166,8 @@ private extension AssistantMainTableView {
             self?.didChangeWritingModeTrigger.accept(mode)
         }
         
-        inputCell.didTapDone = { [weak self] text in
-            self?.didTapDoneTrigger.accept(text)
+        inputCell.didEditing = { [weak self] text in
+            self?.didChangeTextTrigger.accept(text)
         }
     }
 }

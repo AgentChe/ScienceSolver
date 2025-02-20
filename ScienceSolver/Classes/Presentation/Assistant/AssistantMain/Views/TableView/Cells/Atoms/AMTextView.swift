@@ -8,7 +8,7 @@
 import UIKit
 
 final class AMTextView: UIView {
-    var didTapDone: ((String) -> Void)?
+    var didEditing: ((String) -> Void)?
     
     lazy var textView = makeTextView()
     lazy var placeholderLabel = makePlaceholderLabel()
@@ -18,7 +18,6 @@ final class AMTextView: UIView {
         
         makeConstraints()
         initialize()
-        addToolBar()
     }
     
     required init?(coder: NSCoder) {
@@ -35,40 +34,16 @@ extension AMTextView: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         placeholderLabel.isHidden = true
     }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        didEditing?(textView.text ?? "")
+    }
 }
 
 // MARK: Private
 private extension AMTextView {
     func initialize() {
         backgroundColor = UIColor.clear
-    }
-    
-    func addToolBar() {
-        let doneButton = UIBarButtonItem(title: "Done".localized, style: .done, target: self, action: #selector(doneTapped))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel".localized, style: .done, target: self, action: #selector(cancelTapped))
-        
-        let toolBar = UIToolbar()
-        toolBar.barStyle = .default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = Appearance.main200
-        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        toolBar.sizeToFit()
-        
-        textView.inputAccessoryView = toolBar
-    }
-    
-    @objc
-    func doneTapped() {
-        textView.resignFirstResponder()
-        
-        didTapDone?(textView.text)
-    }
-    
-    @objc
-    func cancelTapped() {
-        textView.resignFirstResponder()
     }
 }
 
@@ -103,6 +78,7 @@ private extension AMTextView {
         view.textContainerInset = UIEdgeInsets(vertical: 8.scale, horizontal: 16.scale)
         view.delegate = self
         view.typingAttributes = attrs.dictionary
+        view.autocorrectionType = .no
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

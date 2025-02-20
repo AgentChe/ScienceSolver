@@ -19,6 +19,10 @@ final class AssistantMainViewModel {
         case analyze(AssistantMainViewController.DataForManualAnalyze)
     }
     
+    enum Action {
+        case resetInput
+    }
+    
     private lazy var assistantManager = AssistantManager()
 }
 
@@ -34,7 +38,8 @@ extension AssistantMainViewModel {
         let didChangeWritingMode: Signal<WritingMode>
         let didTapCamera: Signal<Void>
         let didTapCalculator: Signal<Void>
-        let didTapDone: Signal<String>
+        let didTapDone: Signal<Void>
+        let didChangeText: Signal<String>
     }
     
     struct Output {
@@ -44,6 +49,8 @@ extension AssistantMainViewModel {
         let currentAssistant: Driver<AssistantsCollectionElement.Assistant>
         let writingMode: Driver<WritingMode>
         let additionalDataEntity: Driver<AMSelectEntityButton.Entity?>
+        let canGetAnswer: Driver<Bool>
+        let action: Driver<Action>
     }
     
     func configure(input: Input) -> Output {
@@ -54,6 +61,10 @@ extension AssistantMainViewModel {
             didSelectWritingStyle: input.didSelectWritingStyle,
             didSelectLanguage: input.didSelectLanguage,
             languages: makeLanguages()
+        )
+        let text = makeText(
+            didChangeText: input.didChangeText,
+            currentAssistant: currentAssistant
         )
         
         return Output(
@@ -68,17 +79,53 @@ extension AssistantMainViewModel {
                 didTapSelectAdditionalData: input.didTapSelectAdditionalData,
                 selectedAdditionalDataEntity: additionalDataEntity,
                 currentWritingMode: currentWritingMode,
-                didTapDone: input.didTapDone
+                didTapDone: input.didTapDone,
+                text: text
             ),
             currentAssistant: currentAssistant,
             writingMode: currentWritingMode,
-            additionalDataEntity: additionalDataEntity
+            additionalDataEntity: additionalDataEntity,
+            canGetAnswer: makeCanGetAnswer(text: text),
+            action: makeAction(
+                currentAssistant: currentAssistant,
+                didTapDone: input.didTapDone
+            )
         )
     }
 }
 
 // MARK: Private
 private extension AssistantMainViewModel {
+    func makeAction(
+        currentAssistant: Driver<AssistantsCollectionElement.Assistant>,
+        didTapDone: Signal<Void>
+    ) -> Driver<Action> {
+        Driver
+            .merge(
+                currentAssistant.map { _ in Void() },
+                didTapDone.asDriver(onErrorDriveWith: .never())
+            )
+            .map { Action.resetInput }
+    }
+    
+    func makeCanGetAnswer(text: Driver<String>) -> Driver<Bool> {
+        text
+            .map { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+            .startWith(false)
+    }
+    
+    func makeText(
+        didChangeText: Signal<String>,
+        currentAssistant: Driver<AssistantsCollectionElement.Assistant>
+    ) -> Driver<String> {
+        Driver
+            .merge(
+                didChangeText.asDriver(onErrorDriveWith: .never()),
+                currentAssistant.map { _ in "" }
+            )
+            .startWith("")
+    }
+    
     func makeAssistantsElements() -> Driver<[AssistantsCollectionElement]> {
         Single<[AssistantsCollectionElement]>
             .create { single in
@@ -131,7 +178,8 @@ private extension AssistantMainViewModel {
         didTapSelectAdditionalData: Signal<Void>,
         selectedAdditionalDataEntity: Driver<AMSelectEntityButton.Entity?>,
         currentWritingMode: Driver<WritingMode>,
-        didTapDone: Signal<String>
+        didTapDone: Signal<Void>,
+        text: Driver<String>
     ) -> Driver<Route> {
         let history = didTapHistory
             .map { Route.history }
@@ -169,6 +217,7 @@ private extension AssistantMainViewModel {
         
         let analyzeOnlyText = didTapDone
             .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(text)
             .withLatestFrom(currentAssistant) { ($0, $1) }
             .compactMap { text, assistant -> AssistantMainViewController.DataForManualAnalyze? in
                 switch assistant {
@@ -188,6 +237,7 @@ private extension AssistantMainViewModel {
         
         let analyzeWritingMode = didTapDone
             .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(text)
             .withLatestFrom(currentAssistant) { ($0, $1) }
             .filter { $0.1.isWriting }
             .withLatestFrom(selectedAdditionalDataEntity) { ($0.0, $1?.writingStyle) }
@@ -201,6 +251,7 @@ private extension AssistantMainViewModel {
         
         let translate = didTapDone
             .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(text)
             .withLatestFrom(currentAssistant) { ($0, $1) }
             .filter { $0.1.isLanguage }
             .withLatestFrom(selectedAdditionalDataEntity) { ($0.0, $1?.language) }

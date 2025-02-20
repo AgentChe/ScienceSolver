@@ -67,10 +67,10 @@ private extension AssistantsCollectionCell {
 private extension AssistantsCollectionCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8.scale),
-            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8.scale),
-            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6.scale),
-            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -6.scale)
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12.scale),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12.scale),
+            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8.scale),
+            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8.scale)
         ])
     }
 }

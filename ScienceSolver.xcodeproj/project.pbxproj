@@ -174,6 +174,7 @@
 		DEC65C3D2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = DEC65C3C2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json */; };
 		DEC9F6E42D66054800353955 /* Onboarding.Welcome3.Animation.riv in Resources */ = {isa = PBXBuildFile; fileRef = DEC9F6E32D66054800353955 /* Onboarding.Welcome3.Animation.riv */; };
 		DEC9F6E62D6622AB00353955 /* AssistantsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9F6E52D6622AB00353955 /* AssistantsCollectionViewLayout.swift */; };
+		DEC9F6E82D6789FD00353955 /* AssistantMainGetAnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9F6E72D6789FD00353955 /* AssistantMainGetAnswerButton.swift */; };
 		DED95F8F2CEA5396003CBC48 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED95F8E2CEA5396003CBC48 /* WebController.swift */; };
 		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
@@ -370,6 +371,7 @@
 		DEC65C3C2CBD474F00A036B0 /* Onboarding.Welcome1.Animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Onboarding.Welcome1.Animation.json; sourceTree = "<group>"; };
 		DEC9F6E32D66054800353955 /* Onboarding.Welcome3.Animation.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding.Welcome3.Animation.riv; sourceTree = "<group>"; };
 		DEC9F6E52D6622AB00353955 /* AssistantsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantsCollectionViewLayout.swift; sourceTree = "<group>"; };
+		DEC9F6E72D6789FD00353955 /* AssistantMainGetAnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantMainGetAnswerButton.swift; sourceTree = "<group>"; };
 		DED95F8E2CEA5396003CBC48 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
@@ -1092,6 +1094,7 @@
 			isa = PBXGroup;
 			children = (
 				DEB22DD12CA29FDE000200C1 /* TableView */,
+				DEC9F6E72D6789FD00353955 /* AssistantMainGetAnswerButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1542,6 +1545,7 @@
 				DE89C2232C8B3AE100CB9160 /* OnboardingView.swift in Sources */,
 				DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */,
 				DE89C4112C949EE500CB9160 /* AssistantCameraWritingModeView.swift in Sources */,
+				DEC9F6E82D6789FD00353955 /* AssistantMainGetAnswerButton.swift in Sources */,
 				DE89C3E72C931B4200CB9160 /* HistoryImageCell.swift in Sources */,
 				DE89C1742C8B3AE100CB9160 /* Fonts.swift in Sources */,
 				DE89C3D52C92E8A200CB9160 /* AssistantHistoryItem.swift in Sources */,
