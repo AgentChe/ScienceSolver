@@ -46,7 +46,7 @@ class CalculatorViewController: UIViewController {
         let button = UIButton(type: .custom)
         
         // Set the image instead of title
-        if let dismissImage = UIImage(named: "dismissImage") {
+        if let dismissImage = UIImage(named: "AssistantResult.Close") {
             button.setImage(dismissImage, for: .normal)
         }
         

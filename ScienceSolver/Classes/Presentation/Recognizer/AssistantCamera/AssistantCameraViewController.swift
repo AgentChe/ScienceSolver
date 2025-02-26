@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import PhotosUI
 import AVFoundation
 
@@ -40,6 +41,8 @@ final class AssistantCameraViewController: UIViewController {
         return cameraService
     }()
     
+    private lazy var videoPermissionChangedAccessTrigger = PublishRelay<Void>()
+    
     private init(assistant: AssistantsCollectionElement.Assistant?) {
         viewModel = AssistantCameraViewModel(assistant: assistant)
         
@@ -62,7 +65,8 @@ final class AssistantCameraViewController: UIViewController {
             didTapSelectImageFromLibrary: mainView.wallpapersButton.rx.tap.asSignal(),
             didSelect: mainView.collectionView.didSelect,
             didTapTakePhoto: mainView.takeButton.rx.tap.asSignal(),
-            didTapAllowAccess: mainView.permissionProblemView.allowAccessButton.rx.tap.asSignal()
+            didTapAllowAccess: mainView.permissionProblemView.allowAccessButton.rx.tap.asSignal(),
+            videoPermissionChangedAccess: videoPermissionChangedAccessTrigger.asSignal()
         ))
         
         output.route
@@ -154,7 +158,7 @@ private extension AssistantCameraViewController {
         case .requestPermissionInSettings:
             guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
             
-            UIApplication.shared.open(url)
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
@@ -197,6 +201,8 @@ private extension AssistantCameraViewController {
         func ui(authorized: Bool) {
             mainView.permissionProblemView.isHidden = authorized
             mainView.takeButton.isHidden = !authorized
+            mainView.wallpapersButton.isHidden = !authorized
+            mainView.flashButton.isHidden = !authorized
             
             if authorized {
                 let previewLayer = AVCaptureVideoPreviewLayer(session: cameraService.captureSession) as AVCaptureVideoPreviewLayer
@@ -212,8 +218,11 @@ private extension AssistantCameraViewController {
         case .authorized:
             ui(authorized: true)
         case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video) { authorized in
+            ui(authorized: false)
+            
+            AVCaptureDevice.requestAccess(for: .video) { [weak self] authorized in
                 ui(authorized: authorized)
+                self?.videoPermissionChangedAccessTrigger.accept(Void())
             }
         default:
             ui(authorized: false)

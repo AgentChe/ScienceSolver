@@ -7,6 +7,7 @@
 
 import RxSwift
 import RxCocoa
+import AVFoundation
 
 final class AssistantCameraViewModel {
     enum Route {
@@ -32,6 +33,7 @@ extension AssistantCameraViewModel {
         let didSelect: Signal<AssistantsCollectionElement.Assistant>
         let didTapTakePhoto: Signal<Void>
         let didTapAllowAccess: Signal<Void>
+        let videoPermissionChangedAccess: Signal<Void>
     }
     
     struct Output {
@@ -52,7 +54,10 @@ extension AssistantCameraViewModel {
                 didTapAllowAccess: input.didTapAllowAccess
             ),
             elements: makeElements(startAssistant: startAssistant),
-            writingModeHidden: currentAssistant.map { $0 != .writing },
+            writingModeHidden: makeWritingModeHidden(
+                currentAssistant: currentAssistant,
+                videoPermissionChangedAccess: input.videoPermissionChangedAccess
+            ),
             action: makeAction(didTapTakePhoto: input.didTapTakePhoto)
         )
     }
@@ -60,6 +65,24 @@ extension AssistantCameraViewModel {
 
 // MARK: Private
 private extension AssistantCameraViewModel {
+    func makeWritingModeHidden(
+        currentAssistant: Driver<AssistantsCollectionElement.Assistant>,
+        videoPermissionChangedAccess: Signal<Void>
+    ) -> Driver<Bool> {
+        Driver<AssistantsCollectionElement.Assistant>
+            .merge(
+                currentAssistant,
+                videoPermissionChangedAccess
+                    .asDriver(onErrorDriveWith: .never())
+                    .withLatestFrom(currentAssistant)
+            )
+            .map { assistant -> Bool in
+                guard assistant == .writing else { return true }
+                
+                return AVCaptureDevice.authorizationStatus(for: .video) != .authorized
+            }
+    }
+    
     func makeRoute(
         didTapDismiss: Signal<Void>,
         didTapSelectImageFromLibrary: Signal<Void>,
