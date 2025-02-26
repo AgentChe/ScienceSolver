@@ -8,7 +8,6 @@
 import UIKit
 
 final class AssistantResultView: UIView {
-    lazy var closeButton = makeCloseButton()
     lazy var tableView = makeTableView()
     
     override init(frame: CGRect) {
@@ -34,16 +33,9 @@ private extension AssistantResultView {
 private extension AssistantResultView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            closeButton.widthAnchor.constraint(equalToConstant: 24.scale),
-            closeButton.heightAnchor.constraint(equalToConstant: 24.scale),
-            closeButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 13.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 2.scale),
+            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: keyboardLayoutGuide.topAnchor)
         ])
     }
@@ -51,14 +43,6 @@ private extension AssistantResultView {
 
 // MARK: Lazy initialization
 private extension AssistantResultView {
-    func makeCloseButton() -> TapAreaButton {
-        let view = TapAreaButton()
-        view.setImage(UIImage(named: "AssistantResult.Close"), for: .normal)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
     func makeTableView() -> AssistantResultTableView {
         let view = AssistantResultTableView()
         view.backgroundColor = UIColor.clear

@@ -10,8 +10,8 @@ import UIKit
 final class MainCoordinator {
     weak var parentVC: MainViewController?
     
-    lazy var assistantVC = NavigationController(rootViewController: AssistantMainViewController.make())
-    lazy var accountVC = NavigationController(rootViewController: AccountViewController.make())
+    lazy var assistantVC = AssistantMainViewController.make()
+    lazy var accountVC = AccountViewController.make()
     
     private var previousVC: UIViewController?
     

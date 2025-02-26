@@ -23,6 +23,8 @@ final class AssistantResultViewController: UIViewController {
     private lazy var didLikeTrigger = PublishRelay<AssistantResultViewModel.AssistantResult>()
     private lazy var didDislikeTrigger = PublishRelay<AssistantResultViewModel.AssistantResult>()
     
+    private var navigationClosedButtonTapped: (() -> Void)?
+    
     private init(historyItem: AssistantHistoryItem, didTapClose: @escaping () -> Void) {
         self.viewModel = AssistantResultViewModel(historyItem: historyItem)
         self.didTapClose = didTapClose
@@ -56,7 +58,6 @@ final class AssistantResultViewController: UIViewController {
         super.viewDidLoad()
         
         let output = viewModel.configure(input: AssistantResultViewModel.Input(
-            didTapClose: mainView.closeButton.rx.tap.asSignal(),
             didTapRefresh: didRefreshTrigger.asSignal(),
             didTapCopy: mainView.tableView.didTapCopy,
             didTapLike: didLikeTrigger.asSignal(),
@@ -86,12 +87,6 @@ final class AssistantResultViewController: UIViewController {
             .withLatestFrom(currentAssistantResult)
             .drive(Binder(self) { base, currentAssistantResult in
                 base.didDislikeTrigger.accept(currentAssistantResult)
-            })
-            .disposed(by: disposeBag)
-        
-        output.route
-            .drive(Binder(self) { base, route in
-                base.route(route)
             })
             .disposed(by: disposeBag)
         
@@ -128,17 +123,27 @@ extension AssistantResultViewController {
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
+    
+    func addCloseButtonInNavigationBar(closed: @escaping () -> Void) {
+        let closeButton = TapAreaButton()
+        closeButton.backgroundColor = UIColor.clear
+        closeButton.setImage(UIImage(named: "AssistantResult.Close"), for: .normal)
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        
+        let item = UIBarButtonItem(customView: closeButton)
+        item.customView?.translatesAutoresizingMaskIntoConstraints = false
+        
+        item.customView?.widthAnchor.constraint(equalToConstant: 44.scale).isActive = true
+        item.customView?.heightAnchor.constraint(equalToConstant: 44.scale).isActive = true
+        
+        navigationItem.leftBarButtonItem = item
+        
+        navigationClosedButtonTapped = closed
+    }
 }
 
 // MARK: Private
 private extension AssistantResultViewController {
-    func route(_ route: AssistantResultViewModel.Route) {
-        switch route {
-        case .close:
-            didTapClose()
-        }
-    }
-    
     func action(_ action: AssistantResultViewModel.Action) {
         switch action {
         case .copy(let string):
@@ -146,5 +151,10 @@ private extension AssistantResultViewController {
             
             mainView.makeToast("AssistantResult.Copied".localized, position: .top)
         }
+    }
+    
+    @objc
+    func closeButtonTapped() {
+        navigationClosedButtonTapped?()
     }
 }

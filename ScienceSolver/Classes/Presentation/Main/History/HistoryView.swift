@@ -8,8 +8,6 @@
 import UIKit
 
 final class HistoryView: UIView {
-    lazy var backButton = makeBackButton()
-    lazy var titleLabel = makeTitleLabel()
     lazy var tableView = makeTableView()
     lazy var emptyView = makeEmptyView()
     lazy var centerPreloader = makePreloader()
@@ -38,21 +36,9 @@ private extension HistoryView {
 private extension HistoryView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            backButton.widthAnchor.constraint(equalToConstant: 24.scale),
-            backButton.heightAnchor.constraint(equalToConstant: 24.scale),
-            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            backButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 12.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.scale),
+            tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
         ])
         
@@ -80,28 +66,6 @@ private extension HistoryView {
 
 // MARK: Lazy initialization
 private extension HistoryView {
-    func makeBackButton() -> TapAreaButton {
-        let view = TapAreaButton()
-        view.setImage(UIImage(named: "History.Back"), for: .normal)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeTitleLabel() -> UILabel {
-        let attrs = TextAttributes()
-            .textColor(Appearance.mono200)
-            .font(Fonts.Inter.medium(size: 18.scale))
-            .lineHeight(22.scale)
-            .textAlignment(.center)
-        
-        let view = UILabel()
-        view.attributedText = "History.Title".localized.attributed(with: attrs)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
     func makeTableView() -> HistoryTableView {
         let view = HistoryTableView()
         view.backgroundColor = UIColor.clear

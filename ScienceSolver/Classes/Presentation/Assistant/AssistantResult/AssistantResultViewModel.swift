@@ -9,10 +9,6 @@ import RxSwift
 import RxCocoa
 
 final class AssistantResultViewModel {
-    enum Route {
-        case close
-    }
-    
     enum Action {
         case copy(String)
     }
@@ -65,7 +61,6 @@ final class AssistantResultViewModel {
 // MARK: Public
 extension AssistantResultViewModel {
     struct Input {
-        let didTapClose: Signal<Void>
         let didTapRefresh: Signal<AssistantResult>
         let didTapCopy: Signal<AssistantResultTableAnswerElement>
         let didTapLike: Signal<AssistantResult>
@@ -73,7 +68,6 @@ extension AssistantResultViewModel {
     }
     
     struct Output {
-        let route: Driver<Route>
         let action: Driver<Action>
         let elements: Driver<[AssistantResultTableElement]>
         let currentResult: Driver<AssistantResult>
@@ -88,7 +82,6 @@ extension AssistantResultViewModel {
         )
         
         return Output(
-            route: makeRoute(didTapClose: input.didTapClose),
             action: makeAction(didTapCopy: input.didTapCopy),
             elements: makeElements(
                 inputData: inputData,
@@ -102,15 +95,6 @@ extension AssistantResultViewModel {
 
 // MARK: Private
 private extension AssistantResultViewModel {
-    func makeRoute(didTapClose: Signal<Void>) -> Driver<Route> {
-        let close = didTapClose
-            .map { Route.close }
-            .asDriver(onErrorDriveWith: .never())
-        
-        return Driver
-            .merge(close)
-    }
-    
     func makeElements(
         inputData: Driver<InputData>,
         didTapRefresh: Signal<AssistantResult>,
