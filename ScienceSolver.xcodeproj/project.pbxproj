@@ -178,6 +178,8 @@
 		DECF9A882D6A19F500EE81AF /* HelpfulActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF9A872D6A19F500EE81AF /* HelpfulActionsView.swift */; };
 		DECF9A8A2D6A258B00EE81AF /* HelpfulReasonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF9A892D6A258B00EE81AF /* HelpfulReasonsView.swift */; };
 		DECF9A8D2D6A25A300EE81AF /* HelpfulReasonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF9A8C2D6A25A300EE81AF /* HelpfulReasonButton.swift */; };
+		DECF9A912D6F49CF00EE81AF /* FiraMath-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DECF9A8F2D6F49CF00EE81AF /* FiraMath-Regular.otf */; };
+		DECF9A922D6F49CF00EE81AF /* FiraMath-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = DECF9A902D6F49CF00EE81AF /* FiraMath-Regular.plist */; };
 		DED95F8F2CEA5396003CBC48 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED95F8E2CEA5396003CBC48 /* WebController.swift */; };
 		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
@@ -378,6 +380,8 @@
 		DECF9A872D6A19F500EE81AF /* HelpfulActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpfulActionsView.swift; sourceTree = "<group>"; };
 		DECF9A892D6A258B00EE81AF /* HelpfulReasonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpfulReasonsView.swift; sourceTree = "<group>"; };
 		DECF9A8C2D6A25A300EE81AF /* HelpfulReasonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpfulReasonButton.swift; sourceTree = "<group>"; };
+		DECF9A8F2D6F49CF00EE81AF /* FiraMath-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraMath-Regular.otf"; sourceTree = "<group>"; };
+		DECF9A902D6F49CF00EE81AF /* FiraMath-Regular.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FiraMath-Regular.plist"; sourceTree = "<group>"; };
 		DED95F8E2CEA5396003CBC48 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
@@ -468,6 +472,7 @@
 		DE89BF832C8B35B100CB9160 /* ScienceSolver */ = {
 			isa = PBXGroup;
 			children = (
+				DECF9A8E2D6F49B900EE81AF /* FontsForSwiftMath */,
 				DE89C14D2C8B3AE100CB9160 /* Classes */,
 				DE89BF982C8B35CB00CB9160 /* Resource */,
 			);
@@ -1154,6 +1159,15 @@
 			path = HelpfulReason;
 			sourceTree = "<group>";
 		};
+		DECF9A8E2D6F49B900EE81AF /* FontsForSwiftMath */ = {
+			isa = PBXGroup;
+			children = (
+				DECF9A8F2D6F49CF00EE81AF /* FiraMath-Regular.otf */,
+				DECF9A902D6F49CF00EE81AF /* FiraMath-Regular.plist */,
+			);
+			path = FontsForSwiftMath;
+			sourceTree = "<group>";
+		};
 		DEE883772C988F9D008DAD26 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1349,6 +1363,8 @@
 				DE89C34B2C8B51B000CB9160 /* Inter-Black.ttf in Resources */,
 				DE89C35B2C8B55AA00CB9160 /* Onboarding.Welcome2.Animation.json in Resources */,
 				DE89C34C2C8B51B000CB9160 /* Inter-Bold.ttf in Resources */,
+				DECF9A912D6F49CF00EE81AF /* FiraMath-Regular.otf in Resources */,
+				DECF9A922D6F49CF00EE81AF /* FiraMath-Regular.plist in Resources */,
 				DE89C34D2C8B51B000CB9160 /* Inter-Medium.ttf in Resources */,
 				DE89C34E2C8B51B000CB9160 /* Inter-Regular.ttf in Resources */,
 				DE89C34F2C8B51B000CB9160 /* Inter-SemiBold.ttf in Resources */,

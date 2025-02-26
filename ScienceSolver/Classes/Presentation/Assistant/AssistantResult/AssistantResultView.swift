@@ -48,8 +48,8 @@ private extension AssistantResultView {
         view.backgroundColor = UIColor.clear
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
-        view.contentInset = UIEdgeInsets(vertical: 19.scale)
-        view.setContentOffset(CGPoint(x: 0, y: -19.scale), animated: false)
+        view.contentInset = UIEdgeInsets()
+        view.setContentOffset(CGPoint.zero, animated: false)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

@@ -46,7 +46,7 @@ class CalculatorViewController: UIViewController {
         let button = UIButton(type: .custom)
         
         // Set the image instead of title
-        if let dismissImage = UIImage(named: "Calculator.close") {
+        if let dismissImage = UIImage(named: "dismissImage") {
             button.setImage(dismissImage, for: .normal)
         }
         
@@ -60,9 +60,8 @@ class CalculatorViewController: UIViewController {
         let label = MTMathUILabel()
         label.textAlignment = .right
         label.fontSize = 29.scale
-        if let font = MTFontManager().kpMathSansFont(withSize: 29.scale) {
-            label.font = font
-        }
+        let font = MTFontManager().font(withName: "FiraMath-Regular", size: 29.scale)
+        label.font = font!
         label.latex = "0"
         label.textAlignment = .right
         label.backgroundColor = .clear//.yellow
@@ -338,10 +337,38 @@ class CalculatorViewController: UIViewController {
             updateDisplay()
         case "DEL":
             if !currentExpression.isEmpty {
-                currentExpression.removeLast()
-                updateDisplay()
+                // Special case: if currentExpression is exactly "log10(", clear it
+                if currentExpression == "log10(" {
+                    currentExpression = ""
+                }
+                // Existing check: if no digits or decimals are present, clear it completely.
+                else if currentExpression.rangeOfCharacter(from: CharacterSet.decimalDigits) == nil &&
+                        !currentExpression.contains(".") {
+                    currentExpression = ""
+                } else {
+                    currentExpression.removeLast()
+                }
                 updateDisplay()
             }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                self.adjustDisplayLabelHeight()
+            }
+        case "(":
+              if currentExpression.isEmpty {
+                  // Do nothing if expression is empty
+                  return
+              } else {
+                  currentExpression += "("
+                  updateDisplay()
+              }
+          case ")":
+              if currentExpression.isEmpty {
+                  // Do nothing if expression is empty
+                  return
+              } else {
+                  currentExpression += ")"
+                  updateDisplay()
+              }
         case "=":
             balanceParentheses()
             
@@ -361,17 +388,31 @@ class CalculatorViewController: UIViewController {
             updateDisplay()
             updateDisplay()
         case "x²":
+            if currentExpression.isEmpty {
+                    // If there's no base number, default to 0
+                    currentExpression = "0"
+            }
             currentExpression += "^(2)"
             updateDisplay()
             updateDisplay()
+            delay(0.01) {
+                self.updateDisplay()
+            }
         case "√":
             currentExpression += "sqrt("
             updateDisplay()
             updateDisplay()
         case "n!":
+            if currentExpression.isEmpty {
+                    // If there's no base number, default to 0
+                    currentExpression = "0"
+            }
             currentExpression += "!"
             updateDisplay()
             updateDisplay()
+            delay(0.01) {
+                self.updateDisplay()
+            }
         case "nPr":
             currentExpression += "nPr("
             updateDisplay()
@@ -402,6 +443,7 @@ class CalculatorViewController: UIViewController {
                 currentExpression = ""
                 lastResult = nil
             }
+            self.adjustDisplayLabelHeight()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
                 self.adjustDisplayLabelHeight()
             }
@@ -414,30 +456,75 @@ class CalculatorViewController: UIViewController {
             currentExpression += "\(title)("
             updateDisplay()
             updateDisplay()
+            delay(0.01) {
+                self.updateDisplay()
+            }
         case "x^y":
+            if currentExpression.isEmpty {
+                    // If there's no base number, default to 0
+                    currentExpression = "0"
+            }
             currentExpression += "^("
             updateDisplay()
             updateDisplay()
+            delay(0.01) {
+                self.updateDisplay()
+            }
         case "y√x":
+            if currentExpression.isEmpty {
+                    // If there's no base number, default to 0
+                    currentExpression = "0"
+            }
             currentExpression += "^(1/("
             updateDisplay()
             updateDisplay()
+            delay(0.01) {
+                self.updateDisplay()
+            }
         case "×":
+            if currentExpression.isEmpty {
+                    // If there's no base number, default to 0
+                    currentExpression = "0"
+            }
             currentExpression += "*"
             updateDisplay()
             updateDisplay()
+            delay(0.01) {
+                self.updateDisplay()
+            }
         case "−":
+            if currentExpression.isEmpty {
+                    // If there's no base number, default to 0
+                    currentExpression = "0"
+            }
             currentExpression += "-"
             updateDisplay()
             updateDisplay()
+            delay(0.01) {
+                self.updateDisplay()
+            }
         case "+":
+            if currentExpression.isEmpty {
+                    // If there's no base number, default to 0
+                    currentExpression = "0"
+            }
             currentExpression += "+"
             updateDisplay()
             updateDisplay()
+            delay(0.01) {
+                self.updateDisplay()
+            }
         case "/":
+            if currentExpression.isEmpty {
+                    // If there's no base number, default to 0
+                    currentExpression = "0"
+            }
             currentExpression += "/"
             updateDisplay()
             updateDisplay()
+            delay(0.01) {
+                self.updateDisplay()
+            }
         default:
             currentExpression += title
             updateDisplay()
@@ -482,9 +569,9 @@ class CalculatorViewController: UIViewController {
         var fontSize = expressionLabel.fontSize
            while totalWidth > historyScrollView.frame.width {
                fontSize -= 0.1
-               expressionLabel.font =  MTFontManager().kpMathSansFont(withSize: fontSize)
+               expressionLabel.font =  MTFontManager().font(withName: "FiraMath-Regular", size: fontSize)
                if expressionLabel.fontSize < 1 {  // Prevent font size from becoming too small
-                   expressionLabel.font =  MTFontManager().kpMathSansFont(withSize: 1)
+                   expressionLabel.font =  MTFontManager().font(withName: "FiraMath-Regular", size: 1)
                    break
                }
                expressionLabel.layoutSubviews()
@@ -498,7 +585,7 @@ class CalculatorViewController: UIViewController {
            let resultLabel = MTMathUILabel()
            resultLabel.textAlignment = .right
         resultLabel.fontSize = displayLabel.fontSize * 1.5 // Double the font size
-        resultLabel.font = MTFontManager().kpMathSansFont(withSize: 29*1.5.scale)
+        resultLabel.font = MTFontManager().font(withName: "FiraMath-Regular", size: 29*1.5.scale) // S
            let resultLatex: String
            if isDecimalDisplay {
                resultLatex = "= " + formatDecimalResult(result)
@@ -517,9 +604,9 @@ class CalculatorViewController: UIViewController {
         fontSize = resultLabel.fontSize
            while totalWidth > historyScrollView.frame.width {
                fontSize -= 0.1
-               resultLabel.font = MTFontManager().kpMathSansFont(withSize: fontSize)
+               resultLabel.font =  MTFontManager().font(withName: "FiraMath-Regular", size: fontSize)
                if resultLabel.fontSize < 1 {  // Prevent font size from becoming too small
-                   resultLabel.font =  MTFontManager().kpMathSansFont(withSize: 1)
+                   resultLabel.font =  MTFontManager().font(withName: "FiraMath-Regular", size: 1)
                    break
                }
                resultLabel.layoutSubviews()
