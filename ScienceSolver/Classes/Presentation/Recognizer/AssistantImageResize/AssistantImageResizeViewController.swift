@@ -39,7 +39,6 @@ final class AssistantImageResizeViewController: UIViewController {
     private lazy var didCroppedImageTrigger = PublishRelay<UIImage>()
     private lazy var didSelectWritingStyleTrigger = PublishRelay<WritingStyle>()
     private lazy var didSelectLanguageTrigger = PublishRelay<Language>()
-    private lazy var tryAgainTrigger = PublishRelay<Void>()
     
     private init(fromCamera: AssistantCameraViewController.Result) {
         viewModel = AssistantImageResizeViewModel(fromCamera: fromCamera)
@@ -64,8 +63,7 @@ final class AssistantImageResizeViewController: UIViewController {
             didCroppedImage: didCroppedImageTrigger.asSignal(),
             didSelectWritingStyle: didSelectWritingStyleTrigger.asSignal(),
             didSelectLanguage: didSelectLanguageTrigger.asSignal(),
-            didTapSelectAdditionalData: mainView.selectEntityButton.rx.tap.asSignal(),
-            tryAgain: tryAgainTrigger.asSignal()
+            didTapSelectAdditionalData: mainView.selectEntityButton.rx.tap.asSignal()
         ))
         
         output.route
@@ -145,8 +143,7 @@ private extension AssistantImageResizeViewController {
             animate(false)
             
             let vc = ACEViewController.make { [weak self] in
-                self?.animate(true)
-                self?.tryAgainTrigger.accept(Void())
+                self?.didCancel?()
             }
             present(vc, animated: false)
         case .result(let result):

@@ -39,7 +39,6 @@ extension AssistantImageResizeViewModel {
         let didSelectWritingStyle: Signal<WritingStyle>
         let didSelectLanguage: Signal<Language>
         let didTapSelectAdditionalData: Signal<Void>
-        let tryAgain: Signal<Void>
     }
     
     struct Output {
@@ -66,7 +65,6 @@ extension AssistantImageResizeViewModel {
             action: makeAction(
                 didTapDone: input.didTapDone,
                 croppedImage: input.didCroppedImage,
-                tryAgain: input.tryAgain,
                 selectedAdditionalDataEntity: selectedAdditionalDataEntity
             ),
             originalImage: makeOriginalImage(),
@@ -123,18 +121,13 @@ private extension AssistantImageResizeViewModel {
     func makeAction(
         didTapDone: Signal<Void>,
         croppedImage: Signal<UIImage>,
-        tryAgain: Signal<Void>,
         selectedAdditionalDataEntity: Driver<AIRSelectEntityButton.Entity?>
     ) -> Driver<Action> {
         let crop = didTapDone
             .map { Action.crop }
             .asDriver(onErrorDriveWith: .never())
         
-        let errorOrResult = Signal
-            .merge(
-                croppedImage,
-                tryAgain.withLatestFrom(croppedImage)
-            )
+        let errorOrResult = croppedImage
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(fromCamera) { ($1, $0) }
             .withLatestFrom(selectedAdditionalDataEntity) { ($0.0, $0.1, $1) }
