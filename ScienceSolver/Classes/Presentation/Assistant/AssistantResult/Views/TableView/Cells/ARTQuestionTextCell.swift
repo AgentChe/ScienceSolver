@@ -14,7 +14,6 @@ final class ARTQuestionTextCell: UITableViewCell {
     private lazy var attrs = TextAttributes()
         .textColor(Appearance.mono200)
         .font(Fonts.Inter.regular(size: 16.scale))
-        .lineHeight(22.scale)
         .textAlignment(.left)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

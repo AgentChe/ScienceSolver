@@ -36,7 +36,7 @@ enum AssistantResultTableAnswerElement {
             return response.detected
         case .writing(let response):
             return response.detected
-        case .language(let translateResult):
+        case .language:
             return true
         }
     }

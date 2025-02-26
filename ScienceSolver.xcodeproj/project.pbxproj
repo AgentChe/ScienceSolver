@@ -175,6 +175,9 @@
 		DEC9F6E42D66054800353955 /* Onboarding.Welcome3.Animation.riv in Resources */ = {isa = PBXBuildFile; fileRef = DEC9F6E32D66054800353955 /* Onboarding.Welcome3.Animation.riv */; };
 		DEC9F6E62D6622AB00353955 /* AssistantsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9F6E52D6622AB00353955 /* AssistantsCollectionViewLayout.swift */; };
 		DEC9F6E82D6789FD00353955 /* AssistantMainGetAnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC9F6E72D6789FD00353955 /* AssistantMainGetAnswerButton.swift */; };
+		DECF9A882D6A19F500EE81AF /* HelpfulActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF9A872D6A19F500EE81AF /* HelpfulActionsView.swift */; };
+		DECF9A8A2D6A258B00EE81AF /* HelpfulReasonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF9A892D6A258B00EE81AF /* HelpfulReasonsView.swift */; };
+		DECF9A8D2D6A25A300EE81AF /* HelpfulReasonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF9A8C2D6A25A300EE81AF /* HelpfulReasonButton.swift */; };
 		DED95F8F2CEA5396003CBC48 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED95F8E2CEA5396003CBC48 /* WebController.swift */; };
 		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
@@ -372,6 +375,9 @@
 		DEC9F6E32D66054800353955 /* Onboarding.Welcome3.Animation.riv */ = {isa = PBXFileReference; lastKnownFileType = file; path = Onboarding.Welcome3.Animation.riv; sourceTree = "<group>"; };
 		DEC9F6E52D6622AB00353955 /* AssistantsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		DEC9F6E72D6789FD00353955 /* AssistantMainGetAnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantMainGetAnswerButton.swift; sourceTree = "<group>"; };
+		DECF9A872D6A19F500EE81AF /* HelpfulActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpfulActionsView.swift; sourceTree = "<group>"; };
+		DECF9A892D6A258B00EE81AF /* HelpfulReasonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpfulReasonsView.swift; sourceTree = "<group>"; };
+		DECF9A8C2D6A25A300EE81AF /* HelpfulReasonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpfulReasonButton.swift; sourceTree = "<group>"; };
 		DED95F8E2CEA5396003CBC48 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
@@ -1132,9 +1138,20 @@
 		DEB22DF82CAE92A9000200C1 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				DECF9A8B2D6A259200EE81AF /* HelpfulReason */,
 				DEB22DF92CAE92B2000200C1 /* KatexWebView.swift */,
+				DECF9A872D6A19F500EE81AF /* HelpfulActionsView.swift */,
 			);
 			path = Atoms;
+			sourceTree = "<group>";
+		};
+		DECF9A8B2D6A259200EE81AF /* HelpfulReason */ = {
+			isa = PBXGroup;
+			children = (
+				DECF9A892D6A258B00EE81AF /* HelpfulReasonsView.swift */,
+				DECF9A8C2D6A25A300EE81AF /* HelpfulReasonButton.swift */,
+			);
+			path = HelpfulReason;
 			sourceTree = "<group>";
 		};
 		DEE883772C988F9D008DAD26 /* Views */ = {
@@ -1419,6 +1436,7 @@
 				DE89C35F2C8DCD3200CB9160 /* OnboardingSlideView.swift in Sources */,
 				DE89C3E22C931B2800CB9160 /* HistoryTableView.swift in Sources */,
 				DE89C3452C8B467600CB9160 /* TryAgainViewController.swift in Sources */,
+				DECF9A8D2D6A25A300EE81AF /* HelpfulReasonButton.swift in Sources */,
 				DE89C15E2C8B3AE100CB9160 /* PaddingTextField.swift in Sources */,
 				DE89C1692C8B3AE100CB9160 /* UIView+RxExtension.swift in Sources */,
 				DE89C32C2C8B3F1800CB9160 /* PaygateActionsView.swift in Sources */,
@@ -1478,6 +1496,7 @@
 				DE89C16C2C8B3AE100CB9160 /* RestAPITransport.swift in Sources */,
 				DE89C3DE2C93181E00CB9160 /* HistoryView.swift in Sources */,
 				DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */,
+				DECF9A882D6A19F500EE81AF /* HelpfulActionsView.swift in Sources */,
 				DE89C34A2C8B4E4800CB9160 /* Weak.swift in Sources */,
 				DE89C17E2C8B3AE100CB9160 /* GlobalDefinitions.swift in Sources */,
 				DEE8838A2C9975D0008DAD26 /* SLViewModel.swift in Sources */,
@@ -1527,6 +1546,7 @@
 				DE89C1522C8B3AE100CB9160 /* ImagePicker.swift in Sources */,
 				DE89C3342C8B3F1800CB9160 /* PaygateViewModel.swift in Sources */,
 				DE89C3472C8B467A00CB9160 /* TryAgainView.swift in Sources */,
+				DECF9A8A2D6A258B00EE81AF /* HelpfulReasonsView.swift in Sources */,
 				DE89C4022C93483300CB9160 /* AssistantsCollectionCell.swift in Sources */,
 				DE89C16D2C8B3AE100CB9160 /* PushNotificationsAuthorizationStatus.swift in Sources */,
 				DEE883B42C9AEE57008DAD26 /* ARTAnswerCell.swift in Sources */,

@@ -13,14 +13,15 @@ final class ARTHelpfulCell: UITableViewCell {
     
     lazy var container = makeContainer()
     lazy var titleLabel = makeTitleLabel()
-    lazy var likeButton = makeActionButton(iconName: "AssistantResult.Like")
-    lazy var dislikeButton = makeActionButton(iconName: "AssistantResult.Dislike")
+    
+    private var actionsView: UIView?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         makeConstraints()
         initialize()
+        makeActionsButtonsUI()
     }
     
     required init?(coder: NSCoder) {
@@ -33,20 +34,70 @@ private extension ARTHelpfulCell {
     func initialize() {
         backgroundColor = UIColor.clear
         contentView.backgroundColor = UIColor.clear
-        selectionStyle = .none
         
-        likeButton.addTarget(self, action: #selector(likeTapped), for: .touchUpInside)
-        dislikeButton.addTarget(self, action: #selector(dislikeTapped), for: .touchUpInside)
+        selectionStyle = .none
     }
     
-    @objc
-    func likeTapped() {
-        didTapLike?()
+    func makeActionsButtonsUI() {
+        let view = HelpfulActionsView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(view)
+        
+        NSLayoutConstraint.activate([
+            view.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            view.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale),
+            view.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale)
+        ])
+        
+        self.actionsView = view
+        
+        view.didTapLike = { [weak self] in
+            self?.makeReasonsUI(relatively: .like)
+        }
+        
+        view.didTapDislike = { [weak self] in
+            self?.makeReasonsUI(relatively: .dislike)
+        }
+        
+        setNeedsLayout()
+        layoutIfNeeded()
     }
     
-    @objc
-    func dislikeTapped() {
-        didTapDislike?()
+    func makeReasonsUI(relatively: HelpfulReasonsView.Relatively) {
+        actionsView?.removeFromSuperview()
+        actionsView = nil
+        
+        let view = HelpfulReasonsView(relatively: relatively) { [weak self] in
+            guard let self else { return }
+            
+            switch relatively {
+            case .like:
+                didTapLike?()
+            case .dislike:
+                didTapDislike?()
+            }
+        }
+        view.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(view)
+        
+        NSLayoutConstraint.activate([
+            view.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            view.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale),
+            view.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale)
+        ])
+        
+        self.actionsView = view
+        
+        if let tableView = self.superview as? UITableView {
+            tableView.beginUpdates()
+            
+            setNeedsLayout()
+            layoutIfNeeded()
+            
+            tableView.endUpdates()
+       }
     }
 }
 
@@ -57,28 +108,13 @@ private extension ARTHelpfulCell {
             container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
             container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
             container.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16.scale),
-            container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            container.heightAnchor.constraint(equalToConstant: 110.scale)
+            container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
             titleLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
             titleLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 16.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            likeButton.widthAnchor.constraint(equalToConstant: 40.scale),
-            likeButton.heightAnchor.constraint(equalToConstant: 40.scale),
-            likeButton.trailingAnchor.constraint(equalTo: container.centerXAnchor, constant: -4.scale),
-            likeButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            dislikeButton.widthAnchor.constraint(equalToConstant: 40.scale),
-            dislikeButton.heightAnchor.constraint(equalToConstant: 40.scale),
-            dislikeButton.leadingAnchor.constraint(equalTo: container.centerXAnchor, constant: 4.scale),
-            dislikeButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16.scale)
         ])
     }
 }
@@ -105,14 +141,6 @@ private extension ARTHelpfulCell {
         
         let view = UILabel()
         view.attributedText = "AssistantResult.Helpful".localized.attributed(with: attrs)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        container.addSubview(view)
-        return view
-    }
-    
-    func makeActionButton(iconName: String) -> TapAreaButton {
-        let view = TapAreaButton()
-        view.setImage(UIImage(named: iconName), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view

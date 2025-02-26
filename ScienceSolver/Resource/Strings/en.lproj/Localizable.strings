@@ -118,6 +118,17 @@
 
 // MARK: AssistantResult
 "AssistantResult.Helpful" = "Was it helpful?";
+"AssistantResult.Helpful.Reason.Like.1" = "Really liked the answer";
+"AssistantResult.Helpful.Reason.Like.2" = "It contains all necessary information";
+"AssistantResult.Helpful.Reason.Like.3" = "Good structure";
+"AssistantResult.Helpful.Reason.Like.4" = "Other";
+"AssistantResult.Helpful.Reason.Like.TextPlaceholder" = "Tell us what you like";
+"AssistantResult.Helpful.Reason.Dislike.1" = "There is no answer to my question";
+"AssistantResult.Helpful.Reason.Dislike.2" = "Not enough information";
+"AssistantResult.Helpful.Reason.Dislike.3" = "Unacceptable or offensive answer";
+"AssistantResult.Helpful.Reason.Dislike.4" = "Other";
+"AssistantResult.Helpful.Reason.Dislike.TextPlaceholder" = "How can we improve for you";
+"AssistantResult.Helpful.Reason.Submit" = "Submit";
 "AssistantResult.Answer" = "Answer";
 "AssistantResult.Explanation" = "Explanation";
 "AssistantResult.Recommendation" = "Recommendation";

@@ -44,7 +44,7 @@ private extension AssistantResultView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 2.scale),
-            tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: keyboardLayoutGuide.topAnchor)
         ])
     }
 }
