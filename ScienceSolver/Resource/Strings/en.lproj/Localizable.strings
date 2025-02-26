@@ -132,7 +132,7 @@
 "AssistantResult.Answer" = "Answer";
 "AssistantResult.Explanation" = "Explanation";
 "AssistantResult.Recommendation" = "Recommendation";
-"AssistantResult.Math.UserFormula" = "User Formula";
+"AssistantResult.Math.UserFormula" = "Identified problem";
 "AssistantResult.Copied" = "Copied";
 
 // MARK: AssistantMain
