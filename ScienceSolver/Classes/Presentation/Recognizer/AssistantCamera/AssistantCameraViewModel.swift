@@ -16,6 +16,7 @@ final class AssistantCameraViewModel {
     
     enum Action {
         case takePhoto
+        case toggleFlashMode
     }
     
     private let initialAssistant: Driver<AssistantsCollectionElement.Assistant?>
@@ -34,6 +35,7 @@ extension AssistantCameraViewModel {
         let didTapTakePhoto: Signal<Void>
         let didTapAllowAccess: Signal<Void>
         let videoPermissionChangedAccess: Signal<Void>
+        let didTapFlash: Signal<Void>
     }
     
     struct Output {
@@ -58,7 +60,10 @@ extension AssistantCameraViewModel {
                 currentAssistant: currentAssistant,
                 videoPermissionChangedAccess: input.videoPermissionChangedAccess
             ),
-            action: makeAction(didTapTakePhoto: input.didTapTakePhoto)
+            action: makeAction(
+                didTapTakePhoto: input.didTapTakePhoto,
+                didTapFlash: input.didTapFlash
+            )
         )
     }
 }
@@ -118,12 +123,19 @@ private extension AssistantCameraViewModel {
             }
     }
     
-    func makeAction(didTapTakePhoto: Signal<Void>) -> Driver<Action> {
+    func makeAction(
+        didTapTakePhoto: Signal<Void>,
+        didTapFlash: Signal<Void>
+    ) -> Driver<Action> {
         let takePhoto = didTapTakePhoto
             .map { Action.takePhoto }
             .asDriver(onErrorDriveWith: .never())
         
+        let toggleFlash = didTapFlash
+            .map { Action.toggleFlashMode }
+            .asDriver(onErrorDriveWith: .never())
+        
         return Driver
-            .merge(takePhoto)
+            .merge(takePhoto, toggleFlash)
     }
 }

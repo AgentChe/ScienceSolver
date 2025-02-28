@@ -36,6 +36,24 @@ final class CameraService: NSObject {
         
         setupAndStartCaptureSession()
     }
+    
+    var flashEnable: Bool {
+        captureDevice?.torchMode == .on
+    }
+    
+    func toggleFlash() {
+        guard let device = captureDevice else { return }
+            
+        do {
+            try device.lockForConfiguration()
+            
+            device.torchMode = device.torchMode == .off ? .on : .off
+            
+            device.unlockForConfiguration()
+        } catch {
+            print("Cannot toggle flash: \(error.localizedDescription)")
+        }
+    }
 
     func setZoom(scale: CGFloat) {
         guard let zoomFactor = captureDevice?.videoZoomFactor else {

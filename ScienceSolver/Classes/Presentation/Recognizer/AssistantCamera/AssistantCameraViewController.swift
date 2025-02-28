@@ -66,7 +66,8 @@ final class AssistantCameraViewController: UIViewController {
             didSelect: mainView.collectionView.didSelect,
             didTapTakePhoto: mainView.takeButton.rx.tap.asSignal(),
             didTapAllowAccess: mainView.permissionProblemView.allowAccessButton.rx.tap.asSignal(),
-            videoPermissionChangedAccess: videoPermissionChangedAccessTrigger.asSignal()
+            videoPermissionChangedAccess: videoPermissionChangedAccessTrigger.asSignal(),
+            didTapFlash: mainView.flashButton.rx.tap.asSignal()
         ))
         
         output.route
@@ -167,8 +168,10 @@ private extension AssistantCameraViewController {
         case .takePhoto:
             let photoSettings = AVCapturePhotoSettings()
             photoSettings.isHighResolutionPhotoEnabled = true
-            photoSettings.flashMode = .off
+            photoSettings.flashMode = cameraService.flashEnable ? .on : .off
             cameraService.photoOutput.capturePhoto(with: photoSettings, delegate: cameraService)
+        case .toggleFlashMode:
+            cameraService.toggleFlash()
         }
     }
     
