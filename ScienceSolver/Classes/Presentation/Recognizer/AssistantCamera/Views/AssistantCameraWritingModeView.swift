@@ -156,15 +156,13 @@ private extension AssistantCameraWritingModeView {
         NSLayoutConstraint.activate([
             essayButton.leadingAnchor.constraint(equalTo: leadingAnchor),
             essayButton.trailingAnchor.constraint(equalTo: centerXAnchor),
-            essayButton.topAnchor.constraint(equalTo: topAnchor),
-            essayButton.bottomAnchor.constraint(equalTo: bottomAnchor)
+            essayButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -1.scale)
         ])
         
         NSLayoutConstraint.activate([
             outlineButton.leadingAnchor.constraint(equalTo: centerXAnchor),
             outlineButton.trailingAnchor.constraint(equalTo: trailingAnchor),
-            outlineButton.topAnchor.constraint(equalTo: topAnchor),
-            outlineButton.bottomAnchor.constraint(equalTo: bottomAnchor)
+            outlineButton.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -1.scale)
         ])
     }
 }
@@ -191,8 +189,8 @@ private extension AssistantCameraWritingModeView {
         return view
     }
     
-    func makeButton() -> UIButton {
-        let view = UIButton()
+    func makeButton() -> TapAreaButton {
+        let view = TapAreaButton()
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
