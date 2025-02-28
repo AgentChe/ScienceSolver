@@ -24,6 +24,7 @@ final class AssistantCameraWritingModeView: UIView {
         }
     }
     
+    lazy var blurView = makeBlurView()
     lazy var selector = makeSelector()
     lazy var essayButton = makeButton()
     lazy var outlineButton = makeButton()
@@ -66,13 +67,15 @@ private extension AssistantCameraWritingModeView {
         backgroundColor = {
             switch style {
             case .camera:
-                return Appearance.main100.withAlphaComponent(0.2)
+                return UIColor.clear
             case .manual:
                 return  Appearance.main100
             }
         }()
         layer.cornerRadius = 21.5.scale
         layer.masksToBounds = true
+        
+        blurView.isHidden = style != .camera
         
         Observable
             .merge(
@@ -139,6 +142,13 @@ private extension AssistantCameraWritingModeView {
 private extension AssistantCameraWritingModeView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
+            blurView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            blurView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            blurView.topAnchor.constraint(equalTo: topAnchor),
+            blurView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             selector.topAnchor.constraint(equalTo: topAnchor, constant: 4.scale),
             selector.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4.scale)
         ])
@@ -161,6 +171,17 @@ private extension AssistantCameraWritingModeView {
 
 // MARK: Lazy initialization
 private extension AssistantCameraWritingModeView {
+    func makeBlurView() -> UIVisualEffectView {
+        let effect = UIBlurEffect(style: .light)
+        let view = UIVisualEffectView(effect: effect)
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.layer.cornerRadius = 21.5.scale
+        view.layer.masksToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
     func makeSelector() -> UIView {
         let view = UIView()
         view.layer.cornerRadius = 17.5.scale

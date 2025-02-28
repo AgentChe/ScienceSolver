@@ -180,6 +180,7 @@
 		DECF9A8D2D6A25A300EE81AF /* HelpfulReasonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF9A8C2D6A25A300EE81AF /* HelpfulReasonButton.swift */; };
 		DECF9A912D6F49CF00EE81AF /* FiraMath-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = DECF9A8F2D6F49CF00EE81AF /* FiraMath-Regular.otf */; };
 		DECF9A922D6F49CF00EE81AF /* FiraMath-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = DECF9A902D6F49CF00EE81AF /* FiraMath-Regular.plist */; };
+		DECF9AA22D71CF8200EE81AF /* AssistantCameraActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF9AA12D71CF8200EE81AF /* AssistantCameraActionButton.swift */; };
 		DED95F8F2CEA5396003CBC48 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED95F8E2CEA5396003CBC48 /* WebController.swift */; };
 		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
@@ -382,6 +383,7 @@
 		DECF9A8C2D6A25A300EE81AF /* HelpfulReasonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpfulReasonButton.swift; sourceTree = "<group>"; };
 		DECF9A8F2D6F49CF00EE81AF /* FiraMath-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FiraMath-Regular.otf"; sourceTree = "<group>"; };
 		DECF9A902D6F49CF00EE81AF /* FiraMath-Regular.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FiraMath-Regular.plist"; sourceTree = "<group>"; };
+		DECF9AA12D71CF8200EE81AF /* AssistantCameraActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantCameraActionButton.swift; sourceTree = "<group>"; };
 		DED95F8E2CEA5396003CBC48 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
@@ -1044,6 +1046,7 @@
 				DE89C3FC2C93481900CB9160 /* AssistantsCollection */,
 				DE89C4102C949EE500CB9160 /* AssistantCameraWritingModeView.swift */,
 				DEE8839D2C9ABC6C008DAD26 /* AssistantCameraPermissionProblemView.swift */,
+				DECF9AA12D71CF8200EE81AF /* AssistantCameraActionButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1541,6 +1544,7 @@
 				DEE883932C99C18B008DAD26 /* ACEViewController.swift in Sources */,
 				DE89C37F2C8EFAC900CB9160 /* AssistantHelpfulRequest.swift in Sources */,
 				DEB22DCF2CA29B0A000200C1 /* AssistantMainView.swift in Sources */,
+				DECF9AA22D71CF8200EE81AF /* AssistantCameraActionButton.swift in Sources */,
 				DEE883B92C9AF75A008DAD26 /* AssistantAssembly.swift in Sources */,
 				DE89C38B2C8F0A1100CB9160 /* GetLanguagesRequest.swift in Sources */,
 				DE89C3B32C919A4F00CB9160 /* AccountTitleCell.swift in Sources */,

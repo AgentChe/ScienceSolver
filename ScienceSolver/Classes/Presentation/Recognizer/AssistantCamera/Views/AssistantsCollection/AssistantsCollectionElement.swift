@@ -16,7 +16,7 @@ final class AssistantsCollectionElement {
     }
     
     enum Style {
-        case onlyWhite
+        case withBlur
         case whiteBlack
     }
     

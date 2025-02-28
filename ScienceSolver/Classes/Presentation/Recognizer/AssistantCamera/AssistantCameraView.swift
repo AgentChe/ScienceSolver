@@ -8,11 +8,11 @@
 import UIKit
 
 final class AssistantCameraView: UIView {
-    lazy var closeButton = makeTapAreaButton(imageName: "AssistantCamera.Close")
+    lazy var closeButton = makeTapAreaButton(imageName: "AssistantCamera.Close", mode: .other)
     lazy var collectionView = makeCollectionView()
-    lazy var wallpapersButton = makeTapAreaButton(imageName: "AssistantCamera.Wallpapers")
-    lazy var takeButton = makeTapAreaButton(imageName: "AssistantCamera.Take")
-    lazy var flashButton = makeTapAreaButton(imageName: "AssistantCamera.Flash")
+    lazy var wallpapersButton = makeTapAreaButton(imageName: "AssistantCamera.Wallpapers", mode: .other)
+    lazy var takeButton = makeTapAreaButton(imageName: "AssistantCamera.Take", mode: .take)
+    lazy var flashButton = makeTapAreaButton(imageName: "AssistantCamera.Flash", mode: .other)
     lazy var writingModeView = makeWritingModeView()
     lazy var permissionProblemView = makePermissionProblemView()
     
@@ -90,9 +90,8 @@ private extension AssistantCameraView {
 
 // MARK: Lazy initialization
 private extension AssistantCameraView {
-    func makeTapAreaButton(imageName: String) -> TapAreaButton {
-        let view = TapAreaButton()
-        view.setImage(UIImage(named: imageName), for: .normal)
+    func makeTapAreaButton(imageName: String, mode: AssistantCameraActionButton.Mode) -> AssistantCameraActionButton {
+        let view = AssistantCameraActionButton(iconName: imageName, mode: mode)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

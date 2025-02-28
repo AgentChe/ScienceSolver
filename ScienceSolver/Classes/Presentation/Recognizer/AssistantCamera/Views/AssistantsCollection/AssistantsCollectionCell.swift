@@ -8,6 +8,7 @@
 import UIKit
 
 final class AssistantsCollectionCell: UICollectionViewCell {
+    lazy var blurView = makeBlurView()
     lazy var label = makeLabel()
     
     private lazy var mono100Attrs = TextAttributes()
@@ -37,15 +38,17 @@ final class AssistantsCollectionCell: UICollectionViewCell {
 extension AssistantsCollectionCell {
     func setup(element: AssistantsCollectionElement) {
         switch element.style {
-        case .onlyWhite:
+        case .withBlur:
             label.attributedText = element.assistant.title.attributed(with: mono100Attrs)
             
-            contentView.backgroundColor = element.marked ? Appearance.main300 : Appearance.mono200.withAlphaComponent(0.2)
+            contentView.backgroundColor = element.marked ? Appearance.main300 : UIColor.clear
+            blurView.isHidden = element.marked
         case .whiteBlack:
             let attrs = element.marked ? mono100Attrs : mono200Attrs
             label.attributedText = element.assistant.title.attributed(with: attrs)
             
             contentView.backgroundColor = element.marked ? Appearance.main300 : Appearance.main200
+            blurView.isHidden = true
         }
     }
 }
@@ -67,6 +70,13 @@ private extension AssistantsCollectionCell {
 private extension AssistantsCollectionCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
+            blurView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            blurView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            blurView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            blurView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12.scale),
             label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12.scale),
             label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8.scale),
@@ -77,6 +87,18 @@ private extension AssistantsCollectionCell {
 
 // MARK: Lazy initialization
 private extension AssistantsCollectionCell {
+    func makeBlurView() -> UIVisualEffectView {
+        let effect = UIBlurEffect(style: .light)
+        let view = UIVisualEffectView(effect: effect)
+        view.isUserInteractionEnabled = false
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.layer.cornerRadius = 12.scale
+        view.layer.masksToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
+        return view
+    }
+    
     func makeLabel() -> UILabel {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
