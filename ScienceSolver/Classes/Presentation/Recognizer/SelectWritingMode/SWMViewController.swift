@@ -14,12 +14,12 @@ final class SWMViewController: UIViewController {
     private lazy var disposeBag = DisposeBag()
     
     private let mode: WritingMode
-    private let style: WritingStyle?
+    private let initialStyle: WritingStyle?
     private let select: (WritingStyle) -> Void
     
     private init(mode: WritingMode, style: WritingStyle?, select: @escaping (WritingStyle) -> Void) {
         self.mode = mode
-        self.style = style
+        self.initialStyle = style
         self.select = select
         
         super.init(nibName: nil, bundle: nil)
@@ -44,7 +44,7 @@ final class SWMViewController: UIViewController {
         
         mainView.saveButton.rx.tap
             .compactMap { [weak self] void -> WritingStyle? in
-                self?.mainView.pickerView.selectedStyle
+                self?.mainView.pickerView.selected
             }
             .bind(to: Binder(self) { base, style in
                 base.dismiss {
@@ -53,9 +53,11 @@ final class SWMViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        if let style {
-            mainView.pickerView.select(style: style)
-        }
+        let styles = WritingStyle.allCases
+        mainView.pickerView.setup(
+            elements: styles,
+            initialIndex: styles.firstIndex(where: { $0 == initialStyle })
+        )
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -87,6 +89,30 @@ private extension SWMViewController {
             self?.dismiss(animated: false) {
                 completion?()
             }
+        }
+    }
+}
+
+// MARK: Additional
+extension WritingStyle: PickerViewElement {
+    var title: String {
+        switch self {
+        case .expository:
+            return "WritingStyle.Expository".localized
+        case .narrative:
+            return "WritingStyle.Narrative".localized
+        case .argumentative:
+            return "WritingStyle.Argumentative".localized
+        case .analytical:
+            return "WritingStyle.Analytical".localized
+        case .research:
+            return "WritingStyle.Research".localized
+        case .descriptive:
+            return "WritingStyle.Descriptive".localized
+        case .omparative:
+            return "WritingStyle.Omparative".localized
+        case .other:
+            return "WritingStyle.Other".localized
         }
     }
 }

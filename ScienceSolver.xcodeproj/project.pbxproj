@@ -15,6 +15,8 @@
 		A3430F752CB375510006FB37 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3430F712CB375510006FB37 /* Parser.swift */; };
 		A3430F782CB375780006FB37 /* Expression in Frameworks */ = {isa = PBXBuildFile; productRef = A3430F772CB375780006FB37 /* Expression */; };
 		DE1DF99A2D09C14B0004A43F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE1DF9992D09C14B0004A43F /* GoogleService-Info.plist */; };
+		DE4AF7552D75A28600422532 /* PIckerCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4AF7542D75A28600422532 /* PIckerCollectionLayout.swift */; };
+		DE4F0A772D759997001C897A /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4F0A762D759997001C897A /* PickerView.swift */; };
 		DE89BF8E2C8B35B400CB9160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE89BF8D2C8B35B300CB9160 /* Assets.xcassets */; };
 		DE89BF912C8B35B400CB9160 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DE89BF902C8B35B400CB9160 /* Base */; };
 		DE89C14E2C8B3AE100CB9160 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BF992C8B3AE100CB9160 /* AmplitudeManager.swift */; };
@@ -186,11 +188,9 @@
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
 		DEE8837E2C996922008DAD26 /* SWMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837D2C996922008DAD26 /* SWMView.swift */; };
 		DEE883802C99692B008DAD26 /* SWMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837F2C99692B008DAD26 /* SWMViewController.swift */; };
-		DEE883852C996F5F008DAD26 /* SWMPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883842C996F5F008DAD26 /* SWMPickerView.swift */; };
 		DEE883882C9975CA008DAD26 /* SLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883872C9975CA008DAD26 /* SLViewController.swift */; };
 		DEE8838A2C9975D0008DAD26 /* SLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883892C9975D0008DAD26 /* SLViewModel.swift */; };
 		DEE8838C2C9975D4008DAD26 /* SLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8838B2C9975D4008DAD26 /* SLView.swift */; };
-		DEE8838F2C9976BE008DAD26 /* SLPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8838E2C9976BE008DAD26 /* SLPickerView.swift */; };
 		DEE883932C99C18B008DAD26 /* ACEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883922C99C18B008DAD26 /* ACEViewController.swift */; };
 		DEE883952C99C190008DAD26 /* ACEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883942C99C190008DAD26 /* ACEView.swift */; };
 		DEE883982C9AAB04008DAD26 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883972C9AAB04008DAD26 /* CameraService.swift */; };
@@ -206,6 +206,9 @@
 		DEE883B62C9AEE61008DAD26 /* ARTHelpfulCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883B52C9AEE61008DAD26 /* ARTHelpfulCell.swift */; };
 		DEE883B92C9AF75A008DAD26 /* AssistantAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883B82C9AF75A008DAD26 /* AssistantAssembly.swift */; };
 		DEE883BC2C9B2D27008DAD26 /* ART.Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = DEE883BB2C9B2D27008DAD26 /* ART.Loader.json */; };
+		DEF019E02D7580C300496D64 /* PickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF019DF2D7580C300496D64 /* PickerCollectionView.swift */; };
+		DEF019E22D7580CE00496D64 /* PickerCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF019E12D7580CE00496D64 /* PickerCollectionCell.swift */; };
+		DEF019E42D7580D900496D64 /* PickerCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF019E32D7580D900496D64 /* PickerCollectionElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -216,6 +219,8 @@
 		A3430F712CB375510006FB37 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		A3430F722CB375510006FB37 /* SetCalcBtnImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCalcBtnImages.swift; sourceTree = "<group>"; };
 		DE1DF9992D09C14B0004A43F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DE4AF7542D75A28600422532 /* PIckerCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIckerCollectionLayout.swift; sourceTree = "<group>"; };
+		DE4F0A762D759997001C897A /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		DE89BF812C8B35B100CB9160 /* ScienceSolver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScienceSolver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE89BF8D2C8B35B300CB9160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE89BF902C8B35B400CB9160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -389,11 +394,9 @@
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
 		DEE8837D2C996922008DAD26 /* SWMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMView.swift; sourceTree = "<group>"; };
 		DEE8837F2C99692B008DAD26 /* SWMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMViewController.swift; sourceTree = "<group>"; };
-		DEE883842C996F5F008DAD26 /* SWMPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMPickerView.swift; sourceTree = "<group>"; };
 		DEE883872C9975CA008DAD26 /* SLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLViewController.swift; sourceTree = "<group>"; };
 		DEE883892C9975D0008DAD26 /* SLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLViewModel.swift; sourceTree = "<group>"; };
 		DEE8838B2C9975D4008DAD26 /* SLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLView.swift; sourceTree = "<group>"; };
-		DEE8838E2C9976BE008DAD26 /* SLPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SLPickerView.swift; sourceTree = "<group>"; };
 		DEE883922C99C18B008DAD26 /* ACEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACEViewController.swift; sourceTree = "<group>"; };
 		DEE883942C99C190008DAD26 /* ACEView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACEView.swift; sourceTree = "<group>"; };
 		DEE883972C9AAB04008DAD26 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
@@ -409,6 +412,9 @@
 		DEE883B52C9AEE61008DAD26 /* ARTHelpfulCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTHelpfulCell.swift; sourceTree = "<group>"; };
 		DEE883B82C9AF75A008DAD26 /* AssistantAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAssembly.swift; sourceTree = "<group>"; };
 		DEE883BB2C9B2D27008DAD26 /* ART.Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ART.Loader.json; sourceTree = "<group>"; };
+		DEF019DF2D7580C300496D64 /* PickerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCollectionView.swift; sourceTree = "<group>"; };
+		DEF019E12D7580CE00496D64 /* PickerCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCollectionCell.swift; sourceTree = "<group>"; };
+		DEF019E32D7580D900496D64 /* PickerCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCollectionElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -451,6 +457,17 @@
 				15FFBE93DB1784E69B82777B /* Pods_ScienceSolver.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE4F0A752D759988001C897A /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				DEF019DF2D7580C300496D64 /* PickerCollectionView.swift */,
+				DEF019E12D7580CE00496D64 /* PickerCollectionCell.swift */,
+				DEF019E32D7580D900496D64 /* PickerCollectionElement.swift */,
+				DE4AF7542D75A28600422532 /* PIckerCollectionLayout.swift */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		DE89BF782C8B35B100CB9160 = {
@@ -527,6 +544,7 @@
 		DE89BFAF2C8B3AE100CB9160 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				DEF019DE2D7580B700496D64 /* Picker */,
 				DE89BFA42C8B3AE100CB9160 /* NavigationController */,
 				DE89BFA92C8B3AE100CB9160 /* GradientView.swift */,
 				DE89BFAB2C8B3AE100CB9160 /* PaddingLabel.swift */,
@@ -1183,38 +1201,20 @@
 		DEE8837C2C996909008DAD26 /* SelectWritingMode */ = {
 			isa = PBXGroup;
 			children = (
-				DEE883832C996F54008DAD26 /* Views */,
 				DEE8837F2C99692B008DAD26 /* SWMViewController.swift */,
 				DEE8837D2C996922008DAD26 /* SWMView.swift */,
 			);
 			path = SelectWritingMode;
 			sourceTree = "<group>";
 		};
-		DEE883832C996F54008DAD26 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DEE883842C996F5F008DAD26 /* SWMPickerView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		DEE883862C9975B9008DAD26 /* SelectLanguage */ = {
 			isa = PBXGroup;
 			children = (
-				DEE8838D2C9976B5008DAD26 /* Views */,
 				DEE883872C9975CA008DAD26 /* SLViewController.swift */,
 				DEE883892C9975D0008DAD26 /* SLViewModel.swift */,
 				DEE8838B2C9975D4008DAD26 /* SLView.swift */,
 			);
 			path = SelectLanguage;
-			sourceTree = "<group>";
-		};
-		DEE8838D2C9976B5008DAD26 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DEE8838E2C9976BE008DAD26 /* SLPickerView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		DEE883912C99C176008DAD26 /* AssistantCameraError */ = {
@@ -1294,6 +1294,15 @@
 				DEE883BB2C9B2D27008DAD26 /* ART.Loader.json */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		DEF019DE2D7580B700496D64 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				DE4F0A752D759988001C897A /* Collection */,
+				DE4F0A762D759997001C897A /* PickerView.swift */,
+			);
+			path = Picker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1450,7 +1459,6 @@
 				DE89C1672C8B3AE100CB9160 /* UIEdgeInsets+Extension.swift in Sources */,
 				DEE883802C99692B008DAD26 /* SWMViewController.swift in Sources */,
 				DE89C39F2C918D1E00CB9160 /* AccountViewController.swift in Sources */,
-				DEE8838F2C9976BE008DAD26 /* SLPickerView.swift in Sources */,
 				DE89C2522C8B3AE200CB9160 /* PurchaseValidationObserver.swift in Sources */,
 				DE89C35F2C8DCD3200CB9160 /* OnboardingSlideView.swift in Sources */,
 				DE89C3E22C931B2800CB9160 /* HistoryTableView.swift in Sources */,
@@ -1469,6 +1477,7 @@
 				DE89C3912C8F0EFB00CB9160 /* WritingStyle.swift in Sources */,
 				DEE883A32C9AED92008DAD26 /* AssistantResultViewModel.swift in Sources */,
 				DEE8838C2C9975D4008DAD26 /* SLView.swift in Sources */,
+				DEF019E42D7580D900496D64 /* PickerCollectionElement.swift in Sources */,
 				DE89C3CA2C92E77900CB9160 /* AssistantHistoryRequest.swift in Sources */,
 				DEE883A52C9AED96008DAD26 /* AssistantResultView.swift in Sources */,
 				DE89C2322C8B3AE200CB9160 /* SplashViewModel.swift in Sources */,
@@ -1480,6 +1489,7 @@
 				DE89C3A72C918DC800CB9160 /* AccountTableView.swift in Sources */,
 				DE89C3AE2C918DE600CB9160 /* AccountAboutCell.swift in Sources */,
 				DE89C40F2C94771100CB9160 /* AssistantImageResizeView.swift in Sources */,
+				DE4F0A772D759997001C897A /* PickerView.swift in Sources */,
 				DE89C2502C8B3AE200CB9160 /* ProductPrice.swift in Sources */,
 				DE89C27A2C8B3AE200CB9160 /* SessionManager.swift in Sources */,
 				DE89C1702C8B3AE100CB9160 /* ContentError.swift in Sources */,
@@ -1511,6 +1521,7 @@
 				DEE883B02C9AEE37008DAD26 /* ARTQuestionTextCell.swift in Sources */,
 				DE89C1602C8B3AE100CB9160 /* TapAreaButton.swift in Sources */,
 				DE89C3812C8EFBD800CB9160 /* AssistantTranslateImage.swift in Sources */,
+				DEF019E02D7580C300496D64 /* PickerCollectionView.swift in Sources */,
 				DE89C3FA2C9344F100CB9160 /* AssistantCameraView.swift in Sources */,
 				DE89C16C2C8B3AE100CB9160 /* RestAPITransport.swift in Sources */,
 				DE89C3DE2C93181E00CB9160 /* HistoryView.swift in Sources */,
@@ -1521,6 +1532,7 @@
 				DEE8838A2C9975D0008DAD26 /* SLViewModel.swift in Sources */,
 				DE89C3F82C9344EC00CB9160 /* AssistantCameraViewModel.swift in Sources */,
 				A3430F732CB375510006FB37 /* SetCalcBtnImages.swift in Sources */,
+				DE4AF7552D75A28600422532 /* PIckerCollectionLayout.swift in Sources */,
 				A3430F742CB375510006FB37 /* CalculatorViewController.swift in Sources */,
 				A3430F752CB375510006FB37 /* Parser.swift in Sources */,
 				DE89C24F2C8B3AE200CB9160 /* IAPProduct.swift in Sources */,
@@ -1538,7 +1550,6 @@
 				DE89C3992C8F1E3100CB9160 /* AssistantAnalyzeManualRequest.swift in Sources */,
 				DE89C3772C8EF43300CB9160 /* PhysicsAssistantResult.swift in Sources */,
 				DE89C3E92C931B4A00CB9160 /* HistoryTextCell.swift in Sources */,
-				DEE883852C996F5F008DAD26 /* SWMPickerView.swift in Sources */,
 				DE89C32F2C8B3F1800CB9160 /* PaygateInfoCell.swift in Sources */,
 				DE89C1762C8B3AE100CB9160 /* ObservableRetrySingle.swift in Sources */,
 				DEE883932C99C18B008DAD26 /* ACEViewController.swift in Sources */,
@@ -1601,6 +1612,7 @@
 				DE89C32A2C8B3F1800CB9160 /* Currency.swift in Sources */,
 				DEE883982C9AAB04008DAD26 /* CameraService.swift in Sources */,
 				DE89C1562C8B3AE100CB9160 /* NavigationControllerSettings.swift in Sources */,
+				DEF019E22D7580CE00496D64 /* PickerCollectionCell.swift in Sources */,
 				DE89C3402C8B42A800CB9160 /* ProfileBindingRequest.swift in Sources */,
 				DE89C3892C8F080500CB9160 /* Language.swift in Sources */,
 				DEE8839E2C9ABC6C008DAD26 /* AssistantCameraPermissionProblemView.swift in Sources */,

@@ -40,7 +40,10 @@ final class SLViewController: UIViewController {
         
         output.languages
             .drive(Binder(self) { base, languages in
-                base.mainView.pickerView.setup(languages: languages, scrollTo: base.initialLanguage)
+                base.mainView.pickerView.setup(
+                    elements: languages,
+                    initialIndex: languages.firstIndex(where: { $0.code == base.initialLanguage?.code })
+                )
             })
             .disposed(by: disposeBag)
         
@@ -52,7 +55,7 @@ final class SLViewController: UIViewController {
         
         mainView.saveButton.rx.tap
             .compactMap { [weak self] void -> Language? in
-                self?.mainView.pickerView.selectedLanguage
+                self?.mainView.pickerView.selected
             }
             .bind(to: Binder(self) { base, style in
                 base.dismiss {
@@ -93,4 +96,9 @@ private extension SLViewController {
             }
         }
     }
+}
+
+// MARK: Additional
+extension Language: PickerViewElement {
+    var title: String { name }
 }

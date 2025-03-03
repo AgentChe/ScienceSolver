@@ -86,10 +86,10 @@ private extension SLView {
         ])
         
         NSLayoutConstraint.activate([
-            pickerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            pickerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            pickerView.topAnchor.constraint(equalTo: container.topAnchor, constant: 64.scale),
-            pickerView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -90.scale)
+            pickerView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
+            pickerView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
+            pickerView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24.scale),
+            pickerView.heightAnchor.constraint(equalToConstant: 164.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -143,8 +143,8 @@ private extension SLView {
         return view
     }
     
-    func makePickerView() -> SLPickerView {
-        let view = SLPickerView()
+    func makePickerView() -> PickerView<Language> {
+        let view = PickerView<Language>()
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
         return view
