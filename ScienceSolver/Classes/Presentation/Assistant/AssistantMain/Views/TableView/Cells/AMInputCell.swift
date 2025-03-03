@@ -125,7 +125,7 @@ private extension AMInputCell {
         NSLayoutConstraint.activate([
             bottomView.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             bottomView.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            bottomView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale),
+            bottomView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -24.scale),
             bottomView.heightAnchor.constraint(equalToConstant: 31.scale)
         ])
     }

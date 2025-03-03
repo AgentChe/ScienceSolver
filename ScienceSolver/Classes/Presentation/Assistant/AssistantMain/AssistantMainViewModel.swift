@@ -60,7 +60,8 @@ extension AssistantMainViewModel {
             currentAssistant: currentAssistant,
             didSelectWritingStyle: input.didSelectWritingStyle,
             didSelectLanguage: input.didSelectLanguage,
-            languages: makeLanguages()
+            languages: makeLanguages(),
+            currentWritingMode: currentWritingMode
         )
         let text = makeText(
             didChangeText: input.didChangeText,
@@ -243,9 +244,13 @@ private extension AssistantMainViewModel {
             .withLatestFrom(selectedAdditionalDataEntity) { ($0.0, $1?.writingStyle) }
             .withLatestFrom(currentWritingMode) { ($0.0, $0.1, $1) }
             .compactMap { text, style, mode -> AssistantMainViewController.DataForManualAnalyze? in
-                guard let style else { return nil }
-                
-                return .writing(text, mode, style)
+                switch mode {
+                case .essay:
+                    guard let style else { return nil }
+                    return .writing(text, mode, style)
+                case .outline:
+                    return .writing(text, mode, .analytical)
+                }
             }
             .map { Route.analyze($0) }
         
@@ -284,7 +289,8 @@ private extension AssistantMainViewModel {
         currentAssistant: Driver<AssistantsCollectionElement.Assistant>,
         didSelectWritingStyle: Signal<WritingStyle>,
         didSelectLanguage: Signal<Language>,
-        languages: Driver<[Language]>
+        languages: Driver<[Language]>,
+        currentWritingMode: Driver<WritingMode>
     ) -> Driver<AMSelectEntityButton.Entity?> {
         let none = currentAssistant
             .filter { $0.notRequiredAdditionalData }
@@ -297,17 +303,38 @@ private extension AssistantMainViewModel {
             
             let moveToAssistant = currentAssistant
                 .filter { $0.isWriting }
-                .withLatestFrom(lastWritingStyle)
+                .withLatestFrom(currentWritingMode)
+                .withLatestFrom(lastWritingStyle) { ($0, $1) }
+                .map { mode, lastStyle -> AMSelectEntityButton.Entity? in
+                    switch mode {
+                    case .essay:
+                        return .writingStyle(lastStyle)
+                    case .outline:
+                        return nil
+                    }
+                }
             
             let changedWritingStyle = lastWritingStyle
                 .withLatestFrom(currentAssistant) { ($0, $1) }
-                .compactMap { writingStyle, assistant -> WritingStyle? in
-                    assistant.isWriting ? writingStyle : nil
+                .filter { $1.isWriting }
+                .map { $0.0 }
+                .map { writingStyle -> AMSelectEntityButton.Entity? in .writingStyle(writingStyle) }
+            
+            let changedWritingMode = currentWritingMode
+                .withLatestFrom(currentAssistant) { ($0, $1) }
+                .filter { $1.isWriting }
+                .withLatestFrom(lastWritingStyle) { ($0.0, $1) }
+                .map { mode, lastStyle -> AMSelectEntityButton.Entity? in
+                    switch mode {
+                    case .essay:
+                        return .writingStyle(lastStyle)
+                    case .outline:
+                        return nil
+                    }
                 }
             
             return Driver
-                .merge(moveToAssistant, changedWritingStyle)
-                .map { writingStyle -> AMSelectEntityButton.Entity? in .writingStyle(writingStyle) }
+                .merge(moveToAssistant, changedWritingStyle, changedWritingMode)
         }()
         
         let language: Driver<AMSelectEntityButton.Entity?> = {
