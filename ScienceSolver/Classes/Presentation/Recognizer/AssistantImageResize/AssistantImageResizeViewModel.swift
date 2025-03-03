@@ -170,9 +170,16 @@ private extension AssistantImageResizeViewModel {
                             return .result(.init(croppedImage: image, assistant: .chemistry(result)))
                         }
                 case .writing(let mode):
-                    guard let writingStyle = additionalInfo?.writingStyle else {
-                        return .just(.error)
-                    }
+                    let writingStyle: WritingStyle? = {
+                        switch mode {
+                        case .essay:
+                            return additionalInfo?.writingStyle
+                        case .outline:
+                            return .analytical
+                        }
+                    }()
+                    
+                    guard let writingStyle else { return .just(.error) }
                     
                     return assistantManager
                         .analyzeWriting(image: image, mode: mode, style: writingStyle)
@@ -217,7 +224,7 @@ private extension AssistantImageResizeViewModel {
         
         let writingStyle: Driver<AIRSelectEntityButton.Entity?> = {
             let initial = fromCamera
-                .compactMap { $0.assistant.isWriting ? WritingStyle.expository : nil }
+                .compactMap { $0.assistant.isEssay ? WritingStyle.expository : nil }
                 .asDriver(onErrorDriveWith: .never())
             
             let selected = didSelectWritingStyle
@@ -263,17 +270,29 @@ private extension AssistantImageResizeViewModel {
 private extension AssistantCameraViewController.Result.Assistant {
     var notRequiredAdditionalData: Bool {
         switch self {
-        case .writing, .language:
+        case .writing(let mode):
+            switch mode {
+            case .outline:
+                return true
+            case .essay:
+                return false
+            }
+        case .language:
             return false
         default:
             return true
         }
     }
     
-    var isWriting: Bool {
+    var isEssay: Bool {
         switch self {
-        case .writing:
-            return true
+        case .writing(let mode):
+            switch mode {
+            case .outline:
+                return false
+            case .essay:
+                return true
+            }
         default:
             return false
         }
