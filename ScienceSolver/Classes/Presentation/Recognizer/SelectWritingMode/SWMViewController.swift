@@ -110,7 +110,7 @@ extension WritingStyle: PickerViewElement {
         case .descriptive:
             return "WritingStyle.Descriptive".localized
         case .omparative:
-            return "WritingStyle.Omparative".localized
+            return "WritingStyle.Comparative".localized
         case .other:
             return "WritingStyle.Other".localized
         }
