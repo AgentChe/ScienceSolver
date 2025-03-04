@@ -31,7 +31,25 @@ final class ARTQuestionTextCell: UITableViewCell {
 // MARK: Public
 extension ARTQuestionTextCell {
     func setup(question: String) {
-        label.attributedText = question.attributed(with: attrs)
+        let html: NSAttributedString = {
+            let font = Fonts.Inter.regular(size: 16.scale)
+            let htmlWithStyle = "<span style=\"font-family: \(font.fontName); font-style: regular; font-size: \(font.pointSize); line-height: \(22.scale)px;\">\(question)</span>"
+            
+            guard let data = htmlWithStyle.data(using: .utf8) else { return question.attributed(with: attrs) }
+            
+            let attributedString = try? NSAttributedString(
+                data: data,
+                options: [
+                    .documentType: NSAttributedString.DocumentType.html,
+                    .characterEncoding: String.Encoding.utf8.rawValue
+                ],
+                documentAttributes: nil
+            )
+            guard let attributedString else { return question.attributed(with: attrs) }
+            
+            return attributedString
+        }()
+        label.attributedText = html
     }
 }
 

@@ -11,6 +11,8 @@ import RxCocoa
 final class AssistantResultViewModel {
     enum Action {
         case copy(String)
+        case selectEssayStyle
+        case generateEssay(String, WritingStyle)
     }
     
     enum InputData {
@@ -65,12 +67,15 @@ extension AssistantResultViewModel {
         let didTapCopy: Signal<AssistantResultTableAnswerElement>
         let didTapLike: Signal<AssistantResult>
         let didTapDislike: Signal<AssistantResult>
+        let didBottomViewAction: Signal<AssistantResultBottomView.Action>
+        let didSelectEssayStyle: Signal<WritingStyle>
     }
     
     struct Output {
         let action: Driver<Action>
         let elements: Driver<[AssistantResultTableElement]>
         let currentResult: Driver<AssistantResult>
+        let bottomViewMode: Driver<AssistantResultBottomView.Mode?>
     }
     
     func configure(input: Input) -> Output {
@@ -82,13 +87,22 @@ extension AssistantResultViewModel {
         )
         
         return Output(
-            action: makeAction(didTapCopy: input.didTapCopy),
+            action: makeAction(
+                didTapCopy: input.didTapCopy,
+                didBottomViewAction: input.didBottomViewAction,
+                didSelectEssayStyle: input.didSelectEssayStyle,
+                currentResult: currentResult
+            ),
             elements: makeElements(
                 inputData: inputData,
                 didTapRefresh: input.didTapRefresh,
                 assistantResult: currentResult
             ),
-            currentResult: currentResult
+            currentResult: currentResult,
+            bottomViewMode: makeBottomViewMode(
+                didTapRefresh: input.didTapRefresh,
+                currentResult: currentResult
+            )
         )
     }
 }
@@ -681,7 +695,12 @@ private extension AssistantResultViewModel {
         }
     }
     
-    func makeAction(didTapCopy: Signal<AssistantResultTableAnswerElement>) -> Driver<Action> {
+    func makeAction(
+        didTapCopy: Signal<AssistantResultTableAnswerElement>,
+        didBottomViewAction: Signal<AssistantResultBottomView.Action>,
+        didSelectEssayStyle: Signal<WritingStyle>,
+        currentResult: Driver<AssistantResult>
+    ) -> Driver<Action> {
         let copy = didTapCopy
             .asDriver(onErrorDriveWith: .never())
             .filter { $0.detected }
@@ -703,7 +722,61 @@ private extension AssistantResultViewModel {
             }
             .map { Action.copy($0) }
         
+        let bottomAction = didBottomViewAction
+            .compactMap { action -> Action? in
+                switch action {
+                case .generateEssay:
+                    return .selectEssayStyle
+                }
+            }
+            .asDriver(onErrorDriveWith: .never())
+        
+        let generateEssay = didSelectEssayStyle
+            .asDriver(onErrorDriveWith: .never())
+            .withLatestFrom(currentResult) { ($0, $1) }
+            .compactMap { style, currentResult -> Action? in
+                guard
+                    let result = currentResult.result,
+                    case let .writing(writingResult) = result,
+                    writingResult.meta.mode == .outline,
+                    writingResult.response.detected,
+                    let body = writingResult.response.data?.body, !body.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                else { return nil }
+                
+                return .generateEssay(body, style)
+            }
+        
         return Driver
-            .merge(copy)
+            .merge(copy, bottomAction, generateEssay)
+    }
+    
+    func makeBottomViewMode(
+        didTapRefresh: Signal<AssistantResult>,
+        currentResult: Driver<AssistantResult>
+    ) -> Driver<AssistantResultBottomView.Mode?> {
+        let reset = didTapRefresh
+            .map { _ -> AssistantResultBottomView.Mode? in nil }
+            .startWith(nil)
+            .asDriver(onErrorDriveWith: .never())
+        
+        let mode = currentResult
+            .map { assistantResult -> AssistantResultBottomView.Mode? in
+                guard let result = assistantResult.result else { return nil }
+                
+                switch result {
+                case .writing(let writingResult):
+                    switch writingResult.meta.mode {
+                    case .outline:
+                        return writingResult.response.detected ? .generateEssay : nil
+                    case .essay:
+                        return nil
+                    }
+                default:
+                    return nil
+                }
+            }
+        
+        return Driver
+            .merge(reset, mode)
     }
 }

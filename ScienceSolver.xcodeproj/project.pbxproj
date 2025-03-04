@@ -185,6 +185,7 @@
 		DECF9AA22D71CF8200EE81AF /* AssistantCameraActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF9AA12D71CF8200EE81AF /* AssistantCameraActionButton.swift */; };
 		DED95F8F2CEA5396003CBC48 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED95F8E2CEA5396003CBC48 /* WebController.swift */; };
 		DEE1E46B2D76DCD1007C4CB7 /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1E46A2D76DCD1007C4CB7 /* TODO.swift */; };
+		DEE1E46D2D76E045007C4CB7 /* AssistantResultBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1E46C2D76E045007C4CB7 /* AssistantResultBottomView.swift */; };
 		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
 		DEE8837E2C996922008DAD26 /* SWMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837D2C996922008DAD26 /* SWMView.swift */; };
@@ -392,6 +393,7 @@
 		DECF9AA12D71CF8200EE81AF /* AssistantCameraActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantCameraActionButton.swift; sourceTree = "<group>"; };
 		DED95F8E2CEA5396003CBC48 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		DEE1E46A2D76DCD1007C4CB7 /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
+		DEE1E46C2D76E045007C4CB7 /* AssistantResultBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantResultBottomView.swift; sourceTree = "<group>"; };
 		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
 		DEE8837D2C996922008DAD26 /* SWMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMView.swift; sourceTree = "<group>"; };
@@ -1252,6 +1254,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE883A72C9AEDDD008DAD26 /* TableView */,
+				DEE1E46C2D76E045007C4CB7 /* AssistantResultBottomView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1564,6 +1567,7 @@
 				DE89C38B2C8F0A1100CB9160 /* GetLanguagesRequest.swift in Sources */,
 				DE89C3B32C919A4F00CB9160 /* AccountTitleCell.swift in Sources */,
 				DE89C22F2C8B3AE200CB9160 /* SplashReceiptValidationObserver.swift in Sources */,
+				DEE1E46D2D76E045007C4CB7 /* AssistantResultBottomView.swift in Sources */,
 				DE89C3DA2C93181600CB9160 /* HistoryViewController.swift in Sources */,
 				DE89C3FE2C93482700CB9160 /* AssistantsCollectionView.swift in Sources */,
 				DE89C3522C8B550100CB9160 /* OnboardingWelcome1View.swift in Sources */,

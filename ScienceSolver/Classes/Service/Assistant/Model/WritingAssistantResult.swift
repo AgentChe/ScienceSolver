@@ -32,6 +32,7 @@ struct WritingAssistantResult {
     }
     
     let threadId: String
+    let title: String?
     let helpful: Bool?
     let created: TimeInterval
     let meta: Meta
@@ -96,6 +97,7 @@ extension WritingAssistantResult {
         
         self = WritingAssistantResult(
             threadId: threadId,
+            title: body["title"] as? String,
             helpful: body["helpful"] as? Bool,
             created: created,
             meta: meta,

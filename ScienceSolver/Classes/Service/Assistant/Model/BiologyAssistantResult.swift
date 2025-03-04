@@ -27,6 +27,7 @@ struct BiologyAssistantResult {
     }
     
     let threadId: String
+    let title: String?
     let helpful: Bool?
     let created: TimeInterval
     let request: Request
@@ -77,6 +78,7 @@ extension BiologyAssistantResult {
         
         self = BiologyAssistantResult(
             threadId: threadId,
+            title: body["title"] as? String,
             helpful: body["helpful"] as? Bool,
             created: created,
             request: request,
@@ -96,6 +98,7 @@ extension BiologyAssistantResult {
     func helpful(_ helpful: Bool?) -> BiologyAssistantResult {
         BiologyAssistantResult(
             threadId: threadId,
+            title: title,
             helpful: helpful,
             created: created,
             request: request,

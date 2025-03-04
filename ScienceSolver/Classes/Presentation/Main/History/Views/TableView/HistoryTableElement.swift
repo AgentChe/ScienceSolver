@@ -74,15 +74,15 @@ private extension AssistantHistoryItem {
     var text: String {
         switch self {
         case .math(let result):
-            return result.request.content
+            return result.title ?? result.request.content
         case .physics(let result):
-            return result.request.content
+            return result.title ?? result.request.content
         case .biology(let result):
-            return result.request.content
+            return result.title ?? result.request.content
         case .chemistry(let result):
-            return result.request.content
+            return result.title ?? result.request.content
         case .writing(let result):
-            return result.request.content
+            return result.title ?? result.request.content
         }
     }
     

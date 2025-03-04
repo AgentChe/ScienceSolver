@@ -134,6 +134,7 @@
 "AssistantResult.Recommendation" = "Recommendation";
 "AssistantResult.Math.UserFormula" = "Identified problem";
 "AssistantResult.Copied" = "Copied";
+"AssistantResult.GenerateEssay" = "Write an essay";
 
 // MARK: AssistantMain
 "AssistantMain.History" = "Recent";

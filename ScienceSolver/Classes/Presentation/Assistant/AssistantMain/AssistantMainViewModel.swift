@@ -249,7 +249,7 @@ private extension AssistantMainViewModel {
                     guard let style else { return nil }
                     return .writing(text, mode, style)
                 case .outline:
-                    return .writing(text, mode, .analytical)
+                    return .writing(text, mode, .other)
                 }
             }
             .map { Route.analyze($0) }

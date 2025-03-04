@@ -17,31 +17,31 @@ final class AssistantResultViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private let didTapClose: () -> Void
-    
     private lazy var didRefreshTrigger = PublishRelay<AssistantResultViewModel.AssistantResult>()
     private lazy var didLikeTrigger = PublishRelay<AssistantResultViewModel.AssistantResult>()
     private lazy var didDislikeTrigger = PublishRelay<AssistantResultViewModel.AssistantResult>()
+    private lazy var didSelectEssayStyleTrigger = PublishRelay<WritingStyle>()
     
+    private let generateEssay: ((String, WritingStyle) -> Void)?
     private var navigationClosedButtonTapped: (() -> Void)?
     
-    private init(historyItem: AssistantHistoryItem, didTapClose: @escaping () -> Void) {
+    private init(historyItem: AssistantHistoryItem, generateEssay: ((String, WritingStyle) -> Void)?) {
         self.viewModel = AssistantResultViewModel(historyItem: historyItem)
-        self.didTapClose = didTapClose
+        self.generateEssay = generateEssay
         
         super.init(nibName: nil, bundle: nil)
     }
     
-    private init(recognized: AssistantRecognizerController.Result, didTapClose: @escaping () -> Void) {
+    private init(recognized: AssistantRecognizerController.Result, generateEssay: ((String, WritingStyle) -> Void)?) {
         self.viewModel = AssistantResultViewModel(recognized: recognized)
-        self.didTapClose = didTapClose
+        self.generateEssay = generateEssay
         
         super.init(nibName: nil, bundle: nil)
     }
     
-    private init(manual: AssistantMainViewController.DataForManualAnalyze, didTapClose: @escaping () -> Void) {
+    private init(manual: AssistantMainViewController.DataForManualAnalyze, generateEssay: ((String, WritingStyle) -> Void)?) {
         self.viewModel = AssistantResultViewModel(manual: manual)
-        self.didTapClose = didTapClose
+        self.generateEssay = generateEssay
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -61,7 +61,9 @@ final class AssistantResultViewController: UIViewController {
             didTapRefresh: didRefreshTrigger.asSignal(),
             didTapCopy: mainView.tableView.didTapCopy,
             didTapLike: didLikeTrigger.asSignal(),
-            didTapDislike: didDislikeTrigger.asSignal()
+            didTapDislike: didDislikeTrigger.asSignal(),
+            didBottomViewAction: mainView.bottomView.action,
+            didSelectEssayStyle: didSelectEssayStyleTrigger.asSignal()
         ))
         
         let currentAssistantResult = output.currentResult
@@ -101,25 +103,31 @@ final class AssistantResultViewController: UIViewController {
                 base.setup(elements: elements)
             })
             .disposed(by: disposeBag)
+        
+        output.bottomViewMode
+            .drive(Binder(mainView) { base, mode in
+                base.setup(bottomViewMode: mode)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
 // MARK: Public
 extension AssistantResultViewController {
-    static func make(recognized: AssistantRecognizerController.Result, didTapClose: @escaping () -> Void) -> AssistantResultViewController {
-        let vc = AssistantResultViewController(recognized: recognized, didTapClose: didTapClose)
+    static func make(recognized: AssistantRecognizerController.Result, generateEssay: ((String, WritingStyle) -> Void)? = nil) -> AssistantResultViewController {
+        let vc = AssistantResultViewController(recognized: recognized, generateEssay: generateEssay)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
     
-    static func make(historyItem: AssistantHistoryItem, didTapClose: @escaping () -> Void) -> AssistantResultViewController {
-        let vc = AssistantResultViewController(historyItem: historyItem, didTapClose: didTapClose)
+    static func make(historyItem: AssistantHistoryItem, generateEssay: ((String, WritingStyle) -> Void)? = nil) -> AssistantResultViewController {
+        let vc = AssistantResultViewController(historyItem: historyItem, generateEssay: generateEssay)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
     
-    static func make(manual: AssistantMainViewController.DataForManualAnalyze, didTapClose: @escaping () -> Void) -> AssistantResultViewController {
-        let vc = AssistantResultViewController(manual: manual, didTapClose: didTapClose)
+    static func make(manual: AssistantMainViewController.DataForManualAnalyze, generateEssay: ((String, WritingStyle) -> Void)? = nil) -> AssistantResultViewController {
+        let vc = AssistantResultViewController(manual: manual, generateEssay: generateEssay)
         vc.navigationItem.backButtonTitle = " "
         return vc
     }
@@ -150,6 +158,13 @@ private extension AssistantResultViewController {
             UIPasteboard.general.string = string
             
             mainView.makeToast("AssistantResult.Copied".localized, position: .top)
+        case .selectEssayStyle:
+            let vc = SWMViewController.make(mode: .essay, style: .expository, select: { [weak self] style in
+                self?.didSelectEssayStyleTrigger.accept(style)
+            })
+            present(vc, animated: false)
+        case .generateEssay(let text, let style):
+            self.generateEssay?(text, style)
         }
     }
     

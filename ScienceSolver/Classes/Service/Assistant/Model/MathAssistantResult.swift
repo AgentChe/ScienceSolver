@@ -28,6 +28,7 @@ struct MathAssistantResult {
     }
     
     let threadId: String
+    let title: String?
     let helpful: Bool?
     let created: TimeInterval
     let request: Request
@@ -78,6 +79,7 @@ extension MathAssistantResult {
         
         self = MathAssistantResult(
             threadId: threadId,
+            title: body["title"] as? String,
             helpful: body["helpful"] as? Bool,
             created: created,
             request: request,
@@ -97,6 +99,7 @@ extension MathAssistantResult {
     func helpful(_ helpful: Bool?) -> MathAssistantResult {
         MathAssistantResult(
             threadId: threadId,
+            title: title,
             helpful: helpful,
             created: created,
             request: request,

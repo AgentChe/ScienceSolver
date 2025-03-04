@@ -175,7 +175,7 @@ private extension AssistantImageResizeViewModel {
                         case .essay:
                             return additionalInfo?.writingStyle
                         case .outline:
-                            return .analytical
+                            return .other
                         }
                     }()
                     

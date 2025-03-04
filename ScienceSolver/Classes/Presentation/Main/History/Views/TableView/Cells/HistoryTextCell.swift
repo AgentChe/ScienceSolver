@@ -41,7 +41,27 @@ final class HistoryTextCell: UITableViewCell {
 extension HistoryTextCell {
     func setup(assistantName: String, content: String, created: String) {
         assistantNameLabel.attributedText = assistantName.attributed(with: createdAttrs)
-        contentLabel.attributedText = content.attributed(with: contentAttrs)
+        
+        let contentHTML: NSAttributedString = {
+            let font = Fonts.Inter.medium(size: 16.scale)
+            let htmlWithStyle = "<span style=\"font-family: \(font.fontName); font-style: regular; font-size: \(font.pointSize); line-height: \(19.scale)px;\">\(content)</span>"
+            
+            guard let data = htmlWithStyle.data(using: .utf8) else { return content.attributed(with: contentAttrs) }
+            
+            let attributedString = try? NSAttributedString(
+                data: data,
+                options: [
+                    .documentType: NSAttributedString.DocumentType.html,
+                    .characterEncoding: String.Encoding.utf8.rawValue
+                ],
+                documentAttributes: nil
+            )
+            guard let attributedString else { return content.attributed(with: contentAttrs) }
+            
+            return attributedString
+        }()
+        contentLabel.attributedText = contentHTML
+        
         createdLabel.attributedText = created.attributed(with: createdAttrs)
     }
 }
