@@ -17,6 +17,7 @@ final class AssistantMainViewModel {
         case assistantRecognize(AssistantsCollectionElement.Assistant)
         case calculator
         case analyze(AssistantMainViewController.DataForManualAnalyze)
+        case paygate
     }
     
     enum Action {
@@ -187,13 +188,13 @@ private extension AssistantMainViewModel {
             .asDriver(onErrorDriveWith: .never())
         
         let historyItem = didSelectHistoryItem
-            .map { Route.historyItem($0) }
+            .map { SessionManager().hasActiveSubscriptions() ? Route.historyItem($0) : Route.paygate }
             .asDriver(onErrorDriveWith: .never())
         
         let recognize = didTapCamera
             .asDriver(onErrorDriveWith: .never())
             .withLatestFrom(currentAssistant)
-            .map { Route.assistantRecognize($0) }
+            .map { SessionManager().hasActiveSubscriptions() ? Route.assistantRecognize($0) : Route.paygate }
         
         let calculator = didTapCalculator
             .asDriver(onErrorDriveWith: .never())
@@ -234,7 +235,7 @@ private extension AssistantMainViewModel {
                     return nil
                 }
             }
-            .map { Route.analyze($0) }
+            .map { SessionManager().hasActiveSubscriptions() ? Route.analyze($0) : Route.paygate }
         
         let analyzeWritingMode = didTapDone
             .asDriver(onErrorDriveWith: .never())
@@ -252,7 +253,7 @@ private extension AssistantMainViewModel {
                     return .writing(text, mode, .other)
                 }
             }
-            .map { Route.analyze($0) }
+            .map { SessionManager().hasActiveSubscriptions() ? Route.analyze($0) : Route.paygate }
         
         let translate = didTapDone
             .asDriver(onErrorDriveWith: .never())
@@ -265,7 +266,7 @@ private extension AssistantMainViewModel {
                 
                 return .language(text, language)
             }
-            .map { Route.analyze($0) }
+            .map { SessionManager().hasActiveSubscriptions() ? Route.analyze($0) : Route.paygate }
         
         return Driver
             .merge(history, historyItem, recognize, calculator, selectWritingStyle, selectLanguage, analyzeOnlyText, analyzeWritingMode, translate)

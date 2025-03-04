@@ -11,6 +11,7 @@ import RxCocoa
 final class HistoryViewModel {
     enum Route {
         case select(AssistantHistoryItem)
+        case paygate
     }
     
     private lazy var firstPageActivity = RxActivityIndicator()
@@ -81,7 +82,7 @@ private extension HistoryViewModel {
     
     func makeRoute(didSelect: Signal<AssistantHistoryItem>) -> Driver<Route> {
         didSelect
-            .map { Route.select($0) }
+            .map { SessionManager().hasActiveSubscriptions() ? Route.select($0) : Route.paygate }
             .asDriver(onErrorDriveWith: .never())
     }
 }

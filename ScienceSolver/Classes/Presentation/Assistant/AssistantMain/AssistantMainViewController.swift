@@ -156,6 +156,9 @@ private extension AssistantMainViewController {
             guard let nc = navigationController else { return }
             
             AssistantAssembly().manualAnalyze(data: data, from: nc)
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
     

@@ -72,6 +72,9 @@ private extension HistoryViewController {
             guard let nc = navigationController else { return }
             
             AssistantAssembly().history(item: item, from: nc)
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
     
