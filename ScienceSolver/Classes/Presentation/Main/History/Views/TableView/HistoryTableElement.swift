@@ -13,6 +13,7 @@ struct HistoryTableElement {
         case text(String)
     }
     
+    let assistantName: String
     let mode: Mode
     let created: String
     let item: AssistantHistoryItem
@@ -25,6 +26,20 @@ struct HistoryTableElement {
     }()
     
     init(item: AssistantHistoryItem) {
+        self.assistantName = {
+            switch item {
+            case .math:
+                return "Assistant.Math".localized
+            case .physics:
+                return "Assistant.Physics".localized
+            case .biology:
+                return "Assistant.Biology".localized
+            case .chemistry:
+                return "Assistant.Chemistry".localized
+            case .writing:
+                return "Assistant.Writing".localized
+            }
+        }()
         self.mode = {
             if let url = item.imageUrl {
                 return .image(url)

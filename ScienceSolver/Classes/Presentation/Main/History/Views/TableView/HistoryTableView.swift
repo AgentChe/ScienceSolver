@@ -66,11 +66,19 @@ extension HistoryTableView: UITableViewDataSource {
         switch element.mode {
         case .image(let url):
             let cell = dequeueReusableCell(withIdentifier: String(describing: HistoryImageCell.self), for: indexPath) as! HistoryImageCell
-            cell.setup(imageUrl: url, created: element.created)
+            cell.setup(
+                assistantName: element.assistantName,
+                imageUrl: url,
+                created: element.created
+            )
             return cell
         case .text(let content):
             let cell = dequeueReusableCell(withIdentifier: String(describing: HistoryTextCell.self), for: indexPath) as! HistoryTextCell
-            cell.setup(content: content, created: element.created)
+            cell.setup(
+                assistantName: element.assistantName,
+                content: content,
+                created: element.created
+            )
             return cell
         }
     }

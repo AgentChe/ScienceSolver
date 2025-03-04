@@ -184,6 +184,7 @@
 		DECF9A922D6F49CF00EE81AF /* FiraMath-Regular.plist in Resources */ = {isa = PBXBuildFile; fileRef = DECF9A902D6F49CF00EE81AF /* FiraMath-Regular.plist */; };
 		DECF9AA22D71CF8200EE81AF /* AssistantCameraActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECF9AA12D71CF8200EE81AF /* AssistantCameraActionButton.swift */; };
 		DED95F8F2CEA5396003CBC48 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED95F8E2CEA5396003CBC48 /* WebController.swift */; };
+		DEE1E46B2D76DCD1007C4CB7 /* TODO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE1E46A2D76DCD1007C4CB7 /* TODO.swift */; };
 		DEE883792C988FAD008DAD26 /* AIRAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */; };
 		DEE8837B2C99639F008DAD26 /* AIRSelectEntityButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */; };
 		DEE8837E2C996922008DAD26 /* SWMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8837D2C996922008DAD26 /* SWMView.swift */; };
@@ -390,6 +391,7 @@
 		DECF9A902D6F49CF00EE81AF /* FiraMath-Regular.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FiraMath-Regular.plist"; sourceTree = "<group>"; };
 		DECF9AA12D71CF8200EE81AF /* AssistantCameraActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantCameraActionButton.swift; sourceTree = "<group>"; };
 		DED95F8E2CEA5396003CBC48 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
+		DEE1E46A2D76DCD1007C4CB7 /* TODO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TODO.swift; sourceTree = "<group>"; };
 		DEE883782C988FAD008DAD26 /* AIRAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRAnimationView.swift; sourceTree = "<group>"; };
 		DEE8837A2C99639F008DAD26 /* AIRSelectEntityButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIRSelectEntityButton.swift; sourceTree = "<group>"; };
 		DEE8837D2C996922008DAD26 /* SWMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWMView.swift; sourceTree = "<group>"; };
@@ -1185,6 +1187,7 @@
 			children = (
 				DECF9A8F2D6F49CF00EE81AF /* FiraMath-Regular.otf */,
 				DECF9A902D6F49CF00EE81AF /* FiraMath-Regular.plist */,
+				DEE1E46A2D76DCD1007C4CB7 /* TODO.swift */,
 			);
 			path = FontsForSwiftMath;
 			sourceTree = "<group>";
@@ -1457,6 +1460,7 @@
 				DE89C2512C8B3AE200CB9160 /* IAPManager.swift in Sources */,
 				DE89C3A12C918D2700CB9160 /* AccountViewModel.swift in Sources */,
 				DE89C1672C8B3AE100CB9160 /* UIEdgeInsets+Extension.swift in Sources */,
+				DEE1E46B2D76DCD1007C4CB7 /* TODO.swift in Sources */,
 				DEE883802C99692B008DAD26 /* SWMViewController.swift in Sources */,
 				DE89C39F2C918D1E00CB9160 /* AccountViewController.swift in Sources */,
 				DE89C2522C8B3AE200CB9160 /* PurchaseValidationObserver.swift in Sources */,

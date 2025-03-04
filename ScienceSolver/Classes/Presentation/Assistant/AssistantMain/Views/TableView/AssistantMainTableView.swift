@@ -107,11 +107,19 @@ extension AssistantMainTableView: UITableViewDataSource {
             switch historyItem.mode {
             case .image(let url):
                 let cell = dequeueReusableCell(withIdentifier: String(describing: HistoryImageCell.self), for: indexPath) as! HistoryImageCell
-                cell.setup(imageUrl: url, created: historyItem.created)
+                cell.setup(
+                    assistantName: historyItem.assistantName,
+                    imageUrl: url,
+                    created: historyItem.created
+                )
                 return cell
             case .text(let content):
                 let cell = dequeueReusableCell(withIdentifier: String(describing: HistoryTextCell.self), for: indexPath) as! HistoryTextCell
-                cell.setup(content: content, created: historyItem.created)
+                cell.setup(
+                    assistantName: historyItem.assistantName,
+                    content: content,
+                    created: historyItem.created
+                )
                 return cell
             }
         }

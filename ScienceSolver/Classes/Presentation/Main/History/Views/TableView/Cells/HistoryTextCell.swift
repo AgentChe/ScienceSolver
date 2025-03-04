@@ -9,6 +9,7 @@ import UIKit
 
 final class HistoryTextCell: UITableViewCell {
     lazy var container = makeContainer()
+    lazy var assistantNameLabel = makeLabel()
     lazy var contentLabel = makeLabel()
     lazy var createdLabel = makeLabel()
     
@@ -38,7 +39,8 @@ final class HistoryTextCell: UITableViewCell {
 
 // MARK: Public
 extension HistoryTextCell {
-    func setup(content: String, created: String) {
+    func setup(assistantName: String, content: String, created: String) {
+        assistantNameLabel.attributedText = assistantName.attributed(with: createdAttrs)
         contentLabel.attributedText = content.attributed(with: contentAttrs)
         createdLabel.attributedText = created.attributed(with: createdAttrs)
     }
@@ -65,9 +67,15 @@ private extension HistoryTextCell {
         ])
         
         NSLayoutConstraint.activate([
+            assistantNameLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
+            assistantNameLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
+            assistantNameLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
             contentLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
             contentLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
-            contentLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 16.scale)
+            contentLabel.topAnchor.constraint(equalTo: assistantNameLabel.bottomAnchor, constant: 8.scale)
         ])
         
         NSLayoutConstraint.activate([

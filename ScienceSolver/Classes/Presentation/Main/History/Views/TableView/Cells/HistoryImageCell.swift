@@ -10,10 +10,11 @@ import Kingfisher
 
 final class HistoryImageCell: UITableViewCell {
     lazy var container = makeContainer()
+    lazy var assistantNameLabel = makeLabel()
     lazy var pictureView = makeImageView()
     lazy var createdLabel = makeLabel()
     
-    private lazy var createdAttrs = TextAttributes()
+    private lazy var attrs = TextAttributes()
         .textColor(Appearance.mono200.withAlphaComponent(0.4))
         .font(Fonts.Inter.semiBold(size: 12.scale))
         .lineHeight(17.scale)
@@ -40,9 +41,10 @@ final class HistoryImageCell: UITableViewCell {
 
 // MARK: Public
 extension HistoryImageCell {
-    func setup(imageUrl: URL, created: String) {
+    func setup(assistantName: String, imageUrl: URL, created: String) {
+        assistantNameLabel.attributedText = assistantName.attributed(with: attrs)
         pictureView.kf.setImage(with: imageUrl)
-        createdLabel.attributedText = created.attributed(with: createdAttrs)
+        createdLabel.attributedText = created.attributed(with: attrs)
     }
 }
 
@@ -67,9 +69,15 @@ private extension HistoryImageCell {
         ])
         
         NSLayoutConstraint.activate([
+            assistantNameLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
+            assistantNameLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
+            assistantNameLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
             pictureView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
             pictureView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
-            pictureView.topAnchor.constraint(equalTo: container.topAnchor, constant: 16.scale),
+            pictureView.topAnchor.constraint(equalTo: assistantNameLabel.bottomAnchor, constant: 8.scale),
             pictureView.heightAnchor.constraint(equalToConstant: 131.scale)
         ])
         
