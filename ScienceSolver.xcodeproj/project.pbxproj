@@ -20,7 +20,6 @@
 		DE89BF8E2C8B35B400CB9160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE89BF8D2C8B35B300CB9160 /* Assets.xcassets */; };
 		DE89BF912C8B35B400CB9160 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DE89BF902C8B35B400CB9160 /* Base */; };
 		DE89C14E2C8B3AE100CB9160 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BF992C8B3AE100CB9160 /* AmplitudeManager.swift */; };
-		DE89C14F2C8B3AE100CB9160 /* BranchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BF9A2C8B3AE100CB9160 /* BranchManager.swift */; };
 		DE89C1502C8B3AE100CB9160 /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BF9B2C8B3AE100CB9160 /* FacebookManager.swift */; };
 		DE89C1512C8B3AE100CB9160 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BF9C2C8B3AE100CB9160 /* FirebaseManager.swift */; };
 		DE89C1522C8B3AE100CB9160 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BF9E2C8B3AE100CB9160 /* ImagePicker.swift */; };
@@ -228,7 +227,6 @@
 		DE89BF902C8B35B400CB9160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE89BF922C8B35B400CB9160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE89BF992C8B3AE100CB9160 /* AmplitudeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
-		DE89BF9A2C8B3AE100CB9160 /* BranchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BranchManager.swift; sourceTree = "<group>"; };
 		DE89BF9B2C8B3AE100CB9160 /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		DE89BF9C2C8B3AE100CB9160 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DE89BF9E2C8B3AE100CB9160 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -519,7 +517,6 @@
 			isa = PBXGroup;
 			children = (
 				DE89BF992C8B3AE100CB9160 /* AmplitudeManager.swift */,
-				DE89BF9A2C8B3AE100CB9160 /* BranchManager.swift */,
 				DE89BF9B2C8B3AE100CB9160 /* FacebookManager.swift */,
 				DE89BF9C2C8B3AE100CB9160 /* FirebaseManager.swift */,
 			);
@@ -1642,7 +1639,6 @@
 				DE89C14E2C8B3AE100CB9160 /* AmplitudeManager.swift in Sources */,
 				DE89C17B2C8B3AE100CB9160 /* XOREncryption.swift in Sources */,
 				DE89C3E42C931B2E00CB9160 /* HistoryTableElement.swift in Sources */,
-				DE89C14F2C8B3AE100CB9160 /* BranchManager.swift in Sources */,
 				DE89C3422C8B43CA00CB9160 /* ProfileManager.swift in Sources */,
 				DE89C3642C8DFF2D00CB9160 /* TabItemButton.swift in Sources */,
 			);
@@ -1797,7 +1793,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1813,7 +1809,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = app.iphone.science;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1835,7 +1831,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1851,7 +1847,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.5.2;
 				PRODUCT_BUNDLE_IDENTIFIER = app.iphone.science;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
