@@ -19,7 +19,6 @@
 		DE4F0A772D759997001C897A /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4F0A762D759997001C897A /* PickerView.swift */; };
 		DE89BF8E2C8B35B400CB9160 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE89BF8D2C8B35B300CB9160 /* Assets.xcassets */; };
 		DE89BF912C8B35B400CB9160 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DE89BF902C8B35B400CB9160 /* Base */; };
-		DE89C14E2C8B3AE100CB9160 /* AmplitudeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BF992C8B3AE100CB9160 /* AmplitudeManager.swift */; };
 		DE89C1502C8B3AE100CB9160 /* FacebookManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BF9B2C8B3AE100CB9160 /* FacebookManager.swift */; };
 		DE89C1512C8B3AE100CB9160 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BF9C2C8B3AE100CB9160 /* FirebaseManager.swift */; };
 		DE89C1522C8B3AE100CB9160 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE89BF9E2C8B3AE100CB9160 /* ImagePicker.swift */; };
@@ -226,7 +225,6 @@
 		DE89BF8D2C8B35B300CB9160 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE89BF902C8B35B400CB9160 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE89BF922C8B35B400CB9160 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE89BF992C8B3AE100CB9160 /* AmplitudeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmplitudeManager.swift; sourceTree = "<group>"; };
 		DE89BF9B2C8B3AE100CB9160 /* FacebookManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookManager.swift; sourceTree = "<group>"; };
 		DE89BF9C2C8B3AE100CB9160 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DE89BF9E2C8B3AE100CB9160 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -516,7 +514,6 @@
 		DE89BF9D2C8B3AE100CB9160 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				DE89BF992C8B3AE100CB9160 /* AmplitudeManager.swift */,
 				DE89BF9B2C8B3AE100CB9160 /* FacebookManager.swift */,
 				DE89BF9C2C8B3AE100CB9160 /* FirebaseManager.swift */,
 			);
@@ -1402,9 +1399,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ScienceSolver/Pods-ScienceSolver-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ScienceSolver/Pods-ScienceSolver-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1419,9 +1420,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ScienceSolver/Pods-ScienceSolver-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ScienceSolver/Pods-ScienceSolver-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1636,7 +1641,6 @@
 				DEB22DD32CA29FE8000200C1 /* AssistantMainTableView.swift in Sources */,
 				DE89C2312C8B3AE200CB9160 /* SplashViewController.swift in Sources */,
 				DE89C3322C8B3F1800CB9160 /* PaygateView.swift in Sources */,
-				DE89C14E2C8B3AE100CB9160 /* AmplitudeManager.swift in Sources */,
 				DE89C17B2C8B3AE100CB9160 /* XOREncryption.swift in Sources */,
 				DE89C3E42C931B2E00CB9160 /* HistoryTableElement.swift in Sources */,
 				DE89C3422C8B43CA00CB9160 /* ProfileManager.swift in Sources */,
@@ -1794,7 +1798,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = RXCT63549X;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1811,7 +1815,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.3;
+				MARKETING_VERSION = 1.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = app.iphone.science;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1835,7 +1839,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = RXCT63549X;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
@@ -1852,7 +1856,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.3;
+				MARKETING_VERSION = 1.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = app.iphone.science;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
